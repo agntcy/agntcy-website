@@ -1,8 +1,8 @@
 # Agntcy Website
 
-[![Release](https://img.shields.io/github/v/release/agntcy/agntcy-website?display_name=tag)](CHANGELOG.md)
+[![Deploy Next.js site to Pages](https://github.com/agntcy/agntcy-website/actions/workflows/nextjs.yml/badge.svg?branch=main)](https://github.com/agntcy/agntcy-website/actions/workflows/nextjs.yml)
+
 [![Lint](https://github.com/agntcy/repo-template/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/marketplace/actions/super-linter)
-[![Contributor-Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-fbab2c.svg)](CODE_OF_CONDUCT.md)
 
 ## About The Project
 
