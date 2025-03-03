@@ -32,6 +32,8 @@ jobs:
         env:
           CSS_FILE_NAME: ".stylelintrc.json"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_CONFIG_FILE: ".gitleaks.toml"
+          JAVASCRIPT_ES_CONFIG_FILE: ".eslintrc.json"
           LINTER_RULES_PATH: ".github/linters"
           MARKDOWN_CONFIG_FILE: ".markdownlint.yml"
           YAML_CONFIG_FILE: ".yamllint.yml"
