@@ -1,0 +1,35 @@
+name: Pre-commit checks
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - main
+      - ETIUIDEVS-1779
+
+jobs:
+  pre-commit-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run ESLint
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx --config .eslintrc.json
+
+      - name: Run Stylelint
+        run: npx stylelint "**/*.css" --config .github/linters/.stylelintrc.json
+
+      - name: Run Gitleaks
+        uses: zricethezav/gitleaks-action@v1.3.0
+        with:
+          config: .github/linters/.gitleaks.toml

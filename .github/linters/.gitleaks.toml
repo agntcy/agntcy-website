@@ -1,8 +1,10 @@
 title = "gitleaks config"
+
 [[rules]]
 description = "Generic API Key"
 regex = '''(?i)(apikey|api_key|secret|password|token|writeKey)'''
 tags = ["apikey", "generic"]
-[[rules.allowlist]]
+
+[rules.allowlist]
 description = "Allow specific file"
 paths = ["src/lib/segment.ts"]
