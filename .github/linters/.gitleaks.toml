@@ -10,6 +10,6 @@ tags = ["apikey", "generic"]
 description = "Allow specific file"
 paths = ["src/lib/segment.ts"]
 
-[[allowlist]]
+[allowlist]
 description = "Exclude yarn.lock file"
 files = ["yarn.lock"]

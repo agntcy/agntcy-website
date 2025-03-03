@@ -41,4 +41,5 @@ jobs:
           VALIDATE_MARKDOWN_PRETTIER: false
           VALIDATE_YAML_PRETTIER: false
           VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_TYPESCRIPT_STANDARD: false
           MULTI_STATUS: false
