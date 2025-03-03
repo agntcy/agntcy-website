@@ -30,9 +30,9 @@ jobs:
       - name: 🧹 run superlinter
         uses: super-linter/super-linter@85f7611e0f7b53c8573cca84aa0ed4344f6f6a4d # v7.2.1
         env:
+          CSS_FILE_NAME: ".stylelintrc.json"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: ".github/linters"
-          STYLELINT_CONFIG_FILE: ".stylelintrc.json"
           MARKDOWN_CONFIG_FILE: ".markdownlint.yml"
           YAML_CONFIG_FILE: ".yamllint.yml"
           VALIDATE_ALL_CODEBASE: false
