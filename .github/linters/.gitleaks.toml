@@ -1,6 +1,7 @@
 title = "gitleaks config"
 
 [[rules]]
+id = "generic-api-key"
 description = "Generic API Key"
 regex = '''(?i)(apikey|api_key|secret|password|token|writeKey)'''
 tags = ["apikey", "generic"]
