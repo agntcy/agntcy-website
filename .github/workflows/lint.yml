@@ -32,6 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: ".github/linters"
+          STYLELINT_CONFIG_FILE: ".stylelintrc.json"
           MARKDOWN_CONFIG_FILE: ".markdownlint.yml"
           YAML_CONFIG_FILE: ".yamllint.yml"
           VALIDATE_ALL_CODEBASE: false
