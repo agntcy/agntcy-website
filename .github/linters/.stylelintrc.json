@@ -1,19 +1,18 @@
 {
-    "extends": [
-      "stylelint-config-standard",
-      "stylelint-config-recommended",
-      "stylelint-config-recommended-vue",
-      "stylelint-config-recommended-scss",
-      "stylelint-config-recommended-less",
-      "stylelint-config-recommended-tailwindcss"
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen"
+        ]
+      }
     ],
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
-        }
-      ],
-      "color-hex-length": "short"
-    }
+    "color-hex-length": "long"
   }
+}
