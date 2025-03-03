@@ -1,15 +1,3 @@
-title = "gitleaks config"
-
-[[rules]]
-id = "generic-api-key"
-description = "Generic API Key"
-regex = '''(?i)(apikey|api_key|secret|password|token|writeKey)'''
-tags = ["apikey", "generic"]
-
-[rules.allowlist]
-description = "Allow specific file"
-paths = ["src/lib/segment.ts"]
-
-[allowlist]
-description = "Exclude yarn.lock file"
-files = ["yarn.lock"]
+[extend]
+useDefault = true
+disabledRules = [ "generic-api-key"]
