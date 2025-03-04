@@ -1,24 +1,15 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
 import Image from "next/image";
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
 } from "components/ui/drawer";
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   const navItems = [
     { name: "Github", href: "https://github.com/agntcy/agntcy-website" },
