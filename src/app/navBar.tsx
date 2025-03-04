@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Github', href: 'https://github.com/agntcy/agntcy-website' },
-    { name: 'Resources', href: 'https://agntcy.org/' },
+    { name: 'Documentation', href: 'https://docs.agntcy.org' },
   ];
 
   return (
