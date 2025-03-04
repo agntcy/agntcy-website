@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Analytics from "components/reusables/analytics";
-import Navbar from "./navBar";
+import Navbar from "../components/layout/nav-bar";
 
 const roboto = Roboto({
   weight: '400',
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} antialiased`}
+        className={`${roboto.className} antialiased relative flex min-h-screen flex-col justify-between bg-[#00142B]`}
       >
         <Navbar/>
         {children}
