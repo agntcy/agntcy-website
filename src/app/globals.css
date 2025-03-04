@@ -19,3 +19,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+[data-nextjs-toast] {
+  display: none !important;
+}
