@@ -28,14 +28,23 @@ jobs:
         with:
           fetch-depth: 0
       - name: 🧹 run superlinter
-        uses: super-linter/super-linter@85f7611e0f7b53c8573cca84aa0ed4344f6f6a4d # v7.2.1
+        uses: super-linter/super-linter@4e8a7c2bf106c4c766c816b35ec612638dc9b6b2 # v7.3.0
         env:
+          CSS_FILE_NAME: ".stylelintrc.json"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_CONFIG_FILE: ".gitleaks.toml"
+          JAVASCRIPT_ES_CONFIG_FILE: ".eslintrc.json"
           LINTER_RULES_PATH: ".github/linters"
           MARKDOWN_CONFIG_FILE: ".markdownlint.yml"
+          TYPESCRIPT_ES_CONFIG_FILE: ".eslintrc.json"
           YAML_CONFIG_FILE: ".yamllint.yml"
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_GITLEAKS: false
+          VALIDATE_JSON: false
           VALIDATE_MARKDOWN_PRETTIER: false
-          VALIDATE_YAML_PRETTIER: false
           VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_TSX: false
+          VALIDATE_TYPESCRIPT_ES: false
+          VALIDATE_TYPESCRIPT_STANDARD: false
+          VALIDATE_YAML_PRETTIER: false
           MULTI_STATUS: false
