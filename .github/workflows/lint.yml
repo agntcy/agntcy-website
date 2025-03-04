@@ -47,4 +47,5 @@ jobs:
           VALIDATE_TYPESCRIPT_ES: false
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_YAML_PRETTIER: false
+          VALIDATE_GITHUB_ACTIONS: false
           MULTI_STATUS: false
