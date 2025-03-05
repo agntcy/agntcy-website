@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import { LinkTrackers } from "~/components/reusables/link-trackers";
 
@@ -53,7 +52,7 @@ const Hero = () => {
           </div>
           <div className="py-12 flex">
             <LinkTrackers
-              href="mailto:hello@agntcy.org?subject=AGNTCY Membership Inquiry&body=Hi, I’d like to learn more about how my organization can become members of the AGNTCY open source collective."
+              href="mailto:hello@agntcy.org?subject=AGNTCY Membership Inquiry&body=Hi, I'd like to learn more about how my organization can become members of the AGNTCY open source collective."
               segmentMsg="agntcy join us clicked"
               segmentOpt={{
                 link_label: "Join us",
