@@ -25,7 +25,7 @@ export const LinkTrackers: React.FC<LinkTrackersProps> = ({
   const searchParams = useSearchParams();
 
   const handleOnClick = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     const baseUrl = `${window.location.protocol}//${window.location.host}`;
     const currentPath = pathname || window.location.pathname;
@@ -55,6 +55,8 @@ export const LinkTrackers: React.FC<LinkTrackersProps> = ({
           ? "/" +
             `${typeof window !== "undefined" ? window.location.search : ""}` +
             href
+          : href.toString().startsWith("mailto")
+          ? href
           : href +
             `${typeof window !== "undefined" ? window.location.search : ""}`
       }
