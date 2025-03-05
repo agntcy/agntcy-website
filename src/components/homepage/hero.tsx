@@ -1,6 +1,7 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
+import { LinkTrackers } from "~/components/reusables/link-trackers";
+
 const logos = [
   {
     name: "outshift",
@@ -36,7 +37,7 @@ const logos = [
 
 const Hero = () => {
   return (
-    <div className="mx-auto container bg-[#00142B] md:py-36 w-screen py-12 lg:pt-20 lg:pb-5">
+    <div className="mx-auto container bg-[#00142B] md:py-36 w-screen py-12">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-36 w-full py-1">
         <div className="col-span-1 sm:pt-0 sm:pb-12 px-4 ">
           <div className="">
@@ -49,15 +50,20 @@ const Hero = () => {
               width={450}
             />
           </div>
-          <div className="py-12">
-            <Link
-              href="mailto:hello@agntcy.org?subject=AGNTCY Membership Inquiry&body=Hi, I’d like to learn more about how my organization can become members of the AGNTCY open source collective."
-              legacyBehavior
+          <div className="py-12 flex">
+            <LinkTrackers
+              href="mailto:hello@agntcy.org?subject=AGNTCY Membership Inquiry&body=Hi, I'd like to learn more about how my organization can become members of the AGNTCY open source collective."
+              segmentMsg="agntcy join us clicked"
+              segmentOpt={{
+                link_label: "Join us",
+                location: "body",
+                resource_interaction: "email signup",
+              }}
             >
-              <a className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-orange-500 border-2 border-[#FBAB2C] py-3 px-7 rounded-3xl">
+              <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-3xl">
                 Join us
-              </a>
-            </Link>
+              </div>
+            </LinkTrackers>
           </div>
         </div>
         <div className="col-span-1 lg:col-span-2 px-4 relative">
@@ -71,12 +77,18 @@ const Hero = () => {
             workflows and multi-agent applications.
           </div>
           <div className="text-[#FBAB2C] pb-6 underline text-base md:text-xl">
-            <a
+            <LinkTrackers
               href="https://outshift.cisco.com/blog/building-the-internet-of-agents-introducing-the-AGNTCY"
               target="_blank"
+              segmentMsg="agntcy learn more clicked"
+              segmentOpt={{
+                link_label: "Learn more about AGNTCY and what we're launching",
+                location: "body",
+                resource_interaction: "Visit to the outshift blog page",
+              }}
             >
-              Learn more about AGNTCY and what we’re launching
-            </a>
+              Learn more about AGNTCY and what we're launching
+            </LinkTrackers>
           </div>
           <div className="text-white text-[16px] pb-6 pt-4">GET INVOLVED</div>
           <div className="grid grid-cols-1 items-center lg:grid-cols-3 gap-3">
@@ -114,16 +126,16 @@ const Hero = () => {
             )}
           </div>
         </div>
-        <div className="block -mt-1">
-          <Image
-            unoptimized
-            src={"/images/hero_border.png"}
-            alt="Logo"
-            className="absolute right-0 bottom-0"
-            height={12}
-            width={800}
-          />
-        </div>
+      </div>
+      <div className="block -mt-1">
+        <Image
+          unoptimized
+          src={"/images/hero_border.png"}
+          alt="Logo"
+          className="absolute right-0 bottom-0"
+          height={12}
+          width={800}
+        />
       </div>
     </div>
   );
