@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} antialiased relative flex min-h-screen flex-col justify-between bg-[#00142B]`}
+        className={`${roboto.className} antialiased relative flex min-h-screen flex-col bg-[#00142B]`}
       >
         <Navbar/>
         {children}
