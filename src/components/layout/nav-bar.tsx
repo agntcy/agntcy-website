@@ -16,7 +16,7 @@ const Navbar = () => {
   const navItems = [
     {
       name: "Github",
-      href: "https://github.com/agntcy/agntcy-website",
+      href: "https://github.com/agntcy",
       segmentMsg: "agntcy github clicked",
       segmentOpt: {
         link_label: "Github",
