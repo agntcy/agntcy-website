@@ -9,7 +9,6 @@ import {
   DrawerTrigger,
   DrawerDescription,
 } from "components/ui/drawer";
-import { LinkTrackers } from "~/components/reusables/link-trackers";
 import { Button } from "components/ui/button";
 
 const Navbar = () => {
@@ -57,31 +56,31 @@ const Navbar = () => {
               <div className="">
                 <div className="hidden md:flex items-center space-x-1">
                   {navItems.map((item) => (
-                    <LinkTrackers
+                    <Link
                       key={item.name}
                       href={item.href}
                       target={"_blank"}
-                      segmentMsg={item.segmentMsg}
-                      segmentOpt={item.segmentOpt}
+                      // segmentMsg={item.segmentMsg}
+                      // segmentOpt={item.segmentOpt}
                     >
                       <div className="py-5 px-3 text-xl text-[#FBAB2C] hover:text-orange-500">
                         {item.name}
                       </div>
-                    </LinkTrackers>
+                    </Link>
                   ))}
-                  <LinkTrackers
+                  <Link
                     href="mailto:hello@agntcy.org?subject=AGNTCY Membership Inquiry&body=Hi, I'd like to learn more about how my organization can become members of the AGNTCY open source collective."
-                    segmentMsg="agntcy join us clicked"
-                    segmentOpt={{
-                      link_label: "Join us",
-                      location: "global header",
-                      resource_interaction: "email signup",
-                    }}
+                    // segmentMsg="agntcy join us clicked"
+                    // segmentOpt={{
+                    //   link_label: "Join us",
+                    //   location: "global header",
+                    //   resource_interaction: "email signup",
+                    // }}
                   >
                     <div className="flex-shrink-0 text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 px-5 rounded-3xl">
                       Join us
                     </div>
-                  </LinkTrackers>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -126,15 +125,15 @@ const Navbar = () => {
                 key={item.name}
                 asChild
               >
-                <LinkTrackers
+                <Link
                   key={item.name}
                   href={item.href}
                   target={"_blank"}
-                  segmentMsg={item.segmentMsg}
-                  segmentOpt={item.segmentOpt}
+                  // segmentMsg={item.segmentMsg}
+                  // segmentOpt={item.segmentOpt}
                 >
                   {item.name}
-                </LinkTrackers>
+                </Link>
               </Button>
             ))}
             <Button
@@ -143,17 +142,17 @@ const Navbar = () => {
               size="lg"
               asChild
             >
-              <LinkTrackers
+              <Link
                 href="mailto:hello@agntcy.org?subject=AGNTCY Membership Inquiry&body=Hi, I'd like to learn more about how my organization can become members of the AGNTCY open source collective."
-                segmentMsg="agntcy join us clicked"
-                segmentOpt={{
-                  link_label: "Join us",
-                  location: "global header",
-                  resource_interaction: "email signup",
-                }}
+                // segmentMsg="agntcy join us clicked"
+                // segmentOpt={{
+                //   link_label: "Join us",
+                //   location: "global header",
+                //   resource_interaction: "email signup",
+                // }}
               >
                 Join us
-              </LinkTrackers>
+              </Link>
             </Button>
           </DrawerDescription>
         </DrawerContent>
