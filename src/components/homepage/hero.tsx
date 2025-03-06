@@ -22,8 +22,8 @@ const logos = [
     height: 32,
   },
   {
-    name: "llamacloud",
-    src: "/images/llamacloud-light.svg",
+    name: "llamaindex",
+    src: "/images/llamaindex.png",
     width: 200,
     height: 37,
   },
