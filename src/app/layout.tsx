@@ -31,17 +31,17 @@ export default function RootLayout({
 }
 
 export const metadata: Metadata = {
-  title: "Agntcy Website",
+  title: "AGNTCY.org",
   description: "An open source collective for inter-agent collaboration.",
   openGraph: {
-    title: "Agntcy Website",
+    title: "AGNTCY.org",
     description: "An open source collective for inter-agent collaboration.",
     url: `https://agntcy.org`,
-    siteName: "Agntcy",
+    siteName: "AGNTCY",
     images: [
       {
         url: `https://agntcy.org/logo/preview-thumbnail-new.png`,
-        alt: "Agntcy",
+        alt: "AGNTCY",
         type: "image/png",
         width: 942,
         height: 530,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agntcy Website",
+    title: "AGNTCY.org",
     description: "An open source collective for inter-agent collaboration.",
     creator: "@outshiftbycisco",
     images: [
