@@ -67,9 +67,9 @@ const Hero = () => {
           </div>
         </div>
         <div className="col-span-1 lg:col-span-2 px-4 relative">
-          <div className="text-[#FBAB2C] text-3xl md:text-5xl">
+          <h1 className="text-[#FBAB2C] text-3xl md:text-5xl">
             An open source collective for inter-agent collaboration.
-          </div>
+          </h1>
           <div className="text-white py-10 text-xl md:text-2xl">
             The AGNTCY is where we are building the Internet of Agents to be
             accessible for all: A diverse, collaborative space to innovate,
