@@ -127,7 +127,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="block -mt-1">
+      {/* <div className="block -mt-1">
         <Image
           unoptimized
           src={"/images/hero_border.png"}
@@ -136,7 +136,7 @@ const Hero = () => {
           height={12}
           width={800}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
