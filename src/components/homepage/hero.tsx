@@ -91,7 +91,7 @@ const Hero = () => {
             </Link>
           </div>
           <div className="text-white text-[16px] pb-6 pt-4">GET INVOLVED</div>
-          <div className="grid grid-cols-1 items-center lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 items-center lg:grid-cols-3 gap-3 pb-8 md:pb-3">
             {logos.map((logo, i) =>
               i < 3 ? (
                 <div key={i}>
