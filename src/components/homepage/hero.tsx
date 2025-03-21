@@ -33,6 +33,12 @@ const logos = [
     width: 82,
     height: 33,
   },
+  {
+    name: "Glean",
+    src: "/images/traceloop_logo.png",
+    width: 203,
+    height: 30,
+  },
 ];
 
 const Hero = () => {
@@ -91,10 +97,10 @@ const Hero = () => {
             </Link>
           </div>
           <div className="text-white text-[16px] pb-6 pt-4">GET INVOLVED</div>
-          <div className="grid grid-cols-1 items-center lg:grid-cols-3 gap-3 pb-8 md:pb-3">
+          <div className="grid grid-cols-1 items-center justify-center lg:grid-cols-3 gap-3 pb-8 md:pb-3">
             {logos.map((logo, i) =>
-              i < 3 ? (
-                <div key={i}>
+              i < 6 ? (
+                <div className="lg:self-center lg:flex lg:justify-center" key={i}>
                   <Image
                     key={logo.name}
                     unoptimized
