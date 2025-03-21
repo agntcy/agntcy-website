@@ -32,19 +32,6 @@ const Footer = () => {
             Privacy Policy
           </Link>
         </Button>
-        <Button
-          asChild
-          variant={"link"}
-          aria-label={"Privacy Policy"}
-          className="px-0 text-sm font-thin  text-gray-200 sm:text-center"
-        >
-          <Link
-            href="https://www.cisco.com/c/en/us/about/legal/trademarks.html"
-            target={"_blank"}
-          >
-            Trademarks
-          </Link>
-        </Button>
       </div>
     </div>
   );
