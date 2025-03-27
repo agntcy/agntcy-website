@@ -6,50 +6,56 @@ const logos = [
   {
     name: "outshift",
     src: "/images/outshift_logo.png",
-    width: 162,
-    height: 66,
+    width: 141,
+    height: 57,
   },
   {
     name: "Langchain",
     src: "/images/Langchain_updated.png",
-    width: 222,
-    height: 35,
+    width: 193,
+    height: 31,
   },
   {
     name: "Galileo",
     src: "/images/Galileo.png",
-    width: 160,
-    height: 35,
+    width: 139,
+    height: 31,
   },
   {
     name: "llamaindex",
     src: "/images/llamaindex.png",
-    width: 200,
-    height: 37,
+    width: 174,
+    height: 31,
   },
   {
     name: "Glean",
     src: "/images/Glean.svg",
-    width: 90,
-    height: 36,
+    width: 78,
+    height: 31,
   },
   {
     name: "Traceloop",
     src: "/images/traceloop.png",
-    width: 216,
-    height: 32,
+    width: 188,
+    height: 28,
   },
   {
     name: "MongoDB",
     src: "/images/mongodb-logo.png",
-    width: 182,
-    height: 46,
+    width: 159,
+    height: 40,
   },
   {
     name: "Weaviate",
     src: "/images/weaviate_WH.png",
-    width: 184,
-    height: 27,
+    width: 178,
+    height: 26,
+  },
+  {
+    name: "Agency",
+    src: "/images/agency_white.png",
+    width: 122,
+    height: 36,
   },
 ];
 
@@ -111,40 +117,51 @@ const Hero = () => {
         </div>
       </div>
       <div className="px-5 md:px-8 lg:px-20">
-        <div className="text-white text-[16px] pb-6 pt-4 md:px-0 xl:px-20">GET INVOLVED</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center lg:grid-cols-4 gap-3 pb-8 md:pb-3">
-          {logos.map((logo, i) =>
-            i < 8 ? (
-              <div className="lg:self-center lg:flex lg:justify-center" key={i}>
-                <Image
-                  key={logo.name}
-                  unoptimized
-                  src={logo.src}
-                  alt={logo.name}
-                  className="pt-4"
-                  height={logo.height}
-                  width={logo.width}
-                />
-              </div>
-            ) : (
-              <div
-                key={i}
-                className={`lg:transform ${
-                  i === 4 ? "lg:translate-x-[70%]" : "lg:translate-x-[50%]"
-                } `}
-              >
-                <Image
-                  key={logo.name}
-                  unoptimized
-                  src={logo.src}
-                  alt={logo.name}
-                  className="pt-4"
-                  height={logo.height}
-                  width={logo.width}
-                />
-              </div>
-            )
-          )}
+        <div className="text-white text-[16px] pb-6 pt-4 md:px-0 xl:px-20">
+          GET INVOLVED
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 gap-3 pb-8 md:pb-3">
+          {logos.slice(0, 5).map((logo, i) => (
+            <div className="lg:self-center lg:flex lg:justify-center" key={i}>
+              <Image
+                key={logo.name}
+                unoptimized
+                src={logo.src}
+                alt={logo.name}
+                className="pt-4"
+                height={logo.height}
+                width={logo.width}
+              />
+            </div>
+          ))}
+          {logos.slice(5, 9).map((logo, i) => (
+            <div key={i} className="lg:hidden ">
+              <Image
+                key={logo.name}
+                unoptimized
+                src={logo.src}
+                alt={logo.name}
+                className="pt-4"
+                height={logo.height}
+                width={logo.width}
+              />
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-4 lg:px-20 gap-3 pb-8 md:py-3">
+          {logos.slice(5, 9).map((logo, i) => (
+            <div key={i} className="hidden lg:self-center lg:flex lg:justify-center">
+              <Image
+                key={logo.name}
+                unoptimized
+                src={logo.src}
+                alt={logo.name}
+                className="pt-4"
+                height={logo.height}
+                width={logo.width}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
