@@ -126,7 +126,7 @@ const Hero = () => {
           </div>
           <div className="text-[#FBAB2C] pb-6 underline text-base md:text-xl">
             <Link
-              href="https://outshift.com/blog/AGNTCY-internet-of-agents-is-on-GitHub?utm_campaign=fy25q3_agntcy_ww_owned-media_agntcy-code-launch-blog_website&utm_channel=website"
+              href="https://outshift.cisco.com/blog/agntcy-internet-of-agents-is-on-github?utm_campaign=fy25q3_agntcy_ww_owned-media_agntcy-code-launch-blog_website&utm_channel=website"
               target="_blank"
               //   segmentMsg="agntcy learn more clicked"
               //   segmentOpt={{
