@@ -6,40 +6,82 @@ const logos = [
   {
     name: "outshift",
     src: "/images/outshift_logo.png",
-    width: 147,
-    height: 60,
+    width: 141,
+    height: 57,
   },
   {
     name: "Langchain",
     src: "/images/Langchain_updated.png",
-    width: 203,
-    height: 32,
+    width: 193,
+    height: 31,
   },
   {
     name: "Galileo",
     src: "/images/Galileo.png",
-    width: 147,
-    height: 32,
+    width: 139,
+    height: 31,
   },
   {
     name: "llamaindex",
     src: "/images/llamaindex.png",
-    width: 200,
-    height: 37,
+    width: 174,
+    height: 31,
   },
   {
     name: "Glean",
     src: "/images/Glean.svg",
-    width: 82,
-    height: 33,
+    width: 78,
+    height: 31,
   },
   {
-    name: "Glean",
-    src: "/images/traceloop_logo.png",
-    width: 203,
-    height: 30,
+    name: "Traceloop",
+    src: "/images/traceloop.png",
+    width: 188,
+    height: 28,
+  },
+  {
+    name: "MongoDB",
+    src: "/images/mongodb-logo.png",
+    width: 159,
+    height: 40,
+  },
+  {
+    name: "Weaviate",
+    src: "/images/weaviate_WH.png",
+    width: 178,
+    height: 26,
+  },
+  {
+    name: "Agency",
+    src: "/images/agency_white.png",
+    width: 122,
+    height: 36,
   },
 ];
+
+const renderLogos = (
+  logos: {
+    name: string;
+    src: string;
+    width: number;
+    height: number;
+  }[],
+  className: string
+) => {
+  return logos.map((logo, i) => (
+    <div key={i} className={className}>
+      <Image
+        key={logo.name}
+        unoptimized
+        src={logo.src}
+        alt={logo.name}
+        className="pt-4"
+        height={logo.height}
+        width={logo.width}
+      />
+    </div>
+  ));
+};
 
 const Hero = () => {
   return (
@@ -66,7 +108,7 @@ const Hero = () => {
               //     resource_interaction: "email signup",
               //   }}
             >
-              <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-3xl">
+              <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-full">
                 Join us
               </div>
             </Link>
@@ -84,65 +126,38 @@ const Hero = () => {
           </div>
           <div className="text-[#FBAB2C] pb-6 underline text-base md:text-xl">
             <Link
-              href="https://outshift.cisco.com/blog/building-the-internet-of-agents-introducing-the-AGNTCY"
+              href="https://outshift.com/blog/AGNTCY-internet-of-agents-is-on-GitHub?utm_campaign=fy25q3_agntcy_ww_owned-media_agntcy-code-launch-blog_website&utm_channel=website"
               target="_blank"
-            //   segmentMsg="agntcy learn more clicked"
-            //   segmentOpt={{
-            //     link_label: "Learn more about AGNTCY and what we're launching",
-            //     location: "body",
-            //     resource_interaction: "Visit to the outshift blog page",
-            //   }}
+              //   segmentMsg="agntcy learn more clicked"
+              //   segmentOpt={{
+              //     link_label: "Learn more about AGNTCY and our latest code drop",
+              //     location: "body",
+              //     resource_interaction: "Visit to the outshift blog page",
+              //   }}
             >
-              Learn more about AGNTCY and what we're launching
+              Learn more about AGNTCY and our latest code drop
             </Link>
-          </div>
-          <div className="text-white text-[16px] pb-6 pt-4">GET INVOLVED</div>
-          <div className="grid grid-cols-1 items-center justify-center lg:grid-cols-3 gap-3 pb-8 md:pb-3">
-            {logos.map((logo, i) =>
-              i < 6 ? (
-                <div className="lg:self-center lg:flex lg:justify-center" key={i}>
-                  <Image
-                    key={logo.name}
-                    unoptimized
-                    src={logo.src}
-                    alt={logo.name}
-                    className="pt-4"
-                    height={logo.height}
-                    width={logo.width}
-                  />
-                </div>
-              ) : (
-                <div
-                  key={i}
-                  className={`lg:transform ${
-                    i === 4 ? "lg:translate-x-[70%]" : "lg:translate-x-[50%]"
-                  } `}
-                >
-                  <Image
-                    key={logo.name}
-                    unoptimized
-                    src={logo.src}
-                    alt={logo.name}
-                    className="pt-4"
-                    height={logo.height}
-                    width={logo.width}
-                  />
-                </div>
-              )
-            )}
           </div>
         </div>
       </div>
-      {/* <div className="block -mt-1">
-        <Image
-          unoptimized
-          src={"/images/hero_border.png"}
-          alt="Logo"
-          className="absolute right-0 bottom-0"
-          height={12}
-          width={800}
-        />
-      </div> */}
+      <div className="px-5 md:px-8 lg:px-20">
+        <div className="text-white text-[16px] pb-6 pt-4 md:px-0 xl:px-20">
+          GET INVOLVED
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 gap-3 pb-8 md:pb-3">
+          {renderLogos(
+            logos.slice(0, 5),
+            "lg:self-center lg:flex lg:justify-center"
+          )}
+          {renderLogos(logos.slice(5, 9), "lg:hidden")}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-4 lg:px-20 gap-3 pb-8 md:py-3">
+          {renderLogos(
+            logos.slice(5, 9),
+            "hidden lg:self-center lg:flex lg:justify-center"
+          )}
+        </div>
+      </div>
     </div>
   );
 };
