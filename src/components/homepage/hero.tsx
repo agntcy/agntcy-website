@@ -34,7 +34,7 @@ const logos = [
     height: 33,
   },
   {
-    name: "Glean",
+    name: "Traceloop",
     src: "/images/traceloop_logo.png",
     width: 203,
     height: 30,
