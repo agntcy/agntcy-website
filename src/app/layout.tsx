@@ -5,6 +5,7 @@ import "./globals.css";
 // import Analytics from "components/reusables/analytics";
 import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
+import Scripts from "~/components/layout/scripts";
 
 const roboto = Roboto({
   weight: "400",
@@ -18,9 +19,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
+        <Scripts />
+      </head>
       <body
         className={`${roboto.className} antialiased relative flex min-h-screen flex-col bg-[#00142B]`}
       >
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M725WDCP"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Suspense fallback={null}>
           <Navbar />
           {children}
@@ -57,9 +73,7 @@ export const metadata: Metadata = {
     title: "AGNTCY.org",
     description: "An open source collective for inter-agent collaboration.",
     creator: "@outshiftbycisco",
-    images: [
-      "https://agntcy.org/logo/preview-thumbnail-new.png",
-    ],
+    images: ["https://agntcy.org/logo/preview-thumbnail-new.png"],
   },
   metadataBase: new URL("https://agntcy.org/"),
   alternates: {
