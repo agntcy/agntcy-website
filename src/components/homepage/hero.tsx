@@ -57,6 +57,18 @@ const logos = [
     width: 122,
     height: 36,
   },
+  {
+    name: "Permit",
+    src: "/images/permit_logo_variant3.png",
+    width: 150,
+    height: 38,
+  },
+  {
+    name: "Anon",
+    src: "/images/anon-logo.png",
+    width: 159,
+    height: 49,
+  },
 ];
 
 const renderLogos = (
@@ -86,7 +98,7 @@ const renderLogos = (
 const Hero = () => {
   return (
     <div className="mx-auto container bg-[#00142B] md:py-36 w-screen py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-36 w-full py-1">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-36 w-full py-0">
         <div className="col-span-1 sm:pt-0 sm:pb-12 px-4 ">
           <div className="">
             <Image
@@ -144,16 +156,16 @@ const Hero = () => {
         <div className="text-white text-[16px] pb-6 pt-4 md:px-0 xl:px-20">
           GET INVOLVED
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 gap-3 pb-8 md:pb-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-6 gap-3 pb-8 md:pb-3">
           {renderLogos(
-            logos.slice(0, 5),
+            logos.slice(0, 6),
             "lg:self-center lg:flex lg:justify-center"
           )}
-          {renderLogos(logos.slice(5, 9), "lg:hidden")}
+          {renderLogos(logos.slice(6, 11), "lg:hidden")}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-4 lg:px-20 gap-3 pb-8 md:py-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 lg:px-20 gap-3 pb-8 md:py-3">
           {renderLogos(
-            logos.slice(5, 9),
+            logos.slice(6, 11),
             "hidden lg:self-center lg:flex lg:justify-center"
           )}
         </div>
