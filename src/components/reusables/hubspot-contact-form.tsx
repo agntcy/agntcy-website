@@ -46,9 +46,9 @@ const HubspotContactForm = ({
           },
           onFormSubmitted: (_, data) => {
             // if formId is 7f3330bd-39c5-4358-b56d-44b90ae62e8e, redirect to thank you page
-            if (formId == "7f3330bd-39c5-4358-b56d-44b90ae62e8e") {
-              router.push("/outshift-newsletter-thank-you");
-            }
+            // if (formId == "7f3330bd-39c5-4358-b56d-44b90ae62e8e") {
+            //   router.push("/outshift-newsletter-thank-you");
+            // }
             const submissionValues = data.submissionValues;
 
             // Segment Identify Call
