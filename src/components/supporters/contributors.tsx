@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const logos = [
   {
-        name: "Traceloop",
-        src: "/images/traceloop.png",
-        width: 188,
-        height: 28,
+    name: "Traceloop",
+    src: "/images/traceloop.png",
+    width: 188,
+    height: 28,
   },
   {
     name: "MongoDB",
@@ -48,7 +48,7 @@ const renderLogos = (
     width: number;
     height: number;
   }[],
-  className: string
+  className: string,
 ) => {
   return logos.map((logo, i) => (
     <div key={i} className={className}>
@@ -70,19 +70,19 @@ const Members = () => {
     <div className="mx-auto container w-full py-2 md:py-2 lg:py-6">
       <div className="pb-16">
         <div className="text-white text-[16px] pb-6 pt-4 md:px-0 xl:px-0 font-bold">
-        MEMBERS
+          MEMBERS
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-3 gap-3 pb-8 md:pb-3 px-4 md:px-4">
           {renderLogos(
             logos.slice(0, 6),
-            "lg:self-center lg:flex lg:justify-center"
+            "lg:self-center lg:flex lg:justify-center",
           )}
           {renderLogos(logos.slice(6, 11), "lg:hidden")}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 lg:px-20 gap-3 pb-8 md:py-3">
           {renderLogos(
             logos.slice(6, 11),
-            "hidden lg:self-center lg:flex lg:justify-center"
+            "hidden lg:self-center lg:flex lg:justify-center",
           )}
         </div>
       </div>
