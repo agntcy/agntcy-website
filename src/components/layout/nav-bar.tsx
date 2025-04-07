@@ -14,8 +14,20 @@ import { Button } from "components/ui/button";
 const Navbar = () => {
   const navItems = [
     {
+      name: "Supporters",
+      href: "/supporters",
+      segmentMsg: "agntcy supporters clicked",
+      target: "_self",
+      segmentOpt: {
+        link_label: "Supporters",
+        location: "global header",
+        resource_interaction: "Visit supporters page",
+      },
+    },
+    {
       name: "Github",
       href: "https://github.com/agntcy",
+      target: "_blank",
       segmentMsg: "agntcy github clicked",
       segmentOpt: {
         link_label: "Github",
@@ -24,8 +36,20 @@ const Navbar = () => {
       },
     },
     {
+      name: "Resources",
+      href: "/resources",
+      target: "_self",
+      segmentMsg: "agntcy resources clicked",
+      segmentOpt: {
+        link_label: "Resources",
+        location: "global header",
+        resource_interaction: "Visit resources page",
+      },
+    },
+    {
       name: "Documentation",
       href: "https://docs.agntcy.org",
+      target: "_blank",
       segmentMsg: "agntcy doc clicked",
       segmentOpt: {
         link_label: "Documentation",
@@ -59,7 +83,7 @@ const Navbar = () => {
                     <Link
                       key={item.name}
                       href={item.href}
-                      target={"_blank"}
+                      target={item.target}
                       // segmentMsg={item.segmentMsg}
                       // segmentOpt={item.segmentOpt}
                     >
@@ -77,7 +101,7 @@ const Navbar = () => {
                     //   resource_interaction: "email signup",
                     // }}
                   >
-                    <div className="flex-shrink-0 text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 px-5 rounded-full">
+                    <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
                       Join us
                     </div>
                   </Link>
@@ -128,7 +152,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  target={"_blank"}
+                  target={item.target}
                   // segmentMsg={item.segmentMsg}
                   // segmentOpt={item.segmentOpt}
                 >

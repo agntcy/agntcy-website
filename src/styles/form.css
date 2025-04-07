@@ -1,0 +1,74 @@
+.input > input {
+  width: 100%;
+  border-radius: 5px;
+  height: 45px;
+  color: black;
+  padding: 5px;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.hs-form-field {
+  margin: 24px 0;
+}
+
+.hs-form-field > label {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 5px 0;
+}
+
+.hs-input {
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.hs-richtext {
+  font-weight: 100;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.hs-form-checkbox > label {
+  display: flex;
+  gap: 12px;
+}
+
+.hs-button {
+  background-image: linear-gradient(90deg, #ebe212 -39.12%, #09c0e9 100%);
+  color: black;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-top: 24px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.hs-button:hover {
+  box-shadow: 0 0 15px #ebe412be;
+  background-image: linear-gradient(90deg, #ebe212 -39.12%, #68ce8e 100%);
+}
+
+.hs-form-booleancheckbox > label {
+  display: flex;
+  gap: 5px;
+}
+.hs-error-msg {
+  color: red;
+}
+select {
+  width: 100%;
+  height: 45px;
+  color: #9ca3af;
+  padding: 5px;
+  margin-top: 5px;
+}
