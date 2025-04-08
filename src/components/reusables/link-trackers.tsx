@@ -29,7 +29,7 @@ export const LinkTrackers: React.FC<LinkTrackersProps> = ({
   ) => {
     const baseUrl = `${window.location.protocol}//${window.location.host}`;
     const currentPath = pathname || window.location.pathname;
-    const queryString = searchParams.toString();
+    const queryString = searchParams?.toString();
     const fullPath = queryString
       ? `${currentPath}?${queryString}`
       : currentPath;

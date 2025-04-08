@@ -8,7 +8,6 @@ interface TableProps {
 
 const Table: React.FC<TableProps> = ({ headers, data }) => {
   return (
-    <div className="ml-56 md:ml-0 lg:ml-0 xl:ml-0 2xl:ml-0">
       <table style={{ border: "1px solid black", borderCollapse: "collapse", width: "100%", borderRadius: "20px" }}>
         <thead>
           <tr>
@@ -31,7 +30,6 @@ const Table: React.FC<TableProps> = ({ headers, data }) => {
           ))}
         </tbody>
       </table>
-    </div>
   );
 };
 

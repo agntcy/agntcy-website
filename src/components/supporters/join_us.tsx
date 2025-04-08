@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const JoinUs = () => {
   return (
-    <div className="mx-auto container w-full py-2 md:py-2 lg:py-6 lg:mb-2">
+    <div className="mx-auto 2xl:mx-0 container w-full py-2 md:py-2 lg:py-6 lg:mb-2">
       <div className="px-5 md:px-8 lg:px-0">
         <div className="flex items-center justify-center py-12">
           <Image

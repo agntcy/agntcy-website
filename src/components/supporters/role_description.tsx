@@ -12,9 +12,9 @@ const RoleDescription = () => {
   ];
 
   return (
-    <div className="mx-auto container mb-36 w-full py-2 md:py-2 lg:py-2 lg:mb-36">
+    <div className="mx-auto sm:mx-0 2xl:mx-0 container mb-36 w-full py-2 md:py-2 lg:py-2 lg:mb-36">
       <div className="overflow-x-auto">
-        <div className="flex items-center justify-center py-2">
+        <div className="flex items-center justify-left py-2">
           <Table headers={headers} data={data} />
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import RenderLogos from "../reusables/render-logo";
 
 const logos = [
   {
@@ -71,30 +72,6 @@ const logos = [
   },
 ];
 
-const renderLogos = (
-  logos: {
-    name: string;
-    src: string;
-    width: number;
-    height: number;
-  }[],
-  className: string,
-) => {
-  return logos.map((logo, i) => (
-    <div key={i} className={className}>
-      <Image
-        key={logo.name}
-        unoptimized
-        src={logo.src}
-        alt={logo.name}
-        className="pt-4"
-        height={logo.height}
-        width={logo.width}
-      />
-    </div>
-  ));
-};
-
 const Hero = () => {
   return (
     <div className="mx-auto container bg-[#00142B] md:py-36 w-screen py-12">
@@ -157,14 +134,14 @@ const Hero = () => {
           GET INVOLVED
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-6 gap-3 pb-8 md:pb-3">
-          {renderLogos(
+          {RenderLogos(
             logos.slice(0, 6),
             "lg:self-center lg:flex lg:justify-center",
           )}
-          {renderLogos(logos.slice(6, 11), "lg:hidden")}
+          {RenderLogos(logos.slice(6, 11), "lg:hidden")}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 lg:px-20 gap-3 pb-8 md:py-3">
-          {renderLogos(
+          {RenderLogos(
             logos.slice(6, 11),
             "hidden lg:self-center lg:flex lg:justify-center",
           )}
