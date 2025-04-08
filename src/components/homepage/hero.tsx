@@ -69,6 +69,18 @@ const logos = [
     width: 159,
     height: 49,
   },
+  {
+    name: "AVIZ",
+    src: "/images/aviz.png",
+    width: 179,
+    height: 45,
+  },
+  {
+    name: "Plotch",
+    src: "/images/plotch.png",
+    width: 148,
+    height: 51,
+  },
 ];
 
 const renderLogos = (
@@ -156,16 +168,16 @@ const Hero = () => {
         <div className="text-white text-[16px] pb-6 pt-4 md:px-0 xl:px-20">
           GET INVOLVED
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-6 gap-3 pb-8 md:pb-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 gap-3 pb-8 md:pb-3">
           {renderLogos(
-            logos.slice(0, 6),
+            logos.slice(0, 10),
             "lg:self-center lg:flex lg:justify-center"
           )}
-          {renderLogos(logos.slice(6, 11), "lg:hidden")}
+          {renderLogos(logos.slice(10, 13), "lg:hidden")}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 lg:px-20 gap-3 pb-8 md:py-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-3 lg:px-20 gap-3 pb-8 md:py-3">
           {renderLogos(
-            logos.slice(6, 11),
+            logos.slice(10, 13),
             "hidden lg:self-center lg:flex lg:justify-center"
           )}
         </div>
