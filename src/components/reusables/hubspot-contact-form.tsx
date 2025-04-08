@@ -14,9 +14,8 @@ const HubspotContactForm = ({
   region,
   portalId,
   formId,
-  conversion_id,
-  segmentMsg = "AGNTCY supporter details submitted",
-}: { portalId: string; formId: string; region: string; conversion_id:string; }) => {
+  // segmentMsg = "AGNTCY supporter details submitted",
+}: { portalId: string; formId: string; region: string; }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
 
@@ -49,27 +48,27 @@ const HubspotContactForm = ({
             // if (formId == "7f3330bd-39c5-4358-b56d-44b90ae62e8e") {
             //   router.push("/outshift-newsletter-thank-you");
             // }
-            const submissionValues = data.submissionValues;
+            // const submissionValues = data.submissionValues;
 
             // Segment Identify Call
-            analytics.identify({
-              firstname: submissionValues.firstname,
-              lastname: submissionValues.lastname,
-              email: submissionValues.email,
-              jobtitle: submissionValues.jobtitle,
-              agreed_to_pii:
-                submissionValues.consent_marketing_emails_and_privacy_policy,
-            });
+            // analytics.identify({
+            //   firstname: submissionValues.firstname,
+            //   lastname: submissionValues.lastname,
+            //   email: submissionValues.email,
+            //   jobtitle: submissionValues.jobtitle,
+            //   agreed_to_pii:
+            //     submissionValues.consent_marketing_emails_and_privacy_policy,
+            // });
 
             // Segment Track Call
-            analytics.track(segmentMsg, {
-              firstname: submissionValues.firstname,
-              lastname: submissionValues.lastname,
-              email: submissionValues.email,
-              jobtitle: submissionValues.jobtitle,
-              agreed_to_pii:
-                submissionValues.consent_marketing_emails_and_privacy_policy,
-            });
+            // analytics.track(segmentMsg, {
+            //   firstname: submissionValues.firstname,
+            //   lastname: submissionValues.lastname,
+            //   email: submissionValues.email,
+            //   jobtitle: submissionValues.jobtitle,
+            //   agreed_to_pii:
+            //     submissionValues.consent_marketing_emails_and_privacy_policy,
+            // });
           },
           ...{ region: region, portalId: portalId, formId: formId },
         });
