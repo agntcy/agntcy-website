@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 
 const JoinUs = () => {
   return (
@@ -18,7 +17,7 @@ const JoinUs = () => {
         </div>
         <div className="text-lg text-center text-white">We build and grow together! You can start as a Supporter or Adopter and grow your involvement through contributions.</div>
         <div className="py-12 flex items-center justify-center ">
-            <Link
+            <a
               href="/contactus"
               //   segmentMsg="agntcy join us clicked"
               //   segmentOpt={{
@@ -30,7 +29,7 @@ const JoinUs = () => {
               <div className="flex-shrink-0 text-2xl text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-3 rounded-full">
               Become a supporter
               </div>
-            </Link>
+            </a>
           </div>
       </div>
     </div>

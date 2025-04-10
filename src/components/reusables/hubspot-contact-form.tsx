@@ -20,7 +20,7 @@ const HubspotContactForm = ({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const element = document.getElementsByClassName("hsfc-FieldLabel");
+    const element = document.getElementsByClassName("hsfc-TextField");
     if(element)
     {
       setLoading(false);

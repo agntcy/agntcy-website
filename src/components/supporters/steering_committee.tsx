@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 "use client";
 import RenderLogos from "../reusables/render-logo";
 
