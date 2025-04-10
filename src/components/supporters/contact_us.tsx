@@ -4,7 +4,7 @@ import HubspotContactForm from "../reusables/hubspot-contact-form";
 
 const ContactUs = () => {
   return (
-    <div className="container rounded-2xl md:py-36 w-[100%] md:w-[100%] lg:w-[80%] xl:w-[70%] py-12 mb-8 pl-4 pr-4 lg:py-12 lg:pl-56 lg:pr-0 xl:ml-56 xl:mr-56 xl:mb-24 xl:px-20 2xl:pl-[25%] 2xl:pr-0">
+    <div className="container rounded-2xl md:py-36 w-[100%] md:w-[100%] lg:w-[80%] xl:w-[70%] py-12 mb-8 pl-4 pr-4 lg:py-12 lg:pl-56 lg:pr-0 xl:ml-56 xl:mr-56 xl:mb-24 xl:px-20 2xl:pl-[0%] 2xl:pr-0">
       <div className="w-full 2xl:max-w-fit py-0 pb-12">
         <div className="col-span-1 sm:pt-0 sm:pb-12 px-4 ">
           <div className="flex items-center justify-center">

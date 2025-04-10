@@ -8,12 +8,12 @@ import RoleDescription from "~/components/supporters/role_description";
 export default function Supporters() {
   return (
     <div className="items-center justify-center">
-      <div className="pl-4 pr-4 md:pl-12 md:pr-12 lg:pl-40 lg:pr-40 xl:pl-72 xl:pr-72 2xl:pl-[20%] 2xl:pr-[0%]">
+      <div className="container mx-auto px-4 md:px-8 lg:px-48">
         <Description />
         <SteeringCommittee />
         <Members />
       </div>
-      <div className="pl-4 pr-4 md:pl-12 md:pr-12 lg:pl-24 lg:pr-24 xl:pl-40 xl:pr-40 2xl:pl-[20%] 2xl:pr-[0%] bg-gradient-to-t from-[#00142B] to-[#187ADC]">
+      <div className="container mx-auto px-4 md:px-8 lg:px-20">
         <JoinUs />
         <RoleDescription />
       </div>
