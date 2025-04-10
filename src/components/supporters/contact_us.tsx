@@ -18,7 +18,12 @@ const ContactUs = () => {
             />
           </div>
           <div className="py-6 flex text-white text-lg">
-            <h3>If you're using AGNTCY in your organization or desire to show your support for an open, interoperable internet of agents, please fill out this form to add your company name to the list.</h3>
+            <h3>
+              If you're interested in getting involved in AGNTCY to support our
+              mission of building an open, interoperable Internet of Agents,
+              please fill out this form to join the collective and we'll be in
+              touch!
+            </h3>
           </div>
         </div>
         <div className="px-0 relative py-0 bg-white rounded-xl">

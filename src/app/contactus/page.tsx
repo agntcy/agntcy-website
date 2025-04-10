@@ -1,4 +1,5 @@
 import ContactUs from "../../components/supporters/contact_us";
+import type { Metadata } from "next";
 
 export default function Supporters() {
   return (
@@ -7,3 +8,10 @@ export default function Supporters() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "AGNTCY.org | Contact Us",
+  alternates: {
+    canonical: "/contactus",
+  },
+};
