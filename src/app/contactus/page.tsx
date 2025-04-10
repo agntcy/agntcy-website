@@ -10,8 +10,8 @@ export default function Supporters() {
 }
 
 export const metadata: Metadata = {
-  title: "AGNTCY.org | Supporters",
+  title: "AGNTCY.org | Contact Us",
   alternates: {
-    canonical: "/supporters",
+    canonical: "/contactus",
   },
 };
