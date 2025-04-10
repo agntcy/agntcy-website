@@ -4,6 +4,7 @@ import Members from "~/components/supporters/contributors";
 // import ContactUs from "../../components/supporters/contact_us";
 import JoinUs from "~/components/supporters/join_us";
 import RoleDescription from "~/components/supporters/role_description";
+import type { Metadata } from "next";
 
 export default function Supporters() {
   return (
@@ -20,3 +21,10 @@ export default function Supporters() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "AGNTCY.org | Supporters",
+  alternates: {
+    canonical: "/supporters",
+  },
+};
