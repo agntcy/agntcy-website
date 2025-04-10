@@ -92,8 +92,8 @@ const Navbar = () => {
                       </div>
                     </Link>
                   ))}
-                  <Link
-                    href="mailto:hello@agntcy.org?subject=AGNTCY Membership Inquiry&body=Hi, I'd like to learn more about how my organization can become members of the AGNTCY open source collective."
+                  <a
+                    href="/contactus"
                     // segmentMsg="agntcy join us clicked"
                     // segmentOpt={{
                     //   link_label: "Join us",
@@ -104,7 +104,7 @@ const Navbar = () => {
                     <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
                       Join us
                     </div>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -166,8 +166,8 @@ const Navbar = () => {
               size="lg"
               asChild
             >
-              <Link
-                href="mailto:hello@agntcy.org?subject=AGNTCY Membership Inquiry&body=Hi, I'd like to learn more about how my organization can become members of the AGNTCY open source collective."
+              <a
+                href="/contactus"
                 // segmentMsg="agntcy join us clicked"
                 // segmentOpt={{
                 //   link_label: "Join us",
@@ -176,7 +176,7 @@ const Navbar = () => {
                 // }}
               >
                 Join us
-              </Link>
+              </a>
             </Button>
           </DrawerDescription>
         </DrawerContent>

@@ -102,8 +102,8 @@ const Hero = () => {
             />
           </div>
           <div className="py-12 flex">
-            <Link
-              href="mailto:hello@agntcy.org?subject=AGNTCY Membership Inquiry&body=Hi, I'd like to learn more about how my organization can become members of the AGNTCY open source collective."
+            <a
+              href="/contactus"
               //   segmentMsg="agntcy join us clicked"
               //   segmentOpt={{
               //     link_label: "Join us",
@@ -114,7 +114,7 @@ const Hero = () => {
               <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-full">
                 Join us
               </div>
-            </Link>
+            </a>
           </div>
         </div>
         <div className="col-span-1 lg:col-span-2 px-4 relative">
