@@ -42,7 +42,6 @@ jobs:
           VALIDATE_CSS: false
           VALIDATE_CSS_PRETTIER: false
           VALIDATE_GITLEAKS: false
-          VALIDATE_JSCPD: false
           VALIDATE_JSON: false
           VALIDATE_JSON_PRETTIER: false
           VALIDATE_MARKDOWN_PRETTIER: false

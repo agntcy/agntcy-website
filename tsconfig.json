@@ -23,6 +23,7 @@
       "~/*": ["src/*"],
       "app/*": ["src/app/*"],
       "components/*": ["src/components/*"],
+      "data/*": ["src/data/*"],
       "styles/*": ["src/styles/*"],
       "hooks/*": ["src/hooks/*"],
       "public/*": ["public/*"],
