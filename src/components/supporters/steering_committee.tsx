@@ -1,28 +1,6 @@
-/* eslint-disable */
-
 "use client";
 import RenderLogos from "../reusables/render-logo";
-
-const logos = [
-  {
-    name: "outshift",
-    src: "/images/outshift_logo.png",
-    width: 141,
-    height: 57,
-  },
-  {
-    name: "Langchain",
-    src: "/images/Langchain_updated.png",
-    width: 193,
-    height: 31,
-  },
-  {
-    name: "Galileo",
-    src: "/images/Galileo.png",
-    width: 139,
-    height: 31,
-  },
-];
+import { logos } from "data/logos";
 
 const SteeringCommittee = () => {
   return (
@@ -33,15 +11,8 @@ const SteeringCommittee = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-3 gap-3 pb-8 md:pb-3 px-4 md:px-4">
           {RenderLogos(
-            logos.slice(0, 6),
+            logos.filter((logo) => logo.type === "Steering Committee"),
             "lg:self-center lg:flex lg:justify-center"
-          )}
-          {RenderLogos(logos.slice(6, 11), "lg:hidden")}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 lg:px-20 gap-3 pb-8 md:py-3">
-          {RenderLogos(
-            logos.slice(6, 11),
-            "hidden lg:self-center lg:flex lg:justify-center"
           )}
         </div>
       </div>

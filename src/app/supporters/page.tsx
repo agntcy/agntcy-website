@@ -1,7 +1,6 @@
 import Description from "~/components/supporters/description";
 import SteeringCommittee from "~/components/supporters/steering_committee";
 import Members from "~/components/supporters/contributors";
-// import ContactUs from "../../components/supporters/contact_us";
 import JoinUs from "~/components/supporters/join_us";
 import RoleDescription from "~/components/supporters/role_description";
 import type { Metadata } from "next";
