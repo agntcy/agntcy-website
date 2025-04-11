@@ -63,6 +63,13 @@ export const logos = [
       type: 'members',
     },
     {
+      name: "AVIZ",
+      src: "/images/aviz.png",
+      width: 179,
+      height: 45,
+      type: 'members',
+    },
+    {
       name: "Permit",
       src: "/images/permit_logo_variant3.png",
       width: 150,
@@ -77,17 +84,31 @@ export const logos = [
       type: 'members',
     },
     {
-      name: "AVIZ",
-      src: "/images/aviz.png",
-      width: 179,
-      height: 45,
-      type: 'members',
-    },
-    {
       name: "Plotch",
       src: "/images/plotch.png",
       width: 148,
       height: 51,
       type: 'members',
     },
+    {
+        name: "Komodor",
+        src: "/images/komodor_logo.png",
+        width: 99,
+        height: 48,
+        type: 'members',
+      },
+      {
+        name: "AG2",
+        src: "/images/AG2-logo.png",
+        width: 81,
+        height: 45,
+        type: 'members',
+      },
+      {
+        name: "Dynamiq",
+        src: "/images/Dynamiq_Logo.png",
+        width: 141,
+        height: 35,
+        type: 'members',
+      },
   ];

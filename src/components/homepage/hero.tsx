@@ -69,11 +69,11 @@ const Hero = () => {
             logos.slice(0, 10),
             "lg:self-center lg:flex lg:justify-center"
           )}
-          {RenderLogos(logos.slice(10, 13), "lg:hidden")}
+          {RenderLogos(logos.slice(10, 16), "lg:hidden")}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-3 lg:px-20 gap-3 pb-8 md:py-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-6 lg:px-20 gap-3 pb-8 md:py-3">
           {RenderLogos(
-            logos.slice(10, 13),
+            logos.slice(10, 16),
             "hidden lg:self-center lg:flex lg:justify-center"
           )}
         </div>
