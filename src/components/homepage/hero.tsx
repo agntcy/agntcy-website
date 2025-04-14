@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import RenderLogos from "../reusables/render-logo";
-import { logos } from "data/logos";
+import { LogoMarquee } from "../reusables/logo-marquee";
 
 const Hero = () => {
   return (
@@ -60,24 +59,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="px-5 md:px-8 lg:px-20">
-        <div className="text-white text-[16px] pb-6 pt-4 md:px-0 xl:px-20">
-          GET INVOLVED
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 gap-3 pb-8 md:pb-3">
-          {RenderLogos(
-            logos.slice(0, 10),
-            "lg:self-center lg:flex lg:justify-center"
-          )}
-          {RenderLogos(logos.slice(10, 16), "lg:hidden")}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-6 lg:px-20 gap-3 pb-8 md:py-3">
-          {RenderLogos(
-            logos.slice(10, 16),
-            "hidden lg:self-center lg:flex lg:justify-center"
-          )}
-        </div>
-      </div>
+      <LogoMarquee />
     </div>
   );
 };
