@@ -148,9 +148,9 @@ export const logos = [
   },
   {
     name: "CrewAI",
-    src: "/images/CrewAI.png",
-    width: 117,
-    height: 39,
+    src: "/images/CrewAI-logo.png",
+    width: 132,
+    height: 44,
     type: "members",
   },
 ];
