@@ -16,7 +16,7 @@ const RenderLogos = (
           unoptimized
           src={logo.src}
           alt={logo.name}
-          className="pt-4"
+          className="pt-3"
           height={logo.height}
           width={logo.width}
         />
