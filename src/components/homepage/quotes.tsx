@@ -9,17 +9,19 @@ import {
 } from "components/ui/carousel";
 import { quotes } from "data/members";
 import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
+import AutoScroll from "embla-carousel-auto-scroll";
 import { AspectRatio } from "components/ui/aspect-ratio";
 
 const Quotes = () => {
   return (
-    <div className="mx-auto container bg-[#00142B] md:pb-36 w-screen pb-12 relative px-5 md:px-8 lg:px-20">
+    <div className="mx-auto lg:container bg-[#00142B] md:pb-36 w-screen pb-12 relative">
+      {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-[#00142B] to-[#00142b00] z-30"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-[#00142B] to-[#00142b00] z-30"></div> */}
       <Carousel
-        className="w-full max-w-4xl mx-auto"
+        className="w-full mx-auto"
         plugins={[
-          Autoplay({
-            delay: 3000,
+          AutoScroll({
+            speed: 0.8,
           }),
         ]}
       >
@@ -27,7 +29,7 @@ const Quotes = () => {
           {quotes.map((quote, index) => (
             <CarouselItem
               key={index}
-              className="flex items-center justify-center"
+              className="flex items-center justify-center lg:basis-[80%]"
             >
               <Card className="py-6 md:py-8 px-2 md:px-4 lg:px-8 min-h-[420px] flex items-center justify-center">
                 <CardContent className="grid grid-cols-1 md:grid-cols-3  gap-4 md:gap-6 lg:gap-8 pt-6 items-center">
