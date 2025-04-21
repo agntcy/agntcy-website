@@ -14,22 +14,22 @@ import { AspectRatio } from "components/ui/aspect-ratio";
 
 const Quotes = () => {
   return (
-    <div className="mx-auto lg:container bg-[#00142B] md:pb-36 w-screen pb-12 relative">
-      {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-[#00142B] to-[#00142b00] z-30"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-[#00142B] to-[#00142b00] z-30"></div> */}
+    <div className="mx-auto xl:container bg-[#00142B] md:pb-36 w-screen pb-12 relative ">
+      <div className="max-md:hidden pointer-events-none absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-[#00142B] to-[#00142b00] z-30"></div>
+      <div className="max-md:hidden pointer-events-none absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-[#00142B] to-[#00142b00] z-30"></div>
       <Carousel
-        className="w-full mx-auto"
+        className="w-full mx-auto "
         plugins={[
           AutoScroll({
-            speed: 0.8,
+            speed: 1,
           }),
         ]}
       >
-        <CarouselContent className="max-md:pb-5">
+        <CarouselContent className="pb-5">
           {quotes.map((quote, index) => (
             <CarouselItem
               key={index}
-              className="flex items-center justify-center lg:basis-[80%]"
+              className="flex items-center justify-center basis-[90%] lg:basis-[80%]"
             >
               <Card className="py-6 md:py-8 px-2 md:px-4 lg:px-8 min-h-[420px] flex items-center justify-center">
                 <CardContent className="grid grid-cols-1 md:grid-cols-3  gap-4 md:gap-6 lg:gap-8 pt-6 items-center">

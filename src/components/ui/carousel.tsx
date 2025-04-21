@@ -41,6 +41,8 @@ function useCarousel() {
   return context;
 }
 
+const TWEEN_FACTOR_BASE = 0.74;
+
 const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & CarouselProps
@@ -66,6 +68,7 @@ const Carousel = React.forwardRef<
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
+    const tweenFactor = React.useRef(0);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -97,6 +100,27 @@ const Carousel = React.forwardRef<
       [scrollPrev, scrollNext]
     );
 
+    const setTweenFactor = React.useCallback((api: CarouselApi) => {
+      if (!api) {
+        return;
+      }
+      tweenFactor.current = TWEEN_FACTOR_BASE * api.scrollSnapList().length;
+    }, []);
+
+    const tweenOpacity = React.useCallback((api: CarouselApi) => {
+      if (!api) {
+        return;
+      }
+      const scrollProgress = api.scrollProgress();
+      const slides = api.slideNodes();
+
+      api.scrollSnapList().forEach((snap, index) => {
+        const diffToTarget = Math.abs(snap - scrollProgress);
+        const opacity = Math.max(1 - diffToTarget * tweenFactor.current, 0);
+        slides[index].style.opacity = opacity.toString();
+      });
+    }, []);
+
     React.useEffect(() => {
       if (!api || !setApi) {
         return;
@@ -104,6 +128,24 @@ const Carousel = React.forwardRef<
 
       setApi(api);
     }, [api, setApi]);
+
+    React.useEffect(() => {
+      if (!api) {
+        return;
+      }
+
+      setTweenFactor(api);
+      tweenOpacity(api);
+      api.on("reInit", setTweenFactor);
+      api.on("reInit", tweenOpacity);
+      api.on("scroll", tweenOpacity);
+
+      return () => {
+        api.off("reInit", setTweenFactor);
+        api.off("reInit", tweenOpacity);
+        api.off("scroll", tweenOpacity);
+      };
+    }, [api, setTweenFactor, tweenOpacity]);
 
     React.useEffect(() => {
       if (!api) {
@@ -227,7 +269,7 @@ const CarouselPrevious = React.forwardRef<
       className={cn(
         "absolute  rounded-full z-50",
         orientation === "horizontal"
-          ? "max-lg:-translate-x-[50px] max-lg:left-1/2 lg:-left-12 lg:top-1/2 lg:-translate-y-1/2 xl:-left-20"
+          ? "max-lg:-translate-x-[50px] max-lg:left-1/2 lg:-left-0 lg:top-1/2 lg:-translate-y-1/2 xl:-left-10"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
@@ -256,7 +298,7 @@ const CarouselNext = React.forwardRef<
       className={cn(
         "absolute rounded-full z-50",
         orientation === "horizontal"
-          ? "max-lg:translate-x-[50px] max-lg:right-1/2 lg:-right-12 lg:top-1/2 lg:-translate-y-1/2 xl:-right-20"
+          ? "max-lg:translate-x-[50px] max-lg:right-1/2 lg:-right-0 lg:top-1/2 lg:-translate-y-1/2 xl:-right-10"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
