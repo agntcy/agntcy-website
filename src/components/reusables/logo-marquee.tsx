@@ -1,6 +1,6 @@
 import { Marquee } from "components/ui/marquee";
 import RenderLogos from "../reusables/render-logo";
-import { logos } from "data/logos";
+import { logos } from "~/data/members";
 
 export function LogoMarquee() {
   const committeeLogos = logos.filter(

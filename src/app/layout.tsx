@@ -8,9 +8,11 @@ import Footer from "components/layout/footer";
 import Scripts from "~/components/layout/scripts";
 
 const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-});
+  weight: ['100', '400', '700', '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export default function RootLayout({
   children,
