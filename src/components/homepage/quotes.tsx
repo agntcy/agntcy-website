@@ -22,8 +22,10 @@ const Quotes = () => {
         plugins={[
           AutoScroll({
             speed: 1,
+            stopOnInteraction: false,
           }),
         ]}
+        opts={{ loop: true }}
       >
         <CarouselContent className="pb-5">
           {quotes.map((quote, index) => (
