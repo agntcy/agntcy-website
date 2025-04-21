@@ -16,13 +16,13 @@ const Quotes = () => {
     <div className="mx-auto container bg-[#00142B] md:pb-36 w-screen pb-12 relative px-5 md:px-8 lg:px-20">
       <Carousel
         className="w-full max-w-4xl mx-auto"
-        // plugins={[
-        //   Autoplay({
-        //     delay: 3000,
-        //   }),
-        // ]}
+        plugins={[
+          Autoplay({
+            delay: 3000,
+          }),
+        ]}
       >
-        <CarouselContent>
+        <CarouselContent className="max-md:pb-5">
           {quotes.map((quote, index) => (
             <CarouselItem key={index} className="flex items-center justify-center">
                 <Card className="py-6 md:py-8 px-2 md:px-4 lg:px-8 min-h-[420px] flex items-center justify-center">

@@ -67,14 +67,14 @@ const Hero = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-6 gap-3 pb-8 md:pb-3">
           {RenderLogos(
-            logos.slice(0, 12),
+            logos.slice(0, 18),
             "lg:self-center lg:flex lg:justify-center"
           )}
-          {RenderLogos(logos.slice(12, 22), "lg:hidden")}
+          {RenderLogos(logos.slice(18, 23), "lg:hidden")}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 lg:px-20 gap-3 pb-8 md:py-3">
           {RenderLogos(
-            logos.slice(12, 22),
+            logos.slice(18, 23),
             "hidden lg:self-center lg:flex lg:justify-center"
           )}
         </div>

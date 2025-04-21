@@ -153,6 +153,13 @@ export const logos = [
     height: 44,
     type: "members",
   },
+  {
+    name: "FabrixAI",
+    src: "/images/fabrix-ai.png",
+    width: 72,
+    height: 57,
+    type: "members",
+  },
 ];
 
 export const quotes = [
@@ -250,11 +257,7 @@ export const quotes = [
   },
   {
     name: "FabrixAI",
-    img: {
-      src: "/images/fabrix-ai.png",
-      width: 250,
-      height: 120,
-    },
+    img: logos.find((logo) => logo.name === "FabrixAI"),
     authorName: "Shailesh Manjrekar, Chief AI and Marketing Officer",
     authorTitle: "",
     blurb:
