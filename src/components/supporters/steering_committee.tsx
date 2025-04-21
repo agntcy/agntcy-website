@@ -1,6 +1,6 @@
 "use client";
 import RenderLogos from "../reusables/render-logo";
-import { logos } from "data/logos";
+import { logos } from "~/data/members";
 
 const SteeringCommittee = () => {
   return (

@@ -1,0 +1,263 @@
+export const logos = [
+  {
+    name: "outshift",
+    src: "/images/outshift_logo.png",
+    width: 141,
+    height: 57,
+    type: "Steering Committee",
+  },
+  {
+    name: "Langchain",
+    src: "/images/Langchain_updated.png",
+    width: 193,
+    height: 31,
+    type: "Steering Committee",
+  },
+  {
+    name: "Galileo",
+    src: "/images/Galileo.png",
+    width: 139,
+    height: 31,
+    type: "Steering Committee",
+  },
+  {
+    name: "llamaindex",
+    src: "/images/llamaindex.png",
+    width: 174,
+    height: 31,
+    type: "members",
+  },
+  {
+    name: "Glean",
+    src: "/images/Glean.svg",
+    width: 78,
+    height: 31,
+    type: "members",
+  },
+  {
+    name: "Traceloop",
+    src: "/images/traceloop.png",
+    width: 188,
+    height: 28,
+    type: "members",
+  },
+  {
+    name: "MongoDB",
+    src: "/images/mongodb-logo.png",
+    width: 159,
+    height: 40,
+    type: "members",
+  },
+  {
+    name: "Weaviate",
+    src: "/images/weaviate_WH.png",
+    width: 178,
+    height: 26,
+    type: "members",
+  },
+  {
+    name: "Agency",
+    src: "/images/agency_white.png",
+    width: 122,
+    height: 36,
+    type: "members",
+  },
+  {
+    name: "AVIZ",
+    src: "/images/aviz.png",
+    width: 179,
+    height: 45,
+    type: "members",
+  },
+  {
+    name: "Permit",
+    src: "/images/permit_logo_variant3.png",
+    width: 150,
+    height: 38,
+    type: "members",
+  },
+  {
+    name: "Anon",
+    src: "/images/anon-logo.png",
+    width: 159,
+    height: 49,
+    type: "members",
+  },
+  {
+    name: "Plotch",
+    src: "/images/plotch.png",
+    width: 148,
+    height: 51,
+    type: "members",
+  },
+  {
+    name: "Komodor",
+    src: "/images/komodor_logo.png",
+    width: 99,
+    height: 48,
+    type: "members",
+  },
+  {
+    name: "AG2",
+    src: "/images/AG2-logo.png",
+    width: 81,
+    height: 45,
+    type: "members",
+  },
+  {
+    name: "Dynamiq",
+    src: "/images/Dynamiq_Logo.png",
+    width: 141,
+    height: 35,
+    type: "members",
+  },
+  {
+    name: "AnyWeb",
+    src: "/images/anyweb.png",
+    width: 116,
+    height: 39,
+    type: "members",
+  },
+  {
+    name: "Layer",
+    src: "/images/LayerLogo.png",
+    width: 42,
+    height: 42,
+    type: "members",
+  },
+  {
+    name: "haize",
+    src: "/images/haize-labs-white.png",
+    width: 145,
+    height: 39,
+    type: "members",
+  },
+  {
+    name: "Boomi_2",
+    src: "/images/Boomi_2.png",
+    width: 106,
+    height: 31,
+    type: "members",
+  },
+  {
+    name: "BrowserBase",
+    src: "/images/BrowserBase.png",
+    width: 177,
+    height: 42,
+    type: "members",
+  },
+  {
+    name: "CrewAI",
+    src: "/images/CrewAI-logo.png",
+    width: 132,
+    height: 44,
+    type: "members",
+  },
+];
+
+export const quotes = [
+  {
+    name: "cisco",
+    img: {
+      src: "/images/cisco-logo.png",
+      width: 250,
+      height: 120,
+    },
+    authorName: "Guillaume De Saint Marc",
+    authorTitle: "VP of Engineering at Outshift by Cisco",
+    blurb:
+      "We're at an inflection point in AI where the next wave of innovation will come from agents working together. Building this infrastructure as open source ensures it will serve the entire ecosystem, not just individual vendors.",
+  },
+  {
+    name: "Langchain",
+    img: logos.find((logo) => logo.name === "Langchain"),
+    authorName: "Harrison Chase, CEO and Co-Founder of LangChain",
+    authorTitle: "",
+    blurb:
+      "Multi-agent systems are the future of AI, but we need open standards for both collaboration and rigorous assessment. The AGNTCY creates the foundation for a truly observable and trustworthy AI ecosystem. Our evaluation frameworks ensure agents perform reliably across diverse scenarios, empowering organizations to deploy at scale.",
+  },
+  {
+    name: "Galileo",
+    img: logos.find((logo) => logo.name === "Galileo"),
+    authorName: "Yash Sheth, Co-Founder of Galileo",
+    authorTitle: "",
+    blurb:
+      "The agentic future should be open and distributed. At Galileo, we help organizations build trustworthy agents and scale agentic systems with confidence. We're happy to contribute frameworks and schemas for agent evaluation to this important effort.",
+  },
+  {
+    name: "llamaindex",
+    img: logos.find((logo) => logo.name === "llamaindex"),
+    authorName: "Jerry Liu, Co-Founder and CEO, LlamaIndex",
+    authorTitle: "",
+    blurb:
+      "Effective agent communication demands both protocols and structured knowledge. At LlamaIndex, our parsing and knowledge management platform transforms enterprise data into intelligence that agents can reason over and share. We're proud to contribute to AGNTCY as we build the data foundation layer that powers contextual, data-aware agent collaboration across organizational boundaries.",
+  },
+  {
+    name: "Glean",
+    img: logos.find((logo) => logo.name === "Glean"),
+    authorName: "Arvind Jain, Founder and CEO, Glean",
+    authorTitle: "",
+    blurb:
+      "Networks of agents are breaking down the silos that have long limited enterprise software, unlocking the potential of agents to transform how we work. They create space for continuous innovation, where the most practical solutions can emerge and thrive. At Glean, we’re committed to open source and open standards as the foundation for this future - building agents that reason and act over enterprise knowledge, grounded in context and extensible by design. We’re proud to help drive this vision forward as part of AGNTCY.",
+  },
+  {
+    name: "Traceloop",
+    img: logos.find((logo) => logo.name === "Traceloop"),
+    authorName: "Nir Gazit, Co-founder and CEO",
+    authorTitle: "",
+    blurb:
+      "As agents move from prototypes to production, observability becomes mission-critical. At Traceloop, we’re building OpenTelemetry-native infrastructure to monitor, evaluate, and debug agent behavior in real time—across any stack. AGNTCY’s push for open standards aligns perfectly with our mission to make agentic systems reliable, transparent, and production-ready.",
+  },
+  {
+    name: "Komodor",
+    img: logos.find((logo) => logo.name === "Komodor"),
+    authorName: "Itiel Shwartz, Co-Founder & CTO, Komodor",
+    authorTitle: "",
+    blurb:
+      "At Komodor, we understand that the complexity of modern systems demands more than just reactive solutions—it requires proactive, collaborative frameworks. The AGNTCY's commitment to open standards and inter-agent collaboration aligns perfectly with our mission to enhance system reliability and observability. By contributing to this open-source collective, we aim to empower organizations to build more resilient infrastructures, ensuring that multi-agent systems operate seamlessly and transparently at scale",
+  },
+  {
+    name: "AG2",
+    img: logos.find((logo) => logo.name === "AG2"),
+    authorName: "Qingyun Wu, Founder and CEO, AG2",
+    authorTitle: "",
+    blurb:
+      "Internet of Agents represents the next evolution of AI - a paradigm shift for seamless agent collaboration across boundaries. Open protocols like AGNTCY's are essential for this future, and AG2 proudly supports this initiative. As pioneers of open-source agent frameworks, our AgentOS vision enables truly AI-native organizations where agents communicate and create value together. We remain committed to advancing open standards that democratize agent technology.",
+  },
+  {
+    name: "Dynamiq",
+    img: logos.find((logo) => logo.name === "Dynamiq"),
+    authorName: "Vitalii Duk, CEO and Founder of Dynamiq",
+    authorTitle: "",
+    blurb:
+      "As experts in agentic AI, providing tools for rapid development and integration of AI agents across multiple models and platforms, we recognize at Dynamiq the importance of standards that ensure interoperability between AI agents. The AGNTCY collective plays a crucial role in bringing together open-source supporters and agentic AI leaders to define, promote, and implement such protocols, accelerating innovation in the AI industry. We are excited to join the collective and contribute to its standardization initiatives.",
+  },
+  {
+    name: "AnyWeb",
+    img: logos.find((logo) => logo.name === "AnyWeb"),
+    authorName: "Boris Morosoli, CEO",
+    authorTitle: "",
+    blurb:
+      "The use case of Agentic AI is compelling. However, we are at an early stage of understanding its potential and risks, and capabilities and alignments should be evaluated carefully. AGNTCY offers an open-source-like ecosystem approach that incorporates opportunities and risks on a broad scale.",
+  },
+  {
+    name: "haize",
+    img: logos.find((logo) => logo.name === "haize"),
+    authorName: "Leonard Tang, Co-Founder & CEO @ Haize Labs",
+    authorTitle: "",
+    blurb:
+      "The world aspires to create agents that coordinate, reason, and generalize across tasks and contexts. The salient, unsolved obstacle towards this dream is trust and transparency. The AGNTCY project enables this trust through shared protocols, infrastructure, and evaluation standards. Haize Labs resolutely supports AGNTCY through chaos engineering and highly-aligned scoring models; uncovering and mitigating unexpected behavior to close the last-mile gap in agentic trust. ",
+  },
+  {
+    name: "FabrixAI",
+    img: {
+      src: "/images/fabrix-ai.png",
+      width: 250,
+      height: 120,
+    },
+    authorName: "Shailesh Manjrekar, Chief AI and Marketing Officer",
+    authorTitle: "",
+    blurb:
+      "We believe the most significant technological advances happen when visionary companies unite around shared challenges. By joining the AGNTCY collective, we're creating an entirely new operational paradigm where AI agents seamlessly collaborate to solve complex problems with minimal human intervention.Together, we will redefine operational excellence for the AI era.",
+  },
+];

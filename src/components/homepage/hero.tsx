@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import RenderLogos from "../reusables/render-logo";
-import { logos } from "data/logos";
+import { logos } from "~/data/members";
 // import { LogoMarquee } from "../reusables/logo-marquee";
 
 const Hero = () => {

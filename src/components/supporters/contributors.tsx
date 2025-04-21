@@ -1,5 +1,5 @@
 import RenderLogos from "../reusables/render-logo";
-import { logos } from "data/logos";
+import { logos } from "~/data/members";
 
 const Members = () => {
   return (
@@ -14,7 +14,6 @@ const Members = () => {
             "lg:self-center lg:flex lg:justify-center"
           )}
         </div>
-        
       </div>
     </div>
   );
