@@ -156,8 +156,8 @@ export const logos = [
   {
     name: "FabrixAI",
     src: "/images/fabrix-ai.png",
-    width: 72,
-    height: 57,
+    width: 63,
+    height: 50,
     type: "members",
   },
 ];
@@ -167,8 +167,8 @@ export const quotes = [
     name: "cisco",
     img: {
       src: "/images/cisco-logo.png",
-      width: 250,
-      height: 120,
+      width: 144,
+      height: 72,
     },
     authorName: "Guillaume De Saint Marc",
     authorTitle: "VP of Engineering at Outshift by Cisco",
@@ -262,5 +262,21 @@ export const quotes = [
     authorTitle: "",
     blurb:
       "We believe the most significant technological advances happen when visionary companies unite around shared challenges. By joining the AGNTCY collective, we're creating an entirely new operational paradigm where AI agents seamlessly collaborate to solve complex problems with minimal human intervention.Together, we will redefine operational excellence for the AI era.",
+  },
+  {
+    name: "Permit",
+    img: logos.find((logo) => logo.name === "Permit"),
+    authorName: "Gabriel Manor-Liechtman, VP DevRel",
+    authorTitle: "",
+    blurb:
+      "We are excited to work with AGNTCY to help deliver the technologies and standards that will transform how developers manage permissions and access control in the Internet of Agents.",
+  },
+  {
+    name: "AVIZ",
+    img: logos.find((logo) => logo.name === "AVIZ"),
+    authorName: "Thomas Scheibe, CPO, Aviz Networks",
+    authorTitle: "",
+    blurb:
+      "Aviz Networks empowers enterprises to create open, AI-driven, vendor-neutral networks that deliver greater choice, control, cost savings, and standardization. We’re excited to partner with AGNTCY in setting new standards for AI-powered networking solutions.",
   },
 ];

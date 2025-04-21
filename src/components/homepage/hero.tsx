@@ -6,7 +6,7 @@ import { logos } from "~/data/members";
 
 const Hero = () => {
   return (
-    <div className="mx-auto container bg-[#00142B] md:py-36 w-screen py-12">
+    <div className="mx-auto container bg-[#00142B] md:py-36 w-screen max-md:pt-12 max-md:pb-3">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-36 w-full py-0">
         <div className="col-span-1 sm:pt-0 sm:pb-12 px-4 ">
           <div className="">
@@ -72,7 +72,7 @@ const Hero = () => {
           )}
           {RenderLogos(logos.slice(18, 23), "lg:hidden")}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 lg:px-20 gap-3 pb-8 md:py-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 lg:px-20 gap-3 pb-8 md:pb-3">
           {RenderLogos(
             logos.slice(18, 23),
             "hidden lg:self-center lg:flex lg:justify-center"
