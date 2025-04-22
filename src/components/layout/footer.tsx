@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { Button } from "components/ui/button";
-import CookieConsentComponent from "~/components/layout/cookie-consent";
 
 const Footer = () => {
   return (
@@ -33,7 +32,6 @@ const Footer = () => {
             Privacy Policy
           </Link>
         </Button>
-        <CookieConsentComponent />
       </div>
     </div>
   );

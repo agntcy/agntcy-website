@@ -2,8 +2,7 @@ import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import 'vanilla-cookieconsent/dist/cookieconsent.css';
-import Analytics from "components/reusables/analytics";
+// import Analytics from "components/reusables/analytics";
 import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
 import Scripts from "~/components/layout/scripts";
@@ -21,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="">
+    <html lang="en">
       <head>
         <meta
           httpEquiv="Content-Security-Policy"
@@ -46,7 +45,7 @@ export default function RootLayout({
           <Footer />
         </Suspense>
       </body>
-      <Analytics />
+      {/* <Analytics /> */}
     </html>
   );
 }

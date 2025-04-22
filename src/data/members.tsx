@@ -266,33 +266,17 @@ export const quotes = [
   {
     name: "Permit",
     img: logos.find((logo) => logo.name === "Permit"),
-    authorName: "Gabriel Manor-Liechtman",
-    authorTitle: "VP DevRel",
+    authorName: "Gabriel Manor-Liechtman, VP DevRel",
+    authorTitle: "",
     blurb:
       "We are excited to work with AGNTCY to help deliver the technologies and standards that will transform how developers manage permissions and access control in the Internet of Agents.",
   },
   {
     name: "AVIZ",
     img: logos.find((logo) => logo.name === "AVIZ"),
-    authorName: "Thomas Scheibe",
-    authorTitle: "CPO, Aviz Networks",
+    authorName: "Thomas Scheibe, CPO, Aviz Networks",
+    authorTitle: "",
     blurb:
-      "Aviz Networks empowers enterprises to create open, AI-driven, vendor-neutral networks that deliver greater choice, control, cost savings, and standardization. We’re excited to partner with AGNTCY in setting new standards for AI-powered networking solutions",
-  },
-  {
-    name: "Boomi_2",
-    img: logos.find((logo) => logo.name === "Boomi_2"),
-    authorName: "Matt McLarty",
-    authorTitle: "CTO of Boomi",
-    blurb:
-      "Agent interoperability is a fundamental concern for our industry, and it will affect every organization as we enter the agentic age. AGNTCY is bringing experts from all backgrounds and specializations to create common ground across agent platforms and lower the barrier of entry for companies to get in the agent game.",
-  },
-  {
-    name: "Weaviate",
-    img: logos.find((logo) => logo.name === "Weaviate"),
-    authorName: "Bob van Luijt",
-    authorTitle: "CoFounder and CEO, Weaviate",
-    blurb:
-      "Weaviate’s AI Native database empowers both developers and enterprises to build next generation agentic applications. Built on open source and community roots, we are excited to partner with AGNTCY to advance foundational technologies and establish standards that will streamline the creation of cutting-edge AI applications.",
+      "Aviz Networks empowers enterprises to create open, AI-driven, vendor-neutral networks that deliver greater choice, control, cost savings, and standardization. We’re excited to partner with AGNTCY in setting new standards for AI-powered networking solutions.",
   },
 ];
