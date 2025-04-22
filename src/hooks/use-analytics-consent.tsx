@@ -1,6 +1,6 @@
 import { CookieValue } from "vanilla-cookieconsent";
 import useConsentStore from "~/store/consent-store";
-export function handleAnalyticsConsent(cookie: CookieValue) {
+export function useAnalyticsConsent(cookie: CookieValue) {
     const setCategories = useConsentStore((state) => state.setCategories)
 
     setCategories(cookie.categories);

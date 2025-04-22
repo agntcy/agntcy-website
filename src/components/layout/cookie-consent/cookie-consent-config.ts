@@ -1,5 +1,5 @@
 import { show, type CookieConsentConfig } from "vanilla-cookieconsent";
-import { handleAnalyticsConsent } from "~/functions/trackings";
+import useConsentStore from "~/store/consent-store";
 
 const pluginConfig: CookieConsentConfig = {
   guiOptions: {
@@ -23,12 +23,16 @@ const pluginConfig: CookieConsentConfig = {
 
   onConsent: function ({ cookie }) {
     console.log("onConsent fired ...");
-    handleAnalyticsConsent(cookie);
+    // const setCategories = useConsentStore((state) => state.setCategories)
+
+    // setCategories(cookie.categories);
   },
 
   onChange: function ({ changedCategories, cookie }) {
     console.log("onChange fired ...");
-    handleAnalyticsConsent(cookie);
+    // const setCategories = useConsentStore((state) => state.setCategories)
+
+    // setCategories(cookie.categories);
   },
 
   categories: {
