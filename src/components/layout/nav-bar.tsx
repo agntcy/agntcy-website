@@ -10,7 +10,6 @@ import {
   DrawerDescription,
 } from "components/ui/drawer";
 import { Button } from "components/ui/button";
-import { LinkTrackers } from "../reusables/link-trackers";
 
 const Navbar = () => {
   const navItems = [
@@ -81,31 +80,31 @@ const Navbar = () => {
               <div className="">
                 <div className="hidden md:flex items-center space-x-1">
                   {navItems.map((item) => (
-                    <LinkTrackers
+                    <Link
                       key={item.name}
                       href={item.href}
                       target={item.target}
-                      segmentMsg={item.segmentMsg}
-                      segmentOpt={item.segmentOpt}
+                      // segmentMsg={item.segmentMsg}
+                      // segmentOpt={item.segmentOpt}
                     >
                       <div className="py-5 px-3 text-xl text-[#FBAB2C] hover:text-orange-500">
                         {item.name}
                       </div>
-                    </LinkTrackers>
+                    </Link>
                   ))}
-                  <LinkTrackers
+                  <a
                     href="/contactus"
-                    segmentMsg="agntcy join us clicked"
-                    segmentOpt={{
-                      link_label: "Join us",
-                      location: "global header",
-                      resource_interaction: "view AGNTCY Membership Intake Form",
-                    }}
+                    // segmentMsg="agntcy join us clicked"
+                    // segmentOpt={{
+                    //   link_label: "Join us",
+                    //   location: "global header",
+                    //   resource_interaction: "email signup",
+                    // }}
                   >
                     <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
                       Join us
                     </div>
-                  </LinkTrackers>
+                  </a>
                 </div>
               </div>
             </div>
@@ -150,15 +149,15 @@ const Navbar = () => {
                 key={item.name}
                 asChild
               >
-                <LinkTrackers
+                <Link
                   key={item.name}
                   href={item.href}
                   target={item.target}
-                  segmentMsg={item.segmentMsg}
-                  segmentOpt={item.segmentOpt}
+                  // segmentMsg={item.segmentMsg}
+                  // segmentOpt={item.segmentOpt}
                 >
                   {item.name}
-                </LinkTrackers>
+                </Link>
               </Button>
             ))}
             <Button
@@ -167,17 +166,17 @@ const Navbar = () => {
               size="lg"
               asChild
             >
-              <LinkTrackers
+              <a
                 href="/contactus"
-                segmentMsg="agntcy join us clicked"
-                segmentOpt={{
-                  link_label: "Join us",
-                  location: "global header",
-                  resource_interaction: "view AGNTCY Membership Intake Form",
-                }}
+                // segmentMsg="agntcy join us clicked"
+                // segmentOpt={{
+                //   link_label: "Join us",
+                //   location: "global header",
+                //   resource_interaction: "email signup",
+                // }}
               >
                 Join us
-              </LinkTrackers>
+              </a>
             </Button>
           </DrawerDescription>
         </DrawerContent>
