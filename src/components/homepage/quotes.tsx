@@ -33,7 +33,7 @@ const Quotes = () => {
               key={index}
               className="flex items-center justify-center basis-[90%] lg:basis-[80%]"
             >
-              <Card className="py-6 md:py-8 px-2 lg:px-8 min-h-[580px] md:min-h-[550px] lg::min-h-[420px] flex items-center justify-center">
+              <Card className="py-6 md:py-8 px-2 lg:px-8 min-h-[580px] md:min-h-[550px] lg:min-h-[420px] flex items-center justify-center">
                 <CardContent className="grid grid-cols-1 md:grid-cols-3  gap-4 md:gap-6 lg:gap-8 pt-6 items-center">
                   {quote.img && (
                     <div
