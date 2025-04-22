@@ -31,4 +31,5 @@ const RenderLogos = (
   ));
 };
 
-export default RenderLogos;
+  export default RenderLogos;
+  

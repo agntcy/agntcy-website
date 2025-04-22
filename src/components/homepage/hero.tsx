@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import RenderLogos from "../reusables/render-logo";
 import { logos } from "~/data/members";
+import { LinkTrackers } from "../reusables/link-trackers";
 // import { LogoMarquee } from "../reusables/logo-marquee";
 
 const Hero = () => {
@@ -20,19 +20,19 @@ const Hero = () => {
             />
           </div>
           <div className="py-12 flex">
-            <a
+            <LinkTrackers
               href="/contactus"
-              //   segmentMsg="agntcy join us clicked"
-              //   segmentOpt={{
-              //     link_label: "Join us",
-              //     location: "body",
-              //     resource_interaction: "email signup",
-              //   }}
+                segmentMsg="agntcy join us clicked"
+                segmentOpt={{
+                  link_label: "Join us",
+                  location: "body",
+                  resource_interaction: "view AGNTCY Membership Intake Form",
+                }}
             >
               <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-full">
                 Join us
               </div>
-            </a>
+            </LinkTrackers>
           </div>
         </div>
         <div className="col-span-1 lg:col-span-2 px-4 relative">
@@ -46,18 +46,18 @@ const Hero = () => {
             workflows and multi-agent applications.
           </div>
           <div className="text-[#FBAB2C] pb-6 underline text-base md:text-xl">
-            <Link
+            <LinkTrackers
               href="https://outshift.cisco.com/blog/agntcy-internet-of-agents-is-on-github?utm_campaign=fy25q3_agntcy_ww_owned-media_agntcy-code-launch-blog_website&utm_channel=website"
               target="_blank"
-              //   segmentMsg="agntcy learn more clicked"
-              //   segmentOpt={{
-              //     link_label: "Learn more about AGNTCY and our latest code drop",
-              //     location: "body",
-              //     resource_interaction: "Visit to the outshift blog page",
-              //   }}
+              segmentMsg="agntcy learn more clicked"
+              segmentOpt={{
+                link_label: "Learn more about AGNTCY and our latest code drop",
+                location: "body",
+                resource_interaction: "Visit to the outshift blog page",
+              }}
             >
               Learn more about AGNTCY and our latest code drop
-            </Link>
+            </LinkTrackers>
           </div>
         </div>
       </div>
