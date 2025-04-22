@@ -21,19 +21,19 @@ const Quotes = () => {
         className="w-full mx-auto "
         plugins={[
           AutoScroll({
-            speed: 1,
+            speed: 1.2,
             stopOnInteraction: false,
           }),
         ]}
         opts={{ loop: true }}
       >
-        <CarouselContent className="pb-5">
+        <CarouselContent className="pb-8 md:pb-5">
           {quotes.map((quote, index) => (
             <CarouselItem
               key={index}
               className="flex items-center justify-center basis-[90%] lg:basis-[80%]"
             >
-              <Card className="py-6 md:py-8 px-2 md:px-4 lg:px-8 min-h-[420px] flex items-center justify-center">
+              <Card className="py-6 md:py-8 px-2 md:px-4 lg:px-8 min-h-[670px] md:min-h-[550px] lg::min-h-[420px] flex items-center justify-center">
                 <CardContent className="grid grid-cols-1 md:grid-cols-3  gap-4 md:gap-6 lg:gap-8 pt-6 items-center">
                   {quote.img && (
                     <div
@@ -55,7 +55,7 @@ const Quotes = () => {
                     </div>
                   )}
                   <div className="col-span-1 md:col-span-2 flex flex-col justify-center gap-2">
-                    <p className="md:text-lg pb-5">{quote.blurb}</p>
+                    <p className="text-xs sm:text-base md:text-lg pb-5">{quote.blurb}</p>
                     <div className="">
                       <p className="md:hidden text-right text-orange uppercase font-extrabold text-sm">
                         {quote.authorName.split(",").map((part, index) => (
