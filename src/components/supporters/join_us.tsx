@@ -1,5 +1,5 @@
-"use client";
 import Image from "next/image";
+import { LinkTrackers } from "../reusables/link-trackers";
 
 const JoinUs = () => {
   return (
@@ -15,22 +15,25 @@ const JoinUs = () => {
             width={250}
           />
         </div>
-        <div className="text-lg text-center text-white">We build and grow together! You can start as a Supporter or Adopter and grow your involvement through contributions.</div>
+        <div className="text-lg text-center text-white">
+          We build and grow together! You can start as a Supporter or Adopter
+          and grow your involvement through contributions.
+        </div>
         <div className="py-12 flex items-center justify-center ">
-            <a
-              href="/contactus"
-              //   segmentMsg="agntcy join us clicked"
-              //   segmentOpt={{
-              //     link_label: "Join us",
-              //     location: "body",
-              //     resource_interaction: "email signup",
-              //   }}
-            >
-              <div className="flex-shrink-0 text-2xl text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-3 rounded-full">
+          <LinkTrackers
+            href="/contactus"
+            segmentMsg="agntcy join us clicked"
+            segmentOpt={{
+              link_label: "Join us",
+              location: "body",
+              resource_interaction: "view AGNTCY Membership Intake Form",
+            }}
+          >
+            <div className="flex-shrink-0 text-2xl text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-3 rounded-full">
               Become a supporter
-              </div>
-            </a>
-          </div>
+            </div>
+          </LinkTrackers>
+        </div>
       </div>
     </div>
   );

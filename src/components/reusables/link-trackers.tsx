@@ -24,7 +24,7 @@ export const LinkTrackers: React.FC<LinkTrackersProps> = ({
 }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const cookie = CookieConsent.getCookie();
+  const cookie = typeof document !== "undefined" ? CookieConsent.getCookie() : null;
 
   const handleOnClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -38,7 +38,7 @@ export const LinkTrackers: React.FC<LinkTrackersProps> = ({
 
     if (target === "_blank") e.preventDefault();
 
-    if (cookie.categories.includes("analytics")) {
+    if (cookie?.categories?.includes("analytics")) {
       analytics.track(segmentMsg, {
         ...segmentOpt,
         url: fullPath,

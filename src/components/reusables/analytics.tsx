@@ -7,14 +7,13 @@ import * as CookieConsent from "vanilla-cookieconsent";
 
 export default function Analytics() {
   const pathname = usePathname();
-  const cookie = CookieConsent.getCookie();
+  const cookie = typeof document !== "undefined" ? CookieConsent.getCookie() : null;
 
   useEffect(() => {
-    console.log(cookie);
-    if (cookie.categories.includes("analytics")) {
+    if (cookie && cookie.categories.includes("analytics")) {
       analytics.page();
     }
-  }, [pathname]);
+  }, [pathname, cookie]);
 
   return null;
 }

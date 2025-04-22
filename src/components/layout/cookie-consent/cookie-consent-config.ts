@@ -1,5 +1,4 @@
 import { show, type CookieConsentConfig } from "vanilla-cookieconsent";
-import useConsentStore from "~/store/consent-store";
 
 const pluginConfig: CookieConsentConfig = {
   guiOptions: {
@@ -19,20 +18,6 @@ const pluginConfig: CookieConsentConfig = {
 
   onFirstConsent: function () {
     show();
-  },
-
-  onConsent: function ({ cookie }) {
-    console.log("onConsent fired ...");
-    // const setCategories = useConsentStore((state) => state.setCategories)
-
-    // setCategories(cookie.categories);
-  },
-
-  onChange: function ({ changedCategories, cookie }) {
-    console.log("onChange fired ...");
-    // const setCategories = useConsentStore((state) => state.setCategories)
-
-    // setCategories(cookie.categories);
   },
 
   categories: {
