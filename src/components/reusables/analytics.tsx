@@ -10,7 +10,7 @@ export default function Analytics() {
   const cookie = typeof document !== "undefined" ? CookieConsent.getCookie() : null;
 
   useEffect(() => {
-    if (cookie && cookie.categories.includes("analytics")) {
+    if (cookie && cookie.categories?.includes("analytics")) {
       analytics.page();
     }
   }, [pathname, cookie]);
