@@ -295,4 +295,12 @@ export const quotes = [
     blurb:
       "Weaviate’s AI Native database empowers both developers and enterprises to build next generation agentic applications. Built on open source and community roots, we are excited to partner with AGNTCY to advance foundational technologies and establish standards that will streamline the creation of cutting-edge AI applications.",
   },
+  {
+    name: "CrewAI",
+    img: logos.find((logo) => logo.name === "CrewAI"),
+    authorName: "João Moura",
+    authorTitle: "CEO and Founder",
+    blurb:
+      "CrewAI is excited to support AGNTCY in advancing the future of agentic systems. As the agentic landscape rapidly evolves, interoperability has become a top priority. Establishing strong community standards will be important to realizing the full potential of scalable, enterprise-grade AI agents.",
+  },
 ];
