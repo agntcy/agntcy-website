@@ -3,6 +3,7 @@ import React, { AnchorHTMLAttributes } from "react";
 import Link, { LinkProps } from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { analytics } from "lib/segment";
+import * as CookieConsent from "vanilla-cookieconsent";
 
 interface LinkTrackersProps extends LinkProps {
   target?: AnchorHTMLAttributes<HTMLAnchorElement>["target"];
@@ -23,6 +24,7 @@ export const LinkTrackers: React.FC<LinkTrackersProps> = ({
 }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const cookie = typeof document !== "undefined" ? CookieConsent.getCookie() : null;
 
   const handleOnClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -36,12 +38,14 @@ export const LinkTrackers: React.FC<LinkTrackersProps> = ({
 
     if (target === "_blank") e.preventDefault();
 
-    analytics.track(segmentMsg, {
-      ...segmentOpt,
-      url: fullPath,
-      page_base_url: baseUrl,
-      page_full_url: baseUrl + fullPath,
-    });
+    if (cookie?.categories?.includes("analytics")) {
+      analytics.track(segmentMsg, {
+        ...segmentOpt,
+        url: fullPath,
+        page_base_url: baseUrl,
+        page_full_url: baseUrl + fullPath,
+      });
+    }
 
     if (target === "_blank") {
       window.open(href.toString(), target);
