@@ -22,12 +22,12 @@ const Hero = () => {
           <div className="py-12 flex">
             <LinkTrackers
               href="/contactus"
-                segmentMsg="agntcy join us clicked"
-                segmentOpt={{
-                  link_label: "Join us",
-                  location: "body",
-                  resource_interaction: "view AGNTCY Membership Intake Form",
-                }}
+              segmentMsg="agntcy join us clicked"
+              segmentOpt={{
+                link_label: "Join us",
+                location: "body",
+                resource_interaction: "view AGNTCY Membership Intake Form",
+              }}
             >
               <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-full">
                 Join us
@@ -40,10 +40,10 @@ const Hero = () => {
             An open source collective for inter-agent collaboration.
           </h1>
           <div className="text-white py-10 text-xl md:text-2xl">
-            The AGNTCY is where we are building the Internet of Agents to be
-            accessible for all: A diverse, collaborative space to innovate,
-            develop, and maintain software components and services for agentic
-            workflows and multi-agent applications.
+            The AGNTCY is where we are building the Internet of Agents to be: A
+            diverse, collaborative space to innovate, develop, and maintain
+            software components and services for agentic workflows and
+            multi-agent software.
           </div>
           <div className="text-[#FBAB2C] pb-6 underline text-base md:text-xl">
             <LinkTrackers
