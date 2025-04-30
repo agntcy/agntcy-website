@@ -26,12 +26,12 @@ const Navbar = () => {
       },
     },
     {
-      name: "Github",
+      name: "GitHub",
       href: "https://github.com/agntcy",
       target: "_blank",
       segmentMsg: "agntcy github clicked",
       segmentOpt: {
-        link_label: "Github",
+        link_label: "GitHub",
         location: "global header",
         resource_interaction: "Visit GitHub repositoty",
       },
