@@ -437,12 +437,12 @@ export const quotes = [
     blurb:
       "We believe that multi-agent AGI will be more powerful, balanced and safer than monolithic AGI. However, it's still difficult for engineers to build multi-agent applications that span multiple servers, particularly between organizations. The open standards and tooling created by AGNTCY are making that easier. We're proud to contribute to AGNTCY to enable orchestration of agents across personal devices, cloud platforms, and edge environments.",
   },
-  {
-    name: "Arize AI",
-    img: logos.find((logo) => logo.name === "Arize AI"),
-    authorName: "Jason Lopatecki",
-    authorTitle: "Co-Founder and CEO of Arize AI",
-    blurb:
-      "We can't just build agents and hope they work. At Arize, evaluation is in our DNA—it's how we know what's actually improving and what's just hype. Contributing to AGNTCY aligns perfectly with our belief that open, shared evaluation frameworks accelerate progress for everyone. We're committed to helping developers measuring what matters so agents can deliver on their promise.",
-  },
+  // {
+  //   name: "Arize AI",
+  //   img: logos.find((logo) => logo.name === "Arize AI"),
+  //   authorName: "Jason Lopatecki",
+  //   authorTitle: "Co-Founder and CEO of Arize AI",
+  //   blurb:
+  //     "We can't just build agents and hope they work. At Arize, evaluation is in our DNA—it's how we know what's actually improving and what's just hype. Contributing to AGNTCY aligns perfectly with our belief that open, shared evaluation frameworks accelerate progress for everyone. We're committed to helping developers measuring what matters so agents can deliver on their promise.",
+  // },
 ];
