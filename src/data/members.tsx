@@ -160,6 +160,76 @@ export const logos = [
     height: 50,
     type: "members",
   },
+  {
+    name: "Dagger",
+    src: "/images/dagger.png",
+    width: 140,
+    height: 50,
+    type: "members",
+  },
+  {
+    name: "Ema",
+    src: "/images/ema.png",
+    width: 100,
+    height: 35,
+    type: "members",
+  },
+  {
+    name: "PydanticAI",
+    src: "/images/pydantic.png",
+    width: 140,
+    height: 30,
+    type: "members",
+  },
+  {
+    name: "Skyfire",
+    src: "/images/skyfire.png",
+    width: 140,
+    height: 50,
+    type: "members",
+  },
+  {
+    name: "Yokai",
+    src: "/images/yokai.png",
+    width: 140,
+    height: 50,
+    type: "members",
+  },
+  {
+    name: "VoltAgent",
+    src: "/images/voltagent.png",
+    width: 140,
+    height: 50,
+    type: "members",
+  },
+  {
+    name: "Motleycrew",
+    src: "/images/motleycrew.png",
+    width: 42,
+    height: 42,
+    type: "members",
+  },
+  {
+    name: "Naptha AI",
+    src: "/images/naptha-ai.png",
+    width: 140,
+    height: 50,
+    type: "members",
+  },
+  {
+    name: "Wayfound",
+    src: "/images/wayfound.png",
+    width: 140,
+    height: 50,
+    type: "members",
+  },
+  {
+    name: "SwirlAI",
+    src: "/images/swirl-ai.png",
+    width: 90,
+    height: 80,
+    type: "members",
+  },
 ];
 
 export const quotes = [
@@ -303,4 +373,76 @@ export const quotes = [
     blurb:
       "CrewAI is excited to support AGNTCY in advancing the future of agentic systems. As the agentic landscape rapidly evolves, interoperability has become a top priority. Establishing strong community standards will be important to realizing the full potential of scalable, enterprise-grade AI agents.",
   },
+  {
+    name: "Dagger",
+    img: logos.find((logo) => logo.name === "Dagger"),
+    authorName: "Sam Alba",
+    authorTitle: "Co-Founder, Dagger",
+    blurb:
+      "As AI agents become integral to software development, platform teams face a new layer of complexity that existing CI/CD and automation systems were not designed to handle. At Dagger, we are solving this by unifying task execution and environment definition in a single programmable runtime. This gives engineers precise, code-based control over how agents run, what they access, and how they integrate with broader workflows. We support AGNTCY’s push for open protocols because interoperability is essential at this new scale. A fragmented approach will not scale. Unified, observable automation will.",
+  },
+  {
+    name: "Skyfire",
+    img: logos.find((logo) => logo.name === "Skyfire"),
+    authorName: "Craig DeWitt",
+    authorTitle: "Co-Founder Skyfire",
+    blurb:
+      "Payments and KYA identity will be native to every AI agent interaction. We are excited to join AGNTCY and help drive the development and adoption of the infrastructure the AI economy needs to thrive.",
+  },
+  {
+    name: "Yokai",
+    img: logos.find((logo) => logo.name === "Yokai"),
+    authorName: "Chaitanya",
+    authorTitle: "Founder & CEO, Yokai Network",
+    blurb:
+      "At Yokai, we're building the foundational infrastructure for the emerging agentic era, where verifiable identity, seamless discovery, and secure communication are essential. By joining AGNTCY, we're committing to an open ecosystem where autonomous agents can collaborate securely across organizational boundaries. We believe that standardized protocols like those AGNTCY is pioneering are critical for unleashing the full potential of multi-agent systems while ensuring trust, security, and interoperability remain at the forefront. Together, we can build the secure foundation that the next wave of AI innovation requires.",
+  },
+  {
+    name: "Ema",
+    img: logos.find((logo) => logo.name === "Ema"),
+    authorName: "Surojit Chatterjee",
+    authorTitle: "CEO & Co-founder, Ema",
+    blurb:
+      "Agents are transforming how the world works—and open, collaborative systems are essential to realizing their full potential. At Ema, our pre-built AI Employees and specialized agents are powering agentic business automation across the enterprise. We’re proud to join AGNTCY in advancing a shared vision: intelligent, interoperable agents driving global transformation.",
+  },
+  {
+    name: "VoltAgent",
+    img: logos.find((logo) => logo.name === "VoltAgent"),
+    authorName: "Omer Aplak",
+    authorTitle: "CEO VoltAgent",
+    blurb:
+      "VoltAgent is joining AGNTCY because we believe in a collaborative community for AI agents. As AI systems grow more complex, it’s important to work together across frameworks and standards. We’re excited to be part of a community that values innovation, scalability, and sharing ideas to help advance the AI agent ecosystem.",
+  },
+  {
+    name: "Wayfound",
+    img: logos.find((logo) => logo.name === "Wayfound"),
+    authorName: "Tatyana Mamut PhD",
+    authorTitle: "CEO Wayfound",
+    blurb:
+      "For companies to trust that multi-agent systems are working effectively, standards must be established for AI Agent Management and Supervision, not just for developers but also for business users. AGNTCY will define an Open Agent Management Plane to help technical and non-technical users understand, supervise, and trust AI Agents",
+  },
+  {
+    name: "SwirlAI",
+    img: logos.find((logo) => logo.name === "SwirlAI"),
+    authorName: "Aurimas Griciunas",
+    authorTitle: "Founder & CEO @ SwirlAI",
+    blurb:
+      "At SwirlAI, we believe the future of AI lies in open, collaborative multi-agent systems. We guide organizations through this shift by designing agentic systems rooted in open standards, trust, and scalable architectures. As supporters of AGNTCY’s mission, we’re committed to shaping a future where interoperability, transparency, and reliability are driven by truly open standards.",
+  },
+  {
+    name: "Naptha AI",
+    img: logos.find((logo) => logo.name === "Naptha AI"),
+    authorName: "Richard Blythe",
+    authorTitle: "Co-Founder Naptha AI",
+    blurb:
+      "We believe that multi-agent AGI will be more powerful, balanced and safer than monolithic AGI. However, it's still difficult for engineers to build multi-agent applications that span multiple servers, particularly between organizations. The open standards and tooling created by AGNTCY are making that easier. We're proud to contribute to AGNTCY to enable orchestration of agents across personal devices, cloud platforms, and edge environments.",
+  },
+  // {
+  //   name: "Arize AI",
+  //   img: logos.find((logo) => logo.name === "Arize AI"),
+  //   authorName: "Jason Lopatecki",
+  //   authorTitle: "Co-Founder and CEO of Arize AI",
+  //   blurb:
+  //     "We can't just build agents and hope they work. At Arize, evaluation is in our DNA—it's how we know what's actually improving and what's just hype. Contributing to AGNTCY aligns perfectly with our belief that open, shared evaluation frameworks accelerate progress for everyone. We're committed to helping developers measuring what matters so agents can deliver on their promise.",
+  // },
 ];
