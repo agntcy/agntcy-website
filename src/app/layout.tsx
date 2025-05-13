@@ -2,18 +2,17 @@ import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import Analytics from "components/reusables/analytics";
 import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
 import Scripts from "~/components/layout/scripts";
 
 const roboto = Roboto({
-  weight: ['100', '400', '700', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+  weight: ["100", "400", "700", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -45,6 +44,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </Suspense>
+        
       </body>
       <Analytics />
     </html>
