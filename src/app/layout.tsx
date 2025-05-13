@@ -2,18 +2,18 @@ import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import Analytics from "components/reusables/analytics";
 import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
 import Scripts from "~/components/layout/scripts";
+import Script from "next/script";
 
 const roboto = Roboto({
-  weight: ['100', '400', '700', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-})
+  weight: ["100", "400", "700", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -23,6 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <head>
+        <Script
+          id="cisco-ctm-core"
+          type="text/javascript"
+          src="https://www.cisco.com/c/dam/cdc/t/ctm-core.js"
+          strategy="beforeInteractive"
+        ></Script>
         <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"

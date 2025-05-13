@@ -11,6 +11,11 @@ const Scripts = () => {
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-M725WDCP');`}
       </Script>
+      <Script
+        type="text/javascript"
+        src="https://www.cisco.com/c/dam/cdc/t/ctm.js"
+        strategy="afterInteractive"
+      ></Script>
     </>
   );
 };
