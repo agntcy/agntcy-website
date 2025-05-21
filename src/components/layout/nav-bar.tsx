@@ -15,14 +15,25 @@ import { LinkTrackers } from "../reusables/link-trackers";
 const Navbar = () => {
   const navItems = [
     {
-      name: "Supporters",
-      href: "/supporters",
+      name: "Directory",
+      href: "https://hub.agntcy.org",
       segmentMsg: "agntcy supporters clicked",
-      target: "_self",
+      target: "_blank",
       segmentOpt: {
-        link_label: "Supporters",
+        link_label: "Directory",
         location: "global header",
-        resource_interaction: "Visit supporters page",
+        resource_interaction: "Visit the agntcy directory",
+      },
+    },
+    {
+      name: "Documentation",
+      href: "https://docs.agntcy.org",
+      target: "_blank",
+      segmentMsg: "agntcy doc clicked",
+      segmentOpt: {
+        link_label: "Documentation",
+        location: "global header",
+        resource_interaction: "Visit to the doc.agntcy.org",
       },
     },
     {
@@ -36,6 +47,18 @@ const Navbar = () => {
         resource_interaction: "Visit GitHub repositoty",
       },
     },
+    {
+      name: "Supporters",
+      href: "/supporters",
+      segmentMsg: "agntcy supporters clicked",
+      target: "_self",
+      segmentOpt: {
+        link_label: "Supporters",
+        location: "global header",
+        resource_interaction: "Visit supporters page",
+      },
+    },
+
     // {
     //   name: "Resources",
     //   href: "/resources",
@@ -47,17 +70,6 @@ const Navbar = () => {
     //     resource_interaction: "Visit resources page",
     //   },
     // },
-    {
-      name: "Documentation",
-      href: "https://docs.agntcy.org",
-      target: "_blank",
-      segmentMsg: "agntcy doc clicked",
-      segmentOpt: {
-        link_label: "Documentation",
-        location: "global header",
-        resource_interaction: "Visit to the doc.agntcy.org",
-      },
-    },
   ];
 
   return (
@@ -99,7 +111,8 @@ const Navbar = () => {
                     segmentOpt={{
                       link_label: "Join us",
                       location: "global header",
-                      resource_interaction: "view AGNTCY Membership Intake Form",
+                      resource_interaction:
+                        "view AGNTCY Membership Intake Form",
                     }}
                   >
                     <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
