@@ -15,12 +15,12 @@ import { LinkTrackers } from "../reusables/link-trackers";
 const Navbar = () => {
   const navItems = [
     {
-      name: "Directory",
+      name: "Agent Directory",
       href: "https://hub.agntcy.org",
       segmentMsg: "agntcy directory clicked",
       target: "_blank",
       segmentOpt: {
-        link_label: "Directory",
+        link_label: "Agent Directory",
         location: "global header",
         resource_interaction: "Visit the agntcy directory",
       },
@@ -91,7 +91,7 @@ const Navbar = () => {
                 </Link>
               </div>
               <div className="">
-                <div className="hidden md:flex items-center space-x-1">
+                <div className="hidden lg:flex items-center space-x-1">
                   {navItems.map((item) => (
                     <LinkTrackers
                       key={item.name}
@@ -122,7 +122,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div className="md:hidden flex items-center text-white">
+            <div className="lg:hidden flex items-center text-white">
               <DrawerTrigger asChild>
                 <Button
                   size="icon"
