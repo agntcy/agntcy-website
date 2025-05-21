@@ -47,16 +47,16 @@ const Hero = () => {
           </div>
           <div className="text-[#FBAB2C] pb-6 underline text-base md:text-xl">
             <LinkTrackers
-              href="https://outshift.cisco.com/blog/agntcy-internet-of-agents-is-on-github?utm_campaign=fy25q3_agntcy_ww_owned-media_agntcy-code-launch-blog_website&utm_channel=website"
+              href="https://outshift.cisco.com/blog/agntcy-agent-directory-find-and-publish-ai-agents"
               target="_blank"
               segmentMsg="agntcy learn more clicked"
               segmentOpt={{
-                link_label: "Learn more about AGNTCY and our latest code drop",
+                link_label: "Learn more about AGNTCY's latest code drop",
                 location: "body",
                 resource_interaction: "Visit to the outshift blog page",
               }}
             >
-              Learn more about AGNTCY and our latest code drop
+              Learn more about AGNTCY's latest code drop
             </LinkTrackers>
           </div>
         </div>
