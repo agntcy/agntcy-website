@@ -17,7 +17,7 @@ const Navbar = () => {
     {
       name: "Directory",
       href: "https://hub.agntcy.org",
-      segmentMsg: "agntcy supporters clicked",
+      segmentMsg: "agntcy directory clicked",
       target: "_blank",
       segmentOpt: {
         link_label: "Directory",
