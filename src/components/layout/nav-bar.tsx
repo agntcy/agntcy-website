@@ -11,20 +11,34 @@ import {
 } from "components/ui/drawer";
 import { Button } from "components/ui/button";
 import { LinkTrackers } from "../reusables/link-trackers";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "components/ui/navigation-menu";
 
 const Navbar = () => {
   const navItems = [
-    // {
-    //   name: "Agent Directory",
-    //   href: "https://hub.agntcy.org",
-    //   segmentMsg: "agntcy directory clicked",
-    //   target: "_blank",
-    //   segmentOpt: {
-    //     link_label: "Agent Directory",
-    //     location: "global header",
-    //     resource_interaction: "Visit the agntcy directory",
-    //   },
-    // },
+    {
+      name: "Apps",
+      dropDown: true,
+      subMenu: [
+        {
+          name: "Agent Directory",
+          href: "https://hub.agntcy.org",
+          segmentMsg: "agntcy directory clicked",
+          target: "_blank",
+          segmentOpt: {
+            link_label: "Agent Directory",
+            location: "global header",
+            resource_interaction: "Visit the agntcy directory",
+          },
+        },
+      ],
+    },
     {
       name: "Documentation",
       href: "https://docs.agntcy.org",
@@ -73,7 +87,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#00142B] shadow-lg py-4">
+    <nav className="bg-navy shadow-lg py-4">
       <Drawer direction="left">
         <div className="container mx-auto px-2">
           <div className="flex justify-between">
@@ -90,21 +104,49 @@ const Navbar = () => {
                   />
                 </Link>
               </div>
-              <div className="">
-                <div className="hidden lg:flex items-center space-x-1">
-                  {navItems.map((item) => (
-                    <LinkTrackers
-                      key={item.name}
-                      href={item.href}
-                      target={item.target}
-                      segmentMsg={item.segmentMsg}
-                      segmentOpt={item.segmentOpt}
-                    >
-                      <div className="py-5 px-3 text-xl text-[#FBAB2C] hover:text-orange-500">
-                        {item.name}
-                      </div>
-                    </LinkTrackers>
-                  ))}
+              <NavigationMenu className="">
+                <NavigationMenuList className="hidden lg:flex items-center space-x-1">
+                  {navItems.map((item) =>
+                    item.dropDown ? (
+                      <NavigationMenuItem key={item.name}>
+                        <NavigationMenuTrigger className="py-5 px-3 text-xl text-[#FBAB2C] hover:text-orange-500 bg-navy hover:bg-navy data-[state=open]:hover:bg-navy data-[state=open]:focus:bg-navy data-[state=open]:text-[#FBAB2C] focus:bg-navy data-[state=open]:bg-[#14263b]">
+                          {item.name}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent className="bg-navy border-orange">
+                          {item.subMenu.map((subItem) => (
+                            <NavigationMenuLink
+                              asChild
+                              key={`sub-${subItem.name}`}
+                            >
+                              <LinkTrackers
+                                key={subItem.name}
+                                href={subItem.href || "/"}
+                                target={subItem.target}
+                                segmentMsg={subItem.segmentMsg || ""}
+                                segmentOpt={subItem.segmentOpt || {}}
+                              >
+                                <div className="py-5 px-3 text-lg text-[#FBAB2C] hover:text-orange-500">
+                                  {subItem.name}
+                                </div>
+                              </LinkTrackers>
+                            </NavigationMenuLink>
+                          ))}
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                    ) : (
+                      <LinkTrackers
+                        key={item.name}
+                        href={item.href || "/"}
+                        target={item.target}
+                        segmentMsg={item.segmentMsg || ""}
+                        segmentOpt={item.segmentOpt || {}}
+                      >
+                        <div className="py-5 px-3 text-xl text-[#FBAB2C] hover:text-orange-500">
+                          {item.name}
+                        </div>
+                      </LinkTrackers>
+                    )
+                  )}
                   <LinkTrackers
                     href="/contactus"
                     segmentMsg="agntcy join us clicked"
@@ -115,12 +157,12 @@ const Navbar = () => {
                         "view AGNTCY Membership Intake Form",
                     }}
                   >
-                    <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
+                    <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-navy transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
                       Join us
                     </div>
                   </LinkTrackers>
-                </div>
-              </div>
+                </NavigationMenuList>
+              </NavigationMenu>
             </div>
             <div className="lg:hidden flex items-center text-white">
               <DrawerTrigger asChild>
@@ -148,7 +190,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <DrawerContent className="bg-[#00142B] border-[#00142B]">
+        <DrawerContent className="bg-navy border-navy">
           <DrawerHeader>
             <DrawerTitle>
               <p className="hidden">menu</p>
@@ -165,10 +207,10 @@ const Navbar = () => {
               >
                 <LinkTrackers
                   key={item.name}
-                  href={item.href}
+                  href={item.href || "/"}
                   target={item.target}
-                  segmentMsg={item.segmentMsg}
-                  segmentOpt={item.segmentOpt}
+                  segmentMsg={item.segmentMsg || ""}
+                  segmentOpt={item.segmentOpt || {}}
                 >
                   {item.name}
                 </LinkTrackers>

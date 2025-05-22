@@ -14,9 +14,9 @@ import { AspectRatio } from "components/ui/aspect-ratio";
 
 const Quotes = () => {
   return (
-    <div className="mx-auto xl:container bg-[#00142B] md:pb-36 w-screen pb-12 relative ">
-      <div className="max-md:hidden pointer-events-none absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-[#00142B] to-[#00142b00] z-30"></div>
-      <div className="max-md:hidden pointer-events-none absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-[#00142B] to-[#00142b00] z-30"></div>
+    <div className="mx-auto xl:container bg-navy md:pb-36 w-screen pb-12 relative ">
+      <div className="max-md:hidden pointer-events-none absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-navy to-[#00142b00] z-30"></div>
+      <div className="max-md:hidden pointer-events-none absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-navy to-[#00142b00] z-30"></div>
       <Carousel
         className="w-full mx-auto "
         plugins={[

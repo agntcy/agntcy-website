@@ -29,7 +29,7 @@ const JoinUs = () => {
               resource_interaction: "view AGNTCY Membership Intake Form",
             }}
           >
-            <div className="flex-shrink-0 text-2xl text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-3 rounded-full">
+            <div className="flex-shrink-0 text-2xl text-[#FBAB2C] hover:text-navy hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-3 rounded-full">
               Become a supporter
             </div>
           </LinkTrackers>

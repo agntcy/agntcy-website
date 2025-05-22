@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export default function Supporters() {
   return (
-    <div className="container mx-auto items-center justify-center bg-[#00142B]">
+    <div className="container mx-auto items-center justify-center bg-navy">
       <ContactUs />
     </div>
   );

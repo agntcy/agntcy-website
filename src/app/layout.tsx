@@ -36,7 +36,7 @@ export default function RootLayout({
         <Scripts />
       </head>
       <body
-        className={`${roboto.className} antialiased relative flex min-h-screen flex-col bg-[#00142B]`}
+        className={`${roboto.className} antialiased relative flex min-h-screen flex-col bg-navy`}
       >
         <noscript>
           <iframe

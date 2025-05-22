@@ -5,7 +5,7 @@ import CookieConsentComponent from "~/components/layout/cookie-consent";
 
 const Footer = () => {
   return (
-    <div className="bg-[#00142B] lg:bottom-2 mt-4 flex flex-col sm:mt-0 sm:justify-center md:flex-row md:space-x-5 w-full py-4">
+    <div className="bg-navy lg:bottom-2 mt-4 flex flex-col sm:mt-0 sm:justify-center md:flex-row md:space-x-5 w-full py-4">
       <div className="container mx-auto px-2 flex items-end justify-end lg:items-start lg:justify-start gap-3 md:gap-4">
         <Button
           asChild
