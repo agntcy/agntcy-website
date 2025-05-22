@@ -19,6 +19,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "components/ui/navigation-menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "components/ui/accordion";
 
 const Navbar = () => {
   const navItems = [
@@ -193,32 +199,61 @@ const Navbar = () => {
         <DrawerContent className="bg-navy border-navy">
           <DrawerHeader>
             <DrawerTitle>
-              <p className="hidden">menu</p>
+              <span className="hidden">menu</span>
             </DrawerTitle>
           </DrawerHeader>
-          <DrawerDescription className="flex flex-col gap-4 p-5">
-            {navItems.map((item) => (
-              <Button
-                variant="ghost"
-                className="text-[#FBAB2C] text-lg"
-                size="lg"
-                key={item.name}
-                asChild
-              >
-                <LinkTrackers
+          <div className="flex flex-col gap-4 p-5">
+            {navItems.map((item) =>
+              item.dropDown ? (
+                <Accordion type="single" collapsible key={item.name}>
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger className="pl-8">{item.name}</AccordionTrigger>
+                    <AccordionContent>
+                      {item.subMenu.map((subItem) => (
+                        <Button
+                          variant="ghost"
+                          className="text-[#FBAB2C] text-lg px-12"
+                          size="lg"
+                          key={subItem.name}
+                          asChild
+                        >
+                          <LinkTrackers
+                            key={subItem.name}
+                            href={subItem.href || "/"}
+                            target={subItem.target}
+                            segmentMsg={subItem.segmentMsg || ""}
+                            segmentOpt={subItem.segmentOpt || {}}
+                          >
+                            {subItem.name}
+                          </LinkTrackers>
+                        </Button>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              ) : (
+                <Button
+                  variant="ghost"
+                  className="text-[#FBAB2C] text-lg self-start"
+                  size="lg"
                   key={item.name}
-                  href={item.href || "/"}
-                  target={item.target}
-                  segmentMsg={item.segmentMsg || ""}
-                  segmentOpt={item.segmentOpt || {}}
+                  asChild
                 >
-                  {item.name}
-                </LinkTrackers>
-              </Button>
-            ))}
+                  <LinkTrackers
+                    key={item.name}
+                    href={item.href || "/"}
+                    target={item.target}
+                    segmentMsg={item.segmentMsg || ""}
+                    segmentOpt={item.segmentOpt || {}}
+                  >
+                    {item.name}
+                  </LinkTrackers>
+                </Button>
+              )
+            )}
             <Button
               variant="ghost"
-              className="text-[#FBAB2C] text-lg"
+              className="text-[#FBAB2C] text-lg self-start"
               size="lg"
               asChild
             >
@@ -234,7 +269,7 @@ const Navbar = () => {
                 Join us
               </LinkTrackers>
             </Button>
-          </DrawerDescription>
+          </div>
         </DrawerContent>
       </Drawer>
     </nav>
