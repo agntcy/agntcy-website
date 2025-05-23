@@ -47,7 +47,7 @@ const Hero = () => {
           </div>
           <div className="text-[#FBAB2C] pb-6 underline text-base md:text-xl">
             <LinkTrackers
-              href="https://outshift.cisco.com/blog/agntcy-agent-directory-find-and-publish-ai-agents?utm_campaign=fy25q4_agntcy_ww_owned-media_agntcy-agent-directory-launch_website&utm_channel=website"
+              href="https://outshift.cisco.com/blog/mcp-interoperability-multi-agent-software-observability-agntcy"
               target="_blank"
               segmentMsg="agntcy learn more clicked"
               segmentOpt={{
