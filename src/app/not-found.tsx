@@ -14,7 +14,7 @@ export default async function NotFound() {
         <h2 className="text-xl ">This page could not be found.</h2>
       </div>
       <Link href="/">
-        <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
+        <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-navy transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
           Return Home
         </div>
       </Link>

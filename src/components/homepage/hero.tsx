@@ -6,7 +6,7 @@ import { LinkTrackers } from "../reusables/link-trackers";
 
 const Hero = () => {
   return (
-    <div className="mx-auto container bg-[#00142B] md:py-36 w-screen max-md:pt-12 max-md:pb-3">
+    <div className="mx-auto container bg-navy md:py-36 w-screen max-md:pt-12 max-md:pb-3">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-36 w-full py-0">
         <div className="col-span-1 sm:pt-0 sm:pb-12 px-4 ">
           <div className="">
@@ -29,7 +29,7 @@ const Hero = () => {
                 resource_interaction: "view AGNTCY Membership Intake Form",
               }}
             >
-              <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-full">
+              <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-navy hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-full">
                 Join us
               </div>
             </LinkTrackers>
