@@ -1,8 +1,8 @@
 import Image from "next/image";
-import RenderLogos from "../reusables/render-logo";
-import { logos } from "~/data/members";
+// import RenderLogos from "../reusables/render-logo";
+// import { logos } from "~/data/members";
 import { LinkTrackers } from "../reusables/link-trackers";
-// import { LogoMarquee } from "../reusables/logo-marquee";
+import { LogoMarquee } from "../reusables/logo-marquee";
 
 const Hero = () => {
   return (
@@ -61,7 +61,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="px-5 md:px-8 lg:px-20">
+      {/* <div className="px-5 md:px-8 lg:px-20">
         <div className="text-white text-[16px] pb-6 pt-4 md:px-0 xl:px-20">
           GET INVOLVED
         </div>
@@ -78,8 +78,8 @@ const Hero = () => {
             "hidden lg:self-center lg:flex lg:justify-center"
           )}
         </div>
-      </div>
-      {/* <LogoMarquee /> */}
+      </div> */}
+      <LogoMarquee />
     </div>
   );
 };

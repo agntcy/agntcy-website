@@ -10,7 +10,9 @@ const Members = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-3 gap-3 pb-8 md:pb-3 px-4 md:px-4">
           {RenderLogos(
-            logos.filter((logo) => logo.type === "members"),
+            logos
+              .filter((logo) => logo.type === "members")
+              .sort((a, b) => a.name.localeCompare(b.name)),
             "lg:self-center lg:flex lg:justify-center pb-2"
           )}
         </div>
