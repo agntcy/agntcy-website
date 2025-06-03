@@ -273,7 +273,7 @@ export const logos = [
   },
   {
     name: "Duo",
-    src: "/images/Duo.svg",
+    src: "/images/duo.svg",
     width: 80,
     height: 50,
     type: "members",
