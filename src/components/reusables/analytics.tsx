@@ -8,7 +8,11 @@ export default function Analytics() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (window && window.OnetrustActiveGroups?.includes("2")) {
+    if (
+      typeof window !== "undefined" &&
+      (window.OnetrustActiveGroups == undefined ||
+        window.OnetrustActiveGroups?.includes("2"))
+    ) {
       analytics.page();
     }
   }, [pathname]);
