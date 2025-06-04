@@ -534,6 +534,37 @@ export const quotes = [
     blurb:
       "We believe that multi-agent AGI will be more powerful, balanced and safer than monolithic AGI. However, it's still difficult for engineers to build multi-agent applications that span multiple servers, particularly between organizations. The open standards and tooling created by AGNTCY are making that easier. We're proud to contribute to AGNTCY to enable orchestration of agents across personal devices, cloud platforms, and edge environments.",
   },
+  {
+    name: "Duo",
+    img: logos.find((logo) => logo.name === "Duo"),
+    authorName: "Matt Caulfield",
+    authorTitle: "VP Product, Cisco",
+    blurb:
+      "AI Agents are soon going to number in the billions. Cisco Duo is now working directly with Outshift to help AGNTCY push the frontiers of adoption in this new space, developing the frameworks and guardrails necessary for secure, productive adoption of Agentic AI throughout the industry. We hear from our customers how important AI Agent identity, policy, accountability, and auditing are to their AI roadmaps - and we're here to help accelerate that.",
+  },
+  {
+    name: "Ushur",
+    img: logos.find((logo) => logo.name === "Ushur"),
+    authorName: "Henry Peter",
+    authorTitle: "CTO & Co-Founder",
+    blurb:"We view ACP not just as a protocol — but as a platform for community-led evolution, and we’re excited to build alongside AGNTCY toward an open, federated future for intelligent agents.",
+  },
+  {
+    name: "Infinitus",
+    img: logos.find((logo) => logo.name === "Infinitus"),
+    authorName: "Shyam Rajagopalan",
+    authorTitle: "CTO and Co-Founder of Infinitus",
+    blurb:
+      "Infinitus, we believe the future of AI agents in healthcare depends on open, secure, and interoperable standards. Partnering with Cisco’s AGNTCY allows us to accelerate that future, one where intelligent systems work together to improve patient access and outcomes.",
+  },
+  {
+    name: "Skreens",
+    img: logos.find((logo) => logo.name === "Skreens"),
+    authorName: "Marc Todd",
+    authorTitle: "CEO Skreens",
+    blurb:
+      "At Skreens, we’re building the infrastructure for personalized, interactive, multi-view video experiences—powered by real-time AI agents that adapt content to each viewer. But to truly scale agentic experiences across devices, platforms, and partners, we need open, interoperable systems. That’s why we’re excited to join AGNTCY. Establishing shared standards for agent management and communication is essential to ensuring that viewer-facing AI can be trusted, supervised, and integrated across the ecosystem. Skreens is proud to help shape a future where intelligent agents personalize not just what you watch—but how you experience it.",
+  },
   // {
   //   name: "Arize AI",
   //   img: logos.find((logo) => logo.name === "Arize AI"),
