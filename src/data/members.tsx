@@ -258,8 +258,8 @@ export const logos = [
   {
     name: "SwirlAI",
     src: "/images/swirl-ai.png",
-    width: 90,
-    height: 80,
+    width: 40,
+    height: 47,
     type: "members",
     featured: false,
   },
@@ -327,6 +327,86 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "Comet",
+    src: "/images/comet.png",
+    width: 124,
+    height: 48,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "lightningAI",
+    src: "/images/lightningAI.png",
+    width: 115,
+    height: 39,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Lobby",
+    src: "/images/Lobby.png",
+    width: 103,
+    height: 27,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "mem0",
+    src: "/images/mem0.png",
+    width: 114,
+    height: 27,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "opaque",
+    src: "/images/opaque.png",
+    width: 117,
+    height: 30,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "SmythOS",
+    src: "/images/SmythOS.png",
+    width: 133,
+    height: 26,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "superbo",
+    src: "/images/superbo.png",
+    width: 110,
+    height: 34,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "vijil",
+    src: "/images/vijil.png",
+    width: 49,
+    height: 36,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "zep",
+    src: "/images/zep.png",
+    width: 97,
+    height: 37,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "voagents",
+    src: "/images/voagents.png",
+    width: 109,
+    height: 39,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
@@ -372,7 +452,7 @@ export const quotes = [
     authorName: "Arvind Jain, Founder and CEO, Glean",
     authorTitle: "",
     blurb:
-      "Networks of agents are breaking down the silos that have long limited enterprise software, unlocking the potential of agents to transform how we work. They create space for continuous innovation, where the most practical solutions can emerge and thrive. At Glean, we’re committed to open source and open standards as the foundation for this future - building agents that reason and act over enterprise knowledge, grounded in context and extensible by design. We’re proud to help drive this vision forward as part of AGNTCY.",
+      "Networks of agents are breaking down the silos that have long limited enterprise software, unlocking the potential of agents to transform how we work. They create space for continuous innovation, where the most practical solutions can emerge and thrive. At Glean, we're committed to open source and open standards as the foundation for this future - building agents that reason and act over enterprise knowledge, grounded in context and extensible by design. We're proud to help drive this vision forward as part of AGNTCY.",
   },
   {
     name: "Traceloop",
@@ -380,7 +460,7 @@ export const quotes = [
     authorName: "Nir Gazit, Co-founder and CEO",
     authorTitle: "",
     blurb:
-      "As agents move from prototypes to production, observability becomes mission-critical. At Traceloop, we’re building OpenTelemetry-native infrastructure to monitor, evaluate, and debug agent behavior in real time—across any stack. AGNTCY’s push for open standards aligns perfectly with our mission to make agentic systems reliable, transparent, and production-ready.",
+      "As agents move from prototypes to production, observability becomes mission-critical. At Traceloop, we're building OpenTelemetry-native infrastructure to monitor, evaluate, and debug agent behavior in real time—across any stack. AGNTCY's push for open standards aligns perfectly with our mission to make agentic systems reliable, transparent, and production-ready.",
   },
   {
     name: "Komodor",
@@ -396,7 +476,7 @@ export const quotes = [
     authorName: "Qingyun Wu, Founder and CEO, AG2",
     authorTitle: "",
     blurb:
-      "Internet of Agents represents the next evolution of AI - a paradigm shift for seamless agent collaboration across boundaries. Open protocols like AGNTCY's are essential for this future, and AG2 proudly supports this initiative. As pioneers of open-source agent frameworks, our AgentOS vision enables truly AI-native organizations where agents communicate and create value together. We remain committed to advancing open standards that democratize agent technology.",
+      "Internet of Agents represents the next evolution of AI - a paradigm shift for seamless agent collaboration across boundaries. Open protocols like AGNTCY's are essential for this future, and AG2 proudly supports this initiative. As pioneers of open-source agent frameworks, our AgentOS vision enables truly AI-native organizations where agents communicate and create value together. We remain committed to advancing open standards that democratize agent technology.",
   },
   {
     name: "Dynamiq",
@@ -420,7 +500,7 @@ export const quotes = [
     authorName: "Leonard Tang, Co-Founder & CEO @ Haize Labs",
     authorTitle: "",
     blurb:
-      "The world aspires to create agents that coordinate, reason, and generalize across tasks and contexts. The salient, unsolved obstacle towards this dream is trust and transparency. The AGNTCY project enables this trust through shared protocols, infrastructure, and evaluation standards. Haize Labs resolutely supports AGNTCY through chaos engineering and highly-aligned scoring models; uncovering and mitigating unexpected behavior to close the last-mile gap in agentic trust. ",
+      "The world aspires to create agents that coordinate, reason, and generalize across tasks and contexts. The salient, unsolved obstacle towards this dream is trust and transparency. The AGNTCY project enables this trust through shared protocols, infrastructure, and evaluation standards. Haize Labs resolutely supports AGNTCY through chaos engineering and highly-aligned scoring models; uncovering and mitigating unexpected behavior to close the last-mile gap in agentic trust. ",
   },
   {
     name: "FabrixAI",
@@ -444,7 +524,7 @@ export const quotes = [
     authorName: "Thomas Scheibe",
     authorTitle: "CPO, Aviz Networks",
     blurb:
-      "Aviz Networks empowers enterprises to create open, AI-driven, vendor-neutral networks that deliver greater choice, control, cost savings, and standardization. We’re excited to partner with AGNTCY in setting new standards for AI-powered networking solutions",
+      "Aviz Networks empowers enterprises to create open, AI-driven, vendor-neutral networks that deliver greater choice, control, cost savings, and standardization. We're excited to partner with AGNTCY in setting new standards for AI-powered networking solutions",
   },
   {
     name: "Boomi_2",
@@ -452,7 +532,7 @@ export const quotes = [
     authorName: "Matt McLarty",
     authorTitle: "CTO of Boomi",
     blurb:
-      "Agent interoperability is a fundamental concern for our industry, and it will affect every organization as we enter the agentic age. AGNTCY is bringing experts from all backgrounds and specializations to create common ground across agent platforms and lower the barrier of entry for companies to get in the agent game.",
+      "Agent interoperability is a fundamental concern for our industry, and it will affect every organization as we enter the agentic age. AGNTCY is bringing experts from all backgrounds and specializations to create common ground across agent platforms and lower the barrier of entry for companies to get in the agent game.",
   },
   {
     name: "Weaviate",
@@ -460,7 +540,7 @@ export const quotes = [
     authorName: "Bob van Luijt",
     authorTitle: "CoFounder and CEO, Weaviate",
     blurb:
-      "Weaviate’s AI Native database empowers both developers and enterprises to build next generation agentic applications. Built on open source and community roots, we are excited to partner with AGNTCY to advance foundational technologies and establish standards that will streamline the creation of cutting-edge AI applications.",
+      "Weaviate's AI Native database empowers both developers and enterprises to build next generation agentic applications. Built on open source and community roots, we are excited to partner with AGNTCY to advance foundational technologies and establish standards that will streamline the creation of cutting-edge AI applications.",
   },
   {
     name: "CrewAI",
@@ -476,7 +556,7 @@ export const quotes = [
     authorName: "Sam Alba",
     authorTitle: "Co-Founder, Dagger",
     blurb:
-      "As AI agents become integral to software development, platform teams face a new layer of complexity that existing CI/CD and automation systems were not designed to handle. At Dagger, we are solving this by unifying task execution and environment definition in a single programmable runtime. This gives engineers precise, code-based control over how agents run, what they access, and how they integrate with broader workflows. We support AGNTCY’s push for open protocols because interoperability is essential at this new scale. A fragmented approach will not scale. Unified, observable automation will.",
+      "As AI agents become integral to software development, platform teams face a new layer of complexity that existing CI/CD and automation systems were not designed to handle. At Dagger, we are solving this by unifying task execution and environment definition in a single programmable runtime. This gives engineers precise, code-based control over how agents run, what they access, and how they integrate with broader workflows. We support AGNTCY's push for open protocols because interoperability is essential at this new scale. A fragmented approach will not scale. Unified, observable automation will.",
   },
   {
     name: "Skyfire",
@@ -500,7 +580,7 @@ export const quotes = [
     authorName: "Surojit Chatterjee",
     authorTitle: "CEO & Co-founder, Ema",
     blurb:
-      "Agents are transforming how the world works—and open, collaborative systems are essential to realizing their full potential. At Ema, our pre-built AI Employees and specialized agents are powering agentic business automation across the enterprise. We’re proud to join AGNTCY in advancing a shared vision: intelligent, interoperable agents driving global transformation.",
+      "Agents are transforming how the world works—and open, collaborative systems are essential to realizing their full potential. At Ema, our pre-built AI Employees and specialized agents are powering agentic business automation across the enterprise. We're proud to join AGNTCY in advancing a shared vision: intelligent, interoperable agents driving global transformation.",
   },
   {
     name: "VoltAgent",
@@ -508,7 +588,7 @@ export const quotes = [
     authorName: "Omer Aplak",
     authorTitle: "CEO VoltAgent",
     blurb:
-      "VoltAgent is joining AGNTCY because we believe in a collaborative community for AI agents. As AI systems grow more complex, it’s important to work together across frameworks and standards. We’re excited to be part of a community that values innovation, scalability, and sharing ideas to help advance the AI agent ecosystem.",
+      "VoltAgent is joining AGNTCY because we believe in a collaborative community for AI agents. As AI systems grow more complex, it's important to work together across frameworks and standards. We're excited to be part of a community that values innovation, scalability, and sharing ideas to help advance the AI agent ecosystem.",
   },
   {
     name: "Wayfound",
@@ -524,7 +604,7 @@ export const quotes = [
     authorName: "Aurimas Griciunas",
     authorTitle: "Founder & CEO @ SwirlAI",
     blurb:
-      "At SwirlAI, we believe the future of AI lies in open, collaborative multi-agent systems. We guide organizations through this shift by designing agentic systems rooted in open standards, trust, and scalable architectures. As supporters of AGNTCY’s mission, we’re committed to shaping a future where interoperability, transparency, and reliability are driven by truly open standards.",
+      "At SwirlAI, we believe the future of AI lies in open, collaborative multi-agent systems. We guide organizations through this shift by designing agentic systems rooted in open standards, trust, and scalable architectures. As supporters of AGNTCY's mission, we're committed to shaping a future where interoperability, transparency, and reliability are driven by truly open standards.",
   },
   {
     name: "Naptha AI",
@@ -547,7 +627,8 @@ export const quotes = [
     img: logos.find((logo) => logo.name === "Ushur"),
     authorName: "Henry Peter",
     authorTitle: "CTO & Co-Founder",
-    blurb:"We view ACP not just as a protocol — but as a platform for community-led evolution, and we’re excited to build alongside AGNTCY toward an open, federated future for intelligent agents.",
+    blurb:
+      "We view ACP not just as a protocol — but as a platform for community-led evolution, and we're excited to build alongside AGNTCY toward an open, federated future for intelligent agents.",
   },
   {
     name: "Infinitus",
@@ -555,7 +636,7 @@ export const quotes = [
     authorName: "Shyam Rajagopalan",
     authorTitle: "CTO and Co-Founder of Infinitus",
     blurb:
-      "Infinitus, we believe the future of AI agents in healthcare depends on open, secure, and interoperable standards. Partnering with Cisco’s AGNTCY allows us to accelerate that future, one where intelligent systems work together to improve patient access and outcomes.",
+      "Infinitus, we believe the future of AI agents in healthcare depends on open, secure, and interoperable standards. Partnering with Cisco's AGNTCY allows us to accelerate that future, one where intelligent systems work together to improve patient access and outcomes.",
   },
   {
     name: "Skreens",
@@ -563,7 +644,61 @@ export const quotes = [
     authorName: "Marc Todd",
     authorTitle: "CEO Skreens",
     blurb:
-      "At Skreens, we’re building the infrastructure for personalized, interactive, multi-view video experiences—powered by real-time AI agents that adapt content to each viewer. But to truly scale agentic experiences across devices, platforms, and partners, we need open, interoperable systems. That’s why we’re excited to join AGNTCY. Establishing shared standards for agent management and communication is essential to ensuring that viewer-facing AI can be trusted, supervised, and integrated across the ecosystem. Skreens is proud to help shape a future where intelligent agents personalize not just what you watch—but how you experience it.",
+      "At Skreens, we're building the infrastructure for personalized, interactive, multi-view video experiences—powered by real-time AI agents that adapt content to each viewer. But to truly scale agentic experiences across devices, platforms, and partners, we need open, interoperable systems. That's why we're excited to join AGNTCY. Establishing shared standards for agent management and communication is essential to ensuring that viewer-facing AI can be trusted, supervised, and integrated across the ecosystem. Skreens is proud to help shape a future where intelligent agents personalize not just what you watch—but how you experience it.",
+  },
+  {
+    name: "opaque",
+    img: logos.find((logo) => logo.name === "opaque"),
+    authorName: "Aaron Fulkerson",
+    authorTitle: "CEO, OPAQUE",
+    blurb:
+      "Multi-agent workflows are transforming enterprise AI, fundamentally changing how intelligent systems collaborate. Trust and confidentiality are essential to unlocking their full potential and delivering genuine business value across industries. Joining AGNTCY aligns with OPAQUE's mission to ensure that confidential AI enables secure agent collaboration that accelerates innovation while maintaining privacy in an open, interoperable future for agentic systems.",
+  },
+  {
+    name: "vijil",
+    img: logos.find((logo) => logo.name === "vijil"),
+    authorName: "Vin Sharma",
+    authorTitle: "CEO and Co-Founder",
+    blurb:
+      "Enterprises need assurance that AI agents are reliable, secure, and safe to deploy into production but the underlying AI models are inherently brittle, vulnerable, and risky. The problem is monstrous and no single technology provider can offer a silver bullet. AGNTCY presents a community-driven standards-based approach to building, testing, and operating AI agents. Vijil, the layer of trust between agent development frameworks and deployment platforms, is excited to collaborate with the collective to help enterprises employ AI agents they can trust.",
+  },
+  {
+    name: "voagents",
+    img: logos.find((logo) => logo.name === "voagents"),
+    authorName: "Amit Kumar",
+    authorTitle: "Co-Founder, VoAgents",
+    blurb:
+      "AGNTCY's open, interoperable framework is exactly the catalyst the voice-first agents we build need to collaborate seamlessly at internet scale. We're thrilled to bring our experience in high-volume, multilingual call flows to the Collective and help accelerate an Internet of Agents that works for every industry.",
+  },
+  {
+    name: "zep",
+    img: logos.find((logo) => logo.name === "zep"),
+    authorName: "Daniel Chalef",
+    authorTitle: "Founder, Zep",
+    blurb:
+      "A standardized agent memory protocol is essential for seamless collaboration as specialized frameworks increasingly drive organizations toward heterogeneous agent stacks, making AGNTCY's initiative a key unlock.",
+  },
+  {
+    name: "superbo",
+    img: logos.find((logo) => logo.name === "superbo"),
+    authorName: "Demetri Papazissis",
+    authorTitle: "Co-Founder and CEO",
+    blurb:
+      "At Superbo, we're firm believers that the Internet of Agents must be open by design. Interoperability isn't just a nice-to-have, it's a must. We envision a future where intelligent agents can seamlessly collaborate across ecosystems, unleashing a wave of innovation and empowering businesses and individuals alike. That future can only be built on openness, shared standards, and collective momentum.",
+  },
+  {
+    name: "SmythOS",
+    img: logos.find((logo) => logo.name === "SmythOS"),
+    blurb:
+      "SmythOS is the open AI agent kernel for building, testing, and deploying autonomous agents at scale without sacrificing control and human oversight. The internet of agents is the defining platform shift of our generation. SmythOS is proudly joining forces with AGNTCY to contribute to this vision.",
+  },
+  {
+    name: "Comet",
+    img: logos.find((logo) => logo.name === "Comet"),
+    authorName: " Gideon Mendels",
+    authorTitle: "CEO, Comet",
+    blurb:
+      "As AI systems become more autonomous and agent-driven, the need for shared standards in evaluation has never been more urgent. We're proud to contribute to AGNTCY's open and collaborative framework with Opik, our LLM evaluation platform designed to make agentic systems robust, explainable, and ready for real-world deployment. Together, we're laying the groundwork for a more trustworthy and scalable AI ecosystem.",
   },
   // {
   //   name: "Arize AI",

@@ -18,7 +18,7 @@ export function LogoMarquee() {
       </div>
 
       <div className="relative py-3">
-        <Marquee pauseOnHover className="[--duration:100s]">
+        <Marquee pauseOnHover className="[--duration:120s]">
           {RenderLogos(
             firstHalf,
             "self-center flex justify-center mx-4 md:mx-8"
@@ -28,7 +28,7 @@ export function LogoMarquee() {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-[#00142B]"></div>
       </div>
       <div className="relative py-3">
-        <Marquee pauseOnHover reverse className="[--duration:100s]">
+        <Marquee pauseOnHover reverse className="[--duration:120s]">
           {RenderLogos(
             secondHalf,
             "self-center flex justify-center mx-4 md:mx-8"
