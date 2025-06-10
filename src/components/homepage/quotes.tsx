@@ -55,18 +55,23 @@ const Quotes = () => {
                     </div>
                   )}
                   <div className="col-span-1 md:col-span-2 flex flex-col justify-center gap-2">
-                    <p className="text-sm sm:text-base md:text-lg pb-5">{quote.blurb}</p>
+                    <p className="text-sm sm:text-base md:text-lg pb-5">
+                      {quote.blurb}
+                    </p>
                     <div className="">
                       <p className="md:hidden text-right text-orange uppercase font-extrabold text-sm">
-                        {quote.authorName.split(",").map((part, index) => (
-                          <span key={index} className="block">
-                            {part.trim()}
-                          </span>
-                        ))}
+                        {quote.authorName &&
+                          quote.authorName.split(",").map((part, index) => (
+                            <span key={index} className="block">
+                              {part.trim()}
+                            </span>
+                          ))}
                       </p>
-                      <p className="max-md:hidden text-right text-orange uppercase font-extrabold text-sm">
-                        {quote.authorName}
-                      </p>
+                      {quote.authorName && (
+                        <p className="max-md:hidden text-right text-orange uppercase font-extrabold text-sm">
+                          {quote.authorName}
+                        </p>
+                      )}
                       {quote.authorTitle && (
                         <p className="text-right text-orange uppercase font-extrabold text-sm">
                           {quote.authorTitle}
