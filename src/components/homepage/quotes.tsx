@@ -12,6 +12,7 @@ import AutoScroll from "embla-carousel-auto-scroll";
 import { Marquee } from "components/ui/marquee";
 import QuoteCard from "../reusables/quote-card";
 import QuoteImg from "../reusables/quote-img";
+import QuoteAuthor from "../reusables/quote-title";
 
 const Quotes = () => {
   const third = Math.ceil(quotes.length / 3);
@@ -50,24 +51,7 @@ const Quotes = () => {
                         {quote.blurb}
                       </p>
                       <div>
-                        <p className="md:hidden text-right text-orange uppercase font-extrabold text-sm">
-                          {quote.authorName &&
-                            quote.authorName.split(",").map((part, index) => (
-                              <span key={index} className="block">
-                                {part.trim()}
-                              </span>
-                            ))}
-                        </p>
-                        {quote.authorName && (
-                          <p className="max-md:hidden text-right text-orange uppercase font-extrabold text-sm">
-                            {quote.authorName}
-                          </p>
-                        )}
-                        {quote.authorTitle && (
-                          <p className="text-right text-orange uppercase font-extrabold text-sm">
-                            {quote.authorTitle}
-                          </p>
-                        )}
+                        <QuoteAuthor quote={quote} />
                       </div>
                     </div>
                   </CardContent>
