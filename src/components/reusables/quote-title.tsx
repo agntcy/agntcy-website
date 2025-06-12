@@ -20,7 +20,7 @@ const QuoteAuthor = ({
       <p
         className={`md:hidden ${
           right && "text-right"
-        } text-orange uppercase font-extrabold text-sm`}
+        } text-orange uppercase font-extrabold text-base md:text-lg`}
       >
         {quote.authorName &&
           quote.authorName.split(",").map((part, index) => (
@@ -33,7 +33,7 @@ const QuoteAuthor = ({
         <p
           className={`max-md:hidden ${
             right && "text-right"
-          } text-orange uppercase font-extrabold text-sm`}
+          } text-orange uppercase font-extrabold text-base md:text-lg`}
         >
           {quote.authorName}
         </p>
@@ -42,7 +42,7 @@ const QuoteAuthor = ({
         <p
           className={`${
             right && "text-right"
-          } text-orange uppercase font-extrabold text-sm`}
+          } text-orange uppercase font-extrabold text-base md:text-lg`}
         >
           {quote.authorTitle}
         </p>
