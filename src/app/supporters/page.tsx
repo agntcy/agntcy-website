@@ -4,7 +4,6 @@ import RoleDescription from "~/components/supporters/role_description";
 import type { Metadata } from "next";
 import SteeringCommittee from "~/components/supporters/steering_committee";
 import Members from "~/components/supporters/contributors";
-// import { LogoMarquee } from "~/components/reusables/logo-marquee";
 
 export default function Supporters() {
   return (
@@ -14,9 +13,6 @@ export default function Supporters() {
         <SteeringCommittee />
         <Members />
       </div>
-      {/* <div className="container mx-auto md:px-4 lg:px-44 xl:px-24">
-        <LogoMarquee />
-      </div> */}
       <div className="container mx-auto px-4 md:px-8 lg:px-20">
         <JoinUs />
         <RoleDescription />

@@ -1,12 +1,10 @@
 import Image from "next/image";
-// import RenderLogos from "../reusables/render-logo";
-// import { logos } from "~/data/members";
 import { LinkTrackers } from "../reusables/link-trackers";
 import { LogoMarquee } from "../reusables/logo-marquee";
 
 const Hero = () => {
   return (
-    <div className="mx-auto container bg-[#00142B] md:py-36 w-screen max-md:pt-12 max-md:pb-3">
+    <div className="mx-auto container bg-[#00142B] md:py-36 max-md:pt-12 max-md:pb-3">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-36 w-full py-0">
         <div className="col-span-1 sm:pt-0 sm:pb-12 px-4 ">
           <div className="">
@@ -61,24 +59,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/* <div className="px-5 md:px-8 lg:px-20">
-        <div className="text-white text-[16px] pb-6 pt-4 md:px-0 xl:px-20">
-          GET INVOLVED
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-6 gap-3 pb-12 md:pb-3">
-          {RenderLogos(
-            logos.slice(0, 30),
-            "lg:self-center lg:flex lg:justify-center lg:pb-4"
-          )}
-          {RenderLogos(logos.slice(30, 33), "lg:hidden")}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-5 lg:px-20 gap-3 pb-8 md:pb-3">
-          {RenderLogos(
-            logos.slice(30, 33),
-            "hidden lg:self-center lg:flex lg:justify-center"
-          )}
-        </div>
-      </div> */}
       <LogoMarquee />
     </div>
   );
