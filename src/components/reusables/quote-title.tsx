@@ -13,7 +13,7 @@ const QuoteAuthor = ({
     authorTitle?: string;
     blurb: string;
   };
-  right: boolean;
+  right?: boolean;
 }) => {
   return (
     <>

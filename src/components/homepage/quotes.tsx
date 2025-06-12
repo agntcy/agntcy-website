@@ -65,7 +65,7 @@ const Quotes = () => {
       </div>
 
       <div className="xl:container bg-[#00142B] md:pb-36 py-12 ">
-        <div className="relative hidden md:flex h-[1100px] w-full flex-row items-center justify-center overflow-hidden">
+        <div className="relative hidden md:grid h-[1100px] w-full grid-cols-3 items-center justify-center overflow-hidden">
           <Marquee pauseOnHover vertical className="[--duration:220s]">
             {firstRow.map((quote, i) => (
               <div key={`quote-1-${i}`}>
