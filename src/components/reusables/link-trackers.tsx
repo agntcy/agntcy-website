@@ -36,7 +36,11 @@ export const LinkTrackers: React.FC<LinkTrackersProps> = ({
 
     if (target === "_blank") e.preventDefault();
 
-    if (window && window.OnetrustActiveGroups?.includes("2")) {
+    if (
+      typeof window !== "undefined" &&
+      (window.OnetrustActiveGroups == undefined ||
+        window.OnetrustActiveGroups?.includes("2"))
+    ) {
       analytics.track(segmentMsg, {
         ...segmentOpt,
         url: fullPath,

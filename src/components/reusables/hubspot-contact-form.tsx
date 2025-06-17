@@ -50,28 +50,34 @@ const HubspotContactForm = ({
             },
             {}
           );
+          
+          if (
+            typeof window !== "undefined" &&
+            (window.OnetrustActiveGroups == undefined ||
+              window.OnetrustActiveGroups?.includes("2"))
+          ) {
+            // Segment Identify Call
+            analytics.identify({
+              firstname: valuesObj["0-1/firstname"],
+              lastname: valuesObj["0-1/lastname"],
+              email: valuesObj["0-1/email"],
+              "company name": valuesObj["0-1/company"],
+              jobtitle: valuesObj["0-1/jobtitle"],
+              "agreed to org's logo feature":
+                valuesObj["0-1/agntcy_logo_permission"],
+              agreed_to_pii:
+                valuesObj["0-1/consent_marketing_emails_and_privacy_policy"],
+            });
 
-          // Segment Identify Call
-          analytics.identify({
-            firstname: valuesObj["0-1/firstname"],
-            lastname: valuesObj["0-1/lastname"],
-            email: valuesObj["0-1/email"],
-            "company name": valuesObj["0-1/company"],
-            jobtitle: valuesObj["0-1/jobtitle"],
-            "agreed to org's logo feature":
-              valuesObj["0-1/agntcy_logo_permission"],
-            agreed_to_pii:
-              valuesObj["0-1/consent_marketing_emails_and_privacy_policy"],
-          });
-
-          // Segment Track Call
-          analytics.track("agntcy form submit clicked", {
-            link_label: "Submit",
-            location: "body",
-            page_base_url: baseUrl,
-            page_full_url: baseUrl + fullPath,
-            resource_interaction: "Final form submission",
-          });
+            // Segment Track Call
+            analytics.track("agntcy form submit clicked", {
+              link_label: "Submit",
+              location: "body",
+              page_base_url: baseUrl,
+              page_full_url: baseUrl + fullPath,
+              resource_interaction: "Final form submission",
+            });
+          }
         });
     };
 
