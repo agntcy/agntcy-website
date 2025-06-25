@@ -2,22 +2,21 @@ import ResourcesCard from "./resources-card";
 
 export default async function ResourcesContent() {
   // Revalidate at most every hour
-  let data = await fetch(
+  const data = await fetch(
     "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjQpUIoNLWgxsv8WPMo2W3xc9XiGDXp0lYKbHdCL_xwOCbBjVtX0K7mp9qRHTwwNj7FEH2zXxpXFZa2BMvFbikvGOggnQP7RTG_b53pLZ3SWkuUFC7ryhvKvue7ktwAnWSB-rmIJZRDG6SKQir9auTJ_XtFOE9aMBj8xuuuLPw2t3RZquGOc3ziGzmGpaNVpbhCv3jcKA5qDHEQFwPno8ILddvNhlYrxcFg1aNz_79ixRhXWq2Xsk_OmB8wXko5JH5dBIJDzIxeTSIm1eqrlRuoNSe9bIxzNuhaL6gJ&lib=MY9O_02LRTsAjVdJlVqP4o_nt9JalZlNa",
     { next: { revalidate: 3600 } }
   );
 
-  let resources: ResourcesResponse = await data.json();
+  const resources: ResourcesResponse = await data.json();
 
-  let gettingStarted = resources.data.filter(
+  const gettingStarted = resources.data.filter(
     (resource) =>
       resource.category === "Getting Started" && resource.approved === "TRUE"
   );
-  let otherResources = resources.data.filter(
+  const otherResources = resources.data.filter(
     (resource) =>
       resource.category === "Other Resources" && resource.approved === "TRUE"
   );
-  console.log(gettingStarted);
 
   return (
     <div className="bg-navy-light rounded-lg p-6 md:p-12 lg:p-20 my-2 md:my-6 lg:my-10">
