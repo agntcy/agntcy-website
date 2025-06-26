@@ -407,6 +407,38 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "arizeAI",
+    src: "/images/arizeAI.png",
+    width: 106,
+    height: 28,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "aisera",
+    src: "/images/aisera.png",
+    width: 111,
+    height: 24,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "agentoverlay",
+    src: "/images/agentoverlay.png",
+    width: 163,
+    height: 30,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "PatternAgenticAI",
+    src: "/images/PatternAgenticAI.png",
+    width: 178,
+    height: 35,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
@@ -699,6 +731,30 @@ export const quotes = [
     authorTitle: "CEO, Comet",
     blurb:
       "As AI systems become more autonomous and agent-driven, the need for shared standards in evaluation has never been more urgent. We're proud to contribute to AGNTCY's open and collaborative framework with Opik, our LLM evaluation platform designed to make agentic systems robust, explainable, and ready for real-world deployment. Together, we're laying the groundwork for a more trustworthy and scalable AI ecosystem.",
+  },
+  {
+    name: "arizeAI",
+    img: logos.find((logo) => logo.name === "arizeAI"),
+    authorName: "Jason Lopatecki",
+    authorTitle: "Co-Founder and CEO of Arize AI",
+    blurb:
+      "We can't just build agents and hope they work. At Arize, evaluation is in our DNA—it's how we know what's actually improving and what's just hype. Contributing to AGNTCY aligns perfectly with our belief that open, shared evaluation frameworks accelerate progress for everyone. We're committed to helping developers measuring what matters so agents can deliver on their promise.",
+  },
+  {
+    name: "agentoverlay",
+    img: logos.find((logo) => logo.name === "agentoverlay"),
+    authorName: "Andor Kesselman",
+    authorTitle: "CEO, AgentOverlay",
+    blurb:
+      "Agents will only fulfill their promise in the market when they can interoperate across company and platform boundaries. That’s why open protocols like the OASF and ACP are so powerful. At AgentOverlay, we’re building on these standards and proudly back AGNTCY efforts to turn an interoperable agent ecosystem into reality",
+  },
+  {
+    name: "PatternAgenticAI",
+    img: logos.find((logo) => logo.name === "PatternAgenticAI"),
+    authorName: "James Wilson",
+    authorTitle: "Founder & CEO, Pattern Agentic",
+    blurb:
+      "At Pattern Agentic we cut through the complexity and empower people to get to work with AI — without friction, without limits. We’re only at the beginning of what’s possible: an era of elegant, open, and secure agentic workflows at global scale. By joining forces with AGNTCY, we’re helping lay the foundation for the Internet of Agents — shared standards, inclusive access, and the freedom to compose agentic AI systems with the right tools, for the right job, right now.",
   },
   // {
   //   name: "Arize AI",
