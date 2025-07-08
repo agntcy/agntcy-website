@@ -45,7 +45,7 @@ const Hero = () => {
           </div>
           <div className="text-[#FBAB2C] pb-6 underline text-base md:text-xl">
             <LinkTrackers
-              href="https://outshift.cisco.com/blog/mcp-interoperability-multi-agent-software-observability-agntcy"
+              href="https://outshift.cisco.com/blog/multi-agent-software-observability-evaluation-best-practices"
               target="_blank"
               segmentMsg="agntcy learn more clicked"
               segmentOpt={{
