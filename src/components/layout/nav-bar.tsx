@@ -58,18 +58,17 @@ const Navbar = () => {
         resource_interaction: "Visit supporters page",
       },
     },
-
-    // {
-    //   name: "Resources",
-    //   href: "/resources",
-    //   target: "_self",
-    //   segmentMsg: "agntcy resources clicked",
-    //   segmentOpt: {
-    //     link_label: "Resources",
-    //     location: "global header",
-    //     resource_interaction: "Visit resources page",
-    //   },
-    // },
+    {
+      name: "Resources",
+      href: "/resources",
+      target: "_self",
+      segmentMsg: "agntcy resources clicked",
+      segmentOpt: {
+        link_label: "Resources",
+        location: "global header",
+        resource_interaction: "Visit resources page",
+      },
+    },
   ];
 
   return (
