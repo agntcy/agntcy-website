@@ -24,7 +24,7 @@ export default async function ResourcesContent() {
 
   return (
     <div className="bg-navy-light rounded-lg p-6 md:p-12 lg:p-20 my-2 md:my-6 lg:my-10">
-      <div className="text-white w-full lg:w-5/6">
+      <div className="text-white max-w-4xl">
         <h1 className="text-3xl md:text-4xl mb-3">
           Resources
         </h1>
