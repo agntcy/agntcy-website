@@ -7,6 +7,7 @@ import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
 import Scripts from "~/components/layout/scripts";
 import Script from "next/script";
+import { Banner } from "~/components/layout/banner";
 
 const roboto = Roboto({
   weight: ["100", "400", "700", "900"],
@@ -47,6 +48,7 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         <Suspense fallback={null}>
+          <Banner />
           <Navbar />
           {children}
           <Footer />
