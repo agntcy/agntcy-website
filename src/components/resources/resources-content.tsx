@@ -10,12 +10,14 @@ export default async function ResourcesContent() {
 
   const resources: ResourcesResponse = await data.json();
 
+  // Hard coded data
   const featuredData = resourceData.filter(
     (resource) =>
       resource.isFeatured === true
   );
   
-    const otherResources = resources.data.filter(
+  //Data is coming from Google sheet
+  const otherResources = resources.data.filter(
     (resource) =>
       resource.approved === "TRUE"
   );
