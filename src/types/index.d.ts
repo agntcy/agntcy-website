@@ -1,13 +1,22 @@
 type Resource = {
-  timestamp: string;
-  author: string;
   title: string;
-  url: string;
-  topics: string;
+  description: string;
+  contributor: string;
+  contributorLink: string;
+  resourceLink: string;
+  featureImage: FeatureImage;
+  isAvailable: string;
   approved: string;
-  category: string;
+  isFeatured: boolean;
 };
+
 
 type ResourcesResponse = {
   data: Resource[];
 };
+
+type FeatureImage = {
+  src: string,
+  width: number,
+  height: number,
+}
