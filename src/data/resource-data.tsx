@@ -1,0 +1,47 @@
+export const resourceData = [
+  {
+    title: "AGNTCY Briefs: Youtube Playlist",
+    description: "Learn how to use AGNTCY's open protocols with fast, focused video explainers",
+    contributor: "Outshift by CISCO",
+    contributorLink: "https://outshift.com/",
+    resourceLink: "https://www.youtube.com/playlist?list=PL49BrgsjXg5rUr_jw8VHLaz-roTuRRIjG",
+    featureImage: {
+      src: "/images/image-1.png",
+      width: 150,
+      height: 50,
+    },
+    isFeatured: true,
+    approved: "TRUE",
+    isAvailable: "Yes",
+  },
+  {
+    title: "Agent SDK",
+    description: "Start coding with AGNTCY: core SDK for agent communication and orchestration",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink: "/",
+    featureImage: {
+      src: "/images/image-2.png",
+      width: 150,
+      height: 50,
+    },
+    isFeatured: true,
+    approved: "TRUE",
+    isAvailable: "No",
+  },
+  {
+    title: "CoffeeAGNTCY",
+    description: "CoffeeAGNTCY: demo app for short (Corto) and long (Lungo) agent communication protocols",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink: "/",
+    featureImage: {
+      src: "/images/image-3.png",
+      width: 150,
+      height: 50,
+    },
+    isFeatured: true,
+    approved: "TRUE",
+    isAvailable: "No",
+  },
+];
