@@ -10,7 +10,7 @@ export default function ResourcesCard({ resource }: { resource: Resource }) {
       >
         <Link
           href={resource.resourceLink}
-          target="_blank"
+          target={resource.resourceLink == "/resources" ? "_self" :"_blank"}
           rel="noopener noreferrer"
           className="text-primary flex flex-col gap-4"
         >
