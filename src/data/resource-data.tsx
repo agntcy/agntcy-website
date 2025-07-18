@@ -19,7 +19,7 @@ export const resourceData = [
     description: "Start coding with AGNTCY: core SDK for agent communication and orchestration",
     contributor: "AGNTCY",
     contributorLink: "https://agntcy.org/",
-    resourceLink: "/",
+    resourceLink: "/resources",
     featureImage: {
       src: "/images/image-2.png",
       width: 150,
@@ -34,7 +34,7 @@ export const resourceData = [
     description: "CoffeeAGNTCY: demo app for short (Corto) and long (Lungo) agent communication protocols",
     contributor: "AGNTCY",
     contributorLink: "https://agntcy.org/",
-    resourceLink: "/",
+    resourceLink: "/resources",
     featureImage: {
       src: "/images/image-3.png",
       width: 150,
