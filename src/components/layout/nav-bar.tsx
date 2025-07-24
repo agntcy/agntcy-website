@@ -16,7 +16,7 @@ const Navbar = () => {
   const navItems = [
     {
       name: "Agent Directory",
-      href: "https://hub.agntcy.org",
+      href: "https://agent-directory.outshift.com",
       segmentMsg: "agntcy directory clicked",
       target: "_blank",
       segmentOpt: {

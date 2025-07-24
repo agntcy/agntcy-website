@@ -439,6 +439,86 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "Ciroos",
+    src: "/images/ciroos.png",
+    width: 152,
+    height: 37,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "HumanSecurity",
+    src: "/images/human-security.png",
+    width: 130,
+    height: 30,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Hyperbolic",
+    src: "/images/hyperbolic.png",
+    width: 160,
+    height: 25,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Infosys",
+    src: "/images/infosys.png",
+    width: 95,
+    height: 35,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Onetrust",
+    src: "/images/onetrust.png",
+    width: 143,
+    height: 25,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Persistent",
+    src: "/images/persistent.png",
+    width: 150,
+    height: 35,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "SciEncephalonAI",
+    src: "/images/SciEncephalonAI.png",
+    width: 175,
+    height: 45,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Snaplogic",
+    src: "/images/snaplogic.png",
+    width: 173,
+    height: 55,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Tykio",
+    src: "/images/Tykio.png",
+    width: 120,
+    height: 40,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Yallma3",
+    src: "/images/yallma3.png",
+    width: 130,
+    height: 45,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
@@ -756,12 +836,20 @@ export const quotes = [
     blurb:
       "At Pattern Agentic we cut through the complexity and empower people to get to work with AI — without friction, without limits. We’re only at the beginning of what’s possible: an era of elegant, open, and secure agentic workflows at global scale. By joining forces with AGNTCY, we’re helping lay the foundation for the Internet of Agents — shared standards, inclusive access, and the freedom to compose agentic AI systems with the right tools, for the right job, right now.",
   },
-  // {
-  //   name: "Arize AI",
-  //   img: logos.find((logo) => logo.name === "Arize AI"),
-  //   authorName: "Jason Lopatecki",
-  //   authorTitle: "Co-Founder and CEO of Arize AI",
-  //   blurb:
-  //     "We can't just build agents and hope they work. At Arize, evaluation is in our DNA—it's how we know what's actually improving and what's just hype. Contributing to AGNTCY aligns perfectly with our belief that open, shared evaluation frameworks accelerate progress for everyone. We're committed to helping developers measuring what matters so agents can deliver on their promise.",
-  // },
+  {
+    name: "Ciroos",
+    img: logos.find((logo) => logo.name === "Ciroos"),
+    authorName: "Ronak Desai",
+    authorTitle: "co-founder, president, and CEO",
+    blurb:
+      "As the industry's first extensible, multi-domain AI SRE teammate for modern enterprise operations, the Ciroos team looks forward to sharing our expertise and meaningfully contributing to the AGNTCY initiative pioneered by Cisco and others",
+  },
+  {
+    name: "Tykio",
+    img: logos.find((logo) => logo.name === "Tykio"),
+    authorName: "Martin Buhr",
+    authorTitle: "CEO & Co-Founder",
+    blurb:
+      "We're excited to join AGNTCY and stand at the frontier of the agentic web. At Tyk, we believe the future of the internet is composable, intelligent, and driven by autonomy, and we're here to help shape it.",
+  },
 ];
