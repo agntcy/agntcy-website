@@ -519,6 +519,38 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "Lleverage",
+    src: "/images/lleverage.png",
+    width: 130,
+    height: 30,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Mozilla",
+    src: "/images/mozilla.png",
+    width: 130,
+    height: 20,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Pensar",
+    src: "/images/pensar.png",
+    width: 115,
+    height: 25,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Redis",
+    src: "/images/redis.png",
+    width: 90,
+    height: 28,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
