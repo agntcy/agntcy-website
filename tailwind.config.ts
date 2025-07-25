@@ -14,6 +14,7 @@ export default {
         foreground: "hsl(var(--foreground))",
         orange: "#FBAB2C",
         navy: "#00142B",
+        bg: "#000E1F",
         "navy-light": "#0D274D",
         grey: "#E2E2E2",
         card: {
@@ -73,6 +74,10 @@ export default {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
+      },
+      backgroundImage: {
+        "gradient-blue-purple":
+          "linear-gradient(to right, #9345E1,#2979C7,#00C4D3)",
       },
     },
   },

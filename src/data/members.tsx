@@ -853,3 +853,37 @@ export const quotes = [
       "We're excited to join AGNTCY and stand at the frontier of the agentic web. At Tyk, we believe the future of the internet is composable, intelligent, and driven by autonomy, and we're here to help shape it.",
   },
 ];
+
+export const formativeMembers = [
+  {
+    name: "Cisco",
+    src: "/logo/formative-members/cisco-logo.png",
+    width: 86,
+    height: 45,
+  },
+  {
+    name: "Dell",
+    src: "/logo/formative-members/dell-logo.png",
+    width: 271,
+    height: 45,
+  },
+  {
+    name: "Google",
+    src: "/logo/formative-members/google-logo.png",
+    width: 217,
+    height: 50,
+  },
+  {
+    name: "Oracle",
+    src: "/logo/formative-members/oracle-logo.png",
+    width: 140,
+    height: 38,
+  },
+  {
+    name: "Red Hat",
+    src: "/logo/formative-members/red-hat-logo.png",
+    width: 167,
+    height: 51,
+  },
+ 
+];

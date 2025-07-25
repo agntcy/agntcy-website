@@ -24,7 +24,7 @@ const Quotes = () => {
       <div className="container pb-8 md:pb-12 px-4">
         <h3 className="text-3xl md:text-5xl text-white">Why join AGNTCY?</h3>
       </div>
-      <div className="mx-auto md:hidden bg-[#00142B] w-[calc(100vw-20px)]">
+      <div className="mx-auto md:hidden bg-bg w-[calc(100vw-20px)]">
         <Carousel
           className="w-full mx-auto"
           plugins={[
@@ -64,7 +64,7 @@ const Quotes = () => {
         </Carousel>
       </div>
 
-      <div className="xl:container bg-[#00142B] md:pb-36 py-12 ">
+      <div className="xl:container bg-bg md:pb-36 py-12 ">
         <div className="relative hidden md:grid h-[1100px] w-full grid-cols-3 items-center justify-center overflow-hidden">
           <Marquee pauseOnHover vertical className="[--duration:220s]">
             {firstRow.map((quote, i) => (
@@ -87,8 +87,8 @@ const Quotes = () => {
               </div>
             ))}
           </Marquee>
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-navy"></div>
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-navy"></div>
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-bg"></div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bg"></div>
         </div>
       </div>
     </>

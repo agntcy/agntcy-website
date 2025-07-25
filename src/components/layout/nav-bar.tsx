@@ -44,7 +44,7 @@ const Navbar = () => {
       segmentOpt: {
         link_label: "GitHub",
         location: "global header",
-        resource_interaction: "Visit GitHub repositoty",
+        resource_interaction: "Visit GitHub repository",
       },
     },
     {
@@ -72,18 +72,18 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#00142B] shadow-lg py-4">
+    <nav className="bg-[#00142B] shadow-lg py-8">
       <Drawer direction="left">
         <div className="container mx-auto px-2">
           <div className="flex justify-between">
             <div className="flex justify-between items-center w-full">
               <div className="">
-                <Link href="/" legacyBehavior>
+                <Link href="/">
                   <Image
                     unoptimized
                     src={"/images/logo.png"}
                     alt="Logo"
-                    className="pt-4"
+                    className=""
                     height={150}
                     width={150}
                   />
@@ -105,7 +105,8 @@ const Navbar = () => {
                     </LinkTrackers>
                   ))}
                   <LinkTrackers
-                    href="/contactus"
+                    target="_blank"
+                    href="https://join.slack.com/t/agntcy/shared_invite/zt-34sxmw5e8-LqlUxxcxROq3HRb56QSkUg"
                     segmentMsg="agntcy join us clicked"
                     segmentOpt={{
                       link_label: "Join us",
@@ -180,7 +181,8 @@ const Navbar = () => {
               asChild
             >
               <LinkTrackers
-                href="/contactus"
+                target="_blank"
+                href="https://join.slack.com/t/agntcy/shared_invite/zt-34sxmw5e8-LqlUxxcxROq3HRb56QSkUg"
                 segmentMsg="agntcy join us clicked"
                 segmentOpt={{
                   link_label: "Join us",

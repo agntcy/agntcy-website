@@ -21,7 +21,7 @@ const JoinUs = () => {
         </div>
         <div className="py-12 flex items-center justify-center ">
           <LinkTrackers
-            href="/contactus"
+            href="https://join.slack.com/t/agntcy/shared_invite/zt-34sxmw5e8-LqlUxxcxROq3HRb56QSkUg"
             segmentMsg="agntcy join us clicked"
             segmentOpt={{
               link_label: "Join us",
