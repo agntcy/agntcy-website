@@ -1,33 +1,30 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
+import * as CookieConsent from "vanilla-cookieconsent";
+import pluginConfig from "./cookie-consent-config";
 import { Button } from "components/ui/button";
 
 declare global {
   interface Window {
-    Optanon: any;
-    OnetrustActiveGroups: string;
+    CookieConsent: typeof CookieConsent;
   }
 }
 
 const CookieConsentComponent = () => {
-  function displayConsentManager() {
-    if (
-      window &&
-      typeof window.Optanon !== "undefined" &&
-      typeof window.Optanon.ToggleInfoDisplay === "function"
-    ) {
-      window.Optanon.ToggleInfoDisplay();
+  useEffect(() => {
+    if (window) {
+      CookieConsent.run(pluginConfig);
     } else {
       console.log("CookieConsent not found");
     }
-  }
+  }, []);
 
   return (
     <div>
       <Button
         variant={"link"}
-        aria-label={"Cookies"}
-        onClick={displayConsentManager}
+        aria-label={"Privacy Policy"}
+        onClick={CookieConsent.showPreferences}
         className="px-0 text-sm font-thin  text-gray-200 sm:text-center"
       >
         Cookies

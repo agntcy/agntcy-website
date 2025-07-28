@@ -67,8 +67,13 @@ export const Downloadable = async ({ dark = false }) => {
                         className="font-btn-lg px-auto py-3 md:px-5 font-light"
                         segmentMsg="Downloadable clicked"
                         segmentOpt={{
-                          file_name:
-                            "Welcome to the future of agentic AI: The Internet of Agents",
+                          link_label: "Download",
+                          location: "body",
+                          resource_interaction: "read a PDF",
+                          file_name: "Internet_of_Agents_Whitepaper.pdf",
+                          resource_type: "white paper",
+                          resource_author: "Vijoy Pandey, Ph.D",
+                          is_gated_asset: "false",
                         }}
                       >
                         Download

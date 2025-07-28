@@ -48,14 +48,14 @@ const Hero = () => {
               <LinkTrackers
                 target="_blank"
                 href="https://github.com/agntcy"
-                segmentMsg="agntcy join us clicked"
+                segmentMsg="agntcy join the build clicked"
                 segmentOpt={{
                   link_label: "Join the build",
                   location: "body",
                   resource_interaction: "Visit GitHub repository",
                 }}
               >
-                <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-full">
+                <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-9 rounded-full">
                   Join the build
                 </div>
               </LinkTrackers>
@@ -81,7 +81,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="py-12 md:py-24 lg:py-28 w-full container mx-auto">
-        <div className="mx-6 md:mx-12 lg:max-w-6xl lg:mx-auto p-6 md:p-12 lg:p-16 text-white rounded-lg bg-gradient-to-t from-[#1E5BB3] to-[#0D274D]">
+        <div className="mx-6 md:mx-12 lg:max-w-6xl lg:mx-auto p-6 md:p-12 lg:p-16 text-white rounded-2xl bg-gradient-to-t from-[#1E5BB3] to-[#0D274D]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="space-y-6 md:space-y-10">
               <h2 className="text-orange text-6xl text-[64px] max-w-[300px]">
@@ -91,14 +91,14 @@ const Hero = () => {
                 <LinkTrackers
                   target="_blank"
                   href="https://github.com/agntcy"
-                  segmentMsg="agntcy join us clicked"
+                  segmentMsg="agntcy join the build clicked"
                   segmentOpt={{
                     link_label: "Join the build",
                     location: "body",
                     resource_interaction: "Visit GitHub repository",
                   }}
                 >
-                  <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-7 rounded-full">
+                  <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-9 rounded-full">
                     Join the build
                   </div>
                 </LinkTrackers>
@@ -106,18 +106,17 @@ const Hero = () => {
             </div>
             <div className="space-y-4 lg:col-span-2">
               <div className="text-xl">
-                The AGNTCY project doesn't replace existing agent frameworks—it
-                makes them work together. Whether you're using A2A, MCP, or any
-                other agent protocol, AGNTCY provides the infrastructure that
-                lets specialized agents collaborate across platforms to solve
-                complex problems. 
+                Agents are only as good as the infrastructure connecting them.
+                AGNTCY delivers the complete stack for the Internet of Agents so
+                that specialized agents can collaborate across platforms to
+                solve complex problems.
               </div>
               <div className="text-xl">
-                Agents are only as good as the infrastructure connecting them.
-                Instead of building custom integration for every agent pairing,
-                AGNTCY delivers the complete stack so your agents spend time
-                solving problems instead of figuring out how to talk to each
-                other. 
+                Skip the custom integrations: With AGNTCY, your agents can spend
+                their time solving problems instead of figuring out how to talk
+                to each other. This includes support for key protocols such as
+                A2A and MCP as well as across the full multi-agent software
+                development lifecycle.
               </div>
             </div>
           </div>
@@ -139,7 +138,7 @@ const Hero = () => {
               {frameworkFeatures.map((feature, index) => (
                 <div key={index} className="space-y-2">
                   <h6 className="text-2xl">{feature.title}</h6>
-                  <p  className="text-base">{feature.description}</p>
+                  <p className="text-base">{feature.description}</p>
                 </div>
               ))}
             </div>

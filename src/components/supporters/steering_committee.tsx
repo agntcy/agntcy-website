@@ -1,5 +1,4 @@
 "use client";
-import RenderLogos from "../reusables/render-logo";
 import { formativeMembers } from "~/data/members";
 import Image from "next/image";
 import { AspectRatio } from "components/ui/aspect-ratio";

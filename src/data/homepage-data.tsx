@@ -22,6 +22,6 @@ export const frameworkFeatures = [
   {
     title: "Protocol Integration",
     description:
-      "Makes AGNTCY building blocks interoperable with Agent 2 Agent (A2A) and Model Context Protocol (MCP). A2A-enabled agents and MCP servers can be discovered through AGNTCY directories, transport messages over SLIM, and be monitored with AGNTCY observability SDKs.",
+      "Works with any agent protocol including Agent 2 Agent (A2A) and Model Context Protocol (MCP). A2A agents and MCP servers can be discovered through AGNTCY directories and monitored with AGNTCY observability tools.",
   },
 ];
