@@ -7,6 +7,7 @@ import * as CookieConsent from "vanilla-cookieconsent";
 
 interface LinkTrackersProps extends LinkProps {
   target?: AnchorHTMLAttributes<HTMLAnchorElement>["target"];
+  rel?: AnchorHTMLAttributes<HTMLAnchorElement>["rel"]; 
   className?: string;
   segmentMsg: string;
   segmentOpt: Record<string, any>;
@@ -36,11 +37,10 @@ export const LinkTrackers: React.FC<LinkTrackersProps> = ({
     const fullPath = queryString
       ? `${currentPath}?${queryString}`
       : currentPath;
-console.log(cookie)
-    if (target === "_blank") e.preventDefault();
+
+      if (target === "_blank") e.preventDefault();
 
     if (cookie?.categories?.includes("analytics")) {
-      console.log('test')
       analytics.track(segmentMsg, {
         ...segmentOpt,
         url: fullPath,
