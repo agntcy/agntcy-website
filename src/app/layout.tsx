@@ -7,7 +7,6 @@ import Analytics from "components/reusables/analytics";
 import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
 import Scripts from "~/components/layout/scripts";
-import Script from "next/script";
 
 const roboto = Roboto({
   weight: ["100", "400", "700", "900"],
