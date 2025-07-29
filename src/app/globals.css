@@ -72,3 +72,32 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+@layer components {
+  .font-h1 {
+    @apply text-[33px] font-extralight leading-[1.2] tracking-normal md:text-7xl md:font-light lg:text-8xl;
+  }
+  .font-h2 {
+    @apply text-[26px] font-extralight leading-[1.4] tracking-[.01em] md:text-5xl md:font-light lg:text-6xl lg:leading-[1.2];
+  }
+  .font-h3 {
+    @apply text-[23px] font-light leading-[1.5] tracking-normal md:text-4xl md:leading-[1.2] lg:text-5xl;
+  }
+  .font-h4 {
+    @apply text-[23px] font-light leading-[1.5] tracking-normal md:text-2xl lg:text-3xl;
+  }
+  .font-h5 {
+    @apply text-[18px] font-light leading-[1.5] tracking-[-.01em] md:text-[21px] md:leading-[1.6] md:tracking-normal lg:text-xl lg:leading-[1.5];
+  }
+  .font-p {
+    @apply text-base font-light leading-[1.6] tracking-normal md:leading-[1.5]  lg:text-md lg:leading-[1.6];
+  }
+  .font-btn-lg {
+    @apply text-base leading-tight tracking-normal lg:text-lg;
+  }
+  .font-btn {
+    @apply text-base leading-tight tracking-normal;
+  }
+  
+}

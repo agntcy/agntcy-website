@@ -5,35 +5,50 @@ import CookieConsentComponent from "~/components/layout/cookie-consent";
 
 const Footer = () => {
   return (
-    <div className="bg-[#00142B] lg:bottom-2 mt-4 flex flex-col sm:mt-0 sm:justify-center md:flex-row md:space-x-5 w-full py-4">
-      <div className="container mx-auto px-2 flex items-end justify-end lg:items-start lg:justify-start gap-3 md:gap-4">
-        <Button
-          asChild
-          variant={"link"}
-          aria-label={"Terms & Conditions"}
-          className="px-0 text-sm font-thin  text-gray-200 sm:text-center"
-        >
+    <div className="bg-bg lg:bottom-2 mt-4 flex flex-col sm:mt-0 sm:justify-center md:flex-row md:space-x-5 w-full py-4">
+      <div className="pb-5 container mx-auto px-2 flex flex-col justify-end lg:items-start gap-3 md:gap-4 lg:justify-between text-sm font-thin  text-gray-100">
+        <p className="">Copyright © AGNTCY a Series of LF Projects, LLC</p>
+        <p>
+          For web site terms of use, trademark policy and other project policies
+          please see{" "}
           <Link
-            href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html"
-            target={"_blank"}
+            href="https://lfprojects.org"
+            target="_blank"
+            className="underline"
           >
-            Terms & Conditions
+            https://lfprojects.org
           </Link>
-        </Button>
-        <Button
-          asChild
-          variant={"link"}
-          aria-label={"Privacy Policy"}
-          className="px-0 text-sm font-thin  text-gray-200 sm:text-center"
-        >
-          <Link
-            href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html"
-            target={"_blank"}
+          .
+        </p>
+        <div className="flex items-end justify-end lg:items-start lg:justify-start gap-3 md:gap-4">
+          <Button
+            asChild
+            variant={"link"}
+            aria-label={"Terms & Conditions"}
+            className="px-0 text-sm font-thin  text-gray-200 sm:text-center"
           >
-            Privacy Policy
-          </Link>
-        </Button>
-        <CookieConsentComponent />
+            <Link
+              href="https://lfprojects.org/policies/terms-of-use/"
+              target={"_blank"}
+            >
+              Terms & Conditions
+            </Link>
+          </Button>
+          <Button
+            asChild
+            variant={"link"}
+            aria-label={"Privacy Policy"}
+            className="px-0 text-sm font-thin  text-gray-200 sm:text-center"
+          >
+            <Link
+              href="https://lfprojects.org/policies/privacy-policy/"
+              target={"_blank"}
+            >
+              Privacy Policy
+            </Link>
+          </Button>
+          <CookieConsentComponent />
+        </div>
       </div>
     </div>
   );

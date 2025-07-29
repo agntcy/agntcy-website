@@ -2,12 +2,12 @@ import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import Analytics from "components/reusables/analytics";
 import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
 import Scripts from "~/components/layout/scripts";
 import Script from "next/script";
-import { Banner } from "~/components/layout/banner";
 
 const roboto = Roboto({
   weight: ["100", "400", "700", "900"],
@@ -37,7 +37,7 @@ export default function RootLayout({
         <Scripts />
       </head>
       <body
-        className={`${roboto.className} antialiased relative flex min-h-screen flex-col bg-[#00142B]`}
+        className={`${roboto.className} antialiased relative flex min-h-screen flex-col bg-bg`}
       >
         <noscript>
           <iframe
@@ -48,7 +48,6 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         <Suspense fallback={null}>
-          <Banner />
           <Navbar />
           {children}
           <Footer />
