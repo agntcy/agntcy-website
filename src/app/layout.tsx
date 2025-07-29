@@ -24,12 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <head>
-        <Script
-          id="cisco-ctm-core"
-          type="text/javascript"
-          src="https://www.cisco.com/c/dam/cdc/t/ctm-core.js"
-          strategy="beforeInteractive"
-        ></Script>
+
         <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
