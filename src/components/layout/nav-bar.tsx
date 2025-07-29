@@ -72,7 +72,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#00142B] shadow-lg py-8">
+    <nav className="bg-bg shadow-lg py-8">
       <Drawer direction="left">
         <div className="container mx-auto px-2">
           <div className="flex justify-between">

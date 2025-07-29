@@ -8,7 +8,7 @@ export default function Home() {
       <Hero />
       <Downloadable />
       <Quotes />
-      <div className="bg-gradient-to-t from-navy to-bg h-10 w-full"></div>
+      <div className="bg-gradient-to-t from-bg to-bg h-10 w-full"></div>
     </div>
   );
 }
