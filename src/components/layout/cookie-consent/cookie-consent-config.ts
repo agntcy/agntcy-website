@@ -49,7 +49,7 @@ const pluginConfig: CookieConsentConfig = {
           acceptNecessaryBtn: "Reject all",
           showPreferencesBtn: "Manage preferences",
           footer: `
-            <a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy Policy</a>
+            <a href="https://lfprojects.org/policies/privacy-policy/" target="_blank">Privacy Policy</a>
           `,
         },
         preferencesModal: {
@@ -62,7 +62,7 @@ const pluginConfig: CookieConsentConfig = {
             {
               title: "Cookie Usage",
               description:
-                'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" class="cc__link" target="_blank">privacy policy</a>.',
+                'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="https://lfprojects.org/policies/privacy-policy/" class="cc__link" target="_blank">privacy policy</a>.',
             },
             {
               title: "Strictly necessary cookies",
