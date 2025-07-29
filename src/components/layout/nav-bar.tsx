@@ -15,17 +15,6 @@ import { LinkTrackers } from "../reusables/link-trackers";
 const Navbar = () => {
   const navItems = [
     {
-      name: "Agent Directory",
-      href: "https://agent-directory.outshift.com",
-      segmentMsg: "agntcy directory clicked",
-      target: "_blank",
-      segmentOpt: {
-        link_label: "Agent Directory",
-        location: "global header",
-        resource_interaction: "Visit the agntcy directory",
-      },
-    },
-    {
       name: "Documentation",
       href: "https://docs.agntcy.org",
       target: "_blank",
