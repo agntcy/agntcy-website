@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import {
   Drawer,
@@ -10,7 +9,7 @@ import {
   DrawerDescription,
 } from "components/ui/drawer";
 import { Button } from "components/ui/button";
-import { LinkTrackers } from "../reusables/link-trackers";
+import Link from "next/link";
 
 const Navbar = () => {
   const navItems = [
@@ -18,45 +17,21 @@ const Navbar = () => {
       name: "Documentation",
       href: "https://docs.agntcy.org",
       target: "_blank",
-      segmentMsg: "agntcy doc clicked",
-      segmentOpt: {
-        link_label: "Documentation",
-        location: "global header",
-        resource_interaction: "Visit to the doc.agntcy.org",
-      },
     },
     {
       name: "GitHub",
       href: "https://github.com/agntcy",
       target: "_blank",
-      segmentMsg: "agntcy github clicked",
-      segmentOpt: {
-        link_label: "GitHub",
-        location: "global header",
-        resource_interaction: "Visit GitHub repository",
-      },
     },
     {
       name: "Supporters",
       href: "/supporters",
-      segmentMsg: "agntcy supporters clicked",
       target: "_self",
-      segmentOpt: {
-        link_label: "Supporters",
-        location: "global header",
-        resource_interaction: "Visit supporters page",
-      },
     },
     {
       name: "Resources",
       href: "/resources",
       target: "_self",
-      segmentMsg: "agntcy resources clicked",
-      segmentOpt: {
-        link_label: "Resources",
-        location: "global header",
-        resource_interaction: "Visit resources page",
-      },
     },
   ];
 
@@ -81,33 +56,20 @@ const Navbar = () => {
               <div className="">
                 <div className="hidden lg:flex items-center space-x-1">
                   {navItems.map((item) => (
-                    <LinkTrackers
-                      key={item.name}
-                      href={item.href}
-                      target={item.target}
-                      segmentMsg={item.segmentMsg}
-                      segmentOpt={item.segmentOpt}
-                    >
+                    <Link key={item.name} href={item.href} target={item.target}>
                       <div className="py-5 px-3 text-xl text-[#FBAB2C] hover:text-orange-500">
                         {item.name}
                       </div>
-                    </LinkTrackers>
+                    </Link>
                   ))}
-                  <LinkTrackers
+                  <Link
                     target="_blank"
                     href="https://join.slack.com/t/agntcy/shared_invite/zt-34sxmw5e8-LqlUxxcxROq3HRb56QSkUg"
-                    segmentMsg="agntcy join us clicked"
-                    segmentOpt={{
-                      link_label: "Join us",
-                      location: "global header",
-                      resource_interaction:
-                        "view AGNTCY Membership Intake Form",
-                    }}
                   >
                     <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
                       Join us
                     </div>
-                  </LinkTrackers>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -152,15 +114,9 @@ const Navbar = () => {
                 key={item.name}
                 asChild
               >
-                <LinkTrackers
-                  key={item.name}
-                  href={item.href}
-                  target={item.target}
-                  segmentMsg={item.segmentMsg}
-                  segmentOpt={item.segmentOpt}
-                >
+                <Link key={item.name} href={item.href} target={item.target}>
                   {item.name}
-                </LinkTrackers>
+                </Link>
               </Button>
             ))}
             <Button
@@ -169,18 +125,12 @@ const Navbar = () => {
               size="lg"
               asChild
             >
-              <LinkTrackers
+              <Link
                 target="_blank"
                 href="https://join.slack.com/t/agntcy/shared_invite/zt-34sxmw5e8-LqlUxxcxROq3HRb56QSkUg"
-                segmentMsg="agntcy join us clicked"
-                segmentOpt={{
-                  link_label: "Join us",
-                  location: "global header",
-                  resource_interaction: "view AGNTCY Membership Intake Form",
-                }}
               >
                 Join us
-              </LinkTrackers>
+              </Link>
             </Button>
           </DrawerDescription>
         </DrawerContent>

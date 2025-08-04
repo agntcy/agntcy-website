@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LinkTrackers } from "../reusables/link-trackers";
+import Link from "next/link";
 
 export default function ResourcesCard({ resource }: { resource: Resource }) {
   return (
@@ -8,28 +8,11 @@ export default function ResourcesCard({ resource }: { resource: Resource }) {
         key={`gettingStarted-${resource.title}`}
         className="bg-card rounded-lg shadow-md group hover:shadow-lg transition-shadow duration-300 hover:shadow-blue-300"
       >
-        <LinkTrackers
+        <Link
           href={resource.resourceLink}
           target={resource.resourceLink == "/resources" ? "_self" : "_blank"}
           rel="noopener noreferrer"
           className="text-primary flex flex-col gap-4"
-          segmentMsg="agntcy resource clicked"
-          segmentOpt={{
-            file_name: resource.title || "",
-            resource_type:
-              resource.title?.toLowerCase().includes("video") ||
-              resource.title?.toLowerCase().includes("youtube")
-                ? "video"
-                : "article",
-            resource_author: resource.contributor || "",
-            is_gated_asset: "false",
-            location: "body",
-            resource_interaction:
-              resource.title?.toLowerCase().includes("video") ||
-              resource.title?.toLowerCase().includes("youtube")
-                ? "view video"
-                : "view an article",
-          }}
         >
           {resource.isFeatured ? (
             <Image
@@ -69,7 +52,7 @@ export default function ResourcesCard({ resource }: { resource: Resource }) {
               )}
             </div>
           </div>
-        </LinkTrackers>
+        </Link>
       </div>
     </div>
   );
