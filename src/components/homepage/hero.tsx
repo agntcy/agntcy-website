@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LinkTrackers } from "../reusables/link-trackers";
+import Link from "next/link";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 import { formativeMembers } from "~/data/members";
 import RenderLogos from "../reusables/render-logo";
@@ -45,20 +45,11 @@ const Hero = () => {
               verify capabilities, and work together on complex problems.
             </div>
             <div className="pb-12 flex">
-              <LinkTrackers
-                target="_blank"
-                href="https://github.com/agntcy"
-                segmentMsg="agntcy join the build clicked"
-                segmentOpt={{
-                  link_label: "Join the build",
-                  location: "body",
-                  resource_interaction: "Visit GitHub repository",
-                }}
-              >
+              <Link target="_blank" href="https://github.com/agntcy">
                 <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-9 rounded-full">
                   Join the build
                 </div>
-              </LinkTrackers>
+              </Link>
             </div>
           </div>
         </div>
@@ -88,20 +79,11 @@ const Hero = () => {
                 We ❤️ all protocols
               </h2>
               <div className="flex">
-                <LinkTrackers
-                  target="_blank"
-                  href="https://github.com/agntcy"
-                  segmentMsg="agntcy join the build clicked"
-                  segmentOpt={{
-                    link_label: "Join the build",
-                    location: "body",
-                    resource_interaction: "Visit GitHub repository",
-                  }}
-                >
+                <Link target="_blank" href="https://github.com/agntcy">
                   <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-9 rounded-full">
                     Join the build
                   </div>
-                </LinkTrackers>
+                </Link>
               </div>
             </div>
             <div className="space-y-4 lg:col-span-2">

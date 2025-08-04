@@ -2,8 +2,8 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 import GlowingButton from "~/components/reusables/glowing-button";
-import { LinkTrackers } from "~/components/reusables/link-trackers";
 import { OutshiftLogoFull } from "~/components/icons";
+import Link from "next/link";
 
 const CiscoSans = localFont({
   src: [
@@ -61,23 +61,13 @@ export const Downloadable = async ({ dark = false }) => {
                 <div className="flex">
                   <div className="hidden md:block">
                     <GlowingButton>
-                      <LinkTrackers
+                      <Link
                         href="https://outshift-headless-cms-s3.s3.us-east-2.amazonaws.com/Internet_of_Agents_Whitepaper.pdf"
                         target="_blank"
                         className="font-btn-lg px-auto py-3 md:px-5 font-light"
-                        segmentMsg="Downloadable clicked"
-                        segmentOpt={{
-                          link_label: "Download",
-                          location: "body",
-                          resource_interaction: "read a PDF",
-                          file_name: "Internet_of_Agents_Whitepaper.pdf",
-                          resource_type: "white paper",
-                          resource_author: "Vijoy Pandey, Ph.D",
-                          is_gated_asset: "false",
-                        }}
                       >
                         Download
-                      </LinkTrackers>
+                      </Link>
                     </GlowingButton>
                   </div>
                 </div>
@@ -100,21 +90,12 @@ export const Downloadable = async ({ dark = false }) => {
                 className=" block max-w-[200px] text-center md:hidden font-light"
                 aria-label="Download"
               >
-                <LinkTrackers
+                <Link
                   href="https://outshift-headless-cms-s3.s3.us-east-2.amazonaws.com/Internet_of_Agents_Whitepaper.pdf"
                   target="_blank"
-                  segmentMsg="Downloadable clicked"
-                  segmentOpt={{
-                    link_label: "Download",
-                    location: "body",
-                    resource_interaction: "read a PDF",
-                    file_name:
-                      "Welcome to the future of agentic AI: The Internet of Agents",
-                    is_gated_asset: "false",
-                  }}
                 >
                   Download
-                </LinkTrackers>
+                </Link>
               </GlowingButton>
             </div>
           </div>

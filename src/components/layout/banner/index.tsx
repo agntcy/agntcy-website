@@ -3,19 +3,13 @@ import { AspectRatio } from "~/components/ui/aspect-ratio";
 import Image from "next/image";
 import { Button } from "~/components/ui/button";
 import { ArrowLongRight } from "~/components/icons";
-import { LinkTrackers } from "~/components/reusables/link-trackers";
+import Link from "next/link";
 
 export function Banner() {
   return (
     <>
       <div className="bg-gradient-to-r from-[#1E5BB3] to-[#9345E1] text-white ">
-        <LinkTrackers
-          segmentMsg="Banner Link Clicked"
-          segmentOpt={{
-            link_label: "Register today",
-            location: "banner",
-            resource_interaction: "visit the internet of agents event page",
-          }}
+        <Link
           href="https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/"
           target="_blank"
           aria-label="Learn more about Panopica"
@@ -55,7 +49,7 @@ export function Banner() {
               <ArrowLongRight size={35} />
             </div>
           </div>
-        </LinkTrackers>
+        </Link>
       </div>
     </>
   );
