@@ -551,6 +551,22 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "Supertab",
+    src: "/images/supertab.png",
+    width: 170,
+    height: 31,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "beam AI",
+    src: "/images/beam.png",
+    width: 162,
+    height: 32,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
@@ -883,6 +899,14 @@ export const quotes = [
     authorTitle: "CEO & Co-Founder",
     blurb:
       "We're excited to join AGNTCY and stand at the frontier of the agentic web. At Tyk, we believe the future of the internet is composable, intelligent, and driven by autonomy, and we're here to help shape it.",
+  },
+  {
+    name: "Supertab",
+    img: logos.find((logo) => logo.name === "Supertab"),
+    authorName: "Cosmin Ene",
+    authorTitle: "CEO and Cofounder",
+    blurb:
+      "The next wave of enterprise AI will depend on trust, identity, and frictionless transactions between agents. AGNTCY is tackling this problem head-on, while Supertab is focused on aggregating and settling payments across agents, APIs, and services. The standards AGNTCY is setting are critical, and we’re excited to partner with them to help shape the future of enterprise AI and commerce.",
   },
 ];
 
