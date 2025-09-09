@@ -40,7 +40,8 @@ export default function RootLayout({
 
 export const metadata: Metadata = {
   title: "AGNTCY.org",
-  description: "An open source collective for inter-agent collaboration.",
+  description: "AGNTCY is building the open-source infrastructure stack for the Internet of Agents—enabling discovery, identity, messaging, and observability across frameworks.",
+  keywords: "AI agents, multi-agent systems, agent collaboration, open-source AI, agent infrastructure, agent discovery, agent messaging, agent identity, agent observability, AGNTCY",
   openGraph: {
     title: "AGNTCY.org",
     description: "An open source collective for inter-agent collaboration.",
