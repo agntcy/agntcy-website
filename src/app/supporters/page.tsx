@@ -17,6 +17,8 @@ export default function Supporters() {
 
 export const metadata: Metadata = {
   title: "AGNTCY.org | Supporters",
+  description: "Discover the organizations and contributors supporting AGNTCY.org in building an open, interoperable Internet of Agents. Join a diverse collective shaping the future of multi-agent AI collaboration.",
+  keywords: "AGNTCY supporters, multi-agent AI, agent collaboration, open-source AI, AI community, AGNTCY members",
   alternates: {
     canonical: "/supporters",
   },
