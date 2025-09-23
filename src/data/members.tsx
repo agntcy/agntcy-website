@@ -567,6 +567,14 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "Ory",
+    src: "/images/ory.png",
+    width: 90,
+    height: 40,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
@@ -874,7 +882,7 @@ export const quotes = [
     authorName: "Andor Kesselman",
     authorTitle: "CEO, AgentOverlay",
     blurb:
-      "Agents will only fulfill their promise in the market when they can interoperate across company and platform boundaries. That’s why open protocols like the OASF and ACP are so powerful. At AgentOverlay, we’re building on these standards and proudly back AGNTCY efforts to turn an interoperable agent ecosystem into reality",
+      "Agents will only fulfill their promise in the market when they can interoperate across company and platform boundaries. That’s why open protocols like the OASF and ACP are so powerful. At AgentOverlay, we’re building on these standards and proudly back AGNTCY efforts to turn an interoperable agent ecosystem into reality",
   },
   {
     name: "PatternAgenticAI",
@@ -907,6 +915,14 @@ export const quotes = [
     authorTitle: "CEO and Cofounder",
     blurb:
       "The next wave of enterprise AI will depend on trust, identity, and frictionless transactions between agents. AGNTCY is tackling this problem head-on, while Supertab is focused on aggregating and settling payments across agents, APIs, and services. The standards AGNTCY is setting are critical, and we’re excited to partner with them to help shape the future of enterprise AI and commerce.",
+  },
+  {
+    name: "Ory",
+    img: logos.find((logo) => logo.name === "Ory"),
+    authorName: "Jeff Kukowski",
+    authorTitle: "CEO, Ory",
+    blurb:
+      "Auth is critical as AI agents increasingly act independently or work together to perform tasks that include accessing sensitive files, handling financial transactions, and other critical workflows. Ory addresses this need by supporting the massive scale required to handle agentic authentication while also providing the authorization infrastructure that enables agents to transact safely and securely. As a standards focused company, we're excited to join AGNTCY to help shape a future of secure, safe, and scalable AI agents.",
   },
 ];
 
