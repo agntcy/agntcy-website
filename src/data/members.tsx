@@ -576,6 +576,7 @@ export const logos = [
     featured: false,
   },
 ];
+
 export const quotes = [
   {
     name: "cisco",
