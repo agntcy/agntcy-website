@@ -925,6 +925,7 @@ export const quotes = [
       "Auth is critical as AI agents increasingly act independently or work together to perform tasks that include accessing sensitive files, handling financial transactions, and other critical workflows. Ory addresses this need by supporting the massive scale required to handle agentic authentication while also providing the authorization infrastructure that enables agents to transact safely and securely. As a standards focused company, we're excited to join AGNTCY to help shape a future of secure, safe, and scalable AI agents.",
   },
 ];
+
 export const formativeMembers = [
   {
     name: "Cisco",
