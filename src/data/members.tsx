@@ -575,6 +575,22 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "Orium",
+    src: "/images/orium.png",
+    width: 117,
+    height: 40,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Valtech",
+    src: "/images/valtech.png",
+    width: 125,
+    height: 28,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
@@ -923,6 +939,20 @@ export const quotes = [
     authorTitle: "CEO, Ory",
     blurb:
       "Auth is critical as AI agents increasingly act independently or work together to perform tasks that include accessing sensitive files, handling financial transactions, and other critical workflows. Ory addresses this need by supporting the massive scale required to handle agentic authentication while also providing the authorization infrastructure that enables agents to transact safely and securely. As a standards focused company, we're excited to join AGNTCY to help shape a future of secure, safe, and scalable AI agents.",
+  },
+  {
+    name: "Valtech",
+    img: logos.find((logo) => logo.name === "Valtech"),
+    authorName: "Casper Rasmussen",
+    authorTitle: "Chief Transformation Officer, Valtech",
+    blurb:"Valtech rejects the false “efficiency vs. growth” AI trade-off. Instead, real AI-driven orchestration will generate cost and process efficiency to accelerate experience innovation. When AI need to bridge operation to experience, the enterprise eco-system underneath must be vendor-neutral, composed, and multi-model.",
+  },
+  {
+    name: "Orium",
+    img: logos.find((logo) => logo.name === "Orium"),
+    authorName: "Jason Cottrell",
+    authorTitle: "CEO Orium",
+    blurb:"We believe the next leap in digital experience will come from agents that think, act, and collaborate across systems, and the Internet of Agents is where that future begins.",
   },
 ];
 
