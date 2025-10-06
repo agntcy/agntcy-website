@@ -24,6 +24,11 @@ const Navbar = () => {
       target: "_blank",
     },
     {
+      name: "Changelog",
+      href: "/changelog",
+      target: "_self",
+    },
+    {
       name: "Supporters",
       href: "/supporters",
       target: "_self",
