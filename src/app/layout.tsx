@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
+import { Banner } from "~/components/layout/banner";
 
 const roboto = Roboto({
   weight: ["100", "400", "700", "900"],
@@ -29,6 +30,7 @@ export default function RootLayout({
         className={`${roboto.className} antialiased relative flex min-h-screen flex-col bg-bg`}
       >
         <Suspense fallback={null}>
+          <Banner />
           <Navbar />
           {children}
           <Footer />
