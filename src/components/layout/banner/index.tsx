@@ -8,9 +8,9 @@ import Link from "next/link";
 export function Banner() {
   return (
     <>
-      <div className="bg-gradient-to-r from-[#1E5BB3] to-[#9345E1] text-white ">
+      <div className="bg-[#FBAB2C] text-black ">
         <Link
-          href="https://developers.googleblog.com/en/google-cloud-donates-a2a-to-linux-foundation/"
+          href="https://outshift.cisco.com/events/agntcy-summit-2025"
           target="_blank"
           aria-label="Learn more about Panopica"
           className="lg:font-btn group flex w-full items-center gap-1 py-5  text-xs md:py-6"
@@ -22,20 +22,17 @@ export function Banner() {
                   <AspectRatio ratio={179 / 74}>
                     <Image
                       src={
-                        "https://outshift-headless-cms-s3.s3.us-east-2.amazonaws.com/_logo-Outshift_1C-WHITE%402x%202.png"
+                        "https://outshift-headless-cms-s3.s3.us-east-2.amazonaws.com/_logo-Outshift_1C-BLACK.svg"
                       }
-                      alt="Panoptica logo"
+                      alt="Outshift logo"
                       fill
                       unoptimized
                     ></Image>
                   </AspectRatio>
                 </div>
               </div>
-              <p className="md:text-lg text-[15px]">
-                As part of our commitment to an open and interoperable agentic
-                ecosystem, we are proud to announce that we are now foundational
-                members of Google's Agent2Agent project under the Linux
-                Foundation!
+              <p className="md:text-lg text-[15px] pl-8">
+                Join us in-person at the Inaugural AGNTCY Summit in SF on October 22, 2025
               </p>
             </div>
 
@@ -43,7 +40,7 @@ export function Banner() {
               variant="secondary"
               className="align-end hidden px-0 font-medium text-[#9345E1] group-hover:bg-white group-hover:text-slate-900 md:px-3 lg:flex"
             >
-              <p className="font-h6">Learn More</p>
+              <p className="font-h6 text-black font-bold">RSVP</p>
             </Button>
             <div className="ml-1 lg:hidden">
               <ArrowLongRight size={35} />
