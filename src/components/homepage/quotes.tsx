@@ -13,8 +13,11 @@ import { Marquee } from "components/ui/marquee";
 import QuoteCard from "../reusables/quote-card";
 import QuoteImg from "../reusables/quote-img";
 import QuoteAuthor from "../reusables/quote-title";
+import { fetchQuotes } from "~/lib/supporters";
 
-const Quotes = () => {
+const Quotes = async() => {
+
+  const quotes: Quotes[] = await fetchQuotes() || quotes;
   const third = Math.ceil(quotes.length / 3);
   const firstRow = quotes.slice(0, third);
   const secondRow = quotes.slice(third, third * 2);
