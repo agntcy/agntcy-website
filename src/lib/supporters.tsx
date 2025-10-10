@@ -1,3 +1,4 @@
+// "use server";
 import { logos, quotes } from "~/data/members";
 
 export async function fetchLogo() {
@@ -17,31 +18,26 @@ export async function fetchLogo() {
   return uniqueLogos;
 }
 
-export async function fetchQuotes() {
-    console.log("Fetching Quotes", quotes);
-    
-    const uniqueQuotes: Quotes[] = quotes;
+export async function fetchQuotes() {  
     const uniqueLogos = await fetchLogo();
+    const uniqueQuotes= quotes;
+    
     const fetchQuotes  = await fetch(
       "https://script.google.com/macros/s/AKfycbz0neq7L4iBf_UZHqh40l7lsl5pmW14Yoin0LOHgMzjOVupr9EKPZWomubgNUdVKBscSQ/exec"
         , { next: { revalidate: 3600 } }
     );
+    
     const newQuotes = await fetchQuotes.json();
-    console.log(newQuotes);
 
     newQuotes.data.forEach((quote: Quotes) => {
     // Update the image field before pushing
     quote.img = uniqueLogos.find((logo) => logo.name === quote?.name) || quote.img,
     uniqueQuotes.push(quote);
-    });   
+    });
+
+    const filteredQuotes = Array.from(
+      new Map(uniqueQuotes.map(q => [q.name, q])).values()
+    );
     
-    // newLogos.data.map((logo: Logo) => logos.push(logo));
-    // const uniqueLogosMap = new Map<string, Logo>();
-    // logos.forEach((logo: Logo) => {
-    //   if (!uniqueLogosMap.has(logo.name)) {
-    //     uniqueLogosMap.set(logo.name, logo);
-    //   }
-    // });
-    // const uniqueLogos = Array.from(uniqueLogosMap.values());
-    return newQuotes.data as Quotes[];
+    return filteredQuotes as Quotes[];
 }
