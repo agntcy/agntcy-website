@@ -27,7 +27,7 @@ export const getCommitData = async (
 
   const res = await fetch(url, {
     headers: {
-      Authorization: `Bearer ${token}`,
+      // Authorization: `Bearer ${token}`,
       Accept: "application/vnd.github+json",
     },
     next: { revalidate: 3600 }, // Optional: cache for 1 hour

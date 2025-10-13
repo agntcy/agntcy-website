@@ -10,7 +10,8 @@ export default async function ChangeLogContent() {
         `https://api.github.com/repos/${process.env.NEXT_PUBLIC_GITHUB_OWNER}/${repo}/releases?per_page=5`,
         {
           headers: {
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY}`,
+            // Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY}`,
+            Accept: "application/vnd.github+json",
           },
           next: { revalidate: 3600 },
         }
