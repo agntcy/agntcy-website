@@ -17,9 +17,9 @@ export const getCommitData = async (
   tagName: string
 ): Promise<CommitData> => {
   const owner = process.env.NEXT_PUBLIC_GITHUB_OWNER;
-  const token = process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY;
+  // const token = process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY;
 
-  if (!owner || !token) {
+  if (!owner) {
     throw new Error("Missing GitHub environment variables.");
   }
 
