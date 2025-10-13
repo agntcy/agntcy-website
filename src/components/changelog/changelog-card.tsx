@@ -46,7 +46,20 @@ export default function ChangeLogCard({ release }: { release: Release}) {
               </a>
             );
           }
-          return part ? <span key={i}>• {part}</span> : "";
+
+          // Match raw GitHub URLs
+          const urlMatch = part.match(/https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/(pull|issues|commit)\/([^\s)]+)/);
+          if (urlMatch) {
+            const [url, , , , identifier] = urlMatch;
+            return (
+              <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="text-blue-600">
+                #{identifier}
+              </a>
+            );
+          }
+
+          // Fallback: render plain text          
+          return (part && (part !== "pull" && part !== "issues" && part !== "commit" )) ? <span key={i}> • {part}</span> : null;
         })}
       </div>
     );
