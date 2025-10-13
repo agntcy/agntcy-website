@@ -9,11 +9,16 @@ export default function ChangeLogCard({ release }: { release: Release}) {
   const [commitData, setCommitData] = useState<CommitData | null>(null);
 
   useEffect(() => {
-    (async () => {
+  (async () => {
+    try {
       const data = await getCommitData(release.repo, release.tag_name);
       setCommitData(data);
-    })();
-  }, [release.repo, release.tag_name]);
+    } catch (error) {
+      console.error("Failed to fetch commit data:", error);
+    }
+  })();
+}, [release.repo, release.tag_name]);
+
   
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const toggle = (index: number) => {
@@ -31,18 +36,21 @@ export default function ChangeLogCard({ release }: { release: Release}) {
   }
 
   function replacePrLinks(line: string) {
-  
-    const parts = line.split(/(https:\/\/github\.com\/[^\/]+\/[^\/]+\/pull\/\d+)/);
+    // Match raw URLs and markdown-style links
+    const parts = line.split(/(\(\[[^\]]+\]\(https:\/\/github\.com\/[^\/]+\/[^\/]+\/(pull|issues|commit)\/[^\)]+\)\)|https:\/\/github\.com\/[^\/]+\/[^\/]+\/(pull|issues|commit)\/[^\s)]+)/);
 
     return (
-      <div>
+      <span>
         {parts.map((part, i) => {
-          const match = part.match(/https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/pull\/(\d+)/);
-          if (match) {
-            const [url, owner, repo, prNumber] = match;
+          if (!part) return null;
+
+          // Match markdown-style links: ([#823](...)), ([4e1dd41](...))
+          const markdownMatch = part.match(/\(\[([^\]]+)\]\((https:\/\/github\.com\/[^\/]+\/[^\/]+\/(pull|issues|commit)\/[^\)]+)\)\)/);
+          if (markdownMatch) {
+            const [, label, url] = markdownMatch;
             return (
               <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="text-blue-600">
-                [{prNumber}]
+                {label}
               </a>
             );
           }
@@ -58,14 +66,16 @@ export default function ChangeLogCard({ release }: { release: Release}) {
             );
           }
 
-          // Fallback: render plain text          
-          return (part && (part !== "pull" && part !== "issues" && part !== "commit" )) ? <span key={i}> • {part}</span> : null;
+          // Fallback: render plain text
+          console.log({part});
+          
+          return (part && (part !== "pull" && part !== "issues" && part !== "commit")) ? <span key={i}>• {part}</span> : null;
         })}
-      </div>
+      </span>
     );
-  };
+  }
 
-  function changeLogDetails(changelog: string) {
+  function ChangeLogDetails({ changelog }: { changelog: string }) {
     const [expanded, setExpanded] = useState(false);
     const [isOverflowing, setIsOverflowing] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -76,7 +86,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
       const el = containerRef.current;
       if (el) {
         const lineHeight = parseFloat(getComputedStyle(el).lineHeight);
-        const maxHeight = lineHeight * 8; // 8 lines max
+        const maxHeight = lineHeight * 8;
         setIsOverflowing(el.scrollHeight > maxHeight);
       }
     }, [changelog]);
@@ -86,7 +96,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
         <div
           ref={containerRef}
           style={{
-            maxHeight: expanded ? "none" : "12em", // approx 6 lines
+            maxHeight: expanded ? "none" : "12em",
             overflow: "hidden",
           }}
           className="transition-all duration-300"
@@ -139,46 +149,51 @@ export default function ChangeLogCard({ release }: { release: Release}) {
               {expanded ? "Show less" : "Show more"}
             </button>
           </div>
-          )}
+        )}
       </div>
     );
   }
 
-  function ChangeAssetDetails(data: any, repo: string, tag_name: string) {
-    const defaultAssets = [
-      {title: "Source code (zip)", url:`https://github.com/agntcy/${repo}/archive/refs/tags/${tag_name}.zip`, publishedDate: formatDate(data[0].updated_at)},
-      {title: "Source code (tar.gz)", url:`https://github.com/agntcy/${repo}/archive/refs/tags/${tag_name}.tar.gz`, publishedDate: formatDate(data[0].updated_at)}
-    ];
+  function ChangeAssetDetails({ data, repo, tag_name }: { data: any[]; repo: string; tag_name: string }) {
+  if (!data || data.length === 0) return null;
 
-    // Clone defaultAssets to avoid mutation (optional but cleaner)
-    const fullAssets = [...defaultAssets];
+  const defaultAssets = [
+    {
+      title: "Source code (zip)",
+      url: `https://github.com/agntcy/${repo}/archive/refs/tags/${tag_name}.zip`,
+      publishedDate: formatDate(data[0].updated_at),
+    },
+    {
+      title: "Source code (tar.gz)",
+      url: `https://github.com/agntcy/${repo}/archive/refs/tags/${tag_name}.tar.gz`,
+      publishedDate: formatDate(data[0].updated_at),
+    },
+  ];
 
-    // Add dynamic assets from data
-    data.forEach((asset: any) => {
-      fullAssets.push({
-        title: asset.name,
-        url: asset.browser_download_url,
-        publishedDate: formatDate(asset.updated_at),
-      });
-    });
-    
-    return (
-      <div>
-        <div className="text-sm font-bold">Assets ({fullAssets.length})</div>
-         {[...fullAssets]
-          .sort((a, b) => a.title.localeCompare(b.title))
-          .map((asset) => (
-            <div key={asset.url} className="grid grid-cols-6 m-2 border border-[#187ADC] rounded-lg px-4 py-2">
-              <div className="col-span-4 flex items-center gap-2">
-                <Image src="/images/assets.png" alt="Asset" height={15} width={15} />
-                <span className="text-[#FBAB2C] font-bold"><a href={asset.url} target="_blank">{asset.title}</a></span>
-              </div>
-              <div className="col-span-2 text-right">{asset.publishedDate}</div>
-            </div>
-        ))}
-      </div>
-    );
-  }
+  const fullAssets = [...defaultAssets, ...data.map(asset => ({
+    title: asset.name,
+    url: asset.browser_download_url,
+    publishedDate: formatDate(asset.updated_at),
+  }))];
+
+  return (
+    <section aria-label="Release Assets">
+      <h2 className="text-sm font-bold">Assets ({fullAssets.length})</h2>
+      {fullAssets.sort((a, b) => a.title.localeCompare(b.title)).map(asset => (
+        <div key={asset.url} className="grid grid-cols-6 m-2 border border-[#187ADC] rounded-lg px-4 py-2">
+          <div className="col-span-4 flex items-center gap-2">
+            <Image src="/images/assets.png" alt="Download asset icon" height={15} width={15} />
+            <span className="text-[#FBAB2C] font-bold">
+              <a href={asset.url} target="_blank" rel="noopener noreferrer">{asset.title}</a>
+            </span>
+          </div>
+          <div className="col-span-2 text-right">{asset.publishedDate}</div>
+        </div>
+      ))}
+    </section>
+  );
+}
+
 
   const authors = Array.from(new Set(release?.body.match(/@\w+/g) || []));
   const changelogMatch = release?.body.match(/\*\*Full Changelog\*\*:\s*(\S+)/);
@@ -192,7 +207,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
       <div className="pt-4 pb-8">
         <div className="text-xl text-white">{release.heading ? release.heading : release.tag_name}</div>
         {/* <div className="text-sm text-[#9BB3FF]">{release.subheading}</div> */}
-        <div className="pt-4 text-white">{changeLogDetails(release.body)}</div>
+        <div className="pt-4 text-white">{<ChangeLogDetails changelog={release.body} />}</div>
       </div>
       <div className="text-white flex gap-2 text-xs px-2 pb-2">
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Version:</b> {release.tag_name}</div>
@@ -203,8 +218,8 @@ export default function ChangeLogCard({ release }: { release: Release}) {
       </div>
       <div className="text-white flex gap-2 text-xs px-2">
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Authors:</b> {authors.join(", ")}</div>
-        <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>PRs:</b><a href={commitData?.url} target="_blank">{commitData?.sha.substring(0,7)}</a></div>
-        <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Compare:</b> <a href={changelogUrl ? changelogUrl : "/"} target="_blank" >Previous version</a></div>
+        <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>PRs:</b><a href={commitData?.url} target="_blank" rel="noopener noreferrer">{commitData?.sha.substring(0,7)}</a></div>
+        <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Compare:</b> <a href={changelogUrl ? changelogUrl : "/"} target="_blank" rel="noopener noreferrer">Previous version</a></div>
       </div>
       <div className="text-white text-sm py-8">
         <div key={release.id} className="border-b border-[#187ADC]">
@@ -218,16 +233,16 @@ export default function ChangeLogCard({ release }: { release: Release}) {
           {openIndex === release.id && (
             <div>
               {release?.assets.length > 0 && (
-                <div className="p-3 text-white bg-[#00142B] rounded-lg">{ChangeAssetDetails(release.assets, release.repo, release.tag_name)}</div>
+                <div className="p-3 text-white bg-[#00142B] rounded-lg">{<ChangeAssetDetails data={release.assets} repo={release.repo} tag_name={release.tag_name} />}</div>
               )}
             </div>
           )}
         </div>
       </div>
       <div className="flex gap-4">
-        <div className="text-sm text-[#FBAB2C]"><a href={`https://github.com/agntcy/${release.repo}`} target="_blank">Docs</a></div>
-        <div className="text-sm text-[#FBAB2C]"><a href={commitData?.url}  target="_blank">Release PR</a></div>
-        <div className="text-sm text-[#FBAB2C]"><a href={changelogUrl ? changelogUrl : "/"}  target="_blank">Compare</a></div>
+        <div className="text-sm text-[#FBAB2C]"><a href={`https://github.com/agntcy/${release.repo}`} target="_blank" rel="noopener noreferrer">Docs</a></div>
+        <div className="text-sm text-[#FBAB2C]"><a href={commitData?.url}  target="_blank" rel="noopener noreferrer">Release PR</a></div>
+        <div className="text-sm text-[#FBAB2C]"><a href={changelogUrl ? changelogUrl : "/"}  target="_blank" rel="noopener noreferrer">Compare</a></div>
       </div>
     </div>
 );
