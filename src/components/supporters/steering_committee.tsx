@@ -1,4 +1,3 @@
-"use client";
 import { formativeMembers } from "~/data/members";
 import Image from "next/image";
 import { AspectRatio } from "components/ui/aspect-ratio";
