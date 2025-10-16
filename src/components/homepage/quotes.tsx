@@ -14,7 +14,7 @@ import { Marquee } from "components/ui/marquee";
 import QuoteCard from "../reusables/quote-card";
 import QuoteImg from "../reusables/quote-img";
 import QuoteAuthor from "../reusables/quote-title";
-import { fetchQuotes } from "~/lib/supporters";
+import { fetchQuotes } from "~/app/actions/supporters";
 
 const Quotes = () => {
 

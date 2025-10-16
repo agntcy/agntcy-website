@@ -1,12 +1,16 @@
-// "use server";
+'use server';
 import { logos, quotes } from "~/data/members";
 
 export async function fetchLogo() {
   const fetchLogo  = await fetch(
     "https://script.google.com/macros/s/AKfycbylpZlLnYDajqAWJEQlp9N8k0yazOemGufYpehoxB12oo_aL3lN2wQW0xpGc4AcWab8/exec",
-    { next: { revalidate: 3600 } }
+    {
+    next: { revalidate: 3600 }
+    }
   );
   const newLogos = await fetchLogo.json();
+  console.log(newLogos?.data);
+  
   newLogos.data.map((logo: Logo) => logos.push(logo));
   const uniqueLogosMap = new Map<string, Logo>();
   logos.forEach((logo: Logo) => {
@@ -15,6 +19,8 @@ export async function fetchLogo() {
     }
   });
   const uniqueLogos = Array.from(uniqueLogosMap.values());
+  console.log("Length: ", uniqueLogos.length);
+  
   return uniqueLogos;
 }
 
@@ -26,12 +32,11 @@ export async function fetchQuotes() {
       "https://script.google.com/macros/s/AKfycbz0neq7L4iBf_UZHqh40l7lsl5pmW14Yoin0LOHgMzjOVupr9EKPZWomubgNUdVKBscSQ/exec"
         , { next: { revalidate: 3600 } }
     );
-    
     const newQuotes = await fetchQuotes.json();
 
     newQuotes.data.forEach((quote: Quotes) => {
     // Update the image field before pushing
-    quote.img = uniqueLogos.find((logo) => logo.name === quote?.name) || quote.img,
+    quote.img = uniqueLogos.find((logo) => logo.name === quote?.name) || quote.img;
     uniqueQuotes.push(quote);
     });
 

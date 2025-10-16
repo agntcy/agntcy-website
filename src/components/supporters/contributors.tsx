@@ -1,5 +1,5 @@
 import RenderLogos from "../reusables/render-logo";
-import { fetchLogo } from "~/lib/supporters";
+import { fetchLogo } from "~/app/actions/supporters";
 
 const Members = async () => {
 
