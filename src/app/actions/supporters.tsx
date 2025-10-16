@@ -9,7 +9,6 @@ export async function fetchLogo() {
     }
   );
   const newLogos = await fetchLogo.json();
-  console.log(newLogos?.data);
   
   newLogos.data.map((logo: Logo) => logos.push(logo));
   const uniqueLogosMap = new Map<string, Logo>();
@@ -19,7 +18,6 @@ export async function fetchLogo() {
     }
   });
   const uniqueLogos = Array.from(uniqueLogosMap.values());
-  console.log("Length: ", uniqueLogos.length);
   
   return uniqueLogos;
 }
