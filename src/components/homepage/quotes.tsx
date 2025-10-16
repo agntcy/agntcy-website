@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "components/ui/card";
 import {
   Carousel,
@@ -7,14 +8,26 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "components/ui/carousel";
-import { quotes } from "data/members";
+import { quotes as InitialQuotes } from "~/data/members";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { Marquee } from "components/ui/marquee";
 import QuoteCard from "../reusables/quote-card";
 import QuoteImg from "../reusables/quote-img";
 import QuoteAuthor from "../reusables/quote-title";
+import { fetchQuotes } from "~/app/actions/supporters";
 
 const Quotes = () => {
+
+const [quotes, setQuotes] = useState(InitialQuotes);
+
+  useEffect(() => {
+    const loadQuotes = async () => {
+      const data = await fetchQuotes();
+      setQuotes(data);
+    };
+    loadQuotes();
+  }, []);  
+    
   const third = Math.ceil(quotes.length / 3);
   const firstRow = quotes.slice(0, third);
   const secondRow = quotes.slice(third, third * 2);
