@@ -1,4 +1,3 @@
-'use server';
 import { logos, quotes } from "~/data/members";
 
 export async function fetchLogo() {
@@ -25,7 +24,7 @@ export async function fetchLogo() {
 export async function fetchQuotes() {  
     const uniqueLogos = await fetchLogo();
     const uniqueQuotes= quotes;
-    
+
     const fetchQuotes  = await fetch(
       "https://script.google.com/macros/s/AKfycbz0neq7L4iBf_UZHqh40l7lsl5pmW14Yoin0LOHgMzjOVupr9EKPZWomubgNUdVKBscSQ/exec"
         , { next: { revalidate: 3600 } }
