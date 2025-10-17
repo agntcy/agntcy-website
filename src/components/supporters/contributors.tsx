@@ -1,7 +1,9 @@
 import RenderLogos from "../reusables/render-logo";
-import { logos } from "~/data/members";
+import { fetchLogo } from "~/lib/supporters";
 
-const Members = () => {
+const Members = async () => {
+  const logos: Logo[] = await fetchLogo();
+
   return (
     <div className="mx-auto 2xl:mx-0 container w-full py-2 md:py-2 lg:py-6">
       <div className="pb-16">
@@ -10,8 +12,7 @@ const Members = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center lg:grid-cols-3 gap-3 pb-8 md:pb-3 px-4 md:px-4">
           {RenderLogos(
-            logos
-              .sort((a, b) => a.name.localeCompare(b.name)),
+            logos.sort((a, b) => a.name.localeCompare(b.name)),
             "lg:self-center lg:flex lg:justify-center pb-2"
           )}
         </div>
@@ -19,5 +20,4 @@ const Members = () => {
     </div>
   );
 };
-
 export default Members;
