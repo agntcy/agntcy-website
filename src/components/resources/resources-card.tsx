@@ -14,7 +14,7 @@ export default function ResourcesCard({ resource }: { resource: Resource }) {
           rel="noopener noreferrer"
           className="text-primary flex flex-col gap-4"
         >
-          {resource.isFeatured ? (
+          {resource.featureImage && (
             <Image
               unoptimized
               src={resource.featureImage.src}
@@ -23,8 +23,6 @@ export default function ResourcesCard({ resource }: { resource: Resource }) {
               height={resource.featureImage.height}
               width={resource.featureImage.width}
             />
-          ) : (
-            ""
           )}
           <div className="px-6 py-4">
             <h3 className="text-sm font-semibold text-gray-500">
