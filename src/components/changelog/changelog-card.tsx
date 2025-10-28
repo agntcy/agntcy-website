@@ -91,60 +91,68 @@ export default function ChangeLogCard({ release }: { release: Release}) {
 
     return (
       <div>
-        <div
-          ref={containerRef}
-          style={{
-            maxHeight: expanded ? "none" : "12em",
-            overflow: "hidden",
-          }}
-          className="transition-all duration-300"
-        >
-          {lines.map((line: string, i: number) => {
-            if (line.startsWith("##")) {
-              return (
-                <div key={i} className="font-bold text-lg mb-2">
-                  {line.replace(/^##\s*/, "")}
-                </div>
-              );
-            }
+        <div className="relative">
+          <div
+            ref={containerRef}
+            style={{
+              maxHeight: expanded ? "none" : "12em",
+              overflow: "hidden",
+              paddingBottom: !expanded ? "2rem" : undefined, // creates space for gradient
+            }}
+            className="transition-all duration-300"
+          >
+            {lines.map((line: string, i: number) => {
+              if (line.startsWith("##")) {
+                return (
+                  <div key={i} className="font-bold text-lg mb-2">
+                    {line.replace(/^##\s*/, "")}
+                  </div>
+                );
+              }
 
-            if (line.startsWith("**Full Changelog**") || line.startsWith("Full Changelog:")) {
-              const [label, url] = line.split(": ");
-              const updatedLabel = label.trim().replace(/^\*+\s*/, "").replace(/\*+$/, "");
+              if (line.startsWith("**Full Changelog**") || line.startsWith("Full Changelog:")) {
+                const [label, url] = line.split(": ");
+                const updatedLabel = label.trim().replace(/^\*+\s*/, "").replace(/\*+$/, "");
+
+                return (
+                  <div key={i} className="mt-2">
+                    <strong>{updatedLabel}:</strong>{" "}
+                    <a href={url} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                      {url}
+                    </a>
+                  </div>
+                );
+              }
+
+              if (line.startsWith("*")) {
+                return (
+                  <div key={i} className="ml-4">
+                    {replacePrLinks(line.replace(/^\*\s*/, ""))}
+                  </div>
+                );
+              }
 
               return (
                 <div key={i} className="mt-2">
-                  <strong>{updatedLabel}:</strong>{" "}
-                  <a href={url} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-                    {url}
-                  </a>
+                  {line}
                 </div>
               );
-            }
+            })}
+          </div>        
 
-            if (line.startsWith("*")) {
-              return (
-                <div key={i} className="ml-4">
-                  {replacePrLinks(line.replace(/^\*\s*/, ""))}
-                </div>
-              );
-            }
-
-            return (
-              <div key={i} className="mt-2">
-                {line}
-              </div>
-            );
-          })}
+          {!expanded && (
+            <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#1A2445] to-transparent z-10" />
+          )}
         </div>
-
+        
         {isOverflowing && (
-          <div className="text-right pr-12">
+          <div className="pt-6 text-right pr-12">
             <button
               onClick={() => setExpanded(!expanded)}
-              className="text-blue-500 underline text-sm mt-2"
+              aria-expanded={expanded}
+              className="mt-2 text-blue-600 underline"
             >
-              {expanded ? "Show less" : "Show more"}
+              {expanded ? "Show Less" : "Show More"}
             </button>
           </div>
         )}
@@ -205,14 +213,12 @@ export default function ChangeLogCard({ release }: { release: Release}) {
         {/* <div className="text-sm text-[#9BB3FF]">{release.subheading}</div> */}
         <div className="pt-4 text-white">{<ChangeLogDetails changelog={release.body} />}</div>
       </div>
-      <div className="text-white flex gap-2 text-xs px-2 pb-2">
+      <div className="text-white flex flex-wrap gap-2 text-xs px-2 pb-2">
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Version:</b> {release.tag_name}</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Date:</b> {release.published_at.split("T")[0]}</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Status:</b> Released</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Breaking:</b> Yes</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Components:</b> Core</div>
-      </div>
-      <div className="text-white flex gap-2 text-xs px-2">
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Authors:</b> {authors.join(", ")}</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>PRs:</b><a href={commitData?.url} target="_blank" rel="noopener noreferrer">{commitData?.sha.substring(0,7)}</a></div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Compare:</b> <a href={changelogUrl ? changelogUrl : "/"} target="_blank" rel="noopener noreferrer">Previous version</a></div>
