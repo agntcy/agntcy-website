@@ -591,6 +591,30 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "Kibo",
+    src: "/images/kibo.svg",
+    width: 125,
+    height: 28,
+    type: "members",
+    featured: false,
+  },
+  // {
+  //   name: "NEC",
+  //   src: "/images/nec.png",
+  //   width: 110,
+  //   height: 40,
+  //   type: "members",
+  //   featured: false,
+  // },
+  {
+    name: "Netcloud",
+    src: "/images/netcloud.svg",
+    width: 83,
+    height: 51,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
