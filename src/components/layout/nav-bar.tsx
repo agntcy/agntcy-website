@@ -33,6 +33,11 @@ const Navbar = () => {
       href: "/resources",
       target: "_self",
     },
+    {
+      name: "Changelog",
+      href: "/changelog",
+      target: "_self",
+    },
   ];
 
   return (
