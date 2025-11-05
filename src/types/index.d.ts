@@ -4,7 +4,7 @@ type Resource = {
   contributor: string;
   contributorLink: string;
   resourceLink: string;
-  featureImage: FeatureImage;
+  featureImage?: FeatureImage;
   isAvailable: string;
   approved: string;
   isFeatured: boolean;

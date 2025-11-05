@@ -20,7 +20,7 @@ const JoinUs = () => {
           and grow your involvement through contributions.
         </div>
         <div className="py-12 flex items-center justify-center ">
-          <Link href="https://join.slack.com/t/agntcy/shared_invite/zt-34sxmw5e8-LqlUxxcxROq3HRb56QSkUg">
+          <Link href="https://join.slack.com/t/agntcy/shared_invite/zt-3hb4p7bo0-5H2otGjxGt9OQ1g5jzK_GQ">
             <div className="flex-shrink-0 text-2xl text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-3 rounded-full">
               Become a supporter
             </div>

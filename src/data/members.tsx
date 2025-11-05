@@ -567,14 +567,14 @@ export const logos = [
     type: "members",
     featured: false,
   },
-  // {
-  //   name: "Ory",
-  //   src: "/images/ory.png",
-  //   width: 90,
-  //   height: 40,
-  //   type: "members",
-  //   featured: false,
-  // },
+  {
+    name: "Ory",
+    src: "/images/ory.png",
+    width: 90,
+    height: 40,
+    type: "members",
+    featured: false,
+  },
   {
     name: "Orium",
     src: "/images/orium.png",
@@ -588,6 +588,30 @@ export const logos = [
     src: "/images/valtech.png",
     width: 125,
     height: 28,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "Kibo",
+    src: "/images/kibo.svg",
+    width: 125,
+    height: 28,
+    type: "members",
+    featured: false,
+  },
+  // {
+  //   name: "NEC",
+  //   src: "/images/nec.png",
+  //   width: 110,
+  //   height: 40,
+  //   type: "members",
+  //   featured: false,
+  // },
+  {
+    name: "Netcloud",
+    src: "/images/netcloud.svg",
+    width: 83,
+    height: 51,
     type: "members",
     featured: false,
   },
@@ -932,14 +956,14 @@ export const quotes = [
     blurb:
       "The next wave of enterprise AI will depend on trust, identity, and frictionless transactions between agents. AGNTCY is tackling this problem head-on, while Supertab is focused on aggregating and settling payments across agents, APIs, and services. The standards AGNTCY is setting are critical, and we’re excited to partner with them to help shape the future of enterprise AI and commerce.",
   },
-  // {
-  //   name: "Ory",
-  //   img: logos.find((logo) => logo.name === "Ory"),
-  //   authorName: "Jeff Kukowski",
-  //   authorTitle: "CEO, Ory",
-  //   blurb:
-  //     "Auth is critical as AI agents increasingly act independently or work together to perform tasks that include accessing sensitive files, handling financial transactions, and other critical workflows. Ory addresses this need by supporting the massive scale required to handle agentic authentication while also providing the authorization infrastructure that enables agents to transact safely and securely. As a standards focused company, we're excited to join AGNTCY to help shape a future of secure, safe, and scalable AI agents.",
-  // },
+  {
+    name: "Ory",
+    img: logos.find((logo) => logo.name === "Ory"),
+    authorName: "Jeff Kukowski",
+    authorTitle: "CEO, Ory",
+    blurb:
+      "Auth is critical as AI agents increasingly act independently or work together to perform tasks that include accessing sensitive files, handling financial transactions, and other critical workflows. Ory addresses this need by supporting the massive scale required to handle agentic authentication while also providing the authorization infrastructure that enables agents to transact safely and securely. As a standards focused company, we're excited to join AGNTCY to help shape a future of secure, safe, and scalable AI agents.",
+  },
   {
     name: "Valtech",
     img: logos.find((logo) => logo.name === "Valtech"),

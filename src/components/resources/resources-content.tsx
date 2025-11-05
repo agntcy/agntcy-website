@@ -1,14 +1,8 @@
 import ResourcesCard from "./resources-card";
-import { resourceData } from "~/data/resource-data";
+import { resourceData, otherResources, useCases } from "~/data/resource-data";
 
 export default async function ResourcesContent() {
-  // Revalidate at most every hour
-  const data = await fetch(
-    "https://script.google.com/macros/s/AKfycbyaLyXO27Ia1fMimYyOnaNlgVOUr9E720eprt0MG3u8g2PsAZalOi1uBSt8NVeKRbfzoA/exec",
-    { next: { revalidate: 3600 } }
-  );
-
-  const resources: ResourcesResponse = await data.json();
+  // TODO: udpate data fetching to use microsoft serveces
 
   // Hard coded data
   const featuredData = resourceData.filter(
@@ -16,12 +10,6 @@ export default async function ResourcesContent() {
       resource.isFeatured === true
   );
   
-  //Data is coming from Google sheet
-  const otherResources = resources.data.filter(
-    (resource) =>
-      resource.approved === "TRUE"
-  );
-
   return (
     <div className="bg-navy-light rounded-lg p-6 md:p-12 lg:p-20 my-2 md:my-6 lg:my-10">
       <div className="text-white max-w-4xl">
@@ -48,6 +36,16 @@ export default async function ResourcesContent() {
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {otherResources.map((resource) => (
+            <ResourcesCard key={resource.title} resource={resource} />
+          ))}
+        </div>
+      </div>
+      <div className="py-5">
+        <h2 className="text-xl md:text-2xl font-semibold text-orange pb-6">
+          Use Cases
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          {useCases.map((resource) => (
             <ResourcesCard key={resource.title} resource={resource} />
           ))}
         </div>
