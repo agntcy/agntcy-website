@@ -1,5 +1,5 @@
 import ChangeLogClient from "./changelog-client";
-import { listofRepos } from "~/data/changelog-data";
+import { listofRepos, GITHUB_OWNER } from "~/data/changelog-data";
 
 export default async function ChangeLogContent() {
   const allReleases: Release[] = [];
@@ -7,7 +7,7 @@ export default async function ChangeLogContent() {
   try {
     for (const repo of listofRepos) {
       const response = await fetch(
-        `https://api.github.com/repos/${process.env.NEXT_PUBLIC_GITHUB_OWNER}/${repo}/releases?per_page=5`,
+        `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=5`,
         {
           headers: {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY}`,

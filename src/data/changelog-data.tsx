@@ -12,3 +12,5 @@ export const listofRepos = [
     "observe",
     "telemetry-hub"
 ];
+
+export const GITHUB_OWNER = "agntcy";

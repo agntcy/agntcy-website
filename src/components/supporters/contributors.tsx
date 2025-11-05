@@ -1,9 +1,7 @@
 import RenderLogos from "../reusables/render-logo";
-import { fetchLogo } from "~/lib/supporters";
+import { logos } from "~/data/members";
 
 const Members = async () => {
-  const logos: Logo[] = await fetchLogo();
-
   return (
     <div className="mx-auto 2xl:mx-0 container w-full py-2 md:py-2 lg:py-6">
       <div className="pb-16">

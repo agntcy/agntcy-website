@@ -1,5 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { GITHUB_OWNER } from "~/data/changelog-data";
+
 
 export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
@@ -16,14 +18,9 @@ export const getCommitData = async (
   repo: string,
   tagName: string
 ): Promise<CommitData> => {
-  const owner = process.env.NEXT_PUBLIC_GITHUB_OWNER;
   const token = process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY;
 
-  if (!owner) {
-    throw new Error("Missing GitHub environment variables.");
-  }
-
-  const url = `https://api.github.com/repos/${owner}/${repo}/commits/${tagName}`;
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/commits/${tagName}`;
 
   const res = await fetch(url, {
     headers: {

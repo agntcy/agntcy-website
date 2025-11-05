@@ -15,15 +15,8 @@ import QuoteCard from "../reusables/quote-card";
 import QuoteImg from "../reusables/quote-img";
 import QuoteAuthor from "../reusables/quote-title";
 
-const QuotesClient = ({ data }: { data: Quotes[] }) => {
+const QuotesClient = () => {
   const [quotes, setQuotes] = useState(InitialQuotes);
-
-  useEffect(() => {
-    const loadQuotes = async () => {
-      setQuotes(data);
-    };
-    loadQuotes();
-  }, []);
 
   const third = Math.ceil(quotes.length / 3);
   const firstRow = quotes.slice(0, third);
