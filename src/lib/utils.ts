@@ -17,7 +17,7 @@ export const getCommitData = async (
   tagName: string
 ): Promise<CommitData> => {
   const owner = process.env.NEXT_PUBLIC_GITHUB_OWNER;
-  // const token = process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY;
+  const token = process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY;
 
   if (!owner) {
     throw new Error("Missing GitHub environment variables.");
@@ -27,10 +27,9 @@ export const getCommitData = async (
 
   const res = await fetch(url, {
     headers: {
-      // Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       Accept: "application/vnd.github+json",
     },
-    next: { revalidate: 3600 }, // Optional: cache for 1 hour
   });
 
   if (!res.ok) {
