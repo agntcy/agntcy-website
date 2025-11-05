@@ -599,14 +599,14 @@ export const logos = [
     type: "members",
     featured: false,
   },
-  // {
-  //   name: "NEC",
-  //   src: "/images/nec.png",
-  //   width: 110,
-  //   height: 40,
-  //   type: "members",
-  //   featured: false,
-  // },
+    {
+    name: "NEC",
+    src: "/images/Type_B_white.png",
+    width: 143.8,
+    height: 59.8,
+    type: "members",
+    featured: false,
+  },
   {
     name: "Netcloud",
     src: "/images/netcloud.svg",
