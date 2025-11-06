@@ -10,7 +10,8 @@ export const listofRepos = [
     "identity",
     "identity-spec",
     "observe",
-    "telemetry-hub"
+    "telemetry-hub",
+    "identity-service"
 ];
 
 export const GITHUB_OWNER = "agntcy";
