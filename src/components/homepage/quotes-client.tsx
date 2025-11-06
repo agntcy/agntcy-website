@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Card, CardContent } from "components/ui/card";
 import {
   Carousel,
@@ -16,7 +16,7 @@ import QuoteImg from "../reusables/quote-img";
 import QuoteAuthor from "../reusables/quote-title";
 
 const QuotesClient = () => {
-  const [quotes, setQuotes] = useState(InitialQuotes);
+  const quotes = InitialQuotes;
 
   const third = Math.ceil(quotes.length / 3);
   const firstRow = quotes.slice(0, third);
