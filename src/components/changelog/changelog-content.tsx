@@ -19,6 +19,7 @@ export default async function ChangeLogContent() {
 
       if (!response.ok) {
         console.error(`Failed to fetch releases for ${repo}: ${response.statusText}`);
+        console.error( `Token ${process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY}`);
         continue;
       }
 
