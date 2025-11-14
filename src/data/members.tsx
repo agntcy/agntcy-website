@@ -615,6 +615,14 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "Advensis",
+    src: "/images/Advensis.png",
+    width: 125,
+    height: 20,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
