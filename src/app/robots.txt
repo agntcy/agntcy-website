@@ -1,0 +1,9 @@
+# *
+User-Agent: *
+Disallow: /*?*__hstc=*
+Disallow: /*?*__hssc=*
+Disallow: /*?*__hsfp=*
+Disallow: /*?*__rsc=*
+
+# Sitemaps
+Sitemap: https://agntcy.org/sitemap.xml

@@ -2,7 +2,6 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { GITHUB_OWNER } from "~/data/changelog-data";
 
-
 export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
 }
@@ -28,10 +27,12 @@ export const getCommitData = async (
       Accept: "application/vnd.github+json",
     },
   });
-
   if (!res.ok) {
     const errorText = await res.text();
-    console.error(`GitHub API error: ${res.status} ${res.statusText}`, errorText);
+    console.error(
+      `GitHub API error: ${res.status} ${res.statusText}`,
+      errorText
+    );
     throw new Error(`Failed to fetch commit data for ${repo}@${tagName}`);
   }
 
