@@ -242,7 +242,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
       <div className="flex gap-4">
         <div className="text-sm text-[#FBAB2C]"><a href={`https://github.com/agntcy/${release.repo}`} target="_blank" rel="noopener noreferrer">Docs</a></div>
         <div className="text-sm text-[#FBAB2C]"><a href={commitData?.html_url}  target="_blank" rel="noopener noreferrer">Release PR</a></div>
-        <div className="text-sm text-[#FBAB2C]"><a href={changelogUrl ? changelogUrl : "/"}  target="_blank" rel="noopener noreferrer">Compare</a></div>
+        {changelogUrl && <div className="text-sm text-[#FBAB2C]"><a href={changelogUrl}  target="_blank" rel="noopener noreferrer">Compare</a></div>}
       </div>
     </div>
 );
