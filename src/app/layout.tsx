@@ -4,7 +4,6 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
-// import { Banner } from "~/components/layout/banner";
 
 const roboto = Roboto({
   weight: ["100", "400", "700", "900"],
@@ -12,6 +11,19 @@ const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
 });
+
+const cspHeader = `
+  default-src 'self';
+  connect-src 'self' https://api.github.com;
+  font-src 'self' data: https://*.gstatic.com;
+  frame-src 'self' https://players.brightcove.net https://www.youtube.com https://*.hsforms.com https://*.hsforms.net https://*.hubspot.net https://*.hubspot.com https://*.cisco.com http://*.hsforms.net;
+  frame-ancestors 'none';
+  block-all-mixed-content;
+  base-uri 'self';
+  style-src 'self' 'unsafe-inline' https://*.googleapis.com;
+  script-src 'self' 'unsafe-inline' 'unsafe-eval';
+  img-src 'self' blob: data: https://*.amazonaws.com https://*.youtube.com https://*.ytimg.com;
+`.replace(/\n/g, "");
 
 export default function RootLayout({
   children,
@@ -21,16 +33,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <head>
+        <meta httpEquiv="Content-Security-Policy" content={cspHeader} />
+        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="Referrer-Policy" content="origin-when-cross-origin" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
         <meta
-          httpEquiv="Content-Security-Policy"
-          content="upgrade-insecure-requests"
+          httpEquiv="Permissions-Policy"
+          content="clipboard-read=*, clipboard-write=*"
         />
+        <meta httpEquiv="Cross-Origin-Embedder-Policy" content="require-corp" />
       </head>
       <body
         className={`${roboto.className} antialiased relative flex min-h-screen flex-col bg-bg`}
       >
         <Suspense fallback={null}>
-          {/* <Banner /> */}
           <Navbar />
           {children}
           <Footer />
@@ -42,8 +59,10 @@ export default function RootLayout({
 
 export const metadata: Metadata = {
   title: "AGNTCY.org",
-  description: "AGNTCY is building the open-source infrastructure stack for the Internet of Agents—enabling discovery, identity, messaging, and observability across frameworks.",
-  keywords: "AI agents, multi-agent systems, agent collaboration, open-source AI, agent infrastructure, agent discovery, agent messaging, agent identity, agent observability, AGNTCY",
+  description:
+    "AGNTCY is building the open-source infrastructure stack for the Internet of Agents—enabling discovery, identity, messaging, and observability across frameworks.",
+  keywords:
+    "AI agents, multi-agent systems, agent collaboration, open-source AI, agent infrastructure, agent discovery, agent messaging, agent identity, agent observability, AGNTCY",
   openGraph: {
     title: "AGNTCY.org",
     description: "An open source collective for inter-agent collaboration.",

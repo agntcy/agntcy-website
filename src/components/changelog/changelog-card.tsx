@@ -221,7 +221,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Components:</b> Core</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Authors:</b> {authors.join(", ")}</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>PRs:</b><a href={commitData?.html_url} target="_blank" rel="noopener noreferrer">{commitData?.sha.substring(0,7)}</a></div>
-        <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Compare:</b> <a href={changelogUrl ? changelogUrl : "/"} target="_blank" rel="noopener noreferrer">Previous version</a></div>
+       {changelogUrl && <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Compare:</b> <a href={changelogUrl} target="_blank" rel="noopener noreferrer">Previous version</a></div>}
       </div>
       <div className="text-white text-sm py-8">
         <div key={release.id} className="border-b border-[#187ADC]">
