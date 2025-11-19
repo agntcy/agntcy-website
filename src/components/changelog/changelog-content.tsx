@@ -1,23 +1,24 @@
 import ChangeLogClient from "./changelog-client";
 import { listofRepos, GITHUB_OWNER } from "~/data/changelog-data";
-import { fetchWithRetry } from "~/lib/utils";
 
 export default async function ChangeLogContent() {
   const allReleases: Release[] = [];
 
   try {
     for (const repo of listofRepos) {
-      const response = await fetchWithRetry(
+      const response = await fetch(
         `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=5`,
         {
           headers: {
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY}`,
             Accept: "application/vnd.github+json",
           },
+          next: { revalidate: 3600 },
         }
       );
 
-      if (!response) {
-        console.error(`Failed to fetch releases for ${repo} after retries`);
+      if (!response.ok) {
+        console.error(`Failed to fetch releases for ${repo}: ${response.statusText}`);
         continue;
       }
 
