@@ -28,6 +28,7 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+jobs:
   # Delete cache job
   delete-cache:
     runs-on: ubuntu-latest
