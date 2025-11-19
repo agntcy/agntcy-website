@@ -24,6 +24,7 @@ type Release = {
   repo: string; // we’ll add this field manually
   body: string;
   assets: Array;
+  commitData?: CommitData;
 };
 
 type CommitData = {
