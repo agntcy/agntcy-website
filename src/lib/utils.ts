@@ -30,6 +30,10 @@ export const getCommitData = async (
     throw new Error(`Failed to fetch commit data for ${repo}@${tagName}`);
   }
 
+  if (res.ok) {
+    console.log(`Successfully fetched commit for ${repo}@${tagName}`);
+  }
+
   const commitData = (await res.json()) as CommitData;
   return commitData;
 };

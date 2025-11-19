@@ -11,12 +11,16 @@ export default async function ChangeLogContent() {
         `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=5`,
         {
           headers: {
-            Authorization: `Bearer ${process.env.GITHUB_SECRET_API_KEY}`,
-            Accept: "application/vnd.github+json",
+        Authorization: `Bearer ${process.env.GITHUB_SECRET_API_KEY}`,
+        Accept: "application/vnd.github+json",
           },
           next: { revalidate: 3600 },
         }
       );
+
+      if (response.ok) {
+        console.log(`Successfully fetched releases for ${repo}`);
+      }
 
       if (!response) {
         console.error(`Failed to fetch releases for ${repo} after retries`);
