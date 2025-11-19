@@ -1,12 +1,13 @@
 import ChangeLogClient from "./changelog-client";
 import { listofRepos, GITHUB_OWNER } from "~/data/changelog-data";
+import { fetchWithRetry } from "~/lib/utils";
 
 export default async function ChangeLogContent() {
   const allReleases: Release[] = [];
 
   try {
     for (const repo of listofRepos) {
-      const response = await fetch(
+      const response = await fetchWithRetry(
         `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=5`,
         {
           headers: {
@@ -17,8 +18,8 @@ export default async function ChangeLogContent() {
         }
       );
 
-      if (!response.ok) {
-        console.error(`Failed to fetch releases for ${repo}: ${response.statusText}`);
+      if (!response) {
+        console.error(`Failed to fetch releases for ${repo} after retries`);
         continue;
       }
 
@@ -33,7 +34,8 @@ export default async function ChangeLogContent() {
 
     // Sort by published date (newest first)
     allReleases.sort(
-      (a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+      (a, b) =>
+        new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
     );
   } catch (error) {
     console.error("Error fetching changelog data:", error);
