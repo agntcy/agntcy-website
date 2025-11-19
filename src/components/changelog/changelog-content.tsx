@@ -11,10 +11,9 @@ export default async function ChangeLogContent() {
         `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=5`,
         {
           headers: {
-        Authorization: `Bearer ${process.env.GITHUB_SECRET_API_KEY}`,
-        Accept: "application/vnd.github+json",
+            Authorization: `Bearer ${process.env.GH_SECRET_API_KEY}`,
+            Accept: "application/vnd.github+json",
           },
-          next: { revalidate: 3600 },
         }
       );
 
@@ -47,7 +46,6 @@ export default async function ChangeLogContent() {
       const commitData = await getCommitData(release.repo, release.tag_name);
       release.commitData = commitData;
     }
-
   } catch (error) {
     console.error("Error fetching changelog data:", error);
   }

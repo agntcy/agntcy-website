@@ -14,9 +14,6 @@ const cspHeader = `
 `;
 
 const nextConfig: NextConfig = {
-  env: {
-    GITHUB_SECRET_API_KEY: process.env.GITHUB_SECRET_API_KEY,
-  },
   images: {
     remotePatterns: [
       {

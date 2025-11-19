@@ -21,7 +21,7 @@ export const getCommitData = async (
 
   const res = await fetch(url, {
     headers: {
-      Authorization: `Bearer ${process.env.GITHUB_SECRET_API_KEY}`,
+      Authorization: `Bearer ${process.env.GH_SECRET_API_KEY}`,
       Accept: "application/vnd.github+json",
     },
   });
