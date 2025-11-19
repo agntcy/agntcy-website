@@ -8,7 +8,7 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-    
+
   # Runs every 6 hours
   schedule:
     - cron: '0 */6 * * *'
