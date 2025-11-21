@@ -1,24 +1,9 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { getCommitData } from "~/lib/utils";
 import { Triangle } from 'lucide-react';
 import Image from "next/image";
 
 export default function ChangeLogCard({ release }: { release: Release}) {
-
-  const [commitData, setCommitData] = useState<CommitData | null>(null);
-
-  useEffect(() => {
-  (async () => {
-    try {
-      const data = await getCommitData(release.repo, release.tag_name);
-      setCommitData(data);
-    } catch (error) {
-      console.error("Failed to fetch commit data:", error);
-    }
-  })();
-}, [release.repo, release.tag_name]);
-
   
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const toggle = (index: number) => {
@@ -220,7 +205,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Breaking:</b> Yes</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Components:</b> Core</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Authors:</b> {authors.join(", ")}</div>
-        <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>PRs:</b><a href={commitData?.html_url} target="_blank" rel="noopener noreferrer">{commitData?.sha.substring(0,7)}</a></div>
+        <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>PRs:</b><a href={release.commitData?.html_url} target="_blank" rel="noopener noreferrer">{release.commitData?.sha.substring(0,7)}</a></div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Compare:</b> <a href={changelogUrl ? changelogUrl : "/"} target="_blank" rel="noopener noreferrer">Previous version</a></div>
       </div>
       <div className="text-white text-sm py-8">
@@ -241,7 +226,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
       </div>
       <div className="flex gap-4">
         <div className="text-sm text-[#FBAB2C]"><a href={`https://github.com/agntcy/${release.repo}`} target="_blank" rel="noopener noreferrer">Docs</a></div>
-        <div className="text-sm text-[#FBAB2C]"><a href={commitData?.html_url}  target="_blank" rel="noopener noreferrer">Release PR</a></div>
+        <div className="text-sm text-[#FBAB2C]"><a href={release.commitData?.html_url}  target="_blank" rel="noopener noreferrer">Release PR</a></div>
         {changelogUrl && <div className="text-sm text-[#FBAB2C]"><a href={changelogUrl}  target="_blank" rel="noopener noreferrer">Compare</a></div>}
       </div>
     </div>

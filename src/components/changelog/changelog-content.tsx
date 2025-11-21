@@ -1,5 +1,6 @@
 import ChangeLogClient from "./changelog-client";
 import { listofRepos, GITHUB_OWNER } from "~/data/changelog-data";
+import { getCommitData } from "~/lib/utils";
 
 export default async function ChangeLogContent() {
   const allReleases: Release[] = [];
@@ -10,15 +11,18 @@ export default async function ChangeLogContent() {
         `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=5`,
         {
           headers: {
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY}`,
+            Authorization: `Bearer ${process.env.GH_SECRET_API_KEY}`,
             Accept: "application/vnd.github+json",
           },
-          next: { revalidate: 3600 },
         }
       );
 
-      if (!response.ok) {
-        console.error(`Failed to fetch releases for ${repo}: ${response.statusText}`);
+      if (response.ok) {
+        console.log(`Successfully fetched releases for ${repo}`);
+      }
+
+      if (!response) {
+        console.error(`Failed to fetch releases for ${repo} after retries`);
         continue;
       }
 
@@ -33,8 +37,15 @@ export default async function ChangeLogContent() {
 
     // Sort by published date (newest first)
     allReleases.sort(
-      (a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+      (a, b) =>
+        new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
     );
+
+    // Fetch commit data for each release
+    for (const release of allReleases) {
+      const commitData = await getCommitData(release.repo, release.tag_name);
+      release.commitData = commitData;
+    }
   } catch (error) {
     console.error("Error fetching changelog data:", error);
   }

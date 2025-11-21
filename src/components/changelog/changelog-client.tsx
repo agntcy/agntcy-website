@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import React, { useState } from "react";
 import ChangeLogCard from "./changelog-card";
 import { StepBack, StepForward } from 'lucide-react';
 
