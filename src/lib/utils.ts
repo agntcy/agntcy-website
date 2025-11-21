@@ -17,23 +17,21 @@ export const getCommitData = async (
   repo: string,
   tagName: string
 ): Promise<CommitData> => {
-  const token = process.env.NEXT_PUBLIC_GITHUB_SECRET_API_KEY;
-
   const url = `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/commits/${tagName}`;
 
   const res = await fetch(url, {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${process.env.GH_SECRET_API_KEY}`,
       Accept: "application/vnd.github+json",
     },
   });
-  if (!res.ok) {
-    const errorText = await res.text();
-    console.error(
-      `GitHub API error: ${res.status} ${res.statusText}`,
-      errorText
-    );
+
+  if (!res) {
     throw new Error(`Failed to fetch commit data for ${repo}@${tagName}`);
+  }
+
+  if (res.ok) {
+    console.log(`Successfully fetched commit for ${repo}@${tagName}`);
   }
 
   const commitData = (await res.json()) as CommitData;

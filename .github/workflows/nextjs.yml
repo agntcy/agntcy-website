@@ -9,6 +9,10 @@ on:
   push:
     branches: ["main"]
 
+  # Runs every 6 hours
+  schedule:
+    - cron: '0 */6 * * *'
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -25,11 +29,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Delete cache job
+  delete-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete all caches
+        run: gh cache delete --all
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
   # Build job
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_GITHUB_SECRET_API_KEY: ${{ secrets.NEXT_PUBLIC_GITHUB_SECRET_API_KEY }}
+      GH_SECRET_API_KEY: ${{ secrets.GH_SECRET_API_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
