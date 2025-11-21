@@ -24,6 +24,18 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Delete cache job
+  delete-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Delete all caches
+        run: gh cache delete --all
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
   # Build job
   build:
     runs-on: ubuntu-latest
