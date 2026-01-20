@@ -32,17 +32,22 @@ export const getCommitData = async (
   });
 
   if (!res.ok) {
-     console.error(`Failed to fetch commit data for ${repo}@${tagName}: ${res.status}`);
-     // Return a partial object or handle it so the caller knows it failed.
-     // However, the return type is Promise<CommitData>.
-     // Let's return undefined or throw properly, but since the component expects data...
-     // safest is maybe return null and update type, but let's stick to cleaning the auth first
-     // and maybe returning a dummy object or letting the caller handle throws.
-     // Actually, if I throw here, the catch block in changelog-content.tsx will catch it
-     // and NO releases will be shown? No, the catch block is outside the loop?
-     // Yes:   try { ... for loop ... } catch (error) { ... }
-     // So one failure in getCommitData stops everything? That's bad.
-     return null as unknown as CommitData;
+    console.error(
+      `Failed to fetch commit data for ${repo}@${tagName}: ${res.status}`
+    );
+    return {
+      sha: "unavailable",
+      url: "#",
+      html_url: "#",
+      commit: {
+        message: "Commit data unavailable",
+        author: {
+          name: "Unknown",
+          email: "",
+          date: "",
+        },
+      },
+    };
   }
 
   if (res.ok) {
