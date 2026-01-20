@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Navbar from "components/layout/nav-bar";
 import Footer from "components/layout/footer";
+import CookieBanner from "components/layout/cookie-banner";
 
 const roboto = Roboto({
   weight: ["100", "400", "700", "900"],
@@ -53,7 +53,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </Suspense>
-        <GoogleAnalytics gaId="G-XYZ" />
+        <CookieBanner />
       </body>
     </html>
   );
