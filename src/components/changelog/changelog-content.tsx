@@ -7,18 +7,28 @@ export default async function ChangeLogContent() {
 
   try {
     for (const repo of listofRepos) {
+      const headers: HeadersInit = {
+        Accept: "application/vnd.github+json",
+      };
+
+      if (process.env.GH_SECRET_API_KEY) {
+        headers.Authorization = `Bearer ${process.env.GH_SECRET_API_KEY}`;
+      }
+
       const response = await fetch(
         `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=5`,
         {
-          headers: {
-            Authorization: `Bearer ${process.env.GH_SECRET_API_KEY}`,
-            Accept: "application/vnd.github+json",
-          },
+          headers,
         }
       );
 
       if (response.ok) {
         console.log(`Successfully fetched releases for ${repo}`);
+      } else {
+        console.error(
+          `Failed to fetch releases for ${repo}: ${response.status} ${response.statusText}`
+        );
+        continue;
       }
 
       if (!response) {
@@ -27,6 +37,11 @@ export default async function ChangeLogContent() {
       }
 
       const releases: Omit<Release, "repo">[] = await response.json();
+
+      if (!Array.isArray(releases)) {
+        console.error(`Unexpected response format for ${repo}:`, releases);
+        continue;
+      }
 
       const publishedReleases = releases
         .filter((r) => !r.draft && !r.prerelease)
@@ -43,8 +58,14 @@ export default async function ChangeLogContent() {
 
     // Fetch commit data for each release
     for (const release of allReleases) {
-      const commitData = await getCommitData(release.repo, release.tag_name);
-      release.commitData = commitData;
+      try {
+        const commitData = await getCommitData(release.repo, release.tag_name);
+        if (commitData) {
+          release.commitData = commitData;
+        }
+      } catch (e) {
+        console.error(`Error fetching commit data for ${release.repo}@${release.tag_name}`, e);
+      }
     }
   } catch (error) {
     console.error("Error fetching changelog data:", error);

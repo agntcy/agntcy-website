@@ -4,7 +4,7 @@ import { Triangle } from 'lucide-react';
 import Image from "next/image";
 
 export default function ChangeLogCard({ release }: { release: Release}) {
-  
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -123,13 +123,13 @@ export default function ChangeLogCard({ release }: { release: Release}) {
                 </div>
               );
             })}
-          </div>        
+          </div>
 
           {!expanded && (
             <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#1A2445] to-transparent z-10" />
           )}
         </div>
-        
+
         {isOverflowing && (
           <div className="pt-6 text-right pr-12">
             <button
@@ -187,7 +187,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
   const authors = Array.from(new Set(release?.body.match(/@\w+/g) || []));
   const changelogMatch = release?.body.match(/\*\*Full Changelog\*\*:\s*(\S+)/);
   const changelogUrl = changelogMatch ? changelogMatch[1] : null;
-  
+
   return (
     <div className="bg-[#1A2445] rounded-lg p-6 md:p-12 lg:p-12 my-2 md:my-6 lg:my-4 text-[#9BB3FF]">
       <div className="w-fit uppercase text-xs">
@@ -205,7 +205,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Breaking:</b> Yes</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Components:</b> Core</div>
         <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Authors:</b> {authors.join(", ")}</div>
-        <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>PRs:</b><a href={release.commitData?.html_url} target="_blank" rel="noopener noreferrer">{release.commitData?.sha.substring(0,7)}</a></div>
+        <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>PRs:</b><a href={release.commitData?.html_url} target="_blank" rel="noopener noreferrer">{release.commitData?.sha?.substring(0,7)}</a></div>
        {changelogUrl && <div className="border-[#1A2445] bg-[#0D274D] rounded-lg p-3 w-fit"><b>Compare:</b> <a href={changelogUrl} target="_blank" rel="noopener noreferrer">Previous version</a></div>}
       </div>
       <div className="text-white text-sm py-8">
