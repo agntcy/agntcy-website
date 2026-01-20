@@ -23,8 +23,9 @@ export const getCommitData = async (
     const fetchHeaders: HeadersInit = {
         Accept: "application/vnd.github+json",
     };
-    if (useAuth && process.env.GH_SECRET_API_KEY) {
-        fetchHeaders.Authorization = `Bearer ${process.env.GH_SECRET_API_KEY}`;
+    // Use standard GITHUB_TOKEN if available (works for public repos)
+    if (useAuth && process.env.GITHUB_TOKEN) {
+        fetchHeaders.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
     }
     return fetch(url, { headers: fetchHeaders });
   };
