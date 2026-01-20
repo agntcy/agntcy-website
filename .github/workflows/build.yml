@@ -40,7 +40,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GH_SECRET_API_KEY: ${{ secrets.GH_SECRET_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

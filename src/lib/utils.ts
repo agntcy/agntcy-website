@@ -19,17 +19,23 @@ export const getCommitData = async (
 ): Promise<CommitData> => {
   const url = `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/commits/${tagName}`;
 
-  const headers: HeadersInit = {
-    Accept: "application/vnd.github+json",
+  const fetchCommit = async (useAuth: boolean) => {
+    const fetchHeaders: HeadersInit = {
+        Accept: "application/vnd.github+json",
+    };
+    // Use standard GITHUB_TOKEN if available (works for public repos)
+    if (useAuth && process.env.GITHUB_TOKEN) {
+        fetchHeaders.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+    return fetch(url, { headers: fetchHeaders });
   };
 
-  if (process.env.GH_SECRET_API_KEY) {
-    headers.Authorization = `Bearer ${process.env.GH_SECRET_API_KEY}`;
-  }
+  let res = await fetchCommit(true);
 
-  const res = await fetch(url, {
-    headers,
-  });
+  if (res.status === 401) {
+      console.warn(`Got 401 for commit ${repo}@${tagName}, retrying without auth...`);
+      res = await fetchCommit(false);
+  }
 
   if (!res.ok) {
     console.error(

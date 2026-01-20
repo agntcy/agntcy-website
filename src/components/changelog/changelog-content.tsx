@@ -7,24 +7,31 @@ export default async function ChangeLogContent() {
 
   try {
     for (const repo of listofRepos) {
-      const headers: HeadersInit = {
-        Accept: "application/vnd.github+json",
+      const fetchReleases = async (useAuth: boolean) => {
+        const fetchHeaders: HeadersInit = {
+          Accept: "application/vnd.github+json",
+        };
+        // Use standard GITHUB_TOKEN if available (works for public repos)
+        if (useAuth && process.env.GITHUB_TOKEN) {
+          fetchHeaders.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+        }
+        return fetch(
+            `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=5`,
+            { headers: fetchHeaders }
+        );
       };
 
-      if (process.env.GH_SECRET_API_KEY) {
-        headers.Authorization = `Bearer ${process.env.GH_SECRET_API_KEY}`;
-      }
+      let response = await fetchReleases(true);
 
-      const response = await fetch(
-        `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/releases?per_page=5`,
-        {
-          headers,
-        }
-      );
+      if (response.status === 401) {
+          console.warn(`Got 401 for ${repo}, retrying without auth...`);
+          response = await fetchReleases(false);
+      }
 
       if (response.ok) {
         console.log(`Successfully fetched releases for ${repo}`);
       } else {
+
         console.error(
           `Failed to fetch releases for ${repo}: ${response.status} ${response.statusText}`
         );
