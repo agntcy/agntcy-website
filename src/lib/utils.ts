@@ -19,15 +19,35 @@ export const getCommitData = async (
 ): Promise<CommitData> => {
   const url = `https://api.github.com/repos/${GITHUB_OWNER}/${repo}/commits/${tagName}`;
 
+  const headers: HeadersInit = {
+    Accept: "application/vnd.github+json",
+  };
+
+  if (process.env.GH_SECRET_API_KEY) {
+    headers.Authorization = `Bearer ${process.env.GH_SECRET_API_KEY}`;
+  }
+
   const res = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${process.env.GH_SECRET_API_KEY}`,
-      Accept: "application/vnd.github+json",
-    },
+    headers,
   });
 
-  if (!res) {
-    throw new Error(`Failed to fetch commit data for ${repo}@${tagName}`);
+  if (!res.ok) {
+    console.error(
+      `Failed to fetch commit data for ${repo}@${tagName}: ${res.status}`
+    );
+    return {
+      sha: "unavailable",
+      url: "#",
+      html_url: "#",
+      commit: {
+        message: "Commit data unavailable",
+        author: {
+          name: "Unknown",
+          email: "",
+          date: "",
+        },
+      },
+    };
   }
 
   if (res.ok) {
