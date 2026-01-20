@@ -1,0 +1,31 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task: dev
+
+  install:
+    desc: Install dependencies
+    cmds:
+      - npm install
+
+  dev:
+    desc: Run development server
+    cmds:
+      - npm run dev
+
+  build:
+    desc: Build production application
+    cmds:
+      - npm run build
+
+  start:
+    desc: Start production server
+    cmds:
+      - npm run start
+
+  lint:
+    desc: Lint code
+    cmds:
+      - npm run lint
