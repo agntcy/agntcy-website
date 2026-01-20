@@ -24,6 +24,11 @@ const Navbar = () => {
       target: "_blank",
     },
     {
+      name: "Blogs",
+      href: "https://blogs.agntcy.org",
+      target: "_blank",
+    },
+    {
       name: "Supporters",
       href: "/supporters",
       target: "_self",
