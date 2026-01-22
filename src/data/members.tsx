@@ -626,8 +626,8 @@ export const logos = [
   {
     name: "Presidio",
     src: "/images/presidio.png",
-    width: 131,
-    height: 46,
+    width: 145,
+    height: 50,
     type: "members",
     featured: false,
   },
