@@ -623,6 +623,22 @@ export const logos = [
     type: "members",
     featured: false,
   },
+  {
+    name: "Presidio",
+    src: "/images/presidio.png",
+    width: 131,
+    height: 46,
+    type: "members",
+    featured: false,
+  },
+  {
+    name: "MeetLloyd",
+    src: "/images/meetLoyd.png",
+    width: 172,
+    height: 60,
+    type: "members",
+    featured: false,
+  },
 ];
 
 export const quotes = [
