@@ -104,7 +104,7 @@ const Hero = () => {
           </div>
           <div className="my-8 md:my-12 rounded-sm overflow-hidden">
             <video
-              src="/videos/AGTNCY-Architecture-R1.mp4"
+              src="/videos/AGTNCY-Architecture-R2.mp4"
               autoPlay
               loop
               muted
