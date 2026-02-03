@@ -55,4 +55,7 @@ jobs:
           VALIDATE_YAML_PRETTIER: false
           VALIDATE_GITHUB_ACTIONS: false
           VALIDATE_BIOME: false
+          VALIDATE_BIOME_FORMAT: false
+          VALIDATE_BIOME_LINT: false
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
           MULTI_STATUS: false
