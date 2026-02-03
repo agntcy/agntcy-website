@@ -19,6 +19,7 @@ jobs:
       contents: read
       packages: read
       statuses: write
+      pull-requests: write
     steps:
       - name: 🔒 harden runner
         uses: step-security/harden-runner@e3f713f2d8f53843e71c69a996d56f51aa9adfb9 # v2.14.1
@@ -53,4 +54,8 @@ jobs:
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_YAML_PRETTIER: false
           VALIDATE_GITHUB_ACTIONS: false
+          VALIDATE_BIOME: false
+          VALIDATE_BIOME_FORMAT: false
+          VALIDATE_BIOME_LINT: false
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
           MULTI_STATUS: false
