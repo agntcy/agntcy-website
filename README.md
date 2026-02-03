@@ -2,11 +2,11 @@
 
 [![Deploy Next.js site to Pages](https://github.com/agntcy/agntcy-website/actions/workflows/nextjs.yml/badge.svg?branch=main)](https://github.com/agntcy/agntcy-website/actions/workflows/nextjs.yml)
 
-[![Lint](https://github.com/agntcy/repo-template/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/marketplace/actions/super-linter)
+[![Lint](https://github.com/agntcy/agntcy-website/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/marketplace/actions/super-linter)
 
 ## About The Project
 
-agntcy.org website code
+[agntcy.org](https://agntcy.org/) website code
 
 ## Getting Started
 
@@ -14,14 +14,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to
-install them.
-
-- npm
-
-  ```sh
-  npm install npm@latest -g
-  ```
+Ensure you have Node.js installed on your machine.
 
 ### Installation
 
@@ -39,16 +32,24 @@ install them.
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional
-screenshots, code examples and demos work well in this space. You may also link
-to more resources.
+After installing the dependencies, you can run the development server:
 
-_For more examples, please refer to the [Documentation](https://example.com) or
-the [Wiki](https://github.com/org_name/repo_name/wiki)_
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see
+the result.
 
 ## Roadmap
 
-See the [open issues](https://github.com/org_name/repo_name/issues) for a list
+See the [open issues](https://github.com/agntcy/agntcy-website/issues) for a list
 of proposed features (and known issues).
 
 ## Contributing
@@ -60,7 +61,5 @@ appreciated**. For detailed contributing guidelines, please see
 
 ## Contact
 
-Your Name - [@github_handle](https://github.com/github_handle) - email
-
 Project Link:
-[https://github.com/org_name/repo_name](https://github.com/org_name/repo_name)
+[https://github.com/agntcy/agntcy-website](https://github.com/agntcy/agntcy-website)
