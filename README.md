@@ -16,7 +16,6 @@ To get a local copy up and running follow these simple steps.
 
 Ensure you have Node.js installed on your machine.
 
-
 ### Installation
 
 1. Clone the repository
@@ -45,7 +44,8 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see
+the result.
 
 ## Roadmap
 
