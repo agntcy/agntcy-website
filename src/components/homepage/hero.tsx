@@ -16,7 +16,7 @@ const Hero = () => {
               <AspectRatio ratio={280 / 420}>
                 <Image
                   unoptimized
-                  src={"/images/homepage/hero-diagram.png"}
+                  src={"/images/homepage/hero-diagram.svg"}
                   alt="Logo"
                   fill
                 />
