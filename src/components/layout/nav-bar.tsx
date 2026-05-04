@@ -82,7 +82,7 @@ const Navbar = () => {
                     href="https://join.slack.com/t/agntcy/shared_invite/zt-3hb4p7bo0-5H2otGjxGt9OQ1g5jzK_GQ"
                   >
                     <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
-                      Join us
+                      Join us on Slack
                     </div>
                   </Link>
                 </div>
@@ -144,7 +144,7 @@ const Navbar = () => {
                 target="_blank"
                 href="https://join.slack.com/t/agntcy/shared_invite/zt-3hb4p7bo0-5H2otGjxGt9OQ1g5jzK_GQ"
               >
-                Join us
+                Join us on Slack
               </Link>
             </Button>
           </DrawerDescription>
