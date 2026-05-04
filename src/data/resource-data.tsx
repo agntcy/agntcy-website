@@ -3,10 +3,10 @@ export const resourceData = [
     title: "AGNTCY Briefs: Youtube Playlist",
     description:
       "Learn how to use AGNTCY's open protocols with fast, focused video explainers",
-    contributor: "Outshift by CISCO",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink:
-      "https://www.youtube.com/playlist?list=PL49BrgsjXg5rUr_jw8VHLaz-roTuRRIjG",
+      "https://www.youtube.com/playlist?list=PL49BrgsjXg5qVeRVqlX9O74W02q3c8fow",
     featureImage: {
       src: "/images/image-1.png",
       width: 150,
@@ -77,7 +77,7 @@ export const otherResources = [
     title: "AI observability in multi-agent systems using OpenTelemetry",
     description:
       "Microsoft, Splunk work with AGTNCY to introduce new semantic conventions into OpenTelemetry",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink:
       "https://outshift.cisco.com/blog/ai-observability-multi-agent-systems-opentelemetry",
@@ -89,7 +89,7 @@ export const otherResources = [
     title: "AGNTCY project donated to Linux Foundation with major industry backing",
     description:
       "Cisco, Dell Technologies, Google Cloud, Oracle and Red Hat join as formative members, alongside 75+ companies that have been contributing to and supporting AGNTCY.",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink:
       "https://outshift.cisco.com/blog/agntcy-donated-to-linux-foundation",
@@ -102,7 +102,7 @@ export const otherResources = [
       "(Video) Setting up AGNTCY's Agent Identity and MCP Server Using Duo Identity Provider",
     description:
       "CLI walkthrough: create, publish and verify AI agents IDs using Cisco Duo for authentication",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink: "https://youtu.be/--a4vUKTexE",
     isAvailable: "Yes",
@@ -114,7 +114,7 @@ export const otherResources = [
       "(Video) Setting up AGNTCY's Agent Identity and MCP Server Using Okta Identity Provider",
     description:
       "Use CLI tools to create, publish, and verify MCP server identities with Okta as the ID provider.",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink: "https://youtu.be/6aUUzpFwJ6s",
     isAvailable: "Yes",
@@ -150,7 +150,7 @@ export const otherResources = [
     title: "(Video) What is the Internet of Agents?",
     description:
       "What is the Internet of Agents? A quick explainer of the next layer for AI collaboration.",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink: "https://youtu.be/Pault4FWUwQ?si=TxXAw6AUouJRlKw9",
     isAvailable: "Yes",
@@ -161,7 +161,7 @@ export const otherResources = [
     title:
       "(Webinar) Internet of Agents 101: Building the Open Infrastructure for AI's Collaborative Future",
     description: "Why AI needs a new internet—and how AGNTCY is building it",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink: "http://cs.co/60440ch3M",
     isAvailable: "Yes",
@@ -172,7 +172,7 @@ export const otherResources = [
     title: "The 4 phases for successful development of multi-agent software",
     description:
       "How to build multi-agent systems—four phases from idea to deployment",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink:
       "https://outshift.cisco.com/blog/four-phases-for-development-of-multi-agent-apps",
@@ -198,7 +198,7 @@ export const useCases = [
   {
     title: "Webex and AGNTCY: How this healthcare booking multi-agent system showcases enterprise innovation",
     description: "Building a MAS for healthcare contact center",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink: "https://outshift.cisco.com/blog/webex-agntcy-multi-agent-systems",
     isAvailable: "Yes",
@@ -208,7 +208,7 @@ export const useCases = [
   {
     title: "How SoftServe used AGNTCY to implement a multi-agent intelligence system for video monitoring",
     description: "See how SoftServe used AGNTCY to overcome intelligent video monitoring challenges with scalable, modular, and real-time solutions.",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink: "https://outshift.cisco.com/blog/how-softserve-used-agntcy-multi-agent-intelligence-video-monitoring", 
     isAvailable: "Yes",
@@ -229,7 +229,7 @@ export const useCases = [
   {
     title: "Hands-on with CAIPE: Building an open source, multi-agent system for platform engineering",
     description: "How the open source Community AI Platform Engineering (CAIPE) project leverages AGNTCY components",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink: "https://outshift.cisco.com/blog/caipe-building-open-source-multi-agent-systems-for-platform-engineering",
     isAvailable: "Yes",
@@ -239,7 +239,7 @@ export const useCases = [
   {
     title: "Building multi-agentic systems with AGNTCY's Application SDK and reference application",
     description: "The Sock Shop for the Internet of Agents. Reference application and SDK showcasing AGNTCY",
-    contributor: "Outshift by Cisco",
+    contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink: "https://outshift.cisco.com/blog/multi-agentic-systems-agntcy-application-sdk-reference-application", 
     isAvailable: "Yes",
