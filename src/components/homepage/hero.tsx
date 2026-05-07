@@ -12,6 +12,7 @@ const Hero = () => {
       <div className="mx-auto container max-w-7xl bg-bg md:py-24 max-md:pt-12 max-md:pb-3">
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 gap-5 lg:gap-36 w-full py-0 items-center justify-center">
           <div className="col-span-1 px-4">
+            {/* Updated the left side image */}
             <div className="max-w-xs mx-auto hidden lg:block ">
               <AspectRatio ratio={349 / 252}>
                 <Image
