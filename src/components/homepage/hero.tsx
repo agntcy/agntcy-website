@@ -24,7 +24,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="col-span-1 lg:col-span-2 px-4 relative">
-            <div className="max-w-md">
+            <div className="max-w-md block lg:hidden">
               <AspectRatio ratio={416 / 95}>
                 <Image
                   unoptimized
