@@ -63,7 +63,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
     const [isOverflowing, setIsOverflowing] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const lines = changelog.split("\n");
+    const lines = changelog?.split("\n");
 
     useEffect(() => {
       const el = containerRef.current;
@@ -86,7 +86,7 @@ export default function ChangeLogCard({ release }: { release: Release}) {
             }}
             className="transition-all duration-300"
           >
-            {lines.map((line: string, i: number) => {
+            {lines?.map((line: string, i: number) => {
               if (line.startsWith("##")) {
                 return (
                   <div key={i} className="font-bold text-lg mb-2">
@@ -184,8 +184,8 @@ export default function ChangeLogCard({ release }: { release: Release}) {
 }
 
 
-  const authors = Array.from(new Set(release?.body.match(/@\w+/g) || []));
-  const changelogMatch = release?.body.match(/\*\*Full Changelog\*\*:\s*(\S+)/);
+  const authors = Array.from(new Set(release?.body?.match(/@\w+/g) || []));
+  const changelogMatch = release?.body?.match(/\*\*Full Changelog\*\*:\s*(\S+)/);
   const changelogUrl = changelogMatch ? changelogMatch[1] : null;
 
   return (

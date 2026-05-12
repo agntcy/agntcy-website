@@ -10,13 +10,13 @@ const Hero = () => {
   return (
     <>
       <div className="mx-auto container max-w-7xl bg-bg md:py-24 max-md:pt-12 max-md:pb-3">
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 gap-5 lg:gap-36 w-full py-0">
-          <div className="col-span-1 sm:pt-0 sm:pb-12 px-4 ">
-            <div className="max-w-xs mx-auto">
-              <AspectRatio ratio={280 / 420}>
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 gap-5 lg:gap-36 w-full py-0 items-center justify-center">
+          <div className="col-span-1 px-4">
+            <div className="max-w-xs mx-auto hidden lg:block ">
+              <AspectRatio ratio={349 / 252}>
                 <Image
                   unoptimized
-                  src={"/images/homepage/hero-diagram.svg"}
+                  src={"/images/homepage/mergedLogo.png"}
                   alt="Logo"
                   fill
                 />
@@ -24,11 +24,21 @@ const Hero = () => {
             </div>
           </div>
           <div className="col-span-1 lg:col-span-2 px-4 relative">
-            <div className="max-w-md">
+            <div className="max-w-md block lg:hidden">
               <AspectRatio ratio={416 / 95}>
                 <Image
                   unoptimized
                   src={"/images/homepage/agntcy-logo-white.png"}
+                  alt="Logo"
+                  fill
+                />
+              </AspectRatio>
+            </div>
+            <div className="max-w-md block lg:hidden pt-12">
+              <AspectRatio ratio={300 / 100}>
+                <Image
+                  unoptimized
+                  src={"/images/homepage/linux.png"}
                   alt="Logo"
                   fill
                 />
@@ -47,7 +57,7 @@ const Hero = () => {
             <div className="pb-12 flex">
               <Link target="_blank" href="https://github.com/agntcy">
                 <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-9 rounded-full">
-                  Join the build
+                  Explore on Github
                 </div>
               </Link>
             </div>
@@ -81,7 +91,7 @@ const Hero = () => {
               <div className="flex">
                 <Link target="_blank" href="https://github.com/agntcy">
                   <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-9 rounded-full">
-                    Join the build
+                    Explore on Github
                   </div>
                 </Link>
               </div>
