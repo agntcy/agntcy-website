@@ -9,10 +9,12 @@ import LinuxFoundationLogo from "./linux-foundation-logo";
 
 const Hero = () => {
   return (
-    <div className={cn(pageFrameClassName, "pb-10 pt-2 md:pb-14 md:pt-4")}>
+    <div className={cn(pageFrameClassName, "pb-10 pt-0 md:pb-14 md:pt-2")}>
       <div className="flex w-full flex-col gap-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:items-center">
-          <AgntcyLogo className="h-auto w-full max-w-[280px] md:max-w-[360px] lg:max-w-[400px]" />
+          <div id="hero-agntcy-logo" className="w-fit">
+            <AgntcyLogo className="h-auto w-full max-w-[280px] md:max-w-[360px] lg:max-w-[400px]" />
+          </div>
 
           <div className="flex items-center gap-3">
             <span className="text-sm font-light text-white/80 md:text-base">
