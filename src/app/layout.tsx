@@ -3,11 +3,13 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "components/layout/nav-bar";
+import CautionBanner from "components/layout/caution-banner";
 import Footer from "components/layout/footer";
 import CookieBanner from "components/layout/cookie-banner";
+import ScrollToTop from "components/layout/scroll-to-top";
 
 const roboto = Roboto({
-  weight: ["100", "400", "700", "900"],
+  weight: ["100", "300", "400", "700", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
@@ -32,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="">
+    <html lang="en">
       <head>
         <meta httpEquiv="Content-Security-Policy" content={cspHeader} />
         <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
@@ -49,25 +51,28 @@ export default function RootLayout({
         className={`${roboto.className} antialiased relative flex min-h-screen flex-col bg-bg`}
       >
         <Suspense fallback={null}>
+          <CautionBanner />
           <Navbar />
           {children}
           <Footer />
         </Suspense>
         <CookieBanner />
+        <ScrollToTop />
       </body>
     </html>
   );
 }
 
 export const metadata: Metadata = {
-  title: "AGNTCY.org",
+  title: "AGNTCY.org — Building the Internet of Agents (IoA)",
   description:
-    "AGNTCY is building the open-source infrastructure stack for the Internet of Agents—enabling discovery, identity, messaging, and observability across frameworks.",
+    "AGNTCY delivers an open-source stack enabling AI agents to collaborate across vendors and frameworks through discovery, identity, messaging, and observability.",
   keywords:
-    "AI agents, multi-agent systems, agent collaboration, open-source AI, agent infrastructure, agent discovery, agent messaging, agent identity, agent observability, AGNTCY",
+    "AI agents, multi-agent systems, agent collaboration, open-source AI, agent infrastructure, agent discovery, agent messaging, agent identity, agent observability, AGNTCY, Internet of Agents, IoA",
   openGraph: {
-    title: "AGNTCY.org",
-    description: "An open source collective for inter-agent collaboration.",
+    title: "AGNTCY.org — Building the Internet of Agents (IoA)",
+    description:
+      "AGNTCY delivers an open-source stack enabling AI agents to collaborate across vendors and frameworks through discovery, identity, messaging, and observability.",
     url: `https://agntcy.org`,
     siteName: "AGNTCY",
     images: [
@@ -84,8 +89,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AGNTCY.org",
-    description: "An open source collective for inter-agent collaboration.",
+    title: "AGNTCY.org — Building the Internet of Agents (IoA)",
+    description:
+      "AGNTCY delivers an open-source stack enabling AI agents to collaborate across vendors and frameworks through discovery, identity, messaging, and observability.",
     creator: "@outshiftbycisco",
     images: ["https://agntcy.org/logo/preview-thumbnail-new.png"],
   },

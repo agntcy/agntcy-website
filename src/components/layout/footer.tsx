@@ -1,11 +1,18 @@
 "use client";
 import Link from "next/link";
 import { Button } from "components/ui/button";
+import { cn } from "lib/utils";
+import { pageFrameClassName } from "lib/layout";
 
 const Footer = () => {
   return (
-    <div className="bg-bg lg:bottom-2 mt-4 flex flex-col sm:mt-0 sm:justify-center md:flex-row md:space-x-5 w-full py-4">
-      <div className="pb-5 container mx-auto px-2 flex flex-col justify-end lg:items-start gap-3 md:gap-4 lg:justify-between text-sm font-thin  text-gray-100">
+    <div className="bg-bg lg:bottom-2 mt-4 flex w-full flex-col border-t border-white/20 py-4 sm:mt-0 sm:justify-center md:flex-row md:space-x-5">
+      <div
+        className={cn(
+          pageFrameClassName,
+          "flex flex-col justify-end gap-3 pb-5 pt-5 text-sm font-thin text-gray-100 md:gap-4 lg:items-start lg:justify-between"
+        )}
+      >
         <p className="">Copyright © AGNTCY a Series of LF Projects, LLC</p>
         <p>
           For web site terms of use, trademark policy and other project policies

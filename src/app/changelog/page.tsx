@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { cn } from "lib/utils";
+import { pageFrameClassName } from "lib/layout";
 import ChangeLogContent from "~/components/changelog/changelog-content";
 
 export const metadata: Metadata = {
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
 export default function ChangeLog() {
   return (
     <main className="flex justify-center items-center text-white">
-      <div className="container max-w-[1200px] mx-auto px-4 md:px-8 lg:px-48 pb-12">
+      <div className={cn(pageFrameClassName, "pb-12")}>
         <Header />
         <section aria-label="Changelog Content">
           <ChangeLogContent />

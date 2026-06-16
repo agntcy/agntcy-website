@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import {
   Drawer,
   DrawerContent,
@@ -10,93 +9,103 @@ import {
 } from "components/ui/drawer";
 import { Button } from "components/ui/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "lib/utils";
+import {
+  navBarClassName,
+  navLogoSlotClassName,
+  pageFrameClassName,
+} from "lib/layout";
+import AgntcyLogo from "components/homepage/agntcy-logo";
+
+const navLinkClassName =
+  "cursor-pointer bg-[linear-gradient(#fbaf45,#fbaf45)] bg-[length:0%_2px] bg-[position:0_100%] bg-no-repeat pb-1 text-white transition-[color,background-size] duration-200 hover:bg-[length:100%_2px] hover:text-[#fbaf45]";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const isHomepage = pathname === "/";
+
   const navItems = [
     {
       name: "Documentation",
       href: "https://docs.agntcy.org",
-      target: "_blank",
+      target: "_blank" as const,
     },
     {
-      name: "GitHub",
-      href: "https://github.com/agntcy",
-      target: "_blank",
-    },
-    {
-      name: "Blogs",
-      href: "https://blogs.agntcy.org",
-      target: "_blank",
-    },
-    {
-      name: "YouTube",
-      href: "https://www.youtube.com/@agntcy-lf",
-      target: "_blank",
+      name: "Articles",
+      href: "/articles",
+      target: "_self" as const,
     },
     {
       name: "Supporters",
       href: "/supporters",
-      target: "_self",
+      target: "_self" as const,
     },
     {
-      name: "Resources",
-      href: "/resources",
-      target: "_self",
+      name: "YouTube",
+      href: "https://www.youtube.com/playlist?list=PL49BrgsjXg5qVeRVqlX9O74W02q3c8fow",
+      target: "_blank" as const,
     },
     {
-      name: "Changelog",
-      href: "/changelog",
-      target: "_self",
+      name: "GitHub",
+      href: "https://github.com/agntcy",
+      target: "_blank" as const,
     },
   ];
 
+  const navLinks = (
+    <>
+      {navItems.map((item) => (
+        <Link
+          key={item.name}
+          href={item.href}
+          target={item.target}
+          rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+          className={navLinkClassName}
+        >
+          {item.name}
+        </Link>
+      ))}
+    </>
+  );
+
   return (
-    <nav className="bg-bg shadow-lg py-8">
-      <Drawer direction="left">
-        <div className="container mx-auto px-2">
-          <div className="flex justify-between">
-            <div className="flex justify-between items-center w-full">
-              <div className="">
-                <Link href="/">
-                  <Image
-                    unoptimized
-                    src={"/images/logo.png"}
-                    alt="Logo"
-                    className=""
-                    height={150}
-                    width={150}
-                  />
-                </Link>
-              </div>
-              <div className="">
-                <div className="hidden lg:flex items-center space-x-1">
-                  {navItems.map((item) => (
-                    <Link key={item.name} href={item.href} target={item.target}>
-                      <div className="py-5 px-3 text-xl text-[#FBAB2C] hover:text-orange-500">
-                        {item.name}
-                      </div>
-                    </Link>
-                  ))}
-                  <Link
-                    target="_blank"
-                    href="https://join.slack.com/t/agntcy/shared_invite/zt-3hb4p7bo0-5H2otGjxGt9OQ1g5jzK_GQ"
-                  >
-                    <div className="flex-shrink-0 text-center text-xl font-bold text-[#FBAB2C] hover:text-[#00142B] transition ease-in-out  hover:bg-[#FBAB2C] border-2 border-[#FBAB2C] py-3 md:py-0 lg:py-3 xl:py-3 2xl:py-3 px-5 rounded-full">
-                      Join us on Slack
-                    </div>
-                  </Link>
-                </div>
-              </div>
+    <nav className={navBarClassName}>
+      <div className={pageFrameClassName}>
+        <div
+          className={cn(
+            "flex w-full items-center",
+            isHomepage ? "justify-end" : "gap-4"
+          )}
+        >
+          {!isHomepage && (
+            <div className={navLogoSlotClassName}>
+              <Link href="/" aria-label="AGNTCY home">
+                <AgntcyLogo className="h-7 w-auto md:h-8" />
+              </Link>
             </div>
-            <div className="lg:hidden flex items-center text-white">
+          )}
+
+          <div
+            className={cn(
+              "hidden flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white md:gap-x-8 md:text-base lg:flex",
+              !isHomepage && "ml-auto"
+            )}
+          >
+            {navLinks}
+          </div>
+
+          <div className={cn("lg:hidden", !isHomepage && "ml-auto")}>
+            <Drawer direction="left">
               <DrawerTrigger asChild>
                 <Button
                   size="icon"
-                  variant={"ghost"}
-                  className="mobile-menu-button"
+                  variant="ghost"
+                  className="mobile-menu-button text-white"
+                  aria-label="Open menu"
                 >
                   <svg
-                    className="w-8 h-8"
+                    className="h-8 w-8"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -107,49 +116,38 @@ const Navbar = () => {
                       strokeLinejoin="round"
                       strokeWidth="2"
                       d="M4 6h16M4 12h16m-7 6h7"
-                    ></path>
+                    />
                   </svg>
                 </Button>
               </DrawerTrigger>
-            </div>
+            <DrawerContent className="border-[#00142B] bg-[#00142B]">
+              <DrawerHeader>
+                <DrawerTitle>
+                  <span className="sr-only">Menu</span>
+                </DrawerTitle>
+              </DrawerHeader>
+              <DrawerDescription className="flex flex-col gap-y-2 p-5 text-sm text-white md:text-base">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    target={item.target}
+                    rel={
+                      item.target === "_blank"
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className={navLinkClassName}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </DrawerDescription>
+            </DrawerContent>
+          </Drawer>
           </div>
         </div>
-        <DrawerContent className="bg-[#00142B] border-[#00142B]">
-          <DrawerHeader>
-            <DrawerTitle>
-              <p className="hidden">menu</p>
-            </DrawerTitle>
-          </DrawerHeader>
-          <DrawerDescription className="flex flex-col gap-4 p-5">
-            {navItems.map((item) => (
-              <Button
-                variant="ghost"
-                className="text-[#FBAB2C] text-lg"
-                size="lg"
-                key={item.name}
-                asChild
-              >
-                <Link key={item.name} href={item.href} target={item.target}>
-                  {item.name}
-                </Link>
-              </Button>
-            ))}
-            <Button
-              variant="ghost"
-              className="text-[#FBAB2C] text-lg"
-              size="lg"
-              asChild
-            >
-              <Link
-                target="_blank"
-                href="https://join.slack.com/t/agntcy/shared_invite/zt-3hb4p7bo0-5H2otGjxGt9OQ1g5jzK_GQ"
-              >
-                Join us on Slack
-              </Link>
-            </Button>
-          </DrawerDescription>
-        </DrawerContent>
-      </Drawer>
+      </div>
     </nav>
   );
 };

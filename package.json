@@ -6,24 +6,20 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint src"
   },
   "dependencies": {
     "@next/third-parties": "^16.1.4",
     "@radix-ui/react-aspect-ratio": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.17",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "embla-carousel-auto-scroll": "^8.6.0",
-    "embla-carousel-autoplay": "^8.6.0",
-    "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.477.0",
     "next": "^16.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "stylelint": "^16.15.0",
     "tailwind-merge": "^3.0.2",
-    "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
@@ -36,10 +32,12 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "stylelint": "^16.15.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
   "overrides": {
-    "postcss": "^8.5.10"
+    "postcss": "^8.5.10",
+    "js-yaml": "^4.2.0"
   }
 }

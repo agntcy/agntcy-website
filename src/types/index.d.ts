@@ -8,6 +8,19 @@ type Resource = {
   isAvailable: string;
   approved: string;
   isFeatured: boolean;
+  source?:
+    | "Outshift"
+    | "AGNTCY Blog"
+    | "Dell"
+    | "WSJ for Business"
+    | "VentureBeat"
+    | "Galileo";
+  category?:
+    | "Technical Blog"
+    | "Dell Blog"
+    | "Outshift by Cisco Blog"
+    | "External Articles";
+  date?: string;
 };
 
 type Release = {
@@ -21,7 +34,7 @@ type Release = {
   prerelease: boolean;
   published_at: string;
   html_url: string;
-  repo: string; // we’ll add this field manually
+  repo: string; // we'll add this field manually
   body: string;
   assets: Array;
   commitData?: CommitData;
@@ -41,29 +54,8 @@ type CommitData = {
   };
 };
 
-type ResourcesResponse = {
-  data: Resource[];
-};
-
 type FeatureImage = {
   src: string,
   width: number,
   height: number,
-};
-
-type Logo = {
-  name: string,
-  src: string,
-  width: number,
-  height: number,
-  type: string,
-  featured: boolean,
-};
-
-type Quotes = {
-  name: string,
-  img: Logo,
-  authorName: string
-  authorTitle: string,
-  blurb: string
 };
