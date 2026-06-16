@@ -1,143 +1,68 @@
-import Image from "next/image";
 import Link from "next/link";
-import { AspectRatio } from "~/components/ui/aspect-ratio";
-import { formativeMembers } from "~/data/members";
-import RenderLogos from "../reusables/render-logo";
-import { Marquee } from "components/ui/marquee";
-import { frameworkFeatures } from "~/data/homepage-data";
+import { cn } from "lib/utils";
+import { ArrowLongRight, GithubIcon, SlackIcon } from "~/components/icons";
+import { heroContent } from "~/data/homepage-data";
+import { pageFrameClassName } from "lib/layout";
+import { slackButtonClassName, slackInviteUrl } from "lib/links";
+import AgntcyLogo from "./agntcy-logo";
+import LinuxFoundationLogo from "./linux-foundation-logo";
 
 const Hero = () => {
   return (
-    <>
-      <div className="mx-auto container max-w-7xl bg-bg md:py-24 max-md:pt-12 max-md:pb-3">
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-3 gap-5 lg:gap-36 w-full py-0 items-center justify-center">
-          <div className="col-span-1 px-4">
-            <div className="max-w-xs mx-auto hidden lg:block ">
-              <AspectRatio ratio={349 / 252}>
-                <Image
-                  unoptimized
-                  src={"/images/homepage/mergedLogo.png"}
-                  alt="Logo"
-                  fill
-                />
-              </AspectRatio>
-            </div>
+    <div className={cn(pageFrameClassName, "pb-10 pt-2 md:pb-14 md:pt-4")}>
+      <div className="flex w-full flex-col gap-8">
+        <div className="flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:items-center">
+          <AgntcyLogo className="h-auto w-full max-w-[280px] md:max-w-[360px] lg:max-w-[400px]" />
+
+          <div className="flex items-center gap-3">
+            <span className="text-sm font-light text-white/80 md:text-base">
+              part of
+            </span>
+            <LinuxFoundationLogo className="h-auto w-[240px] md:w-[280px] lg:w-[321px]" />
           </div>
-          <div className="col-span-1 lg:col-span-2 px-4 relative">
-            <div className="max-w-md block lg:hidden">
-              <AspectRatio ratio={416 / 95}>
-                <Image
-                  unoptimized
-                  src={"/images/homepage/agntcy-logo-white.png"}
-                  alt="Logo"
-                  fill
-                />
-              </AspectRatio>
-            </div>
-            <div className="max-w-md block lg:hidden pt-12">
-              <AspectRatio ratio={300 / 100}>
-                <Image
-                  unoptimized
-                  src={"/images/homepage/linux.png"}
-                  alt="Logo"
-                  fill
-                />
-              </AspectRatio>
-            </div>
-            <h1 className="text-[#FBAB2C] pt-10 font-medium text-3xl md:text-5xl">
-              Building infrastructure for the Internet of Agents 
-            </h1>
-            <div className="text-white py-10 text-xl">
-              The AGNTCY project provides the complete infrastructure stack for
-              agent collaboration—discovery, identity, messaging, and
-              observability that works across any vendor or framework. It is the
-              foundational layer that lets specialized agents find each other,
-              verify capabilities, and work together on complex problems.
-            </div>
-            <div className="pb-12 flex">
-              <Link target="_blank" href="https://github.com/agntcy">
-                <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-9 rounded-full">
-                  Explore on Github
-                </div>
-              </Link>
-            </div>
+        </div>
+
+        <div className="w-full space-y-6">
+          <h1 className="w-full text-2xl font-light leading-tight tracking-tight text-[#FBAF45] sm:text-3xl md:text-4xl lg:text-5xl lg:whitespace-nowrap xl:text-[56px]">
+            {heroContent.headline}
+          </h1>
+
+          <p className="w-full max-w-none text-lg font-normal leading-relaxed text-white md:text-xl">
+            {heroContent.description}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4 pt-2">
+            <Link
+              href={heroContent.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent px-6 py-3 text-base font-medium text-white transition-colors hover:border-white hover:bg-white/5 md:text-lg"
+            >
+              <GithubIcon className="h-5 w-5" aria-hidden="true" />
+              GitHub
+            </Link>
+            <Link
+              href={slackInviteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={slackButtonClassName}
+            >
+              <SlackIcon className="h-5 w-5" aria-hidden="true" />
+              Slack
+            </Link>
+            <Link
+              href={heroContent.learnMoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#187ADC] px-6 py-3 text-base font-medium text-white transition-colors hover:bg-[#187ADC]/90 md:text-lg"
+            >
+              Learn more
+              <ArrowLongRight size={22} color="currentColor" />
+            </Link>
           </div>
         </div>
       </div>
-      <div className="w-full shadow-[0_8px_15px_#187adc8f,0_-8px_15px_#187adc8f]">
-        <div className="container max-sm:px-3 mx-auto py-6 flex items-center gap-2">
-          <h6 className="text-orange text-xl md:text-2xl md:min-w-64">
-            Formative Members
-          </h6>
-          <div className="relative overflow-hidden">
-            <Marquee pauseOnHover className="[--duration:50s]">
-              {RenderLogos(
-                formativeMembers,
-                "self-center flex justify-center mx-4 md:mx-8"
-              )}
-            </Marquee>
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-bg"></div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-bg"></div>
-          </div>
-        </div>
-      </div>
-      <div className="py-12 md:py-24 lg:py-28 w-full container mx-auto">
-        <div className="mx-6 md:mx-12 lg:max-w-6xl lg:mx-auto p-6 md:p-12 lg:p-16 text-white rounded-2xl bg-gradient-to-t from-[#1E5BB3] to-[#0D274D]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="space-y-6 md:space-y-10">
-              <h2 className="text-orange text-6xl text-[64px] max-w-[300px]">
-                We ❤️ all protocols
-              </h2>
-              <div className="flex">
-                <Link target="_blank" href="https://github.com/agntcy">
-                  <div className="flex-shrink-0 text-2xl font-bold text-[#FBAB2C] hover:text-[#00142B] hover:bg-[#FBAB2C] transition ease-in-out border-2 border-[#FBAB2C] py-3 px-9 rounded-full">
-                    Explore on Github
-                  </div>
-                </Link>
-              </div>
-            </div>
-            <div className="space-y-4 lg:col-span-2">
-              <div className="text-xl">
-                Agents are only as good as the infrastructure connecting them.
-                AGNTCY delivers the complete stack for the Internet of Agents so
-                that specialized agents can collaborate across platforms to
-                solve complex problems.
-              </div>
-              <div className="text-xl">
-                Skip the custom integrations: With AGNTCY, your agents can spend
-                their time solving problems instead of figuring out how to talk
-                to each other. This includes support for key protocols such as
-                A2A and MCP as well as across the full multi-agent software
-                development lifecycle.
-              </div>
-            </div>
-          </div>
-          <div className="my-8 md:my-12 rounded-sm overflow-hidden">
-            <video
-              src="/videos/AGTNCY-Architecture-R2.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-auto"
-            />
-          </div>
-          <div>
-            <h5 className="font-bold text-2xl">
-              The complete AGNTCY framework includes:
-            </h5>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 md:mt-6">
-              {frameworkFeatures.map((feature, index) => (
-                <div key={index} className="space-y-2">
-                  <h6 className="text-2xl">{feature.title}</h6>
-                  <p className="text-base">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 

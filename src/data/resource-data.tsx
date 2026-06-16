@@ -1,137 +1,447 @@
-export const resourceData = [
+export const articlesData: Resource[] = [
   {
-    title: "AGNTCY Briefs: Youtube Playlist",
+    title: "Now you're thinking with Agents",
     description:
-      "Learn how to use AGNTCY's open protocols with fast, focused video explainers",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
-    resourceLink:
-      "https://www.youtube.com/playlist?list=PL49BrgsjXg5qVeRVqlX9O74W02q3c8fow",
-    featureImage: {
-      src: "/images/image-1.png",
-      width: 150,
-      height: 50,
-    },
-    isFeatured: true,
-    approved: "TRUE",
-    isAvailable: "Yes",
-  },
-  {
-    title: "Agent SDK",
-    description:
-      "Start coding with AGNTCY: core SDK for agent communication and orchestration",
+      "Deploy agents where resources live instead of routing every request through a central coordinator.",
     contributor: "AGNTCY",
     contributorLink: "https://agntcy.org/",
-    resourceLink: "https://github.com/agntcy/app-sdk",
-    featureImage: {
-      src: "/images/image-2.png",
-      width: 150,
-      height: 50,
-    },
-    isFeatured: true,
-    approved: "TRUE",
-    isAvailable: "Yes",
-  },
-  {
-    title: "CoffeeAGNTCY",
-    description:
-      "CoffeeAGNTCY: demo app for short (Corto) and long (Lungo) agent communication protocols",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink: "https://github.com/agntcy/coffeeAgntcy",
-    featureImage: {
-      src: "/images/image-3.png",
-      width: 150,
-      height: 50,
-    },
-    isFeatured: true,
-    approved: "TRUE",
-    isAvailable: "Yes",
-  },
-  // {
-  //   title: "(Video) App SDK Walkthrough Part 1",
-  //   description: "Video walkthrough of the AGNTCY app SDK",
-  //   contributor: "AGNTCY",
-  //   contributorLink: "https://agntcy.org/",
-  //   resourceLink:
-  //     "https://drive.google.com/file/d/1AC5LenOb-QcD3rkGxT8xLUAU9dadEiHZ/view?usp=drive_link",
-  //   isFeatured: true,
-  //   approved: "TRUE",
-  //   isAvailable: "Yes",
-  // },
-  // {
-  //   title: "(Video) App SDK Walkthrough Part 2",
-  //   description: "Video walkthrough part 2 of the AGNTCY app SDK",
-  //   contributor: "AGNTCY",
-  //   contributorLink: "https://agntcy.org/",
-  //   resourceLink:
-  //     "https://drive.google.com/file/d/1AC5LenOb-QcD3rkGxT8xLUAU9dadEiHZ/view?usp=drive_link",
-  //   isFeatured: true,
-  //   approved: "TRUE",
-  //   isAvailable: "Yes",
-  // },
-];
-
-export const otherResources = [
-  {
-    title: "AI observability in multi-agent systems using OpenTelemetry",
-    description:
-      "Microsoft, Splunk work with AGTNCY to introduce new semantic conventions into OpenTelemetry",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
     resourceLink:
-      "https://outshift.cisco.com/blog/ai-observability-multi-agent-systems-opentelemetry",
+      "https://blogs.agntcy.org/technical/agents/a2a/2026/06/08/thinking-with-agents.html",
     isAvailable: "Yes",
     approved: "TRUE",
     isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-06-08",
+  },
+  {
+    title: "lazydir: A Terminal UI for Browsing Agent Directory",
+    description:
+      "Browse and inspect Agent Directory records from the terminal with lazydir.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/2026/05/20/lazydir-v0.0.1.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-05-20",
+  },
+  {
+    title: "SLIM MVP: Multicluster Customer Remediation with AI Agents",
+    description:
+      "A multicluster customer-remediation scenario built on SLIM with private customer clusters.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/2026/04/21/mvp-ai-agents-multicluster.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-04-21",
+  },
+  {
+    title: "SLIM for Observability and Remediation: Beyond Agentic AI",
+    description:
+      "Transport OpenTelemetry over SLIM for observability and remediation workflows.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/2026/04/02/transporting-opentelemetry-over-slim.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-04-02",
+  },
+  {
+    title: "SlimRPC Multicast: One Call, Every Agent",
+    description:
+      "Multicast RPC patterns for coordinating many agents in agentic AI workloads.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/slim/agents/2026/03/31/slimrpc-multicast.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-03-31",
+  },
+  {
+    title: "Announcing slim-a2a-go 0.1.0: Native A2A over SLIM for Go",
+    description:
+      "Go library for A2A agents to communicate natively over SLIM transport.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/agents/go/slim/a2a/announcements/2026/03/24/slim-a2a-go-release.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-03-24",
+  },
+  {
+    title:
+      "Write Once, Run Everywhere: Why Rust + UniFFI is the Future of Multi-Language Libraries",
+    description:
+      "Use Rust and UniFFI to ship core logic once across Python, Go, Swift, and more.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/2026/03/13/rust-uniffi-multilanguage-strategy.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-03-13",
+  },
+  {
+    title:
+      "Directory Federation Hands-On: SPIRE and SPIFFE in a Local Kind Environment",
+    description:
+      "Hands-on Agent Directory federation with SPIRE and SPIFFE in Kubernetes.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/security/directory/2026/02/25/directory-federation.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-02-25",
+  },
+  {
+    title: "Directory MCP Server: Bringing AI Agent Discovery to Your IDE",
+    description:
+      "Connect AI assistants to Agent Directory discovery through an MCP server.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/2026/02/19/directory-mcp-server.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-02-19",
+  },
+  {
+    title:
+      "Agent Directory v1.0: Distributed Announce and Discovery of Multi-Agentic-Systems",
+    description:
+      "Announce and discover specialized agents across distributed multi-agent systems.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink: "https://blogs.agntcy.org/technical/2026/02/19/dir-v1.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-02-19",
+  },
+  {
+    title: "SLIM v1.0: Secure Low-Latency Interactive Messaging for Agentic AI",
+    description:
+      "SLIM v1.0 release for secure, low-latency messaging between agents, tools, and humans.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink: "https://blogs.agntcy.org/technical/2026/02/03/slim-v1.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-02-03",
+  },
+  {
+    title: "Integrating Rust and Go with UniFFI: A Complete Guide",
+    description:
+      "Practical guide to binding Rust libraries for Go using UniFFI and CGO.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/2026/01/27/integrating-rust-and-go-with-uniffi.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-01-27",
+  },
+  {
+    title: "Directory v1.0: Dual-Mode Authentication for Secure Agent Discovery",
+    description:
+      "Dual-mode authentication for verifying agents during secure discovery.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/security/authentication/directory/2026/01/22/directory-authentication-dual-mode-security.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-01-22",
+  },
+  {
+    title: "Distributing C Artifacts for Go Modules: A Practical Approach",
+    description:
+      "Distribute CGO-dependent Go modules with prebuilt C artifacts across platforms.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/2026/01/20/distributing-c-artifacts-for-go-modules.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-01-20",
+  },
+  {
+    title:
+      "The Future of Travel: Building a Multi-Agent Ecosystem with the Internet of Agents",
+    description:
+      "AGNTCY in action: automating marketing tasks with reusable AI agents.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/agents/kubernetes/demo/slim/open-telemetry/2026/01/15/blog-touring-scheduling-system.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-01-15",
+  },
+  {
+    title: "Dell Drives Open Source AI Innovation with AGNTCY, Linux Foundation",
+    description:
+      "Discover how Dell & AGNTCY, now part of the Linux Foundation, are shaping open, interoperable AI for businesses worldwide.",
+    contributor: "Dell",
+    contributorLink: "https://www.dell.com/",
+    resourceLink:
+      "https://www.dell.com/en-us/blog/dell-drives-open-source-ai-innovation-with-agntcy-linux-foundation/",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Dell",
+    category: "Dell Blog",
+    date: "2026-03-02",
+  },
+  {
+    title:
+      "Webex integrates AGNTCY Directory and Identity to power trusted onboarding, discovery, and verification of agentic apps",
+    description:
+      "Webex integrates AGNTCY Directory and Identity to deliver secure onboarding, discovery, and governance of interoperable agentic apps across its AI ecosystem.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/webex-integrates-agntcy-directory-and-identity",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2026-03-10",
+  },
+  {
+    title:
+      "Building a Switchboard for the Internet of Agents: Integrating AGNTCY Directory and NANDA Index",
+    description:
+      "Integrating AGNTCY Directory and the NANDA Index to connect agents across the agentic web.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/outshift-mit-agentic-web",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-12-04",
+  },
+  {
+    title:
+      "Hands-on with CAIPE: Building an open source, multi-agent system for platform engineering",
+    description:
+      "How the open source Community AI Platform Engineering (CAIPE) project leverages AGNTCY components.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/caipe-building-open-source-multi-agent-systems-for-platform-engineering",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-09-05",
+  },
+  {
+    title:
+      "Webex and AGNTCY: How this healthcare booking multi-agent system showcases enterprise innovation",
+    description:
+      "Building a multi-agent system for healthcare contact center booking with Webex and AGNTCY.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/webex-agntcy-multi-agent-systems",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-10-15",
+  },
+  {
+    title:
+      "How SoftServe used AGNTCY to implement a multi-agent intelligence system for video monitoring",
+    description:
+      "How SoftServe used AGNTCY for scalable, modular intelligent video monitoring.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/softserve-agntcy-multi-agent-video-monitoring",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-11-14",
+  },
+  {
+    title:
+      "AI observability in multi-agent systems using OpenTelemetry",
+    description:
+      "Microsoft and Splunk work with AGNTCY to introduce new semantic conventions into OpenTelemetry for multi-agent observability.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/ai-observability-multi-agent-systems-opentelemetry",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-09-22",
+  },
+  {
+    title:
+      "Building multi-agentic systems with AGNTCY's Application SDK and reference application",
+    description:
+      "The Sock Shop for the Internet of Agents, showcasing AGNTCY's SDK and reference application.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/agntcy-sdk-multi-agent-systems-reference",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-07-23",
   },
   {
     title: "AGNTCY project donated to Linux Foundation with major industry backing",
     description:
-      "Cisco, Dell Technologies, Google Cloud, Oracle and Red Hat join as formative members, alongside 75+ companies that have been contributing to and supporting AGNTCY.",
+      "Cisco, Dell Technologies, Google Cloud, Oracle and Red Hat join as formative members, alongside 75+ companies contributing to AGNTCY.",
     contributor: "",
     contributorLink: "https://outshift.com/",
     resourceLink:
-      "https://outshift.cisco.com/blog/agntcy-donated-to-linux-foundation",
+      "https://outshift.cisco.com/blog/ai-ml/agntcy-donated-to-linux-foundation",
     isAvailable: "Yes",
     approved: "TRUE",
     isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-07-29",
   },
   {
     title:
-      "(Video) Setting up AGNTCY's Agent Identity and MCP Server Using Duo Identity Provider",
+      "AGNTCY Agent Directory: Find and publish AI agents with our new service",
     description:
-      "CLI walkthrough: create, publish and verify AI agents IDs using Cisco Duo for authentication",
+      "Discover and publish AI agents with the AGNTCY Directory service.",
     contributor: "",
     contributorLink: "https://outshift.com/",
-    resourceLink: "https://youtu.be/--a4vUKTexE",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-  },
-  {
-    title:
-      "(Video) Setting up AGNTCY's Agent Identity and MCP Server Using Okta Identity Provider",
-    description:
-      "Use CLI tools to create, publish, and verify MCP server identities with Okta as the ID provider.",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
-    resourceLink: "https://youtu.be/6aUUzpFwJ6s",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-  },
-  {
-    title: "AGNTCY: Building the Future of Multi-Agentic Systems",
-    description:
-      "Why Galileo joined AGNTCY to help standardize agentic AI for developers",
-    contributor: "Galileo",
-    contributorLink: "https://galileo.ai/",
     resourceLink:
-      "https://www.galileo.ai/blog/agntcy-open-collective-multi-agent-standardization",
+      "https://outshift.cisco.com/blog/ai-ml/agntcy-agent-directory-find-and-publish-ai-agents",
     isAvailable: "Yes",
     approved: "TRUE",
     isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-05-16",
+  },
+  {
+    title: "New AI Agent Identity framework from the AGNTCY",
+    description:
+      "How AGNTCY helps agents prove who they are and what they are authorized to do.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/ai-agent-identity-framework-agntcy",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-06-05",
+  },
+  {
+    title: "The 4 phases for successful development of multi-agent software",
+    description:
+      "How to build multi-agent systems in four phases from idea to deployment.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/four-phases-for-development-of-multi-agent-apps",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-03-04",
+  },
+  {
+    title: "Building the Internet of Agents: Introducing AGNTCY.org",
+    description:
+      "Why AI needs open infrastructure for discovery, identity, and collaboration across agents.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://outshift.cisco.com/blog/ai-ml/building-the-internet-of-agents-introducing-the-agntcy",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Outshift",
+    category: "Outshift by Cisco Blog",
+    date: "2025-03-06",
+  },
+  {
+    title: "Why We Need a New Internet for AI",
+    description:
+      "Vijoy Pandey on reshaping the internet to support AI-native, agent-based systems",
+    contributor: "WSJ for Business",
+    contributorLink: "https://www.wsj.com/",
+    resourceLink:
+      "https://partners.wsj.com/cisco/building-the-internet-of-agents/why-we-need-a-new-internet-for-ai/",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "WSJ for Business",
+    category: "External Articles",
   },
   {
     title:
@@ -141,109 +451,25 @@ export const otherResources = [
     contributor: "VentureBeat",
     contributorLink: "https://venturebeat.com/",
     resourceLink:
-      "https://venturebeat.com/ai/a-standard-open-framework-for-building-ai-agents-is-coming-from-cisco-langchain-and-galileo/",
+      "https://venturebeat.com/ai/a-standard-open-framework-for-building-ai-agents-is-coming-from-cisco-langchain-and-galileo",
     isAvailable: "Yes",
     approved: "TRUE",
     isFeatured: false,
+    source: "VentureBeat",
+    category: "External Articles",
   },
   {
-    title: "(Video) What is the Internet of Agents?",
+    title: "AGNTCY: Building the Future of Multi-Agentic Systems",
     description:
-      "What is the Internet of Agents? A quick explainer of the next layer for AI collaboration.",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
-    resourceLink: "https://youtu.be/Pault4FWUwQ?si=TxXAw6AUouJRlKw9",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-  },
-  {
-    title:
-      "(Webinar) Internet of Agents 101: Building the Open Infrastructure for AI's Collaborative Future",
-    description: "Why AI needs a new internet—and how AGNTCY is building it",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
-    resourceLink: "http://cs.co/60440ch3M",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-  },
-  {
-    title: "The 4 phases for successful development of multi-agent software",
-    description:
-      "How to build multi-agent systems—four phases from idea to deployment",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
+      "Why Galileo joined AGNTCY to help standardize agentic AI for developers",
+    contributor: "Galileo",
+    contributorLink: "https://galileo.ai/",
     resourceLink:
-      "https://outshift.cisco.com/blog/four-phases-for-development-of-multi-agent-apps",
+      "https://galileo.ai/blog/agntcy-open-collective-multi-agent-standardization",
     isAvailable: "Yes",
     approved: "TRUE",
     isFeatured: false,
-  },
-  {
-    title: "Why We Need a New Internet for AI",
-    description:
-      "Vijoy Pandey on reshaping the internet to support AI-native, agent-based systems",
-    contributor: "WSJ for Business",
-    contributorLink: "https://www.wsj.com/",
-    resourceLink:
-      "https://partners.wsj.com/cisco/building-the-internet-of-agents/why-we-need-a-new-internet-for-ai",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-  },
-];
-
-export const useCases = [
-  {
-    title: "Webex and AGNTCY: How this healthcare booking multi-agent system showcases enterprise innovation",
-    description: "Building a MAS for healthcare contact center",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
-    resourceLink: "https://outshift.cisco.com/blog/webex-agntcy-multi-agent-systems",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-  },
-  {
-    title: "How SoftServe used AGNTCY to implement a multi-agent intelligence system for video monitoring",
-    description: "See how SoftServe used AGNTCY to overcome intelligent video monitoring challenges with scalable, modular, and real-time solutions.",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
-    resourceLink: "https://outshift.cisco.com/blog/how-softserve-used-agntcy-multi-agent-intelligence-video-monitoring", 
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-  },
-  {
-    title: "The Future of Travel: Building a Multi-Agent Ecosystem with the Internet of Agents",
-    description: "AGNTCY in action: automating marketing tasks with reusable AI agents",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/agents/kubernetes/demo/slim/open-telemetry/2026/01/15/blog-touring-scheduling-system.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-  },
-  {
-    title: "Hands-on with CAIPE: Building an open source, multi-agent system for platform engineering",
-    description: "How the open source Community AI Platform Engineering (CAIPE) project leverages AGNTCY components",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
-    resourceLink: "https://outshift.cisco.com/blog/caipe-building-open-source-multi-agent-systems-for-platform-engineering",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-  },
-  {
-    title: "Building multi-agentic systems with AGNTCY's Application SDK and reference application",
-    description: "The Sock Shop for the Internet of Agents. Reference application and SDK showcasing AGNTCY",
-    contributor: "",
-    contributorLink: "https://outshift.com/",
-    resourceLink: "https://outshift.cisco.com/blog/multi-agentic-systems-agntcy-application-sdk-reference-application", 
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
+    source: "Galileo",
+    category: "External Articles",
   },
 ];

@@ -1,27 +1,53 @@
-export const frameworkFeatures = [
+import type { ComponentType } from "react";
+import {
+  DirIcon,
+  IdentityIcon,
+  ObserveIcon,
+  SlimIcon,
+} from "~/components/homepage/feature-icons";
+
+export const heroContent = {
+  headline: "Building the Internet of Agents (IoA)",
+  description:
+    "AGNTCY delivers an open-source stack enabling AI agents to collaborate across vendors and frameworks through discovery, identity, messaging, and observability.",
+  githubUrl: "https://github.com/agntcy",
+  learnMoreUrl: "https://docs.agntcy.org",
+};
+
+export type FeatureCard = {
+  title: string;
+  description: string;
+  icon: ComponentType<{ className?: string }>;
+  href?: string;
+};
+
+export const featureCards: FeatureCard[] = [
   {
-    title: "Agent Discovery",
+    title: "Agent Directory Service",
     description:
-      "Leverages the Open Agent Schema Framework (OASF) to allow any agent to discover and understand the capabilities of others.",
+      "Federated registry for cross-framework, cross-protocol, cross-registry agent discovery.",
+    icon: DirIcon,
+    href: "https://dir.agntcy.org",
   },
   {
-    title: "Agent Identity",
+    title: "SLIM",
     description:
-      "Provides cryptographically verifiable identity and access control to ensure agents can act securely across organizational boundaries.",
+      "A protocol that defines the standards and guidelines for secure and efficient network-level communication between AI agents.",
+    icon: SlimIcon,
+    href: "https://slim.agntcy.org",
   },
   {
-    title: "Agent Messaging",
+    title: "Observability",
     description:
-      "Supports multi-modal, human-in-the-loop and quantum-safe communications via SLIM (Secure Low-latency Interactive Messaging).",
+      "Telemetry collectors, tools and services to enable multi-agent application observability and evaluation.",
+    icon: ObserveIcon,
+    href: "https://docs.agntcy.org/obs-and-eval/observe-and-eval/",
   },
   {
-    title: "Agent Observability",
+    title: "Identity",
     description:
-      "Provides end-to-end observability tools to help evaluate and debug complex multi-agent workflows across vendors and frameworks.",
-  },
-  {
-    title: "Protocol Integration",
-    description:
-      "Works with any agent protocol including Agent 2 Agent (A2A) and Model Context Protocol (MCP). A2A agents and MCP servers can be discovered through AGNTCY directories and monitored with AGNTCY observability tools.",
+      "Solution to manage and verify the identities of Agents or Tools issued by any organization, ensuring secure and trustworthy interactions.",
+    icon: IdentityIcon,
+    href: "https://docs.agntcy.org/identity/identity/",
   },
 ];
