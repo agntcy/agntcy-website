@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import {
   Drawer,
   DrawerContent,
@@ -21,9 +22,56 @@ import AgntcyLogo from "components/homepage/agntcy-logo";
 const navLinkClassName =
   "cursor-pointer bg-[linear-gradient(#fbaf45,#fbaf45)] bg-[length:0%_2px] bg-[position:0_100%] bg-no-repeat pb-1 text-white transition-[color,background-size] duration-200 hover:bg-[length:100%_2px] hover:text-[#fbaf45]";
 
+function clamp(value: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function getHomeLogoScrollProgress(heroLogo: HTMLElement): number {
+  const { top, height } = heroLogo.getBoundingClientRect();
+  if (height <= 0) return 0;
+
+  // Hidden until the hero logo's top edge reaches the viewport top.
+  if (top > 0) return 0;
+
+  // Animate while the logo scrolls from y=0 to fully above the viewport.
+  return clamp(-top / height, 0, 1);
+}
+
 const Navbar = () => {
   const pathname = usePathname();
   const isHomepage = pathname === "/";
+  const [homeLogoProgress, setHomeLogoProgress] = useState(0);
+
+  useEffect(() => {
+    if (!isHomepage) {
+      setHomeLogoProgress(0);
+      return;
+    }
+
+    const heroLogo = document.getElementById("hero-agntcy-logo");
+    if (!heroLogo) return;
+
+    let rafId = 0;
+
+    const update = () => {
+      rafId = 0;
+      setHomeLogoProgress(getHomeLogoScrollProgress(heroLogo));
+    };
+
+    const scheduleUpdate = () => {
+      if (!rafId) rafId = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, [isHomepage]);
 
   const navItems = [
     {
@@ -74,11 +122,26 @@ const Navbar = () => {
       <div className={pageFrameClassName}>
         <div
           className={cn(
-            "flex w-full items-center",
-            isHomepage ? "justify-end" : "gap-4"
+            "relative flex w-full items-center gap-4",
+            isHomepage ? "justify-end" : undefined
           )}
         >
-          {!isHomepage && (
+          {isHomepage ? (
+            <div className="absolute left-0 top-1/2 -translate-y-1/2">
+              <div
+                className="h-9 w-fit md:h-9"
+                style={{
+                  clipPath: `inset(${(1 - homeLogoProgress) * 100}% 0 0 0)`,
+                  pointerEvents:
+                    homeLogoProgress > 0.5 ? undefined : "none",
+                }}
+              >
+                <Link href="/" aria-label="AGNTCY home" className="flex">
+                  <AgntcyLogo className="h-7 w-auto md:h-8" />
+                </Link>
+              </div>
+            </div>
+          ) : (
             <div className={navLogoSlotClassName}>
               <Link href="/" aria-label="AGNTCY home">
                 <AgntcyLogo className="h-7 w-auto md:h-8" />
