@@ -77,11 +77,11 @@ export const metadata: Metadata = {
     siteName: "AGNTCY",
     images: [
       {
-        url: `https://agntcy.org/logo/preview-thumbnail-new.png`,
+        url: "/logo/preview-thumbnail-new.png",
         alt: "AGNTCY",
         type: "image/png",
-        width: 942,
-        height: 530,
+        width: 1920,
+        height: 1080,
       },
     ],
     locale: "en_US",
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     description:
       "AGNTCY delivers an open-source stack enabling AI agents to collaborate across vendors and frameworks through discovery, identity, messaging, and observability.",
     creator: "@outshiftbycisco",
-    images: ["https://agntcy.org/logo/preview-thumbnail-new.png"],
+    images: ["/logo/preview-thumbnail-new.png"],
   },
   metadataBase: new URL("https://agntcy.org/"),
   alternates: {
