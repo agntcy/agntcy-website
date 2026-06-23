@@ -20,7 +20,7 @@ jobs:
         uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2.19.4
         with:
           egress-policy: audit
-      - uses: actions/checkout@130a169078a413d3a5246a393625e8e742f387f6 # v4.3.1
+      - uses: actions/checkout@b9e0990d219a03df7633c93f6f005a8fecbcab22 # v4.3.1
       - name: 🔂 dependency review
         uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
         with:
