@@ -7,14 +7,13 @@ import { articlesData } from "~/data/resource-data";
 type ArticleCategory = NonNullable<Resource["category"]>;
 type ArticleFilter = "All" | ArticleCategory;
 
-const categories = articlesData.reduce<ArticleCategory[]>((acc, article) => {
-  if (article.category && !acc.includes(article.category)) {
-    acc.push(article.category);
-  }
-  return acc;
-}, []);
+const FILTER_CATEGORIES: ArticleCategory[] = [
+  "Technical Blog",
+  "TSC",
+  "External Articles",
+];
 
-const FILTERS = ["All", ...categories] as const;
+const FILTERS = ["All", ...FILTER_CATEGORIES] as const;
 
 const sortArticlesByDate = (articles: typeof articlesData) =>
   [...articles].sort((a, b) => {
@@ -45,7 +44,10 @@ export default function ArticlesContent() {
 
   return (
     <section>
-      <div className="mb-8 flex flex-wrap items-center gap-3">
+      <nav
+        aria-label="Filter articles by category"
+        className="mb-8 inline-flex items-center rounded-full border border-[#0d274d] bg-[#0d274d]/30 p-1"
+      >
         {FILTERS.map((filter) => {
           const isActive = activeFilter === filter;
           const count = filterCounts[filter] ?? 0;
@@ -56,17 +58,26 @@ export default function ArticlesContent() {
               type="button"
               onClick={() => setActiveFilter(filter)}
               aria-pressed={isActive}
-              className={`rounded-full border px-5 py-2 text-sm font-semibold transition-colors ${
+              className={`inline-flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition-colors duration-200 md:px-4 md:text-sm ${
                 isActive
-                  ? "border-accent-blue bg-accent-blue text-white"
-                  : "border-white/30 bg-transparent text-white hover:border-white/50"
+                  ? "bg-[#187adc] text-white shadow-[0px_2px_12px_rgba(24,122,220,0.45)]"
+                  : "text-white/70 hover:text-[#fbaf45]"
               }`}
             >
-              {filter} {count}
+              {filter}
+              <span
+                className={`inline-flex min-w-[1.25rem] items-center justify-center rounded-full px-1.5 py-0.5 text-[10px] font-bold tabular-nums leading-none md:text-[11px] ${
+                  isActive
+                    ? "bg-white/20 text-white"
+                    : "bg-white/10 text-white/50"
+                }`}
+              >
+                {count}
+              </span>
             </button>
           );
         })}
-      </div>
+      </nav>
 
       <div className="grid grid-cols-1 gap-6 pb-16 md:grid-cols-2 xl:grid-cols-3">
         {filteredArticles.map((article) => (

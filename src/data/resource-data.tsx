@@ -238,7 +238,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Dell",
-    category: "Dell Blog",
+    category: "TSC",
     date: "2026-03-02",
   },
   {
@@ -254,7 +254,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2026-03-10",
   },
   {
@@ -270,7 +270,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-12-04",
   },
   {
@@ -286,7 +286,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-09-05",
   },
   {
@@ -302,7 +302,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-10-15",
   },
   {
@@ -318,7 +318,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-11-14",
   },
   {
@@ -334,7 +334,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-09-22",
   },
   {
@@ -350,7 +350,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-07-23",
   },
   {
@@ -365,7 +365,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-07-29",
   },
   {
@@ -381,7 +381,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-05-16",
   },
   {
@@ -396,7 +396,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-06-05",
   },
   {
@@ -411,7 +411,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-03-04",
   },
   {
@@ -426,7 +426,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Outshift",
-    category: "Outshift by Cisco Blog",
+    category: "TSC",
     date: "2025-03-06",
   },
   {
@@ -442,6 +442,7 @@ export const articlesData: Resource[] = [
     isFeatured: false,
     source: "WSJ for Business",
     category: "External Articles",
+    date: "2025-03-09",
   },
   {
     title:
@@ -457,6 +458,7 @@ export const articlesData: Resource[] = [
     isFeatured: false,
     source: "VentureBeat",
     category: "External Articles",
+    date: "2025-03-06",
   },
   {
     title: "AGNTCY: Building the Future of Multi-Agentic Systems",
@@ -471,5 +473,6 @@ export const articlesData: Resource[] = [
     isFeatured: false,
     source: "Galileo",
     category: "External Articles",
+    date: "2025-03-05",
   },
 ];

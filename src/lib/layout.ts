@@ -1,5 +1,5 @@
 export const pageFrameClassName =
-  "container mx-auto w-full max-w-7xl px-4 md:px-8";
+  "container mx-auto w-full max-w-7xl px-6 md:px-12 lg:px-16";
 
 export const navLogoSlotClassName =
   "flex h-9 w-[124px] shrink-0 items-center md:h-9 md:w-[142px]";

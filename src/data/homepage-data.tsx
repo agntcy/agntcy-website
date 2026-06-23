@@ -48,6 +48,6 @@ export const featureCards: FeatureCard[] = [
     description:
       "Solution to manage and verify the identities of Agents or Tools issued by any organization, ensuring secure and trustworthy interactions.",
     icon: IdentityIcon,
-    href: "https://docs.agntcy.org/identity/identity/",
+    href: "https://identity-docs.outshift.com/docs/intro/",
   },
 ];

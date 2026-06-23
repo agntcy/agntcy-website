@@ -1,15 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "lib/utils";
-import { ArrowLongRight, GithubIcon, SlackIcon } from "~/components/icons";
+import { ArrowLongRight } from "~/components/icons";
 import { heroContent } from "~/data/homepage-data";
 import { pageFrameClassName } from "lib/layout";
-import { slackButtonClassName, slackInviteUrl } from "lib/links";
+import {
+  outlineCtaButtonClassName,
+  outlineCtaIconClassName,
+  slackInviteUrl,
+} from "lib/links";
 import AgntcyLogo from "./agntcy-logo";
 import LinuxFoundationLogo from "./linux-foundation-logo";
 
 const Hero = () => {
   return (
-    <div className={cn(pageFrameClassName, "pb-10 pt-0 md:pb-14 md:pt-2")}>
+    <div className={cn(pageFrameClassName, "pb-10 pt-4 md:pb-14 md:pt-8")}>
       <div className="flex w-full flex-col gap-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:items-center">
           <div id="hero-agntcy-logo" className="w-fit">
@@ -33,24 +38,38 @@ const Hero = () => {
             {heroContent.description}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center gap-3 pt-2">
             <Link
               href={heroContent.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent px-6 py-3 text-base font-medium text-white transition-colors hover:border-white hover:bg-white/5 md:text-lg"
+              className={outlineCtaButtonClassName}
             >
-              <GithubIcon className="h-5 w-5" aria-hidden="true" />
-              GitHub
+              Github
+              <Image
+                src="/images/homepage/github.svg"
+                width={22}
+                height={21}
+                alt=""
+                aria-hidden
+                className={outlineCtaIconClassName}
+              />
             </Link>
             <Link
               href={slackInviteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={slackButtonClassName}
+              className={outlineCtaButtonClassName}
             >
-              <SlackIcon className="h-5 w-5" aria-hidden="true" />
-              Slack
+              Join us on Slack
+              <Image
+                src="/images/homepage/slack.svg"
+                width={20}
+                height={20}
+                alt=""
+                aria-hidden
+                className={outlineCtaIconClassName}
+              />
             </Link>
             <Link
               href={heroContent.learnMoreUrl}
