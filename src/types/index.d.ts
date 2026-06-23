@@ -17,8 +17,7 @@ type Resource = {
     | "Galileo";
   category?:
     | "Technical Blog"
-    | "Dell Blog"
-    | "Outshift by Cisco Blog"
+    | "TSC"
     | "External Articles";
   date?: string;
 };

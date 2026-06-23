@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import { formatResourceDate } from "lib/format-date";
 import { interactiveCardClassName } from "lib/card-styles";
 import { cn } from "lib/utils";
@@ -18,7 +19,7 @@ const articleCardClassName = cn(
 );
 
 const getCategoryBadgeClass = (category?: Resource["category"]) => {
-  if (category === "Outshift by Cisco Blog") {
+  if (category === "TSC") {
     return "border border-orange text-orange bg-transparent";
   }
 
@@ -49,8 +50,13 @@ export default function ArticleCard({ article }: { article: Resource }) {
       aria-label={`${article.title} — open in a new tab`}
       className="group relative block h-full"
     >
+      <ExternalLink
+        className="absolute right-4 top-4 h-4 w-4 text-white/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+        aria-hidden="true"
+      />
+
       <div className={articleCardClassName}>
-        <div className="mb-4 flex items-start justify-between gap-3">
+        <div className="mb-4 flex flex-wrap items-center gap-2">
           {article.category && (
             <span
               className={`rounded-full px-3 py-1 text-xs font-semibold ${getCategoryBadgeClass(article.category)}`}
@@ -61,7 +67,7 @@ export default function ArticleCard({ article }: { article: Resource }) {
           {formattedDate && (
             <time
               dateTime={article.date}
-              className="shrink-0 text-sm text-white/60"
+              className="text-xs text-white/60"
             >
               {formattedDate}
             </time>

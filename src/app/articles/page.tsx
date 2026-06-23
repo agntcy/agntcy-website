@@ -17,13 +17,12 @@ export default function ArticlesPage() {
   return (
     <main>
       <div className={pageFrameClassName}>
-        <header className="max-w-4xl pt-8">
+        <header className="max-w-4xl pt-12 md:pt-16">
           <h1 className="mb-3 text-3xl text-orange md:text-4xl">Articles</h1>
           <p className="mb-6 text-base text-white">
             Read the latest blog posts, deep dives, and technical writing from
             AGNTCY and the Internet of Agents community — from the engineering
-            Technical Blog, Dell Blog, and Outshift by Cisco Blog, in one
-            place.
+            Technical Blog and TSC member blogs, in one place.
           </p>
         </header>
         <ArticlesContent />
