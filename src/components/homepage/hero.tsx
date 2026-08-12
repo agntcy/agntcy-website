@@ -5,9 +5,10 @@ import { ArrowLongRight } from "~/components/icons";
 import { heroContent } from "~/data/homepage-data";
 import { pageFrameClassName } from "lib/layout";
 import {
+  discordDirectoryInviteUrl,
+  discordSlimInviteUrl,
   outlineCtaButtonClassName,
   outlineCtaIconClassName,
-  slackInviteUrl,
 } from "lib/links";
 import AgntcyLogo from "./agntcy-logo";
 import LinuxFoundationLogo from "./linux-foundation-logo";
@@ -55,22 +56,35 @@ const Hero = () => {
                 className={outlineCtaIconClassName}
               />
             </Link>
-            <Link
-              href={slackInviteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={outlineCtaButtonClassName}
-            >
-              Join us on Slack
+            <div className={cn(outlineCtaButtonClassName, "gap-2")}>
               <Image
-                src="/images/homepage/slack.svg"
+                src="/images/homepage/discord.svg"
                 width={20}
                 height={20}
                 alt=""
                 aria-hidden
                 className={outlineCtaIconClassName}
               />
-            </Link>
+              <span>Join us on Discord:</span>
+              <Link
+                href={discordDirectoryInviteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-[#187adc]/60 px-2 py-0.5 transition-colors hover:border-[#3b91e6] hover:bg-[#187adc]/15"
+                aria-label="Join Directory on Discord"
+              >
+                Directory
+              </Link>
+              <Link
+                href={discordSlimInviteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-[#187adc]/60 px-2 py-0.5 transition-colors hover:border-[#3b91e6] hover:bg-[#187adc]/15"
+                aria-label="Join SLIM on Discord"
+              >
+                SLIM
+              </Link>
+            </div>
             <Link
               href={heroContent.learnMoreUrl}
               target="_blank"
