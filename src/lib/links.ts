@@ -1,3 +1,6 @@
+export const slackInviteUrl =
+  "https://join.slack.com/t/agntcy/shared_invite/zt-3xozr6nzq-i6LXv2P8l2kVW4_Prnny2w";
+
 export const discordDirectoryInviteUrl = "https://discord.gg/FbEnSHXD34";
 
 export const discordSlimInviteUrl = "https://discord.gg/hdTDzBQe7D";

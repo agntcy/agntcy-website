@@ -9,6 +9,7 @@ import {
   discordSlimInviteUrl,
   outlineCtaButtonClassName,
   outlineCtaIconClassName,
+  slackInviteUrl,
 } from "lib/links";
 import AgntcyLogo from "./agntcy-logo";
 import LinuxFoundationLogo from "./linux-foundation-logo";
@@ -51,6 +52,22 @@ const Hero = () => {
                 src="/images/homepage/github.svg"
                 width={22}
                 height={21}
+                alt=""
+                aria-hidden
+                className={outlineCtaIconClassName}
+              />
+            </Link>
+            <Link
+              href={slackInviteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={outlineCtaButtonClassName}
+            >
+              Join us on Slack
+              <Image
+                src="/images/homepage/slack.svg"
+                width={20}
+                height={20}
                 alt=""
                 aria-hidden
                 className={outlineCtaIconClassName}
