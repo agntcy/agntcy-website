@@ -47,7 +47,6 @@ const Hero = () => {
               rel="noopener noreferrer"
               className={outlineCtaButtonClassName}
             >
-              Github
               <Image
                 src="/images/homepage/github.svg"
                 width={22}
@@ -56,6 +55,7 @@ const Hero = () => {
                 aria-hidden
                 className={outlineCtaIconClassName}
               />
+              Github
             </Link>
             <Link
               href={slackInviteUrl}
@@ -63,7 +63,6 @@ const Hero = () => {
               rel="noopener noreferrer"
               className={outlineCtaButtonClassName}
             >
-              Join us on Slack
               <Image
                 src="/images/homepage/slack.svg"
                 width={20}
@@ -72,6 +71,7 @@ const Hero = () => {
                 aria-hidden
                 className={outlineCtaIconClassName}
               />
+              Join us on Slack
             </Link>
             <div className={cn(outlineCtaButtonClassName, "gap-2")}>
               <Image
