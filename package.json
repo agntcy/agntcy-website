@@ -16,7 +16,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.477.0",
-    "next": "^16.1.6",
+    "next": "^16.2.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.0.2",
@@ -37,7 +37,9 @@
     "typescript": "^5"
   },
   "overrides": {
-    "postcss": "^8.5.10",
+    "postcss": "^8.5.23",
+    "nanoid": "^3.3.17",
+    "sharp": "^0.35.0",
     "js-yaml": "^4.2.0"
   }
 }
