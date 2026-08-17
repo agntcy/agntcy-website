@@ -14,6 +14,23 @@ export const heroContent = {
   learnMoreUrl: "https://docs.agntcy.org",
 };
 
+export const sdkSectionStatement = {
+  title: "SDKs",
+  statement:
+    "Client libraries and language bindings for Directory and SLIM, so you can publish, discover, and connect agents from the stack you already use.",
+  docLinksIntro: "For more information, see the",
+  docLinks: [
+    {
+      label: "Directory SDK",
+      href: "https://dir.agntcy.org/latest/dir/dir-sdk/",
+    },
+    {
+      label: "SLIM SDK",
+      href: "https://slim.agntcy.org/latest/slim/components/sdk/",
+    },
+  ],
+};
+
 export type FeatureCard = {
   title: string;
   description: string;
