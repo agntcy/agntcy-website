@@ -1,5 +1,50 @@
 export const articlesData: Resource[] = [
   {
+    title: "SLIM Cross-Transport: WebSocket, gRPC, and the Browser",
+    description:
+      "Expose WebSocket and gRPC on the same SLIM routing fabric so browser apps participate as first-class endpoints via WebAssembly.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/2026/08/11/slim-cross-transport-browser-websocket-grpc.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-08-11",
+  },
+  {
+    title: "Switching Between Local and Hosted Directory with dirctl Contexts",
+    description:
+      "Use dirctl context to switch between local Directory servers and the hosted testbed without reconfiguring auth or TLS each time.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/directory/2026/08/10/dirctl-context-oidc-gateway.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-08-10",
+  },
+  {
+    title: "ARD over Agent Directory: Interoperability by Design",
+    description:
+      "How AI Catalog, ARD, and Agent Directory work together as complementary layers for secure, federated agent discovery.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/2026/06/17/ai-catalog-over-directory.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-06-17",
+  },
+  {
     title: "Now you're thinking with Agents",
     description:
       "Deploy agents where resources live instead of routing every request through a central coordinator.",
@@ -242,6 +287,21 @@ export const articlesData: Resource[] = [
     date: "2026-03-02",
   },
   {
+    title: "The Infrastructure Problem Nobody Is Talking About in Agentic AI",
+    description:
+      "Deploy agents where resources live instead of opening ports and distributing credentials as you scale past a single agent.",
+    contributor: "",
+    contributorLink: "https://outshift.com/",
+    resourceLink:
+      "https://machalliance.org/insights-hub/the-infrastructure-problem",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "MACH Alliance",
+    category: "TSC",
+    date: "2026-06-22",
+  },
+  {
     title:
       "Webex integrates AGNTCY Directory and Identity to power trusted onboarding, discovery, and verification of agentic apps",
     description:
@@ -443,6 +503,22 @@ export const articlesData: Resource[] = [
     source: "WSJ for Business",
     category: "External Articles",
     date: "2025-03-09",
+  },
+  {
+    title:
+      "The rise of the 'internet of agents' and why it changes everything",
+    description:
+      "Why agents must find, verify, and coordinate across company boundaries—and what that means for enterprise leaders.",
+    contributor: "CIO",
+    contributorLink: "https://www.cio.com/",
+    resourceLink:
+      "https://www.cio.com/article/4200144/the-rise-of-the-internet-of-agents-and-why-it-changes-everything.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "CIO",
+    category: "External Articles",
+    date: "2026-07-27",
   },
   {
     title:

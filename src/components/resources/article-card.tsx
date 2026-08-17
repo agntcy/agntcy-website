@@ -8,9 +8,11 @@ const SOURCE_LABELS: Record<NonNullable<Resource["source"]>, string> = {
   "AGNTCY Blog": "blogs.agntcy.org",
   Outshift: "Outshift",
   Dell: "Dell",
+  "MACH Alliance": "MACH Alliance",
   "WSJ for Business": "WSJ for Business",
   VentureBeat: "VentureBeat",
   Galileo: "Galileo",
+  CIO: "CIO",
 };
 
 const articleCardClassName = cn(

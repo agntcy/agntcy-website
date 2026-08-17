@@ -12,9 +12,11 @@ type Resource = {
     | "Outshift"
     | "AGNTCY Blog"
     | "Dell"
+    | "MACH Alliance"
     | "WSJ for Business"
     | "VentureBeat"
-    | "Galileo";
+    | "Galileo"
+    | "CIO";
   category?:
     | "Technical Blog"
     | "TSC"
