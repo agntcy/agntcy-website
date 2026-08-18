@@ -1,24 +1,21 @@
 import Link from "next/link";
 import { cn } from "lib/utils";
 
-type SectionDocLink = {
-  label: string;
-  href: string;
-};
-
 type SectionHeaderProps = {
   title: string;
   statement: string;
-  docLinks?: SectionDocLink[];
-  docLinksIntro?: string;
+  documentation?: {
+    href: string;
+    intro?: string;
+    label?: string;
+  };
   className?: string;
 };
 
 export default function SectionHeader({
   title,
   statement,
-  docLinks,
-  docLinksIntro = "For more information, see the",
+  documentation,
   className,
 }: SectionHeaderProps) {
   const linkClassName = "font-semibold text-accent-blue hover:underline";
@@ -29,49 +26,18 @@ export default function SectionHeader({
       <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
         {statement}
       </p>
-      {docLinks && docLinks.length > 0 && (
+      {documentation && (
         <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
-          {docLinksIntro}{" "}
-          {docLinks.length === 2 ? (
-            <>
-              <Link
-                href={docLinks[0].href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClassName}
-              >
-                {docLinks[0].label}
-              </Link>
-              {" and "}
-              <Link
-                href={docLinks[1].href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClassName}
-              >
-                {docLinks[1].label}
-              </Link>
-              {" docs."}
-            </>
-          ) : (
-            docLinks.map((link, index) => (
-              <span key={link.href}>
-                {index > 0 && (
-                  <span className="text-white/50" aria-hidden="true">
-                    {" · "}
-                  </span>
-                )}
-                <Link
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={linkClassName}
-                >
-                  {link.label}
-                </Link>
-              </span>
-            ))
-          )}
+          {documentation.intro ?? "For more information, see the"}{" "}
+          <Link
+            href={documentation.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClassName}
+          >
+            {documentation.label ?? "documentation"}
+          </Link>
+          .
         </p>
       )}
     </div>

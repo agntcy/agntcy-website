@@ -10,8 +10,7 @@ const SdkCards = () => {
       <SectionHeader
         title={sdkSectionStatement.title}
         statement={sdkSectionStatement.statement}
-        docLinks={sdkSectionStatement.docLinks}
-        docLinksIntro={sdkSectionStatement.docLinksIntro}
+        documentation={sdkSectionStatement.documentation}
       />
       <SdkCardsCarousel />
     </section>

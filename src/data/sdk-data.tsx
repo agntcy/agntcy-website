@@ -1,7 +1,18 @@
 import type { ComponentType } from "react";
-import { DirIcon, SlimIcon } from "~/components/homepage/feature-icons";
+import {
+  DirIcon,
+  IdentityIcon,
+  ObserveIcon,
+  SlimIcon,
+} from "~/components/homepage/feature-icons";
 
-export type SdkFamily = "Directory" | "SLIM";
+export type SdkFamily =
+  | "Directory"
+  | "SLIM"
+  | "OASF"
+  | "Observability"
+  | "Evaluation"
+  | "Identity";
 
 export type SdkCard = {
   title: string;
@@ -102,5 +113,59 @@ export const sdkCards: SdkCard[] = [
     icon: SlimIcon,
     href: "https://www.npmjs.com/package/@agntcy/slim-bindings-react-native",
     ctaLabel: "View on npm",
+  },
+  {
+    title: "Go SDK",
+    description:
+      "Validate, translate, and decode OASF records in Go — convert between JSON, protobuf, A2A, and MCP formats.",
+    family: "OASF",
+    icon: DirIcon,
+    href: "https://pkg.go.dev/github.com/agntcy/oasf-sdk/pkg",
+    ctaLabel: "View on pkg.go.dev",
+  },
+  {
+    title: "OASF SDK",
+    description:
+      "gRPC translation and validation service with proto bindings for Go, Python, Java, and Node.js.",
+    family: "OASF",
+    icon: DirIcon,
+    href: "https://github.com/agntcy/oasf-sdk",
+    ctaLabel: "View on GitHub",
+  },
+  {
+    title: "Python SDK",
+    description:
+      "OpenTelemetry-compliant observability SDK for multi-agent systems — instrument agents, SLIM, A2A, and MCP.",
+    family: "Observability",
+    icon: ObserveIcon,
+    href: "https://pypi.org/project/ioa-observe-sdk/",
+    ctaLabel: "View on PyPI",
+  },
+  {
+    title: "Metrics Computation Engine",
+    description:
+      "Compute evaluation metrics from agent telemetry — span, session, and population-level insights via REST API.",
+    family: "Evaluation",
+    icon: ObserveIcon,
+    href: "https://pypi.org/project/metrics-computation-engine/",
+    ctaLabel: "View on PyPI",
+  },
+  {
+    title: "Python SDK",
+    description:
+      "Verify agent and MCP server identity badges via the Identity Platform REST API.",
+    family: "Identity",
+    icon: IdentityIcon,
+    href: "https://pypi.org/project/agntcy-identity-sdk/",
+    ctaLabel: "View on PyPI",
+  },
+  {
+    title: "Go client",
+    description:
+      "Identity Node REST client for Go — resolve IDs, fetch resolver metadata, and integrate with the identity backend.",
+    family: "Identity",
+    icon: IdentityIcon,
+    href: "https://pkg.go.dev/github.com/agntcy/identity/api/client",
+    ctaLabel: "View on pkg.go.dev",
   },
 ];
