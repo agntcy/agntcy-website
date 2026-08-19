@@ -1,4 +1,4 @@
-export const listofRepos = [
+export const listOfRepos = [
     "slim",
     "slim-spec",
     "coffeeAgntcy",

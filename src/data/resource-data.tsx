@@ -1,5 +1,20 @@
 export const articlesData: Resource[] = [
   {
+    title: "Building a Multi-Agent Incident Response System on AGNTCY",
+    description:
+      "A five-agent incident response room with runtime specialist discovery, SPIFFE identity, SLIM messaging, and task-based access control.",
+    contributor: "Orium",
+    contributorLink: "https://orium.com/",
+    resourceLink:
+      "https://orium.com/blog/multi-agent-incident-response-agntcy",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "Orium",
+    category: "External Articles",
+    date: "2026-05-12",
+  },
+  {
     title: "SLIM Cross-Transport: WebSocket, gRPC, and the Browser",
     description:
       "Expose WebSocket and gRPC on the same SLIM routing fabric so browser apps participate as first-class endpoints via WebAssembly.",

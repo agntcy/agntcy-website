@@ -1,12 +1,12 @@
 import ChangeLogClient from "./changelog-client";
-import { listofRepos, GITHUB_OWNER } from "~/data/changelog-data";
+import { listOfRepos, GITHUB_OWNER } from "~/data/changelog-data";
 import { getCommitData } from "~/lib/utils";
 
 export default async function ChangeLogContent() {
   const allReleases: Release[] = [];
 
   try {
-    for (const repo of listofRepos) {
+    for (const repo of listOfRepos) {
       const fetchReleases = async (useAuth: boolean) => {
         const fetchHeaders: HeadersInit = {
           Accept: "application/vnd.github+json",

@@ -5,14 +5,13 @@ import { ArrowLongRight } from "~/components/icons";
 import { heroContent } from "~/data/homepage-data";
 import { pageFrameClassName } from "lib/layout";
 import {
-  discordDirectoryInviteUrl,
-  discordSlimInviteUrl,
   outlineCtaButtonClassName,
   outlineCtaIconClassName,
   primaryCtaButtonClassName,
   slackInviteUrl,
 } from "lib/links";
 import AgntcyLogo from "./agntcy-logo";
+import DiscordDropdown from "./discord-dropdown";
 import LinuxFoundationLogo from "./linux-foundation-logo";
 
 const Hero = () => {
@@ -56,7 +55,7 @@ const Hero = () => {
                 aria-hidden
                 className={outlineCtaIconClassName}
               />
-              Github
+              GitHub
             </Link>
             <Link
               href={slackInviteUrl}
@@ -74,35 +73,7 @@ const Hero = () => {
               />
               Join us on Slack
             </Link>
-            <div className={cn(outlineCtaButtonClassName, "gap-2")}>
-              <Image
-                src="/images/homepage/discord.svg"
-                width={20}
-                height={20}
-                alt=""
-                aria-hidden
-                className={outlineCtaIconClassName}
-              />
-              <span>Join us on Discord:</span>
-              <Link
-                href={discordDirectoryInviteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-[#187adc]/60 px-2 py-0.5 transition-colors hover:border-[#3b91e6] hover:bg-[#187adc]/15"
-                aria-label="Join Directory on Discord"
-              >
-                Directory
-              </Link>
-              <Link
-                href={discordSlimInviteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-[#187adc]/60 px-2 py-0.5 transition-colors hover:border-[#3b91e6] hover:bg-[#187adc]/15"
-                aria-label="Join SLIM on Discord"
-              >
-                SLIM
-              </Link>
-            </div>
+            <DiscordDropdown />
             <Link
               href={heroContent.learnMoreUrl}
               target="_blank"

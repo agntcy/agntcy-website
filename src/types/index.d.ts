@@ -12,6 +12,7 @@ type Resource = {
     | "Outshift"
     | "AGNTCY Blog"
     | "Dell"
+    | "Orium"
     | "MACH Alliance"
     | "WSJ for Business"
     | "VentureBeat"
