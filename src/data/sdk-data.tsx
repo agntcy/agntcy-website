@@ -1,11 +1,3 @@
-import type { ComponentType } from "react";
-import {
-  DirIcon,
-  IdentityIcon,
-  ObserveIcon,
-  SlimIcon,
-} from "~/components/homepage/feature-icons";
-
 export type SdkFamily =
   | "Directory"
   | "SLIM"
@@ -14,11 +6,22 @@ export type SdkFamily =
   | "Evaluation"
   | "Identity";
 
+export type SdkLanguageSlug =
+  | "go"
+  | "python"
+  | "javascript"
+  | "dotnet"
+  | "java"
+  | "kotlin"
+  | "nodedotjs"
+  | "react"
+  | "github";
+
 export type SdkCard = {
   title: string;
   description: string;
   family: SdkFamily;
-  icon: ComponentType<{ className?: string }>;
+  languageSlug: SdkLanguageSlug;
   href: string;
   ctaLabel: string;
 };
@@ -35,130 +38,130 @@ export const sdkFamilyOrder = [
 export const sdkCards: SdkCard[] = [
   {
     title: "Go",
-    description: "Publish, discover, and search agents.",
+    description: "Push, publish, and search OASF records from Go.",
     family: "Directory",
-    icon: DirIcon,
+    languageSlug: "go",
     href: "https://pkg.go.dev/github.com/agntcy/dir/client",
-    ctaLabel: "pkg.go.dev",
+    ctaLabel: "View on pkg.go.dev",
   },
   {
     title: "Python",
-    description: "Directory client for Python 3.10+.",
+    description: "Connect to local or remote Directory servers with pip.",
     family: "Directory",
-    icon: DirIcon,
+    languageSlug: "python",
     href: "https://pypi.org/project/agntcy-dir/",
-    ctaLabel: "PyPI",
+    ctaLabel: "View on PyPI",
   },
   {
-    title: "Node.js",
-    description: "Directory client for JavaScript and TypeScript.",
+    title: "JS / TS",
+    description: "Directory client for Node.js with JavaScript & TypeScript.",
     family: "Directory",
-    icon: DirIcon,
+    languageSlug: "javascript",
     href: "https://www.npmjs.com/package/agntcy-dir",
-    ctaLabel: "npm",
+    ctaLabel: "View on npm",
   },
   {
     title: "Python",
-    description: "SLIM messaging for Python apps.",
+    description: "Connect Python apps to the SLIM messaging fabric.",
     family: "SLIM",
-    icon: SlimIcon,
+    languageSlug: "python",
     href: "https://pypi.org/project/slim-bindings/",
-    ctaLabel: "PyPI",
+    ctaLabel: "View on PyPI",
   },
   {
     title: "Go",
-    description: "SLIM messaging, routing, and sessions.",
+    description: "Idiomatic Go wrappers for SLIM messaging & routing.",
     family: "SLIM",
-    icon: SlimIcon,
+    languageSlug: "go",
     href: "https://github.com/agntcy/slim-bindings-go",
-    ctaLabel: "GitHub",
+    ctaLabel: "View on GitHub",
   },
   {
     title: ".NET",
-    description: "SLIM messaging for C# and .NET.",
+    description: "C# bindings for SLIM for .NET applications.",
     family: "SLIM",
-    icon: SlimIcon,
+    languageSlug: "dotnet",
     href: "https://www.nuget.org/packages/Agntcy.Slim",
-    ctaLabel: "NuGet",
+    ctaLabel: "View on NuGet",
   },
   {
     title: "Java",
-    description: "SLIM bindings for JVM workloads.",
+    description: "SLIM bindings for JVM-based agent workloads.",
     family: "SLIM",
-    icon: SlimIcon,
-    href: "https://github.com/agntcy/slim-bindings/tree/main/java",
-    ctaLabel: "GitHub",
+    languageSlug: "java",
+    href: "https://central.sonatype.com/artifact/io.agntcy.slim/slim-bindings-java",
+    ctaLabel: "View on Maven Central",
   },
   {
     title: "Kotlin",
-    description: "SLIM bindings for Android and JVM.",
+    description: "SLIM bindings for Android and JVM apps.",
     family: "SLIM",
-    icon: SlimIcon,
-    href: "https://github.com/agntcy/slim-bindings/tree/main/kotlin",
-    ctaLabel: "GitHub",
+    languageSlug: "kotlin",
+    href: "https://central.sonatype.com/artifact/io.agntcy.slim/slim-bindings-kotlin",
+    ctaLabel: "View on Maven Central",
   },
   {
     title: "Node.js",
-    description: "SLIM bindings for Node.js.",
+    description: "SLIM bindings for Node.js applications.",
     family: "SLIM",
-    icon: SlimIcon,
+    languageSlug: "nodedotjs",
     href: "https://www.npmjs.com/package/@agntcy/slim-bindings",
-    ctaLabel: "npm",
+    ctaLabel: "View on npm",
   },
   {
     title: "React Native",
-    description: "SLIM for mobile and WebAssembly.",
+    description: "SLIM for mobile and WebAssembly runtimes.",
     family: "SLIM",
-    icon: SlimIcon,
+    languageSlug: "react",
     href: "https://www.npmjs.com/package/@agntcy/slim-bindings-react-native",
-    ctaLabel: "npm",
+    ctaLabel: "View on npm",
   },
   {
     title: "Go",
-    description: "Validate and translate OASF records.",
+    description: "Validate and translate OASF records from Go.",
     family: "OASF",
-    icon: DirIcon,
+    languageSlug: "go",
     href: "https://pkg.go.dev/github.com/agntcy/oasf-sdk/pkg",
-    ctaLabel: "pkg.go.dev",
+    ctaLabel: "View on pkg.go.dev",
   },
   {
     title: "gRPC service",
     description: "Translation service and proto bindings.",
     family: "OASF",
-    icon: DirIcon,
+    languageSlug: "github",
     href: "https://github.com/agntcy/oasf-sdk",
-    ctaLabel: "GitHub",
+    ctaLabel: "View on GitHub",
   },
   {
     title: "Python",
     description: "OTel instrumentation for agent systems.",
     family: "Observability",
-    icon: ObserveIcon,
+    languageSlug: "python",
     href: "https://pypi.org/project/ioa-observe-sdk/",
-    ctaLabel: "PyPI",
+    ctaLabel: "View on PyPI",
   },
   {
     title: "Metrics Engine",
-    description: "Evaluation metrics from telemetry.",
+    description: "Evaluation metrics from telemetry data.",
     family: "Evaluation",
-    icon: ObserveIcon,
+    languageSlug: "python",
     href: "https://pypi.org/project/metrics-computation-engine/",
-    ctaLabel: "PyPI",
+    ctaLabel: "View on PyPI",
   },
   {
     title: "Python",
-    description: "Verify agent identity badges.",
+    description: "Verify agent identity badges from Python.",
     family: "Identity",
-    icon: IdentityIcon,
+    languageSlug: "python",
     href: "https://pypi.org/project/agntcy-identity-sdk/",
-    ctaLabel: "PyPI",
+    ctaLabel: "View on PyPI",
   },
   {
     title: "Go",
-    description: "Identity Node REST client.",
+    description: "Identity Node REST client for Go.",
     family: "Identity",
-    icon: IdentityIcon,
+    languageSlug: "go",
     href: "https://pkg.go.dev/github.com/agntcy/identity/api/client",
-    ctaLabel: "pkg.go.dev",
+    ctaLabel: "View on pkg.go.dev",
   },
 ];
