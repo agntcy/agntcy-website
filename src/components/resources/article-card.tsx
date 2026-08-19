@@ -8,6 +8,7 @@ const SOURCE_LABELS: Record<NonNullable<Resource["source"]>, string> = {
   "AGNTCY Blog": "blogs.agntcy.org",
   Outshift: "Outshift",
   Dell: "Dell",
+  Orium: "Orium",
   "MACH Alliance": "MACH Alliance",
   "WSJ for Business": "WSJ for Business",
   VentureBeat: "VentureBeat",
