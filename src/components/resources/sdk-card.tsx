@@ -5,7 +5,7 @@ import { interactiveCardClassName } from "lib/card-styles";
 import { cn } from "lib/utils";
 
 const sdkCardClassName = cn(
-  "relative flex h-full flex-col items-center rounded-xl bg-[#00142B] px-[15px] py-[23px] text-center",
+  "relative flex h-full flex-col items-center rounded-xl bg-[#00142B] px-3 py-4 text-center",
   interactiveCardClassName
 );
 
@@ -31,31 +31,31 @@ export default function SdkCard({ sdk }: { sdk: SdkCard }) {
       aria-label={`${sdk.title} — open in a new tab`}
       className="group relative block h-full rounded-xl pt-1"
     >
-      <div className={cn(sdkCardClassName, "h-full min-h-[228px]")}>
+      <div className={cn(sdkCardClassName, "h-full min-h-[176px]")}>
         <ExternalLink
-          className="absolute right-3 top-3 h-3.5 w-3.5 text-white/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+          className="absolute right-2.5 top-2.5 h-3 w-3 text-white/80 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
           aria-hidden="true"
         />
-        <Icon className="mb-4 scale-75" />
+        <Icon className="mb-2 scale-[0.65]" />
 
         <span
           className={cn(
-            "mb-2 rounded-full px-2.5 py-0.5 text-[11px] font-semibold",
+            "mb-1.5 rounded-full px-2 py-0.5 text-[10px] font-semibold",
             familyBadgeClassNames[sdk.family]
           )}
         >
           {sdk.family}
         </span>
 
-        <h3 className="mb-2 text-base font-bold text-white md:text-lg">
+        <h3 className="mb-1 text-sm font-bold text-white md:text-base">
           {sdk.title}
         </h3>
 
-        <p className="mb-4 line-clamp-4 flex-1 text-xs font-normal leading-relaxed text-white/80 md:text-sm">
+        <p className="mb-2 line-clamp-2 flex-1 text-xs leading-snug text-white/75">
           {sdk.description}
         </p>
 
-        <span className="text-xs font-semibold text-accent-blue group-hover:underline md:text-sm">
+        <span className="text-[11px] font-semibold text-accent-blue group-hover:underline">
           {sdk.ctaLabel}
         </span>
       </div>

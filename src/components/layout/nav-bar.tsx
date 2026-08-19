@@ -80,6 +80,11 @@ const Navbar = () => {
       target: "_blank" as const,
     },
     {
+      name: "SDKs",
+      href: "/sdks",
+      target: "_self" as const,
+    },
+    {
       name: "Articles",
       href: "/articles",
       target: "_self" as const,

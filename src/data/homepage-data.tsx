@@ -14,6 +14,14 @@ export const heroContent = {
   learnMoreUrl: "https://docs.agntcy.org",
 };
 
+export const sdkPromoContent = {
+  headline: "Build with AGNTCY in the language you already use",
+  statement:
+    "Client libraries and bindings across Directory, SLIM, OASF, observability, evaluation, and identity — from Go and Python to .NET, Java, Kotlin, and React Native.",
+  ctaLabel: "Explore all SDKs",
+  ctaHref: "/sdks",
+};
+
 export const sdkSectionStatement = {
   title: "SDKs",
   statement:

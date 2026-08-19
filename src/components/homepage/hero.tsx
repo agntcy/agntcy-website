@@ -9,6 +9,7 @@ import {
   discordSlimInviteUrl,
   outlineCtaButtonClassName,
   outlineCtaIconClassName,
+  primaryCtaButtonClassName,
   slackInviteUrl,
 } from "lib/links";
 import AgntcyLogo from "./agntcy-logo";
@@ -106,7 +107,7 @@ const Hero = () => {
               href={heroContent.learnMoreUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#187ADC] px-6 py-3 text-base font-medium text-white transition-colors hover:bg-[#187ADC]/90 md:text-lg"
+              className={primaryCtaButtonClassName}
             >
               Learn more
               <ArrowLongRight size={22} color="currentColor" />
