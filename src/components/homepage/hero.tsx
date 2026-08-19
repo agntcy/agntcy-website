@@ -55,7 +55,7 @@ const Hero = () => {
                 aria-hidden
                 className={outlineCtaIconClassName}
               />
-              Github
+              GitHub
             </Link>
             <Link
               href={slackInviteUrl}
