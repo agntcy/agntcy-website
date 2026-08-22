@@ -22,34 +22,33 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
       "~/*": [
-        "src/*"
+        "./src/*"
       ],
       "app/*": [
-        "src/app/*"
+        "./src/app/*"
       ],
       "components/*": [
-        "src/components/*"
+        "./src/components/*"
       ],
       "data/*": [
-        "src/data/*"
+        "./src/data/*"
       ],
       "styles/*": [
-        "src/styles/*"
+        "./src/styles/*"
       ],
       "hooks/*": [
-        "src/hooks/*"
+        "./src/hooks/*"
       ],
       "public/*": [
-        "public/*"
+        "./public/*"
       ],
       "types/*": [
-        "src/types/*"
+        "./src/types/*"
       ],
       "lib/*": [
-        "src/lib/*"
+        "./src/lib/*"
       ]
     }
   },
