@@ -65,7 +65,7 @@ export const supporters: Company[] = [
   { name: "Onetrust", logo: "/images/onetrust.png", url: "https://www.onetrust.com" },
   { name: "Opaque", logo: "/images/opaque.png", url: "https://www.opaque.co" },
   { name: "Orium", logo: "/images/orium.png", url: "https://orium.com" },
-  { name: "Ory", logo: "/images/ory.png", url: "https://www.ory.sh" },
+  { name: "Ory", logo: "/images/ory.png", url: "https://www.ory.com" },
   { name: "Pattern Agentic AI", logo: "/images/PatternAgenticAI.png", url: "https://www.patternagentic.ai" },
   { name: "Pensar", logo: "/images/pensar.png" },
   { name: "Permit", logo: "/images/permit_logo_variant3.png", url: "https://www.permit.io" },
