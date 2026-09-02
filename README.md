@@ -4,6 +4,8 @@
 
 [![Lint](https://github.com/agntcy/agntcy-website/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/marketplace/actions/super-linter)
 
+[![License](https://img.shields.io/github/license/agntcy/agntcy-website)](./LICENSE)
+
 ## About The Project
 
 [agntcy.org](https://agntcy.org/) website code
@@ -63,3 +65,10 @@ appreciated**. For detailed contributing guidelines, please see
 
 Project Link:
 [https://github.com/agntcy/agntcy-website](https://github.com/agntcy/agntcy-website)
+
+## Copyright Notice
+
+[Copyright Notice and License](./LICENSE)
+
+Distributed under Apache 2.0 License. See LICENSE for more information.
+Copyright AGNTCY Contributors (https://github.com/agntcy)
