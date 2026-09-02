@@ -15,6 +15,22 @@ export const articlesData: Resource[] = [
     date: "2026-05-12",
   },
   {
+    title:
+      "Agent Identity and Task-Based Access Control: How A2A and AGNTCY Identity Work Together",
+    description:
+      "What A2A standardizes around authorization, how AGNTCY Identity proves who an agent is, and where Task-Based Access Control still needs to go.",
+    contributor: "AGNTCY",
+    contributorLink: "https://agntcy.org/",
+    resourceLink:
+      "https://blogs.agntcy.org/technical/identity/2026/08/25/agent-identity-tbac-a2a-task-authorization.html",
+    isAvailable: "Yes",
+    approved: "TRUE",
+    isFeatured: false,
+    source: "AGNTCY Blog",
+    category: "Technical Blog",
+    date: "2026-08-25",
+  },
+  {
     title: "SLIM Cross-Transport: WebSocket, gRPC, and the Browser",
     description:
       "Expose WebSocket and gRPC on the same SLIM routing fabric so browser apps participate as first-class endpoints via WebAssembly.",
