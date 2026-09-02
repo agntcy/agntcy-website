@@ -71,4 +71,4 @@ Project Link:
 [Copyright Notice and License](./LICENSE)
 
 Distributed under Apache 2.0 License. See LICENSE for more information.
-Copyright AGNTCY Contributors (https://github.com/agntcy)
+Copyright AGNTCY Contributors ([https://github.com/agntcy](https://github.com/agntcy))
