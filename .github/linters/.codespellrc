@@ -1,2 +1,3 @@
 [codespell]
 ignore-words-list = agntcy,dirctl,lazydir,multicluster,nodedotjs,oasf,onetrust,orium,outshiftbycisco,softserve,uniffi,wordmark
+skip = package-lock.json
