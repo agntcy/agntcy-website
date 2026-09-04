@@ -1,8 +1,8 @@
 import type { ComponentType } from "react";
 import {
+  AgentBridgeIcon,
   DirIcon,
   IdentityIcon,
-  OasfIcon,
   ObserveIcon,
   ShadiIcon,
   SlimIcon,
@@ -42,32 +42,32 @@ export type FeatureCard = {
 
 export const featureCards: FeatureCard[] = [
   {
-    title: "Agent Directory Service",
+    title: "Discovery",
     description:
       "Federated registry for cross-framework, cross-protocol, cross-registry agent discovery.",
     icon: DirIcon,
     href: "https://dir.agntcy.org",
   },
   {
-    title: "SLIM",
+    title: "Communications",
     description:
       "A protocol that defines the standards and guidelines for secure and efficient network-level communication between AI agents.",
     icon: SlimIcon,
     href: "https://slim.agntcy.org",
   },
   {
-    title: "SHADI",
+    title: "Secure Runtime",
     description:
       "A secure runtime for AI agents combining identity verification, gated secrets, OS-level sandboxing, and encrypted local memory.",
     icon: ShadiIcon,
     href: "https://shadi.agntcy.org",
   },
   {
-    title: "OASF",
+    title: "AgentBridge",
     description:
-      "A standardized schema for describing AI agent capabilities, metadata, and relationships so agents can be discovered and composed across systems.",
-    icon: OasfIcon,
-    href: "https://docs.agntcy.org/oasf/open-agentic-schema-framework/",
+      "Connects coding agents and other CLIs over A2A so they can hand off context, delegate tasks, and coordinate autonomously.",
+    icon: AgentBridgeIcon,
+    href: "https://shadi.agntcy.org/agentbridge/",
   },
   {
     title: "Identity",
