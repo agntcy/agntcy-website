@@ -2,7 +2,9 @@ import type { ComponentType } from "react";
 import {
   DirIcon,
   IdentityIcon,
+  OasfIcon,
   ObserveIcon,
+  ShadiIcon,
   SlimIcon,
 } from "~/components/homepage/feature-icons";
 
@@ -54,11 +56,18 @@ export const featureCards: FeatureCard[] = [
     href: "https://slim.agntcy.org",
   },
   {
-    title: "Observability",
+    title: "SHADI",
     description:
-      "Telemetry collectors, tools and services to enable multi-agent application observability and evaluation.",
-    icon: ObserveIcon,
-    href: "https://docs.agntcy.org/obs-and-eval/observe-and-eval/",
+      "A secure runtime for AI agents combining identity verification, gated secrets, OS-level sandboxing, and encrypted local memory.",
+    icon: ShadiIcon,
+    href: "https://shadi.agntcy.org",
+  },
+  {
+    title: "OASF",
+    description:
+      "A standardized schema for describing AI agent capabilities, metadata, and relationships so agents can be discovered and composed across systems.",
+    icon: OasfIcon,
+    href: "https://docs.agntcy.org/oasf/open-agentic-schema-framework/",
   },
   {
     title: "Identity",
@@ -66,5 +75,12 @@ export const featureCards: FeatureCard[] = [
       "Solution to manage and verify the identities of Agents or Tools issued by any organization, ensuring secure and trustworthy interactions.",
     icon: IdentityIcon,
     href: "https://identity-docs.outshift.com/docs/intro/",
+  },
+  {
+    title: "Observability",
+    description:
+      "Telemetry collectors, tools and services to enable multi-agent application observability and evaluation.",
+    icon: ObserveIcon,
+    href: "https://docs.agntcy.org/obs-and-eval/observe-and-eval/",
   },
 ];
