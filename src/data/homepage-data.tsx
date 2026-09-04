@@ -1,8 +1,10 @@
 import type { ComponentType } from "react";
 import {
+  AgentBridgeIcon,
   DirIcon,
   IdentityIcon,
   ObserveIcon,
+  ShadiIcon,
   SlimIcon,
 } from "~/components/homepage/feature-icons";
 
@@ -40,25 +42,32 @@ export type FeatureCard = {
 
 export const featureCards: FeatureCard[] = [
   {
-    title: "Agent Directory Service",
+    title: "Discovery",
     description:
       "Federated registry for cross-framework, cross-protocol, cross-registry agent discovery.",
     icon: DirIcon,
     href: "https://dir.agntcy.org",
   },
   {
-    title: "SLIM",
+    title: "Communications",
     description:
       "A protocol that defines the standards and guidelines for secure and efficient network-level communication between AI agents.",
     icon: SlimIcon,
     href: "https://slim.agntcy.org",
   },
   {
-    title: "Observability",
+    title: "Secure Runtime",
     description:
-      "Telemetry collectors, tools and services to enable multi-agent application observability and evaluation.",
-    icon: ObserveIcon,
-    href: "https://docs.agntcy.org/obs-and-eval/observe-and-eval/",
+      "A secure runtime for AI agents combining identity verification, gated secrets, OS-level sandboxing, and encrypted local memory.",
+    icon: ShadiIcon,
+    href: "https://shadi.agntcy.org",
+  },
+  {
+    title: "AgentBridge",
+    description:
+      "Connects coding agents and other CLIs over A2A so they can hand off context, delegate tasks, and coordinate autonomously.",
+    icon: AgentBridgeIcon,
+    href: "https://shadi.agntcy.org/agentbridge/",
   },
   {
     title: "Identity",
@@ -66,5 +75,12 @@ export const featureCards: FeatureCard[] = [
       "Solution to manage and verify the identities of Agents or Tools issued by any organization, ensuring secure and trustworthy interactions.",
     icon: IdentityIcon,
     href: "https://identity-docs.outshift.com/docs/intro/",
+  },
+  {
+    title: "Observability",
+    description:
+      "Telemetry collectors, tools and services to enable multi-agent application observability and evaluation.",
+    icon: ObserveIcon,
+    href: "https://docs.agntcy.org/obs-and-eval/observe-and-eval/",
   },
 ];

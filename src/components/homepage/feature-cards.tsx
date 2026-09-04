@@ -24,7 +24,7 @@ const FeatureCards = () => {
       id="features"
       className={cn(pageFrameClassName, "pb-16 pt-4 md:pb-24")}
     >
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {featureCards.map((card) => {
           const Icon = card.icon;
           const isInteractive = Boolean(card.href);
