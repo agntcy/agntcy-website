@@ -39,6 +39,7 @@ jobs:
           MARKDOWN_CONFIG_FILE: ".markdownlint.yml"
           TYPESCRIPT_ES_CONFIG_FILE: ".eslintrc.json"
           YAML_CONFIG_FILE: ".yamllint.yml"
+          FILTER_REGEX_EXCLUDE: package-lock\.json$
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_CSS: false
           VALIDATE_CSS_PRETTIER: false
