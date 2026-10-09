@@ -4,8 +4,7 @@ name: dependencies
 on:
   workflow_dispatch:
   schedule:
-    # Run every 6 hours so vulnerability alerts are picked up quickly.
-    # Regular dependency PRs stay on the Monday schedule in renovate.json.
+    # Run every 6 hours so vulnerability alerts and regular updates are picked up.
     - cron: "0 */6 * * *"
 
 # Declare default permissions as read-only
@@ -30,7 +29,7 @@ jobs:
         with:
           client-id: ${{ secrets.PROJECT_APP_ID }}
           private-key: ${{ secrets.PROJECT_APP_KEY }}
-      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v4.3.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           token: ${{ steps.app-token.outputs.token }}
           persist-credentials: false

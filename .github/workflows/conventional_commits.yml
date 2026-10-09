@@ -1,12 +1,12 @@
 ---
-name: commit-msg
+name: conventional-commits
 
 on:
   push:
-    # Run superlinter on pushes to default branch
+    # Run conventional-commits on pushes to default branch
     branches:
       - main
-  # Run superlinter on pull request events
+  # Run conventional-commits on pull request events
   pull_request:
 
 # Declare default permissions as read-only
@@ -24,10 +24,10 @@ jobs:
         uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
         with:
           egress-policy: audit
-      - uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
       - name: 🧹 Conventional Commits
-        uses: webiny/action-conventional-commits@v1.4.2
+        uses: webiny/action-conventional-commits@7f91b1595ca1951cdb671ddc9f07a49081ec5b69 # v1.4.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
