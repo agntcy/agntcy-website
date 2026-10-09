@@ -4,8 +4,7 @@ name: dependencies
 on:
   workflow_dispatch:
   schedule:
-    # Run every 6 hours so vulnerability alerts are picked up quickly.
-    # Regular dependency PRs stay on the Monday schedule in renovate.json.
+    # Run every 6 hours so vulnerability alerts and regular updates are picked up.
     - cron: "0 */6 * * *"
 
 # Declare default permissions as read-only
