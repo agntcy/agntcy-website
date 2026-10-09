@@ -1,6 +1,6 @@
 # Agntcy Website
 
-[![Deploy Next.js site to Pages](https://github.com/agntcy/agntcy-website/actions/workflows/nextjs.yml/badge.svg?branch=main)](https://github.com/agntcy/agntcy-website/actions/workflows/nextjs.yml)
+[![Deploy](https://github.com/agntcy/agntcy-website/actions/workflows/nextjs.yml/badge.svg?branch=main)](https://github.com/agntcy/agntcy-website/actions/workflows/nextjs.yml)
 
 [![Lint](https://github.com/agntcy/agntcy-website/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/marketplace/actions/super-linter)
 
