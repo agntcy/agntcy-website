@@ -52,7 +52,6 @@ jobs:
           VALIDATE_TSX: false
           VALIDATE_TYPESCRIPT_ES: false
           VALIDATE_TYPESCRIPT_PRETTIER: false
-          VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_YAML_PRETTIER: false
           VALIDATE_GITHUB_ACTIONS: false
           VALIDATE_BIOME: false

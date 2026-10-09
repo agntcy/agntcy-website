@@ -1,0 +1,11 @@
+---
+# Mirrors super-linter's bundled trivy.yaml, minus the `vuln` scanner.
+# Dependency CVEs are repo-wide and are not introduced by a given branch, so
+# they are handled by Renovate (osvVulnerabilityAlerts) instead of blocking PRs.
+exit-code: 1
+exit-on-eol: 2
+scan:
+  disable-telemetry: true
+  scanners:
+    - misconfig
+    - secret
