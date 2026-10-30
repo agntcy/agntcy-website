@@ -10,6 +10,7 @@ export type SdkLanguageSlug =
   | "go"
   | "python"
   | "javascript"
+  | "rust"
   | "dotnet"
   | "java"
   | "kotlin"
@@ -59,6 +60,14 @@ export const sdkCards: SdkCard[] = [
     languageSlug: "javascript",
     href: "https://www.npmjs.com/package/agntcy-dir",
     ctaLabel: "View on npm",
+  },
+  {
+    title: "Rust",
+    description: "Async Directory client for Rust services and agents.",
+    family: "Directory",
+    languageSlug: "rust",
+    href: "https://crates.io/crates/agntcy-dir",
+    ctaLabel: "View on crates.io",
   },
   {
     title: "Python",

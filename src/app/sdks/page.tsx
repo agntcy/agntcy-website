@@ -7,7 +7,7 @@ import { pageFrameClassName } from "lib/layout";
 export const metadata: Metadata = {
   title: "AGNTCY.org | SDKs",
   description:
-    "Client libraries and language bindings for Directory, SLIM, OASF, observability, evaluation, and identity across Go, Python, Node.js, .NET, Java, Kotlin, and React Native.",
+    "Client libraries and language bindings for Directory, SLIM, OASF, observability, evaluation, and identity across Go, Python, Rust, Node.js, .NET, Java, Kotlin, and React Native.",
   keywords:
     "AGNTCY SDKs, agent directory SDK, SLIM bindings, OASF SDK, observability SDK, identity SDK, multi-agent libraries",
   alternates: {
