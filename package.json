@@ -44,6 +44,9 @@
     "sharp": "^0.35.5",
     "source-map-js": "^1.2.2",
     "baseline-browser-mapping": "^2.11.0",
-    "js-yaml": "^4.2.0"
+    "js-yaml": "^4.2.0",
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.4"
+    }
   }
 }
