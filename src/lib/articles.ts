@@ -1,4 +1,4 @@
-import { articlesData } from "~/data/resource-data";
+import { articlesData, blogDescriptionOverrides } from "~/data/resource-data";
 
 const FEED_URL = "https://blogs.agntcy.org/feed.xml";
 // Feed links are rendered as anchors, so only same-origin https URLs are accepted.
@@ -130,44 +130,77 @@ const parseFeed = (xml: string) => {
 };
 
 const fetchBlogArticles = async () => {
-  try {
-    const response = await fetch(FEED_URL, {
-      headers: { Accept: "application/atom+xml" },
-      signal: AbortSignal.timeout(FEED_TIMEOUT_MS),
-    });
+  const response = await fetch(FEED_URL, {
+    headers: { Accept: "application/atom+xml" },
+    signal: AbortSignal.timeout(FEED_TIMEOUT_MS),
+  });
 
-    if (!response.ok) {
-      console.error(
-        `Failed to fetch ${FEED_URL}: ${response.status} ${response.statusText}`
-      );
-      return [];
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch ${FEED_URL}: ${response.status} ${response.statusText}`
+    );
+  }
+
+  const articles = parseFeed(await response.text());
+
+  if (articles.length === 0) {
+    throw new Error(`No usable entries found in ${FEED_URL}`);
+  }
+
+  console.log(`Fetched ${articles.length} posts from ${FEED_URL}`);
+
+  return articles;
+};
+
+const normalizeUrl = (url: string) => url.replace(/\/+$/, "").toLowerCase();
+
+const applyDescriptionOverrides = (articles: Resource[]) => {
+  const overrides = new Map(
+    Object.entries(blogDescriptionOverrides).map(([url, description]) => [
+      normalizeUrl(url),
+      description,
+    ])
+  );
+  const used = new Set<string>();
+
+  const withOverrides = articles.map((article) => {
+    const key = normalizeUrl(article.resourceLink);
+    const description = overrides.get(key);
+
+    if (!description) {
+      return article;
     }
 
-    const articles = parseFeed(await response.text());
-    console.log(`Fetched ${articles.length} posts from ${FEED_URL}`);
+    used.add(key);
+    return { ...article, description };
+  });
 
-    return articles;
-  } catch (error) {
-    console.error(`Error fetching ${FEED_URL}:`, error);
-    return [];
+  const unused = [...overrides.keys()].filter((key) => !used.has(key));
+  if (unused.length > 0) {
+    console.warn(
+      `Description overrides with no matching post in ${FEED_URL}:\n  ${unused.join("\n  ")}`
+    );
   }
+
+  return withOverrides;
 };
 
 const dedupeKeys = (article: Resource) => [
-  `link:${article.resourceLink.replace(/\/+$/, "").toLowerCase()}`,
+  `link:${normalizeUrl(article.resourceLink)}`,
   `title:${article.title.replace(/\s+/g, " ").trim().toLowerCase()}`,
 ];
 
 /**
- * Returns the curated articles plus any blogs.agntcy.org post that is not
- * already listed. Runs at build time, so a failed or empty feed fetch leaves
- * the curated list untouched instead of breaking the build.
+ * Returns every blogs.agntcy.org post from the feed, with the articles from
+ * other sources listed in resource-data. The feed is the only source for blog
+ * posts, so an unreachable or unusable feed throws and fails the build instead
+ * of publishing an Articles page with no blog posts on it.
  */
 export const getArticles = async (): Promise<Resource[]> => {
   const articles = [...articlesData];
   const seen = new Set(articles.flatMap(dedupeKeys));
 
-  for (const article of await fetchBlogArticles()) {
+  for (const article of applyDescriptionOverrides(await fetchBlogArticles())) {
     const keys = dedupeKeys(article);
     if (keys.some((key) => seen.has(key))) {
       continue;

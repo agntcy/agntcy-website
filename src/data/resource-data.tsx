@@ -1,6 +1,5 @@
-// New blogs.agntcy.org posts are merged in automatically at build time by
-// lib/articles. Add an entry here only to override the feed's title, summary,
-// or category for a post, or to list an article from another source.
+// Articles from sources other than blogs.agntcy.org. Blog posts come from the
+// feed at build time (see lib/articles), so they must not be listed here too.
 export const articlesData: Resource[] = [
   {
     title: "Building a Multi-Agent Incident Response System on AGNTCY",
@@ -16,294 +15,6 @@ export const articlesData: Resource[] = [
     source: "Orium",
     category: "External Articles",
     date: "2026-05-12",
-  },
-  {
-    title:
-      "Agent Identity and Task-Based Access Control: How A2A and AGNTCY Identity Work Together",
-    description:
-      "What A2A standardizes around authorization, how AGNTCY Identity proves who an agent is, and where Task-Based Access Control still needs to go.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/identity/2026/08/25/agent-identity-tbac-a2a-task-authorization.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-08-25",
-  },
-  {
-    title: "SLIM Cross-Transport: WebSocket, gRPC, and the Browser",
-    description:
-      "Expose WebSocket and gRPC on the same SLIM routing fabric so browser apps participate as first-class endpoints via WebAssembly.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/2026/08/11/slim-cross-transport-browser-websocket-grpc.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-08-11",
-  },
-  {
-    title: "Switching Between Local and Hosted Directory with dirctl Contexts",
-    description:
-      "Use dirctl context to switch between local Directory servers and the hosted testbed without reconfiguring auth or TLS each time.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/directory/2026/08/10/dirctl-context-oidc-gateway.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-08-10",
-  },
-  {
-    title: "ARD over Agent Directory: Interoperability by Design",
-    description:
-      "How AI Catalog, ARD, and Agent Directory work together as complementary layers for secure, federated agent discovery.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/2026/06/17/ai-catalog-over-directory.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-06-17",
-  },
-  {
-    title: "Now you're thinking with Agents",
-    description:
-      "Deploy agents where resources live instead of routing every request through a central coordinator.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/agents/a2a/2026/06/08/thinking-with-agents.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-06-08",
-  },
-  {
-    title: "lazydir: A Terminal UI for Browsing Agent Directory",
-    description:
-      "Browse and inspect Agent Directory records from the terminal with lazydir.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/2026/05/20/lazydir-v0.0.1.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-05-20",
-  },
-  {
-    title: "SLIM MVP: Multicluster Customer Remediation with AI Agents",
-    description:
-      "A multicluster customer-remediation scenario built on SLIM with private customer clusters.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/2026/04/21/mvp-ai-agents-multicluster.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-04-21",
-  },
-  {
-    title: "SLIM for Observability and Remediation: Beyond Agentic AI",
-    description:
-      "Transport OpenTelemetry over SLIM for observability and remediation workflows.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/2026/04/02/transporting-opentelemetry-over-slim.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-04-02",
-  },
-  {
-    title: "SlimRPC Multicast: One Call, Every Agent",
-    description:
-      "Multicast RPC patterns for coordinating many agents in agentic AI workloads.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/slim/agents/2026/03/31/slimrpc-multicast.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-03-31",
-  },
-  {
-    title: "Announcing slim-a2a-go 0.1.0: Native A2A over SLIM for Go",
-    description:
-      "Go library for A2A agents to communicate natively over SLIM transport.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/agents/go/slim/a2a/announcements/2026/03/24/slim-a2a-go-release.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-03-24",
-  },
-  {
-    title:
-      "Write Once, Run Everywhere: Why Rust + UniFFI is the Future of Multi-Language Libraries",
-    description:
-      "Use Rust and UniFFI to ship core logic once across Python, Go, Swift, and more.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/2026/03/13/rust-uniffi-multilanguage-strategy.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-03-13",
-  },
-  {
-    title:
-      "Directory Federation Hands-On: SPIRE and SPIFFE in a Local Kind Environment",
-    description:
-      "Hands-on Agent Directory federation with SPIRE and SPIFFE in Kubernetes.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/security/directory/2026/02/25/directory-federation.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-02-25",
-  },
-  {
-    title: "Directory MCP Server: Bringing AI Agent Discovery to Your IDE",
-    description:
-      "Connect AI assistants to Agent Directory discovery through an MCP server.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/2026/02/19/directory-mcp-server.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-02-19",
-  },
-  {
-    title:
-      "Agent Directory v1.0: Distributed Announce and Discovery of Multi-Agentic-Systems",
-    description:
-      "Announce and discover specialized agents across distributed multi-agent systems.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink: "https://blogs.agntcy.org/technical/2026/02/19/dir-v1.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-02-19",
-  },
-  {
-    title: "SLIM v1.0: Secure Low-Latency Interactive Messaging for Agentic AI",
-    description:
-      "SLIM v1.0 release for secure, low-latency messaging between agents, tools, and humans.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink: "https://blogs.agntcy.org/technical/2026/02/03/slim-v1.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-02-03",
-  },
-  {
-    title: "Integrating Rust and Go with UniFFI: A Complete Guide",
-    description:
-      "Practical guide to binding Rust libraries for Go using UniFFI and CGO.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/2026/01/27/integrating-rust-and-go-with-uniffi.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-01-27",
-  },
-  {
-    title: "Directory v1.0: Dual-Mode Authentication for Secure Agent Discovery",
-    description:
-      "Dual-mode authentication for verifying agents during secure discovery.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/security/authentication/directory/2026/01/22/directory-authentication-dual-mode-security.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-01-22",
-  },
-  {
-    title: "Distributing C Artifacts for Go Modules: A Practical Approach",
-    description:
-      "Distribute CGO-dependent Go modules with prebuilt C artifacts across platforms.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/technical/2026/01/20/distributing-c-artifacts-for-go-modules.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-01-20",
-  },
-  {
-    title:
-      "The Future of Travel: Building a Multi-Agent Ecosystem with the Internet of Agents",
-    description:
-      "AGNTCY in action: automating marketing tasks with reusable AI agents.",
-    contributor: "AGNTCY",
-    contributorLink: "https://agntcy.org/",
-    resourceLink:
-      "https://blogs.agntcy.org/agents/kubernetes/demo/slim/open-telemetry/2026/01/15/blog-touring-scheduling-system.html",
-    isAvailable: "Yes",
-    approved: "TRUE",
-    isFeatured: false,
-    source: "AGNTCY Blog",
-    category: "Technical Blog",
-    date: "2026-01-15",
   },
   {
     title: "Dell Drives Open Source AI Innovation with AGNTCY, Linux Foundation",
@@ -586,3 +297,47 @@ export const articlesData: Resource[] = [
     date: "2025-03-05",
   },
 ];
+
+// Card copy for blog posts whose feed excerpt reads as a truncated first
+// paragraph. Keyed by post URL; posts are still listed from the feed, so an
+// entry here is optional and only replaces the description.
+export const blogDescriptionOverrides: Record<string, string> = {
+  "https://blogs.agntcy.org/technical/identity/2026/08/25/agent-identity-tbac-a2a-task-authorization.html":
+    "What A2A standardizes around authorization, how AGNTCY Identity proves who an agent is, and where Task-Based Access Control still needs to go.",
+  "https://blogs.agntcy.org/technical/2026/08/11/slim-cross-transport-browser-websocket-grpc.html":
+    "Expose WebSocket and gRPC on the same SLIM routing fabric so browser apps participate as first-class endpoints via WebAssembly.",
+  "https://blogs.agntcy.org/technical/directory/2026/08/10/dirctl-context-oidc-gateway.html":
+    "Use dirctl context to switch between local Directory servers and the hosted testbed without reconfiguring auth or TLS each time.",
+  "https://blogs.agntcy.org/technical/2026/06/17/ai-catalog-over-directory.html":
+    "How AI Catalog, ARD, and Agent Directory work together as complementary layers for secure, federated agent discovery.",
+  "https://blogs.agntcy.org/technical/agents/a2a/2026/06/08/thinking-with-agents.html":
+    "Deploy agents where resources live instead of routing every request through a central coordinator.",
+  "https://blogs.agntcy.org/technical/2026/05/20/lazydir-v0.0.1.html":
+    "Browse and inspect Agent Directory records from the terminal with lazydir.",
+  "https://blogs.agntcy.org/technical/2026/04/21/mvp-ai-agents-multicluster.html":
+    "A multicluster customer-remediation scenario built on SLIM with private customer clusters.",
+  "https://blogs.agntcy.org/technical/2026/04/02/transporting-opentelemetry-over-slim.html":
+    "Transport OpenTelemetry over SLIM for observability and remediation workflows.",
+  "https://blogs.agntcy.org/technical/slim/agents/2026/03/31/slimrpc-multicast.html":
+    "Multicast RPC patterns for coordinating many agents in agentic AI workloads.",
+  "https://blogs.agntcy.org/agents/go/slim/a2a/announcements/2026/03/24/slim-a2a-go-release.html":
+    "Go library for A2A agents to communicate natively over SLIM transport.",
+  "https://blogs.agntcy.org/technical/2026/03/13/rust-uniffi-multilanguage-strategy.html":
+    "Use Rust and UniFFI to ship core logic once across Python, Go, Swift, and more.",
+  "https://blogs.agntcy.org/technical/security/directory/2026/02/25/directory-federation.html":
+    "Hands-on Agent Directory federation with SPIRE and SPIFFE in Kubernetes.",
+  "https://blogs.agntcy.org/technical/2026/02/19/directory-mcp-server.html":
+    "Connect AI assistants to Agent Directory discovery through an MCP server.",
+  "https://blogs.agntcy.org/technical/2026/02/19/dir-v1.html":
+    "Announce and discover specialized agents across distributed multi-agent systems.",
+  "https://blogs.agntcy.org/technical/2026/02/03/slim-v1.html":
+    "SLIM v1.0 release for secure, low-latency messaging between agents, tools, and humans.",
+  "https://blogs.agntcy.org/technical/2026/01/27/integrating-rust-and-go-with-uniffi.html":
+    "Practical guide to binding Rust libraries for Go using UniFFI and CGO.",
+  "https://blogs.agntcy.org/security/authentication/directory/2026/01/22/directory-authentication-dual-mode-security.html":
+    "Dual-mode authentication for verifying agents during secure discovery.",
+  "https://blogs.agntcy.org/technical/2026/01/20/distributing-c-artifacts-for-go-modules.html":
+    "Distribute CGO-dependent Go modules with prebuilt C artifacts across platforms.",
+  "https://blogs.agntcy.org/agents/kubernetes/demo/slim/open-telemetry/2026/01/15/blog-touring-scheduling-system.html":
+    "AGNTCY in action: automating marketing tasks with reusable AI agents.",
+};
