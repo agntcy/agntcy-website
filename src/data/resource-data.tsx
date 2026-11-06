@@ -1,3 +1,6 @@
+// New blogs.agntcy.org posts are merged in automatically at build time by
+// lib/articles. Add an entry here only to override the feed's title, summary,
+// or category for a post, or to list an article from another source.
 export const articlesData: Resource[] = [
   {
     title: "Building a Multi-Agent Incident Response System on AGNTCY",

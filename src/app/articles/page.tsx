@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getArticles } from "lib/articles";
 import { pageFrameClassName } from "lib/layout";
 import ArticlesContent from "~/components/resources/articles-content";
 
@@ -13,7 +14,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ArticlesPage() {
+export default async function ArticlesPage() {
+  const articles = await getArticles();
+
   return (
     <main>
       <div className={pageFrameClassName}>
@@ -25,7 +28,7 @@ export default function ArticlesPage() {
             Technical Blog and TSC member blogs, in one place.
           </p>
         </header>
-        <ArticlesContent />
+        <ArticlesContent articles={articles} />
       </div>
     </main>
   );

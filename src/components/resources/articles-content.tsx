@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import ArticleCard from "./article-card";
-import { articlesData } from "~/data/resource-data";
 
 type ArticleCategory = NonNullable<Resource["category"]>;
 type ArticleFilter = "All" | ArticleCategory;
@@ -15,7 +14,7 @@ const FILTER_CATEGORIES: ArticleCategory[] = [
 
 const FILTERS = ["All", ...FILTER_CATEGORIES] as const;
 
-const sortArticlesByDate = (articles: typeof articlesData) =>
+const sortArticlesByDate = (articles: Resource[]) =>
   [...articles].sort((a, b) => {
     if (!a.date && !b.date) return 0;
     if (!a.date) return 1;
@@ -23,23 +22,29 @@ const sortArticlesByDate = (articles: typeof articlesData) =>
     return b.date.localeCompare(a.date);
   });
 
-const filterCounts = (() => {
-  const counts: Record<string, number> = { All: articlesData.length };
-  for (const article of articlesData) {
+const countByFilter = (articles: Resource[]) => {
+  const counts: Record<string, number> = { All: articles.length };
+  for (const article of articles) {
     if (article.category) {
       counts[article.category] = (counts[article.category] ?? 0) + 1;
     }
   }
   return counts;
-})();
+};
 
-export default function ArticlesContent() {
+export default function ArticlesContent({
+  articles,
+}: {
+  articles: Resource[];
+}) {
   const [activeFilter, setActiveFilter] = useState<ArticleFilter>("All");
+
+  const filterCounts = useMemo(() => countByFilter(articles), [articles]);
 
   const filteredArticles = sortArticlesByDate(
     activeFilter === "All"
-      ? articlesData
-      : articlesData.filter((article) => article.category === activeFilter)
+      ? articles
+      : articles.filter((article) => article.category === activeFilter)
   );
 
   return (
