@@ -77,9 +77,18 @@ export default function ArticleCard({ article }: { article: Resource }) {
           )}
         </div>
 
-        <h2 className="mb-3 text-lg font-bold leading-snug text-white md:text-xl">
+        <h2
+          className={cn(
+            "text-lg font-bold leading-snug text-white md:text-xl",
+            article.author ? "mb-1" : "mb-3"
+          )}
+        >
           {article.title}
         </h2>
+
+        {article.author && (
+          <p className="mb-3 text-sm text-white/60">by {article.author}</p>
+        )}
 
         <p className="mb-6 line-clamp-3 flex-1 text-sm leading-relaxed text-white/70">
           {article.description}

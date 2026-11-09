@@ -82,6 +82,19 @@ const toIsoDate = (value: string | null) => {
   return parsed.toISOString().slice(0, 10);
 };
 
+const extractAuthors = (entry: string) => {
+  const names: string[] = [];
+
+  for (const [, author] of entry.matchAll(/<author>([\s\S]*?)<\/author>/g)) {
+    const name = toPlainText(extractTagValue(author, "name") ?? "");
+    if (name && !names.includes(name)) {
+      names.push(name);
+    }
+  }
+
+  return names.length > 0 ? names.join(", ") : undefined;
+};
+
 const toDescription = (entry: string) => {
   const summary =
     extractTagValue(entry, "summary") ?? extractTagValue(entry, "content") ?? "";
@@ -123,6 +136,7 @@ const parseFeed = (xml: string) => {
       source: "AGNTCY Blog",
       category: "Technical Blog",
       date,
+      author: extractAuthors(entry),
     });
   }
 
