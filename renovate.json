@@ -22,6 +22,13 @@
   },
   "packageRules": [
     {
+      "matchPackageNames": ["postcss-selector-parser"],
+      "allowedVersions": "7.1.7",
+      "description": [
+        "postcss-selector-parser 7.2.0 escapes class names that are already escaped, so Tailwind selectors such as .sm\\:grid-cols-2 no longer match. Responsive layout then stays full width. Keep 7.1.7 until that double-escape is fixed."
+      ]
+    },
+    {
       "matchUpdateTypes": ["major"],
       "enabled": false,
       "description": ["Ignore major dependency updates."]
