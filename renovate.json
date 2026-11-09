@@ -48,6 +48,15 @@
       ]
     },
     {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["postcss-selector-parser"],
+      "matchUpdateTypes": ["minor", "major"],
+      "enabled": false,
+      "description": [
+        "Hold postcss-selector-parser on the 7.1.x line: 7.2.0 double-escapes Tailwind v3 variant selectors."
+      ]
+    },
+    {
       "matchJsonata": [
         "$exists(vulnerabilityFixVersion) or isVulnerabilityAlert = true"
       ],
