@@ -15,6 +15,7 @@ export const articlesData: Resource[] = [
     source: "Orium",
     category: "External Articles",
     date: "2026-05-12",
+    author: "Danny Lake",
   },
   {
     title: "Dell Drives Open Source AI Innovation with AGNTCY, Linux Foundation",
@@ -30,6 +31,7 @@ export const articlesData: Resource[] = [
     source: "Dell",
     category: "TSC",
     date: "2026-03-02",
+    author: "John Roese",
   },
   {
     title: "The Infrastructure Problem Nobody Is Talking About in Agentic AI",
@@ -45,6 +47,7 @@ export const articlesData: Resource[] = [
     source: "MACH Alliance",
     category: "TSC",
     date: "2026-06-22",
+    author: "Luke Tucker",
   },
   {
     title:
@@ -61,6 +64,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2026-03-10",
+    author: "Chun Hou, Kriti Jain",
   },
   {
     title:
@@ -77,6 +81,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-12-04",
+    author: "Vijoy Pandey",
   },
   {
     title:
@@ -93,6 +98,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-09-05",
+    author: "Ashley Altus",
   },
   {
     title:
@@ -109,6 +115,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-10-15",
+    author: "Chun Hou, Puneet Shrivastava",
   },
   {
     title:
@@ -125,6 +132,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-11-14",
+    author: "Ashley Altus",
   },
   {
     title:
@@ -141,6 +149,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-09-22",
+    author: "Pavan Sudheendra",
   },
   {
     title:
@@ -157,6 +166,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-07-23",
+    author: "Luke Tucker",
   },
   {
     title: "AGNTCY project donated to Linux Foundation with major industry backing",
@@ -172,6 +182,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-07-29",
+    author: "Vijoy Pandey",
   },
   {
     title:
@@ -188,6 +199,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-05-16",
+    author: "Guillaume De Saint Marc",
   },
   {
     title: "New AI Agent Identity framework from the AGNTCY",
@@ -203,6 +215,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-06-05",
+    author: "Julu Panat, Karen Jaworski, Hervé Muyal",
   },
   {
     title: "The 4 phases for successful development of multi-agent software",
@@ -218,6 +231,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-03-04",
+    author: "Papi Menon",
   },
   {
     title: "Building the Internet of Agents: Introducing AGNTCY.org",
@@ -233,6 +247,7 @@ export const articlesData: Resource[] = [
     source: "Outshift",
     category: "TSC",
     date: "2025-03-06",
+    author: "Vijoy Pandey",
   },
   {
     title: "Why We Need a New Internet for AI",
@@ -264,6 +279,7 @@ export const articlesData: Resource[] = [
     source: "CIO",
     category: "External Articles",
     date: "2026-07-27",
+    author: "Keith Ferrazzi, Wendy Smith",
   },
   {
     title:
@@ -280,6 +296,7 @@ export const articlesData: Resource[] = [
     source: "VentureBeat",
     category: "External Articles",
     date: "2025-03-06",
+    author: "Emilia David",
   },
   {
     title: "AGNTCY: Building the Future of Multi-Agentic Systems",
@@ -293,6 +310,7 @@ export const articlesData: Resource[] = [
     approved: "TRUE",
     isFeatured: false,
     source: "Galileo",
+    author: "Yash Sheth, Conor Bronsdon",
     category: "External Articles",
     date: "2025-03-05",
   },
