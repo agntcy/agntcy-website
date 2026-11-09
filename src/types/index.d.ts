@@ -23,6 +23,7 @@ type Resource = {
     | "TSC"
     | "External Articles";
   date?: string;
+  author?: string;
 };
 
 type Release = {
