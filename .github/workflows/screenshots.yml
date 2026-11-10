@@ -1,0 +1,223 @@
+---
+name: screenshots
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+# Default to read-only; the publish job adds write scopes for itself only.
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  # Runs the PR's code (install, build, server, browser) with a read-only token.
+  screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    env:
+      PORT: "3000"
+      SCREENSHOT_DIR: screenshots
+    outputs:
+      artifact-url: ${{ steps.upload.outputs.artifact-url }}
+    steps:
+      - name: 🔒 harden runner
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          egress-policy: audit
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "20"
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build with Next.js
+        run: npx --no-install next build
+      - name: Install Playwright browser
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Start production server
+        run: |
+          nohup npx --no-install next start --port "$PORT" > server.log 2>&1 &
+          echo "SERVER_PID=$!" >> "$GITHUB_ENV"
+          for _ in $(seq 1 60); do
+            if curl --silent --fail --output /dev/null "http://localhost:$PORT/"; then
+              echo "Server is up"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "::error::Site did not respond on port $PORT within 60 seconds"
+          cat server.log
+          exit 1
+      - name: Take screenshots
+        env:
+          BASE_URL: http://localhost:3000
+        run: node .github/scripts/screenshots.mjs
+      - name: Stop production server
+        if: always()
+        run: kill "$SERVER_PID" || true
+      - name: Upload screenshots
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: screenshots-pr-${{ github.event.pull_request.number }}
+          path: ${{ env.SCREENSHOT_DIR }}/*.png
+          if-no-files-found: error
+          retention-days: 14
+
+  # Holds the write token but never checks out or runs PR code. It treats the
+  # artifact as untrusted: only known filenames are accepted, and each must be
+  # a PNG of reasonable size.
+  publish:
+    needs: screenshots
+    # Fork PRs get a read-only token, so they cannot publish or comment.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      BRANCH: pr-screenshots
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: 🔒 harden runner
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          egress-policy: audit
+      - name: Download screenshots
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: screenshots-pr-${{ github.event.pull_request.number }}
+          path: downloaded
+      - name: Publish screenshots to branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          # Must match the pages and viewports in .github/scripts/screenshots.mjs.
+          names=""
+          for page in home articles sdks supporters; do
+            for viewport in small large; do
+              names="$names $page-$viewport.png"
+            done
+          done
+
+          dir="pr-${PR_NUMBER}"
+          sub="${dir}/${HEAD_SHA:0:7}"
+
+          # Validate the untrusted artifact and stage only what we expect.
+          mkdir -p stage
+          for name in $names; do
+            file="downloaded/$name"
+            [ -f "$file" ] && [ ! -L "$file" ] || { echo "::error::missing $name"; exit 1; }
+            [ "$(stat -c %s "$file")" -le 5242880 ] || { echo "::error::$name is larger than 5 MiB"; exit 1; }
+            [ "$(file -b --mime-type "$file")" = "image/png" ] || { echo "::error::$name is not a PNG"; exit 1; }
+            cp "$file" "stage/$name"
+          done
+
+          auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$auth"
+          run_git() {
+            git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" "$@"
+          }
+
+          git init -q publish
+          cd publish
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://github.com/${REPO}.git"
+
+          # Keep the branch at a single commit so image history never accumulates.
+          # Retry if another PR's run pushes between our fetch and push.
+          for attempt in 1 2 3 4 5; do
+            if run_git fetch --quiet --depth 1 origin "$BRANCH"; then
+              git checkout -q -B "$BRANCH" FETCH_HEAD
+              lease="--force-with-lease=refs/heads/$BRANCH:$(git rev-parse HEAD)"
+              amend="--amend"
+            else
+              git checkout -q --orphan "$BRANCH"
+              git rm -rfq --ignore-unmatch . > /dev/null
+              lease="--force-with-lease=refs/heads/$BRANCH:"
+              amend=""
+            fi
+
+            rm -rf "$dir"
+            mkdir -p "$sub"
+            cp ../stage/*.png "$sub/"
+            git add -A
+            # shellcheck disable=SC2086
+            git commit -q $amend -m "chore: screenshots for PR #${PR_NUMBER}"
+
+            if run_git push --quiet "$lease" origin "HEAD:refs/heads/$BRANCH"; then
+              echo "Published to $BRANCH/$sub"
+              echo "SCREENSHOT_PATH=$sub" >> "$GITHUB_ENV"
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt), retrying"
+            sleep $((attempt * 2))
+          done
+          echo "::error::Could not publish screenshots after 5 attempts"
+          exit 1
+      - name: Comment on pull request
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        env:
+          ARTIFACT_URL: ${{ needs.screenshots.outputs.artifact-url }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
+          script: |
+            const marker = "<!-- pr-screenshots -->";
+            const { ARTIFACT_URL, HEAD_SHA, RUN_URL, BRANCH, SCREENSHOT_PATH } = process.env;
+            const { owner, repo } = context.repo;
+
+            // Must match the pages and viewports in .github/scripts/screenshots.mjs.
+            const pages = ["home", "articles", "sdks", "supporters"];
+            const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/${BRANCH}/${SCREENSHOT_PATH}`;
+            const img = (name, width) =>
+              `<a href="${rawBase}/${name}.png"><img src="${rawBase}/${name}.png" width="${width}" alt="${name}"></a>`;
+
+            const rows = pages.map(
+              (page) => `| \`${page}\` | ${img(`${page}-small`, 180)} | ${img(`${page}-large`, 480)} |`,
+            );
+
+            const body = [
+              marker,
+              "### Screenshots",
+              "",
+              `Commit \`${HEAD_SHA.slice(0, 7)}\`, built with \`next build\` and served with \`next start\`. Click an image for full size.`,
+              "",
+              "| Page | Small (375×812) | Large (1440×900) |",
+              "| --- | --- | --- |",
+              ...rows,
+              "",
+              `[Download all screenshots](${ARTIFACT_URL}) · [Workflow run](${RUN_URL})`,
+            ].join("\n");
+
+            const issue_number = context.payload.pull_request.number;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number,
+            });
+            const existing = comments.find(
+              (c) => c.user?.type === "Bot" && c.body?.includes(marker),
+            );
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
