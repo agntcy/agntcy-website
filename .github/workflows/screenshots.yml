@@ -1,0 +1,121 @@
+---
+name: screenshots
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+# Default to read-only; the job below adds pull-requests: write for the comment.
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      PORT: "3000"
+      SCREENSHOT_DIR: screenshots
+    steps:
+      - name: 🔒 harden runner
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          egress-policy: audit
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Setup Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "20"
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build with Next.js
+        run: npx --no-install next build
+      - name: Install Playwright browser
+        run: npx --no-install playwright install --with-deps chromium
+      - name: Start production server
+        run: |
+          nohup npx --no-install next start --port "$PORT" > server.log 2>&1 &
+          echo "SERVER_PID=$!" >> "$GITHUB_ENV"
+          for _ in $(seq 1 60); do
+            if curl --silent --fail --output /dev/null "http://localhost:$PORT/"; then
+              echo "Server is up"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "::error::Site did not respond on port $PORT within 60 seconds"
+          cat server.log
+          exit 1
+      - name: Take screenshots
+        env:
+          BASE_URL: http://localhost:3000
+        run: node .github/scripts/screenshots.mjs
+      - name: Stop production server
+        if: always()
+        run: kill "$SERVER_PID" || true
+      - name: Upload screenshots
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: screenshots-pr-${{ github.event.pull_request.number }}
+          path: ${{ env.SCREENSHOT_DIR }}/*.png
+          if-no-files-found: error
+          retention-days: 14
+      - name: Comment on pull request
+        # Fork PRs get a read-only token, so they cannot comment.
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        env:
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
+          script: |
+            const fs = require("node:fs");
+            const marker = "<!-- pr-screenshots -->";
+            const { ARTIFACT_URL, HEAD_SHA, RUN_URL, SCREENSHOT_DIR } = process.env;
+
+            const files = fs.readdirSync(SCREENSHOT_DIR).filter((f) => f.endsWith(".png")).sort();
+            const rows = files.map((f) => `| \`${f}\` |`).join("\n");
+
+            const body = [
+              marker,
+              "### Screenshots",
+              "",
+              `Commit \`${HEAD_SHA.slice(0, 7)}\`, built with \`next build\` and served with \`next start\`.`,
+              "Small is 375×812, large is 1440×900.",
+              "",
+              `**[Download the screenshots](${ARTIFACT_URL})** ([workflow run](${RUN_URL}))`,
+              "",
+              "| Image |",
+              "| --- |",
+              rows,
+            ].join("\n");
+
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.pull_request.number;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number,
+            });
+            const existing = comments.find(
+              (c) => c.user?.type === "Bot" && c.body?.includes(marker),
+            );
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
