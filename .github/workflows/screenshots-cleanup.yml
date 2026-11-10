@@ -1,0 +1,69 @@
+---
+name: screenshots-cleanup
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: read
+
+jobs:
+  cleanup:
+    # Fork PRs never publish screenshots, so there is nothing to remove.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    env:
+      BRANCH: pr-screenshots
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+    steps:
+      - name: 🔒 harden runner
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          egress-policy: audit
+      - name: Remove PR screenshots from branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          auth="$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
+          echo "::add-mask::$auth"
+          run_git() {
+            git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $auth" "$@"
+          }
+
+          git init -q cleanup
+          cd cleanup
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://github.com/${REPO}.git"
+
+          for attempt in 1 2 3 4 5; do
+            if ! run_git fetch --quiet --depth 1 origin "$BRANCH"; then
+              echo "No $BRANCH branch; nothing to clean up"
+              exit 0
+            fi
+            git checkout -q -B "$BRANCH" FETCH_HEAD
+            if [ ! -d "pr-${PR_NUMBER}" ]; then
+              echo "No screenshots for PR #${PR_NUMBER}; nothing to clean up"
+              exit 0
+            fi
+
+            lease="--force-with-lease=refs/heads/$BRANCH:$(git rev-parse HEAD)"
+            git rm -rq "pr-${PR_NUMBER}"
+            git commit -q --amend --allow-empty -m "chore: remove screenshots for PR #${PR_NUMBER}"
+
+            if run_git push --quiet "$lease" origin "HEAD:refs/heads/$BRANCH"; then
+              echo "Removed screenshots for PR #${PR_NUMBER}"
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt), retrying"
+            sleep $((attempt * 2))
+          done
+          echo "::error::Could not clean up screenshots after 5 attempts"
+          exit 1
