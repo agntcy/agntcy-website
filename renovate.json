@@ -6,7 +6,7 @@
     ":semanticCommitTypeAll(chore)",
     ":dependencyDashboard"
   ],
-  "configMigration": true,
+  "configMigration": false,
   "dependencyDashboardAutoclose": true,
   "dependencyDashboardLabels": ["dependencies"],
   "dependencyDashboardOSVVulnerabilitySummary": "all",
