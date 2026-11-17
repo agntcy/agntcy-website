@@ -28,6 +28,10 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
+      # super-linter bundles an older Renovate that rejects newer config
+      # formats, so validate with a Renovate version that tracks the bot.
+      - name: ✅ validate renovate config
+        run: npx --yes --package renovate@44 renovate-config-validator --strict renovate.json
       - name: 🧹 run superlinter
         uses: super-linter/super-linter@2da136927bd4a73596db63044b504547c62cb854 # v9.0.0
         env:
@@ -49,6 +53,7 @@ jobs:
           VALIDATE_JSCPD: false
           VALIDATE_MARKDOWN_PRETTIER: false
           VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_RENOVATE: false
           VALIDATE_TSX: false
           VALIDATE_TYPESCRIPT_ES: false
           VALIDATE_TYPESCRIPT_PRETTIER: false
