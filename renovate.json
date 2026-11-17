@@ -6,10 +6,12 @@
     ":semanticCommitTypeAll(chore)",
     ":dependencyDashboard"
   ],
-  "configMigration": false,
-  "dependencyDashboardAutoclose": true,
-  "dependencyDashboardLabels": ["dependencies"],
-  "dependencyDashboardOSVVulnerabilitySummary": "all",
+  "configMigration": true,
+  "dependencyDashboard": {
+    "autoclose": true,
+    "labels": ["dependencies"],
+    "osvVulnerabilitySummary": "all"
+  },
   "enabled": true,
   "minimumReleaseAge": "7 days",
   "schedule": ["at any time"],
