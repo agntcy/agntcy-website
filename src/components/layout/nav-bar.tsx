@@ -96,7 +96,7 @@ const Navbar = () => {
     },
     {
       name: "YouTube",
-      href: "https://www.youtube.com/playlist?list=PL49BrgsjXg5qVeRVqlX9O74W02q3c8fow",
+      href: "https://www.youtube.com/@agntcy-lf",
       target: "_blank" as const,
     },
     {
